@@ -1,0 +1,7 @@
+- calibration bar - color bar (legend bar with a color-value LUT (look up table))
+- scale bar, spatial calibration bar - scale bar (legend scal (Massstab~))
+- File > Duplicate
+- bio-formats importer
+	choose a file (.tiff or so, .h5, etc.)
+	Memory Management
+	[x] open as virtual stack

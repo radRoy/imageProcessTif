@@ -1,0 +1,29 @@
+open fiji
+
+open the raw image data (tiff stack)
+duplicate it
+	threshold B&W otsu, min 2000
+	apply threshold without change between slices
+	save as > tiff of the threshold image, same name as raw data, with a SUFFIX (not prefix) (only matters to aesthetics in file explorers)
+
+select raw data window
+save as > HDF5 new (creating a new hdf5 hyperstack)
+	choose a filename identical to the raw image data filename, with some suffix like "-labelled"
+		choose "Standard (no time)" for convenience (each added 3D stack is essentially one recorded fluorescence channel, to the hdf5 format at least)
+		specify something like "raw" in the %c text field
+		save it
+		(wait for completion)
+
+select next image window (i.e., threshold binary image)
+save as > HDF5 append
+	select just created .h5 file
+		do the same as when creating the .h5 file, but change the %c text field accordingly ("threshold" instead of "raw" or whatever)
+		save it
+		(wait for completion)
+
+- - -
+
+opening .h5 files:
+
+file > load hdf5
+	...just read it, self-evident, really.

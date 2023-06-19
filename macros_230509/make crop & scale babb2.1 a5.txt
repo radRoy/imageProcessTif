@@ -1,0 +1,28 @@
+babb2.1 a5
+//makeRectangle(x,y, 2556,3906);
+//run("Duplicate...", "duplicate range=1-50");
+
+max dx: 2556
+max dy: 3906
+
+zplanes:
+1: 100
+2: 103
+3: 108
+(4: 90)
+5: 90
+6: 95
+
+duplicate ranges:
+1, 6-95
+2, 7-96
+3, 10-99
+5, 1-90
+6, 3-92
+
+non-cropped:
+max dz (n_slices): 108
+min dz (n_slices): 90
+
+z-resolution: 10 um
+xy-resolution: .85 um

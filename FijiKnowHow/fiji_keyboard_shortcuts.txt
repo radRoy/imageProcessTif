@@ -1,0 +1,3 @@
+ctrl + L: cursor to search field
+ctrl + shift + C: open the Brightness/Contrast Tool
+ctrl + shift + D: duplicate current image
