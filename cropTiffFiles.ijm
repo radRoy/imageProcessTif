@@ -1,3 +1,7 @@
+/* useful later:
+exit("exit reached");
+*/
+
 // get the file list (dynamic array size (number of files, yes))
 // btw: directory = getDirectory("Y:/Users/DWalther/Microscopy/babb02.1tnnt2/");
 directory = getDirectory("");

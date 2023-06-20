@@ -5,6 +5,7 @@ print(directory);
 //files = getFileList(directory);
 // <loop over dynamically long list of image files> (solved)
 // <truncate file extensions> TBD
+	// maybe try split(string, ".tiff"); or similar, where the file extension is treated as the delimiter, thus truncating/omimtting it.
 // <add some "editX" suffix> <add back file extension> (solved)
 
 indir = "by.085/";
