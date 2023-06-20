@@ -5,8 +5,32 @@ repo creation date: 19.06.2023
 
 My repository containing mainly ImageJ Macros for processing TIFF files for use with 3D U-Net. The files available from start stem from around 09.05.2023, upon which later IJMacros were built.
 
+copied from the BIO321 course - Joana Delgado Martin's fiji hands-on hand-out:
+
+21. Literature and further information:  
+- The ImageJ online documentation
+	- https://imagej.net/learn/
+	- https://imagej.nih.gov/ij/docs/
+	- can also be accessed via Help>Documentation...
+- Help from the community
+	- https://forum.image.sc/
+- Very useful guides and tutorials
+	- https://imagej.net/learn/user-guides
+	- https://imagej.net/Presentations
+- Github
+	- https://github.com/fiji
+
+Any publication that uses Fiji should cite the original Fiji paper:  
+
+Schindelin J, Arganda-Carreras I, Frise E, Kaynig V, Longair M, Pietzsch T, Preibisch S, Rueden C, Saalfeld S, Schmid B, Tinevez JY, White DJ, Hartenstein V, Eliceiri K, Tomancak P and Cardona A (2012). Fiji: an open-source platform for biological-image analysis. Nat Methods Jun 28;9()7);676-82
+
 ## outline of the cropping process
 
+__useful links:__  
+- high-level Segmentation tutorial (imagej.net): <https://imagej.net/imaging/segmentation#flexible-workflow>
+- Creating 3D masks from segmented z-stack, or [Selecting connected pixels in a binary mask in 3D](https://forum.image.sc/t/selecting-connected-pixels-in-a-binary-mask-in-3d/4142/2).
+
+__envisioned process:__  
 - downscale images to pre-determined maximal image size (low-quality interpolation should suffice)
 - distinguish background from signal (thresholding, pixel brightness distribution cluster analysis, etc.)
 - determine 6 coordinates: min & max locations of signal in each x, y, and z dimensions
