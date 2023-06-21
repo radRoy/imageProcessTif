@@ -8,6 +8,7 @@ dir = getDirectory("");
 //print(directory);
 files = getFileList(dir);
 saves = Array.copy(files);
+//saves = addSuffixToFileList(suffix = "the_suffix");
 
 for (i = 0; i < files.length; i++) {
 	print(files[i]);
