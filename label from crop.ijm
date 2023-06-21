@@ -1,3 +1,30 @@
+print("");  // start of program, for easy output reading
+
+dir = getDirectory("");
+//print(directory);
+files = getFileList(dir);
+//saves = Array.copy(files);
+for (i = 0; i < files.length; i++) {
+	print(files[i]);
+	
+	string = split(files[i]);
+	for (j = 0; j < string.length; j++) {
+		print(string[j]);
+	}
+
+	//saves[i] = string[0] + "." + string[1] + "-crop-xyz.tiff";
+	//print(files[i]);
+	//print(saves[i]);
+	//print(directory + saves[i]);
+}
+
+
+print("");
+print("exit reached");
+exit("exit reached");  // end of program, for easy output reading
+
+print("exit overshot (should be unreachable)!");
+
 open("M:/data/d.walther/Microscopy/babb03/tiff-ct3/TIFF crops/id02-img_Ch638 nm_Angle225.0_Tile2-crop.tif");
 selectWindow("id02-img_Ch638 nm_Angle225.0_Tile2-crop.tif");
 
