@@ -5,7 +5,11 @@ repo creation date: 19.06.2023
 
 My repository containing mainly ImageJ Macros for processing TIFF files for use with 3D U-Net. The files available from start stem from around 09.05.2023, upon which later IJMacros were built.
 
-copied from the BIO321 course - Joana Delgado Martin's fiji hands-on hand-out:
+## useful Fiji / ImageJ (Macro) links in general:
+
+- [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
+
+### copied from the BIO321 course - Joana Delgado Martin's fiji hands-on hand-out:
 
 21. Literature and further information:  
 - The ImageJ online documentation
