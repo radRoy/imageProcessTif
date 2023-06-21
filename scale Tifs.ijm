@@ -92,7 +92,7 @@ for (i = 0; i < files.length; i++)
 	
 	// run the scaling command (no duplication required, will create new image and not overwrite)
 	run("Scale...", arguments);
-	saveAs("Tiff", saves[i]);
+	saveAs("Tiff", dirOut + saves[i]);
 	
 	// close the scaled and unscaled images
 	close();
