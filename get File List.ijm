@@ -4,24 +4,31 @@ print(""); print("start of program"); print("");  // start of program, for easy 
  *  https://stackoverflow.com/questions/70354753/i-am-trying-to-select-the-last-index-of-a-string-after-splitting-an-image-name-f
  */
 
-dir = getDirectory("");
-//print(directory);
-files = getFileList(dir);
-saves = Array.copy(files);
-//saves = addSuffixToFileList(suffix = "the_suffix");
-
-for (i = 0; i < files.length; i++) {
-	print(files[i]);
+function addSuffixToFileList(files, suffix, fileExtension)
+{
+	// Takes Array of filenames (including absolute path) and returns a copy where the filenames have an added suffix. Intended to be used to create an Array of filenames to save processed images to.
+	saves = Array.copy(files);
 	
-	string = split(files[i], ".");  // splits input string where any given character occurs and not where the word occurs.
-	/*for (j = 0; j < string.length; j++) {
-		print("string[" + j + "] = " + string[j]);
-	}*/
+	for (i = 0; i < files.length; i++)
+	{
+		string = split(files[i], ".");  // splits input string where any given character occurs and not where the word occurs.
+		saves[i] = string[0] + suffix + fileExtension;  // assumes the only "." in the filename is the one preceding the file extension.
+	}
 
-	saves[i] = string[0] + "." + string[1] + "-crop-xyz.tiff";
-	print("files[i] = " + files[i]);
-	print("saves[i] = " + saves[i]);
-	print("dir + saves[i] = " + dir + saves[i]);
+	return saves;  // Array of output filenames without their path.
+}
+
+dir = getDirectory("");
+saveDir = getDirectory("");
+//print(directory);
+
+files = getFileList(dir);
+suffix = "-suffix";
+fileExtension = ".tif";
+saves = addSuffixToFileList(files, suffix, fileExtension);  // returns an Array of suffixed filenames with a given file extension appended
+for (i = 0; i < saves.length; i++)
+{
+	print(saves[i]);
 }
 
 print(""); print("exit reached"); exit("exit reached");  // end of program, for easy output reading
