@@ -37,3 +37,26 @@ __envisioned process:__
 - export image-wise coordinates into a csv table or similar
 - extrapolate back up to original image size, include a boundary, e.g., by extrapolating to the outer pixel locations instead of the middle ones ~
 - perform cropping on original images
+
+## comparison of Fiji's built-in thresholding algorithms
+
+Fiji thresholding algorithms ranking by segmentation(label) quality (i.e., whole signal included, noise excluded) (view in Source, not Preview, mode):
+
+thresholding algorithm		transformations, quality
+----------------------------------------------------
+default  
+= Huang  
+  
+< Li  
+= MaxEntropy  
+  
+<< Intermodes               gauss < gauss 3D (same sigmas)  
+= IsoData                   2D < 3D regarding noise exclusion, 2D > 3D regarding signal inclusion  
+= IJ_IsoData  
+  
+< Otsu                      slightly but noticeably better inclusion & exclusion of signal & noise  
+(<) Percentile  
+= RenyiEntropy  
+= Shanbhag  
+= Triangle  
+= Yen  
