@@ -26,26 +26,6 @@ function addSuffixToFileList(files, suffix, fileExtension)
 }
 
 
-/*
- * file handling
- */
-
-
-// get file paths (input & output) (dialogue)
-dir = getDirectory("");
-dirOut = getDirectory("");
-// get file list in given path (can specify filetype, or just keep different image data in different folders)
-files = getFileList(dir);
-suffix = "-scaled";
-fileExtension = ".tif";
-saves = addSuffixToFileList(files, suffix, fileExtension);
-
-
-/*
- * file handling done
- */
-
-
 // specify the scaling factor (unsophisticated & neglecting Nyquist-Shannon sampling theorem)
 scaling = 0.25;
 isotropicScaling = true;
@@ -57,10 +37,36 @@ if (isotropicScaling)
 }
 //else: ...not implemented yet - above is easier with an if() condition
 
-// specify interpolation scheme
+// specify interpolation scheme. disclaimer: technically, could also be an extrapolation. but the program differs not.
 bilinearInterpolString = "Bilinear average process create";  // "<interpolation scheme> <'average' if yes> <'process' if entire stack> <'create' if create new window'>
 bicubicInterpolString = "Bicubic average process create";
 interpolString = bicubicInterpolString;
+// create a interpolation method variable for below automatic naming of the output folder
+if (bicubicInterpolString == bicubicInterpolString) {interpolation = "bicubic";}
+else {interpolation = "bilinear";}
+
+
+/*
+ * file handling
+ */
+
+
+// get file paths (input & output) (dialogue)
+dir = getDirectory("Choose a folder containing input image(s)");  // choosing folder with input files
+dirOut = getDirectory("Choose the parent folder of your output folder (the output folder will be created automatically)");  // choosing folder to save output files to
+// make output directory with the scaling in the name
+dirOut = File.makeDirectory(dirOut + interpolation + " scaled by " + scaling);  // creates the directory, if it does not exist. otherwise it does nothing.
+
+// get file list in given path (can specify filetype, or just keep different image data in different folders)
+files = getFileList(dir);
+suffix = "-scaled";
+fileExtension = ".tif";
+saves = addSuffixToFileList(files, suffix, fileExtension);
+
+
+/*
+ * file handling done
+ */
 
 
 print("directory of input files: " + dir);
