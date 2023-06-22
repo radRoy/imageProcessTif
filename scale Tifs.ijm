@@ -4,6 +4,7 @@
  * z-resolution before & after scaling (unchanged) = 10.0 um
  */
 
+run("Record...");
 print(""); print("start of program"); print("");  // start of program, for easy output reading
 
 /*
@@ -19,6 +20,9 @@ function addSuffixToFileList(files, suffix, fileExtension)
 	for (i = 0; i < files.length; i++)
 	{
 		string = split(files[i], ".");  // splits input string where any given character occurs and not where the word occurs.
+		
+		// TBD make the script compatible with input folder & file names containing dots ".", using conditional iterative concatenation of all split() output string Array elements, excluding the last element being the file extension.
+		
 		saves[i] = string[0] + suffix + fileExtension;  // assumes the only "." in the filename is the one preceding the file extension.
 	}
 
@@ -55,7 +59,8 @@ else {interpolation = "bilinear";}
 dir = getDirectory("Choose a folder containing input image(s)");  // choosing folder with input files
 dirOut = getDirectory("Choose the parent folder of your output folder (the output folder will be created automatically)");  // choosing folder to save output files to
 // make output directory with the scaling in the name
-dirOut = File.makeDirectory(dirOut + interpolation + " scaled by " + scaling);  // creates the directory, if it does not exist. otherwise it does nothing.
+dirOut = dirOut + interpolation + " scaled by " + scaling + "/";
+File.makeDirectory(dirOut);  // creates the directory, if it does not exist. otherwise it does nothing.
 
 // get file list in given path (can specify filetype, or just keep different image data in different folders)
 files = getFileList(dir);
@@ -65,7 +70,7 @@ saves = addSuffixToFileList(files, suffix, fileExtension);
 
 
 /*
- * file handling done
+ * file handling donesaveAs("Tiff", "M:/data/d.walther/Microscopy/babb03/tiff-ct3/save test manual/blobs-2.tif");
  */
 
 
@@ -106,7 +111,6 @@ for (i = 0; i < files.length; i++)
 
 	// give message to the user, informing him of the file having been saved
 	print("A file has been saved. filename: " + saves[i]);
-	break;
 }
 
 
