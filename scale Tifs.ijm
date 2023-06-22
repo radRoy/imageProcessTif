@@ -58,8 +58,15 @@ else {interpolation = "bilinear";}
 // get file paths (input & output) (dialogue)
 dir = getDirectory("Choose a folder containing input image(s)");  // choosing folder with input files
 dirOut = getDirectory("Choose the parent folder of your output folder (the output folder will be created automatically)");  // choosing folder to save output files to
-// make output directory with the scaling in the name
-dirOut = dirOut + interpolation + " scaled by " + scaling + "/";
+
+// create the string of the output directory's name, containing the scaling factor & interpolation scheme
+if (endsWith(dirOut, "/") || endsWith(dirOut, "\"))
+{
+	dirOut = dirOut + interpolation + " scaled by " + scaling;
+}
+else {dirOut = dirOut + interpolation + " scaled by " + scaling + "/";}
+
+// create the output directory
 File.makeDirectory(dirOut);  // creates the directory, if it does not exist. otherwise it does nothing.
 
 // get file list in given path (can specify filetype, or just keep different image data in different folders)
@@ -83,7 +90,9 @@ for (i = 0; i < files.length; i++)
 	// open i-th image
 	print(dir);
 	print(files[i]);
-	open(dir + files[i]);
+		
+	open(dir + files[i]);	
+	
 
 	// get image dimensions
 	width = 0; height = 0; channels = 0; slices = 0; frames = 0;
