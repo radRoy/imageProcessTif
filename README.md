@@ -5,6 +5,10 @@ repo creation date: 19.06.2023
 
 My repository containing mainly ImageJ Macros for processing TIFF files for use with 3D U-Net. The files available from start stem from around 09.05.2023, upon which later IJMacros were built.
 
+## important preliminary remarks:
+
+__CAUTION:__ Do ***NOT*** work on one .ijm script in two editors simultaneously! If you do, at some point, Fiji will be 'confused', freeze, and when you force close it with the task manager (or so), Fiji will delete all file contents of the file being changed in the two editors (alternatingly, in my case. I did this, because the VS Code, or most other editors, are way more user-friendly than the Fiji built-in editor).
+
 ## useful Fiji / ImageJ (Macro) links in general:
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
