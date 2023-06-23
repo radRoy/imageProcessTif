@@ -61,11 +61,7 @@ dir = getDirectory("Choose a folder containing input image(s)");  // choosing fo
 dirOut = getDirectory("Choose the parent folder of your output folder (the output folder will be created automatically)");  // choosing folder to save output files to
 
 // create the string of the output directory's name, containing the scaling factor & interpolation scheme
-if (endsWith(dirOut, "/") || endsWith(dirOut, "\"))
-{
-	dirOut = dirOut + interpolation + " scaled by " + scaling;
-}
-else {dirOut = dirOut + interpolation + " scaled by " + scaling + "/";}
+dirOut = dirOut + interpolation + " scaled by " + scaling + "/";
 
 // create the output directory
 File.makeDirectory(dirOut);  // creates the directory, if it does not exist. otherwise it does nothing.
