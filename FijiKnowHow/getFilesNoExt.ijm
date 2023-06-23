@@ -1,7 +1,8 @@
 function getFilesNoExt (dir, delimiter)
 {
 	/* Gets the names of the files contained in dir, excluding file extensions. Returns an array of strings.
-	 * delimiter :: should be one single character. This program does not work as intended if more than 1 character is specified.
+	 *  dir :: string of the absolute path that the user wants a file list from
+	 *  delimiter :: should be one single character (e.g., `.`). This program does not work as intended if more than 1 character is specified.
 	 */
 	
 	files = getFileList(dir);  // Array of filenames WITH file extensions
