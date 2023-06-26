@@ -6,6 +6,7 @@ or better 3, 2, 2 - to be more certain that the model works on different specime
 
 number & filename correspondance:
 
+(redundant table, repeated below, just with other sorting)
 filename	data set
 1			val
 2			train
@@ -15,11 +16,11 @@ filename	data set
 6			val
 7			train
 
-index		data set	h5 data set no.
-2			train		1
-7			train		2
-4			train		3
-3			train		4
-6			val			5
-1			val			6
-5			test		7
+index		data set	h5 data set no.		created (x = done (raw & label input paths))
+2			train		1					x
+7			train		2					x
+4			train		3					x
+3			train		4					x
+6			val			5					x
+1			val			6					x
+5			test		7					x
