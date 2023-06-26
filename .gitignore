@@ -1,1 +1,4 @@
 */temp bicubic scaled by 0.25/*
+
+# ignore all `*<.filetype>` files
+*.Rhistory
