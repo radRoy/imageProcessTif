@@ -32,7 +32,15 @@ Any publication that uses Fiji should cite the original Fiji paper:
 
 Schindelin J, Arganda-Carreras I, Frise E, Kaynig V, Longair M, Pietzsch T, Preibisch S, Rueden C, Saalfeld S, Schmid B, Tinevez JY, White DJ, Hartenstein V, Eliceiri K, Tomancak P and Cardona A (2012). Fiji: an open-source platform for biological-image analysis. Nat Methods Jun 28;9()7);676-82
 
-## outline of the cropping process
+## my .ijm scripts (= macros)
+
+In all my scripts, in-line documentation is available.
+
+- `cropTifs-Static.ijm` is a static cropping script. no automatic edge or signal detection is done. x-, y- and z-coordinates for cropping have to be given (i.e., changed) manually in the script.
+- `scaleTifs.ijm` is a dynamic script for scaling any set of TIF stacks images in a given folder in x-, y- and z-dimensions. Only the scaling factor is static - specify it in the script somewhere.
+- `labelTifsHeart.ijm` is a dynamic script for segmenting the biggest fluorescence signal of a group of TIF stack images. The selection of fluorescence vs. non-fluorescence images is still static, as my string comparison / comprehension skills in .ijm (IJM) are still rudimentary. The value for the threshold segmentation needs to be manually determined in a given image group and statically changed in the script.
+
+## outline of the envisioned automated cropping process
 
 __useful links:__  
 - high-level Segmentation tutorial (imagej.net): <https://imagej.net/imaging/segmentation#flexible-workflow>

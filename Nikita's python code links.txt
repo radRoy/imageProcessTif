@@ -1,0 +1,6 @@
+https://github.com/nvladimus/npy2bdv
+	repo, python code for handling hdf5 files
+https://nvladimus.github.io/npy2bdv/npy2bdv.html#npy2bdv.npy2bdv.BdvEditor.read_view
+	readng from hdf5
+https://github.com/nvladimus/npy2bdv/blob/master/docs/examples/examples_h5writing.ipynb
+	writing to hdf5
