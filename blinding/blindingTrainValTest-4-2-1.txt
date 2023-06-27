@@ -16,11 +16,11 @@ filename	data set
 6			val
 7			train
 
-index		data set	h5 data set no.		created (x = done (raw & label input paths))
-2			train		1					x
-7			train		2					x
-4			train		3					x
-3			train		4					x
-6			val			5					x
-1			val			6					x
-5			test		7					x
+index		data set	h5 data set no.		created (x=done)	.h5: label & raw from same specimen (y/n)
+2			train		1					x					y
+7			train		2					x					y
+4			train		3					x					y
+3			train		4					x					y
+6			val			5					x					y
+1			val			6					x					y
+5			test		7					x					y
