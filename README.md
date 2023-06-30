@@ -5,9 +5,14 @@ repo creation date: 19.06.2023
 
 My repository containing mainly ImageJ Macros for processing TIFF files for use with 3D U-Net. The files available from start stem from around 09.05.2023, upon which later IJMacros were built.
 
+## important preliminary remarks:
+
+__CAUTION:__ Do ***NOT*** work on one .ijm script in two editors simultaneously! If you do, at some point, Fiji will be 'confused', freeze, and when you force close it with the task manager (or so), Fiji will delete all file contents of the file being changed in the two editors (alternatingly, in my case. I did this, because the VS Code, or most other editors, are way more user-friendly than the Fiji built-in editor).
+
 ## useful Fiji / ImageJ (Macro) links in general:
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
+- [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/)
 
 ### copied from the BIO321 course - Joana Delgado Martin's fiji hands-on hand-out:
 
@@ -28,7 +33,15 @@ Any publication that uses Fiji should cite the original Fiji paper:
 
 Schindelin J, Arganda-Carreras I, Frise E, Kaynig V, Longair M, Pietzsch T, Preibisch S, Rueden C, Saalfeld S, Schmid B, Tinevez JY, White DJ, Hartenstein V, Eliceiri K, Tomancak P and Cardona A (2012). Fiji: an open-source platform for biological-image analysis. Nat Methods Jun 28;9()7);676-82
 
-## outline of the cropping process
+## my .ijm scripts (= macros)
+
+In all my scripts, in-line documentation is available.
+
+- `cropTifs-Static.ijm` is a static cropping script. no automatic edge or signal detection is done. x-, y- and z-coordinates for cropping have to be given (i.e., changed) manually in the script.
+- `scaleTifs.ijm` is a dynamic script for scaling any set of TIF stacks images in a given folder in x-, y- and z-dimensions. Only the scaling factor is static - specify it in the script somewhere.
+- `labelTifsHeart.ijm` is a dynamic script for segmenting the biggest fluorescence signal of a group of TIF stack images. The selection of fluorescence vs. non-fluorescence images is still static, as my string comparison / comprehension skills in .ijm (IJM) are still rudimentary. The value for the threshold segmentation needs to be manually determined in a given image group and statically changed in the script.
+
+## outline of the envisioned automated cropping process
 
 __useful links:__  
 - high-level Segmentation tutorial (imagej.net): <https://imagej.net/imaging/segmentation#flexible-workflow>
@@ -64,3 +77,19 @@ default
 = Shanbhag  
 = Triangle  
 = Yen  
+
+## 3D U-Net training data set formatting / creation (HDF5 files)
+
+Refer to (above listed) link about [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/). Following this procedure specimen-wise:
+
+Creating the label input data set:  
+- copy the label image as many times as there are autofluorescence channels in that imaging batch (e.g., 3 channels - 405, 488, 561). This mimicks 3 channels to the 3D U-Net, because (when using binary loss functions) per raw input channel, U-Net requires 1 corresponding label data set. Since there is only 1, the same, intended correct (organ) segmentation for all 3 (autofluorescence) channels, the label has to be copied for creating the HDF5 data set used for training U-Net.
+- start with the procedure written on above linked website - choose the n (e.g., 3) label copies, mimicking n channgels, as images to import.
+- follow the link above for further steps (creating a tif hyperstack).
+- when saving the tif (hyper)stack~ to HDF5, call the "label_internal_path" `/label`. Consider the formatting  specified in pytorch-3dunet's README (C, Z, Y, X).
+
+Creating the raw input data set:  
+- No step required, here. (No copying or similar required. There are already n (e.g., 3) (autofluorescence) channels available for the raw input data.)
+- start with the procedure written on above linked website - choose the n (e.g., 3) raw (autofluorescence) input channels as images to import.
+- follow the link above for further steps (creating a tif hyperstack).
+- when saving the tif (hyper)stack~ to HDF5, call the "raw_internal_path" `/raw`. Consider the formatting  specified in pytorch-3dunet's README (C, Z, Y, X).

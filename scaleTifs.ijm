@@ -4,6 +4,7 @@
  * z-resolution before & after scaling (unchanged) = 10.0 um
  */
 
+run("Record...");
 print(""); print("start of program"); print("");  // start of program, for easy output reading
 
 /*
@@ -19,31 +20,15 @@ function addSuffixToFileList(files, suffix, fileExtension)
 	for (i = 0; i < files.length; i++)
 	{
 		string = split(files[i], ".");  // splits input string where any given character occurs and not where the word occurs.
+		
+		// TBD make the script compatible with input folder & file names containing dots ".", using conditional iterative concatenation of all split() output string Array elements, excluding the last element being the file extension.
+			// refer to the labelling macro for a solution to this (oneliner)
+		
 		saves[i] = string[0] + suffix + fileExtension;  // assumes the only "." in the filename is the one preceding the file extension.
 	}
 
 	return saves;  // Array of output filenames without their path.
 }
-
-
-/*
- * file handling
- */
-
-
-// get file paths (input & output) (dialogue)
-dir = getDirectory("");
-dirOut = getDirectory("");
-// get file list in given path (can specify filetype, or just keep different image data in different folders)
-files = getFileList(dir);
-suffix = "-scaled";
-fileExtension = ".tif";
-saves = addSuffixToFileList(files, suffix, fileExtension);
-
-
-/*
- * file handling done
- */
 
 
 // specify the scaling factor (unsophisticated & neglecting Nyquist-Shannon sampling theorem)
@@ -57,10 +42,40 @@ if (isotropicScaling)
 }
 //else: ...not implemented yet - above is easier with an if() condition
 
-// specify interpolation scheme
+// specify interpolation scheme. disclaimer: technically, could also be an extrapolation. but the program differs not.
 bilinearInterpolString = "Bilinear average process create";  // "<interpolation scheme> <'average' if yes> <'process' if entire stack> <'create' if create new window'>
 bicubicInterpolString = "Bicubic average process create";
 interpolString = bicubicInterpolString;
+// create a interpolation method variable for below automatic naming of the output folder
+if (bicubicInterpolString == bicubicInterpolString) {interpolation = "bicubic";}
+else {interpolation = "bilinear";}
+
+
+/*
+ * file handling
+ */
+
+
+// get file paths (input & output) (dialogue)
+dir = getDirectory("Choose a folder containing input image(s)");  // choosing folder with input files
+dirOut = getDirectory("Choose the parent folder of your output folder (the output folder will be created automatically)");  // choosing folder to save output files to
+
+// create the string of the output directory's name, containing the scaling factor & interpolation scheme
+dirOut = dirOut + interpolation + " scaled by " + scaling + "/";
+
+// create the output directory
+File.makeDirectory(dirOut);  // creates the directory, if it does not exist. otherwise it does nothing.
+
+// get file list in given path (can specify filetype, or just keep different image data in different folders)
+files = getFileList(dir);
+suffix = "-scaled" + toString(scaling);
+fileExtension = ".tif";
+saves = addSuffixToFileList(files, suffix, fileExtension);
+
+
+/*
+ * file handling donesaveAs("Tiff", "M:/data/d.walther/Microscopy/babb03/tiff-ct3/save test manual/blobs-2.tif");
+ */
 
 
 print("directory of input files: " + dir);
@@ -68,11 +83,13 @@ print("directory of output files: " + dirOut);
 // TBD: make a function out of this loop, taking as arguments: Array files, interpolation scheme, Array saves; could also do it with just the in- and output paths
 // iteratively scaling all images specified in the Array containing the paths+filenames
 for (i = 0; i < files.length; i++)
-{	
+{
 	// open i-th image
 	print(dir);
 	print(files[i]);
+		
 	open(dir + files[i]);
+	
 
 	// get image dimensions
 	width = 0; height = 0; channels = 0; slices = 0; frames = 0;
@@ -100,7 +117,6 @@ for (i = 0; i < files.length; i++)
 
 	// give message to the user, informing him of the file having been saved
 	print("A file has been saved. filename: " + saves[i]);
-	break;
 }
 
 

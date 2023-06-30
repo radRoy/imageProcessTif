@@ -20,6 +20,8 @@ saveAs("Tiff", "M:/data/d.walther/Microscopy/babb03/tiff-ct3/TIFF crops/id02-img
 run("Gaussian Blur 3D...", "x=1 y=1 z=1");
 saveAs("Tiff", "M:/data/d.walther/Microscopy/babb03/tiff-ct3/TIFF crops/id02-img_Ch638 nm_Angle225.0_Tile2-crop-scaled.25-blured1.tif");
 
+
+// create mask with threshold segmentation
 setMinAndMax(229, 1575);
 setAutoThreshold("Otsu dark no-reset");
 //run("Threshold...");

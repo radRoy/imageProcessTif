@@ -1,0 +1,26 @@
+below tables were made in Notepad++, the spacing is done with tabs. View the tables in Notepad++ if the rows do not align nicely in the editor you're viewing the file at in.
+
+train / val / test scheme
+4 train, 2 val, 1 test
+or better 3, 2, 2 - to be more certain that the model works on different specimens?
+
+number & filename correspondance:
+
+(redundant table, repeated below, just with other sorting)
+filename	data set
+1			val
+2			train
+3			train
+4			train
+5			test
+6			val
+7			train
+
+index		data set	h5 data set no.		created (x=done)	.h5: label & raw from same specimen (y/n)
+2			train		1					x					y
+7			train		2					x					y
+4			train		3					x					y
+3			train		4					x					y
+6			val			5					x					y
+1			val			6					x					y
+5			test		7					x					y
