@@ -25,7 +25,9 @@ def extract_parent_dir(file_path):
     return parent_dir
 
 
-def get_file_list(parent_dir):
+def get_file_list(parent_dir=""):
+    if parent_dir == "":
+        parent_dir = get_directory_dialog()  # should be str with trailing slash
     file_list = os.listdir(parent_dir)
     return file_list
 
@@ -117,6 +119,12 @@ def export_file(image, filename):
     print("saved shape :", image.shape)
     print("export_file(): File created: {}".format(filename))
     return 0
+
+
+def get_file_path_list():
+    path = get_directory_dialog()
+    files = get_file_list(path)
+    return [path + "/" + file for file in files]
 
 
 if __name__ == "__main__":

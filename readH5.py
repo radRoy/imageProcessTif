@@ -20,6 +20,18 @@ def open_h5(file_path_h5):
     return h5
 
 
+def get_resolution_h5(file_path_h5):
+    file = open_h5(file_path_h5)
+    key = list(file.keys())[-1]
+    # print(f"this file's shape: {file[key].shape}")  # testing (shape)
+    # print(f"this file's shape's type: {type(file[key].shape)}")  # testing (tuple)
+    return file[key].shape
+
+
+def get_resolution_tif(file_path_tif):
+    pass
+
+
 if __name__ == "__main__":
 
     # 1st folder with h5 images
@@ -30,16 +42,15 @@ if __name__ == "__main__":
 
     for file_path in file_paths:
         f = open_h5(file_path)
-        print(list(f.keys()))
-
-        for key in f.keys():
-            print(f[key])
-
-        print("")
+        # print(list(f.keys()))
+        """for key in f.keys():
+            print(f[key])"""
+        print(get_resolution_h5(file_path))
+        # print("")
     
-    
+    exit(0)
     # 2nd folder with h5 images
-    """
+    
     path = fH.get_directory_dialog()
     files = fH.get_file_list(path)
     file_paths = [path + "/" + file for file in files]
@@ -52,5 +63,5 @@ if __name__ == "__main__":
             print(f[key])
 
         print("")
-    """
-    exit(0)
+
+    # exit(0)
