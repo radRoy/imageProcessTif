@@ -35,22 +35,6 @@ def get_resolution_tif(file_path_tif):
 if __name__ == "__main__":
 
     # 1st folder with h5 images
-    
-    path = fH.get_directory_dialog()
-    files = fH.get_file_list(path)
-    file_paths = [path + "/" + file for file in files]
-
-    for file_path in file_paths:
-        f = open_h5(file_path)
-        # print(list(f.keys()))
-        """for key in f.keys():
-            print(f[key])"""
-        print(get_resolution_h5(file_path))
-        # print("")
-    
-    exit(0)
-    # 2nd folder with h5 images
-    
     path = fH.get_directory_dialog()
     files = fH.get_file_list(path)
     file_paths = [path + "/" + file for file in files]
@@ -58,10 +42,14 @@ if __name__ == "__main__":
     for file_path in file_paths:
         f = open_h5(file_path)
         print(list(f.keys()))
-
         for key in f.keys():
             print(f[key])
+        # print(get_resolution_h5(file_path))
+        # print("")
 
-        print("")
-
-    # exit(0)
+    file_path = fH.get_filepath_dialog()
+    #print(file_path, type(file_path))
+    with open_h5(file_path) as f:
+        print(list(f.keys()))
+    
+    exit(0)

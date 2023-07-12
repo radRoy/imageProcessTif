@@ -158,16 +158,17 @@ if __name__ == "__main__":
     print(type(directory))
     """
 
-    parent_dir = extract_parent_dir(get_filepath_dialog())  # pathlib.WindowsPath, path with backslashes, no trailing "\"
+    """parent_dir = extract_parent_dir(get_filepath_dialog())  # pathlib.WindowsPath, path with backslashes, no trailing "\"
     print("extracted parent directory from file path:", parent_dir)
     print(type(parent_dir))
 
     parent_dir_str = str(parent_dir)
     print(parent_dir_str)
-    print(type(parent_dir_str))
+    print(type(parent_dir_str))"""
 
+    parent_dir = get_directory_dialog()
     file_list = get_file_list(parent_dir)
-    print("file list in the given directory (regardless of filetype) " + parent_dir_str + ":")
+    print("file list in the given directory (regardless of filetype) " + parent_dir + ":")
     for file in file_list:
         print("  " + file)
-        print("  " + type(file))
+        print(type(file))
