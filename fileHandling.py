@@ -5,18 +5,18 @@ import os
 import pathlib
 
 
-def get_filepath_dialog():
-    file_path = filedialog.askopenfilename()
+def get_filepath_dialog(window_title="Choose file path"):
+    file_path = filedialog.askopenfilename(title=window_title)
     return file_path
 
 
-def get_directory_dialog():
+def get_directory_dialog(window_title="Choose folder path"):
     """
 
-    Returns: str, absolute path with "/" and trailing "/"
+    Returns: str, absolute path with "/" (slashes) and trailing "/"
 
     """
-    return filedialog.askdirectory() + "/"
+    return filedialog.askdirectory(title=window_title) + "/"
 
 
 def extract_parent_dir(file_path):
