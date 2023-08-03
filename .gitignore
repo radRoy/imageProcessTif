@@ -2,3 +2,9 @@
 
 # ignore all `*<.filetype>` files
 *.Rhistory
+*.iml
+*.pyc
+*.xml
+*.iml
+.idea/imageProcessTif.iml
+.idea/misc.xml
