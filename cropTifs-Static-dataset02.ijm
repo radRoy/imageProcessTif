@@ -3,16 +3,6 @@ print("start of file");
 print("");
 
 
-/* TESTING INTERACTIVE FUNCTION */
-
-
-setTool("rectangle");
-waitForUser("Do the thing. Click OK when done.");
-run("Crop");
-saveAs("Tiff", "C:/Users/popsicle_cell/Documents/imageProcessTif-crop/interactive_crop_test.tif");
-close("*");
-
-
 /* PRELIMINARY INFORMATION */
 
 
@@ -22,6 +12,7 @@ close("*");
  * file purpose: crop .tif files from mesospim, used on the "dataset02" in my Master's thesis project.
  *   dataset02 consistently has 4 channels per specimen.
  */
+
 
 /* FUNCTIONS */
 
