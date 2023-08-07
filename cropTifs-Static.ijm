@@ -8,30 +8,39 @@ directory = getDirectory("");
 print(directory);
 files = getFileList(directory);
 saves = Array.copy(files);
+suffix = "-crop.tif";
+
 for (i = 0; i < files.length; i++) {
 	string = split(files[i], ".");
-	saves[i] = string[0] + "." + string[1] + "-crop-xyz.tiff";
+	saves[i] = string[0] + "." + string[1] + suffix;
 	print("file i: " + files[i]);
 	print("save i: " + saves[i]);
 	print("dir + save i: " + directory + saves[i]);
 }
 
+
+// example arrays with the cropping coordinates, this was for 2 channel data (every range is given twice, once for each channel)
 zrange = newArray("5-95", "5-95", "5-95", "5-95", "8-98", "8-98", "5-95", "5-95", "4-94", "4-94", "1-91", "1-91");
 xoffsets = newArray(990, 990, 1710, 1710, 690, 690, 966, 966, 642, 642, 756, 756);
 
+
+// unfinished iterative version
+/*
 for (i = 0; i < 10; i++) {
 	open(files[i]);
 	run("Duplicate...", "duplicate range=" + zrange[i]);
 }
+*/
 
+
+// finished manual version
 
 // a5-01, 488
 open(files[0]);
 run("Duplicate...", "duplicate range=6-95");
 makeRectangle(339, 432, 2556, 3906);
 saveAs("Tiff", directory + "babb2.1-a5-01-488nm-Int50-crop-xyz.tiff");
-close();   
-close();  
+run("Close All");
 // a5-01, 638
 open(files[1]);
 run("Duplicate...", "duplicate range=6-95");
