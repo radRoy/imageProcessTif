@@ -1,5 +1,6 @@
 import readH5 as rH
 import fileHandling as fH
+from PIL import Image
 
 
 def list_resolutions_h5(file_paths):
@@ -22,10 +23,22 @@ def list_resolutions_h5(file_paths):
     return resolutions
 
 
+def list_resolutions_tif(file_paths):
+
+    resolutions = []
+
+    for i, file_path in enumerate(file_paths):
+        im = Image.open(file_path)
+        width, height = im.size
+
+
 if __name__ == "__main__":
 
     file_paths = fH.get_file_path_list()
-    resolutions = list_resolutions_h5(file_paths)
-    print(resolutions)
+    """
+    resolutions_h5 = list_resolutions_h5(file_paths)
+    print("h5 resolutions:\n", resolutions_h5)"""
+    resolutions_tif = list_resolutions_tif(file_paths)
+    print("tif resolutions:\n", resolutions_tif)
 
     exit(0)

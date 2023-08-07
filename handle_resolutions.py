@@ -3,7 +3,8 @@ import fileHandling as fH
 import list_resolutions as lR
 
 
-def minial_x(resolutions_zyx):
+# unfinished function that was never used
+def minimal_x(resolutions_zyx):
     a_resolutions = np.array(resolutions_zyx)
     pass
 
