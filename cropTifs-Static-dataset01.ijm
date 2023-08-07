@@ -1,3 +1,10 @@
+/*
+ * author: Daniel Walther
+ * creation date: ? (~spring 2023)
+ * file purpose: crop .tif files from mesospim, used on the "dataset01" in my Master's thesis project.
+ */
+
+
 /* useful later:
 exit("exit reached");
 */
