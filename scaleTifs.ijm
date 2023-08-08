@@ -74,7 +74,7 @@ saves = addSuffixToFileList(files, suffix, fileExtension);
 
 
 /*
- * file handling donesaveAs("Tiff", "M:/data/d.walther/Microscopy/babb03/tiff-ct3/save test manual/blobs-2.tif");
+ * file handling done saveAs("Tiff", "M:/data/d.walther/Microscopy/babb03/tiff-ct3/save test manual/blobs-2.tif");
  */
 
 
@@ -112,8 +112,7 @@ for (i = 0; i < files.length; i++)
 	saveAs("Tiff", dirOut + saves[i]);
 	
 	// close the scaled and unscaled images
-	close();
-	close();
+	close("*");
 
 	// give message to the user, informing him of the file having been saved
 	print("A file has been saved. filename: " + saves[i]);

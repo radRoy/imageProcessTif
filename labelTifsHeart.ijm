@@ -46,7 +46,6 @@ function appendSuffix(files, suffix)
 }
 
 
-
 /* PROCEDURES FOR HEART LABEL CREATION */
 
 
