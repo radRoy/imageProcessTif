@@ -5,30 +5,64 @@
  */
 
 run("Record...");
-print(""); print("start of program"); print("");  // start of program, for easy output reading
-
-/*
- * functions
- */
+macroName = "scaleTifs.ijm";
+print(""); print("start of program `"+macroName+"`"); print("");  // start of program, for easy output reading
 
 
-function addSuffixToFileList(files, suffix, fileExtension)
+/* FUNCTIONS */
+
+
+function getFilesStripped(dir, delimiter)
 {
-	// Takes Array of filenames (including absolute path) and returns a copy where the filenames have an added suffix. Intended to be used to create an Array of filenames to save processed images to.
-	saves = Array.copy(files);
+	/* Gets the names of the files contained in dir, excluding file extensions & excluding files' path. Returns an array of strings.
+	 *  dir :: string of the absolute path that the user wants a file list from
+	 *  delimiter :: should be one single character (e.g., `.`). This program does not work as intended if more than 1 character is specified.
+	 */
 	
+	files = getFileList(dir);  // Array of filenames WITH file extensions
 	for (i = 0; i < files.length; i++)
 	{
-		string = split(files[i], ".");  // splits input string where any given character occurs and not where the word occurs.
+		//print("i: " + i);  // testing
+		file = split(files[i], delimiter);
+		//print("file length: " + toString(file.length));  // testing
+	
+		nameNoExt = "";
+		for (j = (file.length - 2); j >= 0; j--)
+		{
+			//print("  j: " + j);  // testing
+			if (nameNoExt == "") {nameNoExt = file[j] + nameNoExt;}
+			else {nameNoExt = file[j] + delimiter + nameNoExt;}
+			//print("    nameNoExt: " + nameNoExt);  // testing
+		}
 		
-		// TBD make the script compatible with input folder & file names containing dots ".", using conditional iterative concatenation of all split() output string Array elements, excluding the last element being the file extension.
-			// refer to the labelling macro for a solution to this (oneliner)
-		
-		saves[i] = string[0] + suffix + fileExtension;  // assumes the only "." in the filename is the one preceding the file extension.
+		files[i] = nameNoExt;
+		//print("files[i] :" + files[i]);  // testing
 	}
 
+	return files;  // Array of filenames WITHOUT file extensions
+}
+dir = getDirectory("choose dir");
+delimiter = ".";
+files = getFilesStripped(dir, delimiter);
+for (i = 0; i < files.length; i++)
+{
+	print(files[i]);
+}
+exit();
+
+
+function appendSuffix(files, suffix)
+{
+	// Takes Array of strings and returns a copy where the strings have an appended suffix. Intended to be used to create an Array of filenames to save processed images to.
+	saves = Array.copy(files);
+	for (i = 0; i < files.length; i++) {saves[i] = saves[i] + suffix;}
+
+	print("appendSuffix(): Output filenames created by suffixing the input filenames.");
 	return saves;  // Array of output filenames without their path.
 }
+
+
+/* STATIC INPUT VALUES */
 
 
 // specify the scaling factor (unsophisticated & neglecting Nyquist-Shannon sampling theorem)
@@ -51,9 +85,7 @@ if (bicubicInterpolString == bicubicInterpolString) {interpolation = "bicubic";}
 else {interpolation = "bilinear";}
 
 
-/*
- * file handling
- */
+/* FILE HANDLING */
 
 
 // get file paths (input & output) (dialogue)
@@ -87,10 +119,8 @@ for (i = 0; i < files.length; i++)
 	// open i-th image
 	print(dir);
 	print(files[i]);
-		
 	open(dir + files[i]);
 	
-
 	// get image dimensions
 	width = 0; height = 0; channels = 0; slices = 0; frames = 0;
 	getDimensions(width, height, channels, slices, frames);  // Returns the dimensions of the current image.
@@ -119,4 +149,4 @@ for (i = 0; i < files.length; i++)
 }
 
 
-print(""); print("end of program, exit reached"); exit("exit reached");  // end of program, for easy output reading
+print(""); print("end of program `"+macroName+"`, exit reached"); exit("exit reached");  // end of program, for easy output reading

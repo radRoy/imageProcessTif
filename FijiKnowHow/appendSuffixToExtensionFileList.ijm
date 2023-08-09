@@ -26,7 +26,8 @@ saveDir = getDirectory("");
 files = getFileList(dir);
 suffix = "-suffix";
 fileExtension = ".tif";
-saves = appendSuffix(files, suffix, fileExtension);  // returns an Array of suffixed filenames with a given file extension appended
+suffix = suffix + fileExtension;
+saves = appendSuffix(files, suffix);  // returns an Array of suffixed filenames (or just any kind of string)
 for (i = 0; i < saves.length; i++)
 {
 	print(saves[i]);

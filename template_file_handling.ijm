@@ -36,6 +36,13 @@ function getFilesStripped (dir, delimiter)
 }
 
 
+function doSomething()
+{
+	// function description
+	return filePaths;  // Array of filePaths (strings with absolute path, filename, and extension)
+}
+
+
 function appendSuffix(files, suffix)
 {
 	// Takes Array of strings and returns a copy where the strings have an appended suffix. Intended to be used to create an Array of filenames to save processed images to.

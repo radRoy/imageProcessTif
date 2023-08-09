@@ -6,14 +6,14 @@
  *   dataset03, in contrast to dataset02, has normalised cropping regions, i.e., all specimens are cropped to the same 3D image size.
  */
 
-macroName = "cropTifs-Static-dataset02.ijm";
+macroName = "cropTifs-Static-dataset03.ijm";
 print(""); print("start of program `"+macroName+"`"); print("");  // start of program, for easy output reading
 
 
 /* FUNCTIONS */
 
 
-function getFilesStripped (dir, delimiter)
+function getFilesStripped(dir, delimiter)
 {
 	/* Gets the names of the files contained in dir, excluding file extensions. Returns an array of strings.
 	 *  dir :: string of the absolute path that the user wants a file list from
