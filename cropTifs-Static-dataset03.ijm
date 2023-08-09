@@ -1,8 +1,9 @@
 /*
  * author: Daniel Walther
  * creation date: 7.8.2023 (d.m.yyyy)
- * file purpose: crop .tif files from mesospim, used on the "dataset02" in my Master's thesis project.
- *   dataset02 consistently has 4 channels per specimen.
+ * file purpose: crop .tif files from mesospim, used on the "dataset03" in my Master's thesis project.
+ *   dataset03, just like dataset02, consistently has 4 channels per specimen, in contrast to dataset01 consistently only having 2 channels per specimen.
+ *   dataset03, in contrast to dataset02, has normalised cropping regions, i.e., all specimens are cropped to the same 3D image size.
  */
 
 macroName = "cropTifs-Static-dataset02.ijm";
@@ -110,7 +111,7 @@ for (i = 0; i < savePaths.length; i++)
 }
 
 
-/* ITERATIVE IMAGE PROCESSING (BABB03 DATASET) */
+/* ITERATIVE IMAGE PROCESSING (A BABB03 DATASET) */
 
 
 // babb03-ct3 images

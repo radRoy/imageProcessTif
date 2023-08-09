@@ -54,7 +54,7 @@ function appendSuffix(files, suffix)
 }
 
 
-/* MANUAL (=STATIC) INPUT VALUES (E.G., CROPPING COORDINATES, ETC.) */
+/* MANUAL (=STATIC) VALUE INPUT (CROPPING COORDINATES, ETC.) */
 
 
 // dataset02 (babb03.something) has 7 specimens, with 4 channels each
@@ -113,25 +113,36 @@ for (i = 0; i < savePaths.length; i++)
 /* ITERATIVE IMAGE PROCESSING (BABB03 DATASET) */
 
 
-// babb03-ct3 images
+// ct3 images
 // iterating over all images (specimens and channels on the same iterative level)
 for (i = 0; i < filePaths.length; i++) {
 
-	// Opening the .tif file
-	print("Opening file, i="+i+". filename = " + inputs[i]);
-	open(filePaths[i]);
+	// temporary correction snippet(s)... (zrange values for id06 were copied falsely from the excel table)
+	if (startsWith(inputs[i], "id06"))
+	{
+		print("");  // output readability newline separator.
+		print("i = " + i +". filename = " + inputs[i]);
+		
+		// actual image processing part
+		open(filePaths[i]);
+	
+		// z-crop by duplication
+		range_string = "duplicate range=" + zranges[i];
+		run("Duplicate...", range_string);
+		
+		// x- and y-crop by drawing a rectangle and running "Crop" macro (crops whole z-stack by default)
+		makeRectangle(xoffsets[i], yoffsets[i], xspan, yspan);  // width = dx, height = dy
+		run("Crop");
+		
+		saveAs("Tiff", savePaths[i]);
+		print("File saved as: " + savePaths[i]);
+		run("Close All");
+	}
 
-	// z-crop by duplication
-	range_string = "duplicate range=" + zranges[i];
-	run("Duplicate...", range_string);
-	
-	// x- and y-crop by drawing a rectangle and running "Crop" macro (crops whole z-stack by default)
-	makeRectangle(xoffsets[i], yoffsets[i], xspan, yspan);  // width = dx, height = dy
-	run("Crop");
-	
-	saveAs("Tiff", savePaths[i]);
-	print("File saved as: " + savePaths[i]);
-	run("Close All");
+	else
+	{
+		print("CONTINUE (IF()=FALSE). i = " + i +". filename = " + inputs[i]);
+	}
 }
 
 

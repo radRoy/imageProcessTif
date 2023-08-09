@@ -41,6 +41,19 @@ In all my scripts, in-line documentation is available.
 - `scaleTifs.ijm` is a dynamic script for scaling any set of TIF stacks images in a given folder in x-, y- and z-dimensions. Only the scaling factor is static - specify it in the script somewhere.
 - `labelTifsHeart.ijm` is a dynamic script for segmenting the biggest fluorescence signal of a group of TIF stack images. The selection of fluorescence vs. non-fluorescence images is still static, as my string comparison / comprehension skills in .ijm (IJM) are still rudimentary. The value for the threshold segmentation needs to be manually determined in a given image group and statically changed in the script.
 
+### overview over the datasets created
+
+- babb02 data: 638 nm (fluo), 488 nm
+  - dataset01 was created from babb02 (TBD verify)
+- babb03 data: 638 nm (fluo), 405 nm, 488 nm, 561 nm
+  - dataset02
+    - cropped individually, such that every specimen has its own 3D cropping region.
+	- 4 channels (1 fluo, 3 autofluo) per specimen
+	- refer to [rois]()
+  - dataset03
+    - normalised cropping, such that all specimens have the same 3D cropping region.
+	- refer to [babb03-cropping-table.xlsx](https://github.com/radRoy/imageProcessTif/blob/master/babb03%20cropping%20table.xlsx) for the cropping coordinates
+
 ## outline of the envisioned automated cropping process
 
 __useful links:__  
