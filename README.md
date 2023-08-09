@@ -49,10 +49,10 @@ In all my scripts, in-line documentation is available.
   - dataset02
     - cropped individually, such that every specimen has its own 3D cropping region.
 	- 4 channels (1 fluo, 3 autofluo) per specimen
-	- refer to [rois]()
+	- refer to the folder [ROIs crop xy (dataset02)](https://github.com/radRoy/imageProcessTif/tree/master/ROIs%20crop%20xy%20(dataset02))
   - dataset03
     - normalised cropping, such that all specimens have the same 3D cropping region.
-	- refer to [babb03-cropping-table.xlsx](https://github.com/radRoy/imageProcessTif/blob/master/babb03%20cropping%20table.xlsx) for the cropping coordinates
+	- refer to the file [babb03-dataset03-cropping-table.xlsx](https://github.com/radRoy/imageProcessTif/blob/master/babb03%20cropping%20table.xlsx) for the cropping coordinates
 
 ## outline of the envisioned automated cropping process
 
