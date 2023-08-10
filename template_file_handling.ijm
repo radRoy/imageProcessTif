@@ -1,11 +1,41 @@
 macro_filename = "template_file_handling.ijm"
-print(""); print("start of program `" +macro_filename+ "`"); print("");  // start of program, for easy output reading
+print("-----------------------------------------------------------");
+print("start of program `" +macro_filename+ "`"); print("");  // start of program, for easy output reading
 
 
 /* FUNCTIONS */
 
 
-function getFilesStripped (dir, delimiter)
+function truncateString(s, n)
+{
+	/* truncates a given string s by n characters (if n is 1, the last character is removed). assumes input arguments are valid & does no checking. */
+	s = substring(s, 0, lengthOf(s) - n);
+	return s;
+}
+
+
+function getCreatedDirectory(dirIn, suffix)
+{
+	/* Creates a directory with the same name as the given directory but with a suffix appended to it, and returns the path of it.
+	 * dirIn (string) : The input directory containing input files to be processed. has a trailing slash (or backslash).
+	 * suffix (string) : The suffix to be appended to the given folder name
+	 * return dirOut (string) : The output (or just the created) directory as a string.
+	 */
+
+	// create string of the directory to be created
+	dirOut = replace(dirIn, "\\", "/");
+	dirOut = truncateString(dirOut, 1);  // truncate the folder path by the trailing slash
+	dirOut = dirOut + suffix + "/";  // extend the input folder by the suffix
+
+	// create the directory
+	File.makeDirectory(dirOut);
+	
+	// return the string of the created directory
+	return dirOut;
+}
+
+
+function getFilesStripped(dir, delimiter)
 {
 	/* Gets the names of the files contained in dir, excluding file extensions. Returns an array of strings.
 	 *  dir :: string of the absolute path that the user wants a file list from
@@ -36,9 +66,21 @@ function getFilesStripped (dir, delimiter)
 }
 
 
-function doSomething()
+function getFilePaths(directory)
 {
-	// function description
+	
+	/* Takes a path as a string and returns the absolute file paths as an array.
+	 * directory (string) : the chosen directory containing some files. has a trailing slash (or backslash).
+	 * return filePaths (string Array) : an array of strings of the file paths (with absolute path, filename, and extension).
+	 */
+
+	files = getFileList(directory);
+	filePaths = Array.copy(files);
+	for (i = 0; i < files.length; i++)
+	{
+		filePaths[i] = directory + files[i];
+	}
+	
 	return filePaths;  // Array of filePaths (strings with absolute path, filename, and extension)
 }
 
@@ -54,15 +96,87 @@ function appendSuffix(files, suffix)
 }
 
 
+function createOutputFilePaths(dir, filenames, extension)
+{
+	/* create array of file paths, with extension.
+	Intended as a function to create an Array of output file paths,
+	i.e., take a newly created output directory (dir) as a string,
+	append input filenames to it,
+	append suffix to them,
+	append file extension to them, and return the resulting string Array. */
+
+	asdf
+	
+	return outputFilePaths;
+}
+
+
+/* FILE HANDLING */
+
+
+// get input directory
+dirIn = getDir("Choose input directory");
+
+// output directory (saving the output files here), has the same folder name as the input directory but with an added suffix
+suffix = "-scaled";
+dirOut = getCreatedDirectory(dirIn, suffix);
+
+// get input file list (only file names)
+delim = ".";
+inputs = getFilesStripped(dirIn, delim);  // array of only the file names in the given directory, no path, no extension
+
+// file paths of the input files
+filePaths = getFilePaths(dirIn);  // array of the file paths in the given directory, i.e., absolute path, file name, and extension
+
+// output file paths (saving as these file paths)
+outputFilePaths = Array.copy(filePaths);  // TBD
+
+
+/* TESTING */
+
+
+print("input directory: " + dirIn);
+print("output directory: " + dirOut);
+print("");
+
+for (i = 0; i < inputs.length; i++)
+{
+	print("i: " + i);
+	print(" inputs[i]: " + inputs[i]);
+	print(" filePaths[i]: " + filePaths[i]);
+	print(" outputFilePaths[i]: " + outputFilePaths[i]);  // <--
+}
+
+
+/* END OF TESTING */
+
+print(""); print("end of program `" +macro_filename+ "` reached."); exit("exit reached.");  // end of program, for easy output reading
+
+// ------------------------------------------------------------------
+// ------------------------------------------------------------------
+// ------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* PROCEDURES FOR HEART LABEL CREATION */
 
 
 // get input file list
-dirIn = getDir("Choose input directory");
+/*dirIn = getDir("Choose input directory");
 delim = ".";
 inputs = getFilesStripped(dirIn, delim);
-extension = ".tif";
+extension = ".tif";*/
 
 // define sigma (standard deviation) for the 3D Gaussian Blurring before thresholding
 sigma = 1.0;
@@ -93,6 +207,11 @@ outputs = Array.copy(inputs);  // to be progressively updated during iterations.
 outputs = appendSuffix(outputs, preSuffix);  // same as with above usage of preSuffix, but used on the output files to be saved.
 //for (i = 0; i < outputs.length; i++) {print(outputs[i]);}  // testing
 
+
+
+
+
+/*
 
 // loop over input files to apply image processing steps and save output images
 for (i = 0; i < inputs.length; i++)
@@ -137,5 +256,4 @@ for (i = 0; i < inputs.length; i++)
 	close("*");
 }
 
-
-print(""); print("end of program `" +macro_filename+ "` reached."); exit("exit reached.");  // end of program, for easy output reading
+*/
