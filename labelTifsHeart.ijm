@@ -85,6 +85,9 @@ outputs = appendSuffix(outputs, preSuffix);  // same as with above usage of preS
 //for (i = 0; i < outputs.length; i++) {print(outputs[i]);}  // testing
 
 
+/* ITERATIVE IMAGE PROCESSING WITH SAVING OF INTERMEDIATE RESULTS */
+
+
 // loop over input files to apply image processing steps and save output images
 for (i = 0; i < inputs.length; i++)
 {

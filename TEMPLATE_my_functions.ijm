@@ -1,4 +1,4 @@
-macro_filename = "template_file_handling.ijm"
+macro_filename = "TEMPLATE_my_functions.ijm"
 print("-----------------------------------------------------------");
 print("start of program `" +macro_filename+ "`"); print("");  // start of program, for easy output reading
 
@@ -112,65 +112,8 @@ function createOutputFilePaths(dir, filenames, extension)
 }
 
 
-/* FILE HANDLING */
-
-
-// get input directory
-dirIn = getDir("Choose input directory");
-
-// output directory (saving the output files here), has the same folder name as the input directory but with an added suffix
-suffix = "-suffix";
-dirOut = getCreatedDirectory(dirIn, suffix);
-
-// get input file list (only file names)
-delim = ".";
-inputs = getFilesStripped(dirIn, delim);  // array of only the file names in the given directory, no path, no extension
-
-// file paths of the input files
-filePaths = getFilePaths(dirIn);  // array of the file paths in the given directory, i.e., absolute path, file name, and extension
-
-// output file names
-outputs = appendSuffix(inputs, suffix);
-
-// output file paths (saving as these file paths)
-extension = ".tif";
-outputFilePaths = createOutputFilePaths(dirOut, outputs, extension);
-
-
-/* TESTING */
-
-
-print("input directory: " + dirIn);
-print("output directory: " + dirOut);
-print("");
-
-for (i = 0; i < inputs.length; i++)
-{
-	print("i: " + i);
-	print(" inputs[i]: " + inputs[i]);
-	print(" filePaths[i]: " + filePaths[i]);
-	print(" outputFilePaths[i]: " + outputFilePaths[i]);
-}
-
-
-/* END OF TESTING */
-
 print(""); print("end of program `" +macro_filename+ "` reached."); exit("exit reached.");  // end of program, for easy output reading
 
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
 // ------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
