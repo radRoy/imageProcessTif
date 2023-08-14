@@ -1,4 +1,6 @@
-print(""); print("start of program `labelTifsHeart.ijm`"); print("");  // start of program, for easy output reading
+macro_filename = "labelTifsHeart.ijm"
+print("-----------------------------------------------------------");
+print("start of program `" +macro_filename+ "`"); print("");  // start of program, for easy output reading
 
 
 /* FUNCTIONS */
@@ -50,7 +52,7 @@ function appendSuffix(files, suffix)
 
 
 // get input file list
-dirIn = getDir("Choose input directory");
+dirIn = getDir("Choose input directory (contains all images, i.e., all channels)");
 delim = ".";
 inputs = getFilesStripped(dirIn, delim);
 extension = ".tif";
@@ -84,6 +86,8 @@ outputs = Array.copy(inputs);  // to be progressively updated during iterations.
 outputs = appendSuffix(outputs, preSuffix);  // same as with above usage of preSuffix, but used on the output files to be saved.
 //for (i = 0; i < outputs.length; i++) {print(outputs[i]);}  // testing
 
+// specify the number of channels (only the fluo channel is processed in this script (fluo channel is assumed to be the highest wavelength one (i.e., largest number in filename) channel))
+
 
 /* ITERATIVE IMAGE PROCESSING WITH SAVING OF INTERMEDIATE RESULTS */
 
@@ -93,7 +97,7 @@ for (i = 0; i < inputs.length; i++)
 {
 	// proceed only with fluo channel files and inform the user
 		// in python, if statement would look like this: `if "638" in filename: ...` - no such thing in .ijm language, TTBOMK
-	if (! ((i + 1) % 4 == 0))
+	if (! ((i + 1) % n_channels == 0))
 	{
 		print("i:"+i+", "+inputs[i]+", skipping non-fluo channel image.");
 		continue;
@@ -132,4 +136,4 @@ for (i = 0; i < inputs.length; i++)
 }
 
 
-print(""); print("end of program `labelTifsHeart.ijm` reached."); exit("exit reached.");  // end of program, for easy output reading
+print(""); print("end of program `" +macro_filename+ "` reached."); exit("exit reached.");  // end of program, for easy output reading
