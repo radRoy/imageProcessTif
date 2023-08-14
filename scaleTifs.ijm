@@ -211,7 +211,7 @@ for (i = 0; i < filePaths.length; i++)
 	close("*");
 
 	// give message to the user, informing him of the file having been saved
-	print("A file has been saved. filename: " + saves[i]);
+	print("A file has been saved. filename: " + outputFilePaths[i]);
 }
 
 
