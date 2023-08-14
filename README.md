@@ -43,17 +43,34 @@ In all my scripts, in-line documentation is available.
 
 ### overview over the datasets created
 
-- babb02 data: 638 nm (fluo), 488 nm
-  - dataset01 was created from babb02 (TBD verify)
+- dataset01 (babb03-ct3-488) babb03? rather babb02, no? and a5, no? QU:
+  - babb02 data: 638 nm (fluo), 488 nm QU: TBD verify
+- dataset02 (babb03-ct3-405,488,561)
+  - the dataset used from <= 2023.07.06 until >= 2023.07.18 (just before my holidays (21.07.2023 - 06.08.2023))
+  - cropped individually, such that every specimen has its own 3D cropping region.
+    - cropped files were created on the 19.06.2023 (dd.mm.yyyy)
+  - 4 channels (1 fluo, 3 autofluo) per specimen
+  - refer to the folder [ROIs crop xy (dataset02)](https://github.com/radRoy/imageProcessTif/tree/master/ROIs%20crop%20xy%20(dataset02))
+  - kinds of image processing performed to get the dataset (& scripts used & relevant folder names in the microscopy image directories)
+    - cropping regions determined manually & individually Fiji (see some `ROI` folder); `cropTifs-Static-dataset02.ijm` used for doing the actual cropping; folder: `M:\data\d.walther\Microscopy\babb03\tiff-ct3\dataset02\raw-cropInd`
+    - scaling;
+    - raw: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
+    - label: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
+- dataset03 (babb03-ct3-405,488,561-body_crop)
+  - (temp: the **current** dataset)
+  - the dataset in creation starting 2023.08.07 (Monday just after holidays) until ...TBDetermined.
+  - the dataset used from ...TBDetermined until ...TBDetermined.
+  - the next to-be dataset, where the cropping region only includes the tadpoles' bodies and not the tail - for getting more cube-like images for easier patch shape handling
+  - normalised cropping, such that all specimens have the same 3D cropping region.
+  - refer to the file [babb03-dataset03-cropping-table.xlsx](https://github.com/radRoy/imageProcessTif/blob/master/babb03-dataset03-cropping-table.xlsx) for the cropping coordinates
+  - kinds of image processing performed to get the dataset (& scripts used & relevant folder names in the microscopy image directories)
+    - cropping; `cropTifs-Static-dataset03.ijm`; 
+
+- 
+  - dataset01
 - babb03 data: 638 nm (fluo), 405 nm, 488 nm, 561 nm
   - dataset02
-    - cropped individually, such that every specimen has its own 3D cropping region.
-	  - cropped files were created on the 19.06.2023 (dd.mm.yyyy)
-	- 4 channels (1 fluo, 3 autofluo) per specimen
-	- refer to the folder [ROIs crop xy (dataset02)](https://github.com/radRoy/imageProcessTif/tree/master/ROIs%20crop%20xy%20(dataset02))
   - dataset03
-    - normalised cropping, such that all specimens have the same 3D cropping region.
-	- refer to the file [babb03-dataset03-cropping-table.xlsx](https://github.com/radRoy/imageProcessTif/blob/master/babb03-dataset03-cropping-table.xlsx) for the cropping coordinates
 
 ## outline of the envisioned automated cropping process
 
