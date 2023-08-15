@@ -78,8 +78,10 @@ dirOuts = newArray(
 	dirParent + suffixes[0] + "/",
 	dirParent + suffixes[0] + suffixes[1] + "/",
 	dirParent + suffixes[0] + suffixes[1] + suffixes[2] + "/");
-//for (i = 0; i < dirOuts.length; i++) {print(dirOuts[i]);}  // testing
+print("dirParent: " + dirParent);  // testing
+for (i = 0; i < dirOuts.length; i++) {print(dirOuts[i]);}  // testing
 for (i = 0; i < dirOuts.length; i++) {File.makeDirectory(dirOuts[i]);}  // creates the directories, if it does not exist. otherwise it does nothing.
+exit();  // testing
 
 // create output file list (which is to be progressively extended when iterating over input files)
 outputs = Array.copy(inputs);  // to be progressively updated during iterations. enables on-the-go (while only iterating over inputs) and progressively saving of intermediate output images.
@@ -87,6 +89,7 @@ outputs = appendSuffix(outputs, preSuffix);  // same as with above usage of preS
 //for (i = 0; i < outputs.length; i++) {print(outputs[i]);}  // testing
 
 // specify the number of channels (only the fluo channel is processed in this script (fluo channel is assumed to be the highest wavelength one (i.e., largest number in filename) channel))
+n_channels
 
 
 /* ITERATIVE IMAGE PROCESSING WITH SAVING OF INTERMEDIATE RESULTS */
