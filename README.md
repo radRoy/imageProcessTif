@@ -1,18 +1,38 @@
 Daniel Walther
-repo creation date: 19.06.2023
+repo creation date: 19.06.2023 (dd.mm.yyyy)
 
 # imageProcessTiff
 
-My repository containing mainly ImageJ Macros for processing TIFF files for use with 3D U-Net. The files available from start stem from around 09.05.2023, upon which later IJMacros were built.
+My repository containing ImageJ Macros and python scripts for processing TIFF (tif) and HDF5 (h5, hdf5) files for use with 3D U-Net (3dunet). The files available from start stem from around 09.05.2023, upon which later IJMacros (ijm) were built. In general, the ijm files are for the image processing regardless of 3dunet input data format (referred below) and the python scripts are for the input data formatting steps after the binary label images have been created. Most parts of the whole image processing workflow have been automated by script files (that includes macros).
 
-## important preliminary remarks:
+The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-format) for multi-channel image data required by [3D U-Net](https://github.com/wolny/pytorch-3dunet) is (C, Z, Y, X) with proper handling of internal paths in the h5 datasets given to 3D U-Net. The HDF5 or TIFF outputs from the [mesoSPIM](https://mesospim.org/) are in a different format. This requires some image processing beyond creation of training labels. An overview over all image processing steps involved in relation to this repository is given in order here (things are generally done iteratively for all files in a specified input folder):
 
-__CAUTION:__ Do ***NOT*** work on one .ijm script in two editors simultaneously! If you do, at some point, Fiji will be 'confused', freeze, and when you force close it with the task manager (or so), Fiji will delete all file contents of the file being changed in the two editors (alternatingly, in my case. I did this, because the VS Code, or most other editors, are way more user-friendly than the Fiji built-in editor).
+- convert the h5 microscopy output image data to **tif** format (no script for this yet)
+  - Note: The microscope recordings can be very large (> 1 TB). You may require a more powerful computer than your local workstation.
+- **scale** the tif images down to the desired size
+  - Note: Ideally, the scaling factor is determined by an informed choice based on computing resource constraints and U-Net model results.
+- **crop** the tif images so that all cropped images have the same size (U-Net can handle different sizes, but there will be some complications if different specimens' images are cropped individually). This step could be exchanged in order with scaling, but this would be more space and time intensive.
+- **label** (create binary annotations of) the fluorescently labelled organs / tissues using the appropriate laser channels (channel handling included in labelling ijm script).
+- **format** the autofluorescence channels to the above mentioned input data format (this may involve multiple steps / scripts).
+  - 1. order of x, y, z information in tif files (array handling) (TBD verify list order)
+  - 2. single to multi channel (TBD verify list order)
+- (**verify**) the format of the newly created, re-formatted tif images (dedicated script for this is available)
+- **convert** the tif images to hdf5
+  - 1. create h5 files with either the auto- or the fluorescence images (separate folders, does not matter which is chosen) (be mindful of setting the parameters correctly of the corresponding python script)
+  - 2. append the remaining images to the h5 files (again, be mindful of setting the parameters correctly of the corresponding python script)
+- (**verify**) the format of the newly created hdf5 files which should be ready for training a U-Net model (uncertain whether a script (redH5.py) contains code for this, already)
+- (**transfer**) the files to the Science Cluster drives (no script for this yet)
+
+## important remarks:
+
+__CAUTION:__ Do ***NOT*** work on one .ijm script in two editors simultaneously (e.g., VS Code and Fiji's built-in editor)! If you do, at some point, Fiji will be 'confused', freeze, and when you force close it with the task manager (or so), Fiji will delete all file contents of the file being changed in the two editors (alternatingly, in my case. I did this, because the VS Code, or most other editors, are way more user-friendly than the Fiji built-in editor, in my opinion (imo)).
 
 ## useful Fiji / ImageJ (Macro) links in general:
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
 - [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/)
+
+"Fiji" and "Imagej" are used interchangeably as the difference between them would not matter to me, if there was one.
 
 ### copied from the BIO321 course - Joana Delgado Martin's fiji hands-on hand-out:
 
