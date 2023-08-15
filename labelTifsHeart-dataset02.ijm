@@ -101,15 +101,28 @@ suffixes = newArray(
 	"-largest");
 
 // create output directories (multiple ones for saving intermediate output images of multiple intermediate steps)
-dirParent = getCreatedDirectory(dirIn, preSuffix);
+dirParent = truncateString(dirIn, 1);
+dirParent = dirParent + preSuffix + "/";
+/* // previous version. it was revised to get proper output directory without manual correction after running the script
 dirOuts = newArray(
 	dirParent + suffixes[0] + "/",
 	dirParent + suffixes[0] + suffixes[1] + "/",
-	dirParent + suffixes[0] + suffixes[1] + suffixes[2] + "/");
+	dirParent + suffixes[0] + suffixes[1] + suffixes[2] + "/");*/
+suffix0 = suffixes[0];
+suffix0 = getCreatedDirectory(dirParent, suffix0);
+suffix1 = suffixes[0] + suffixes[1];
+suffix1 = getCreatedDirectory(dirParent, suffix1);
+suffix2 = suffixes[0] + suffixes[1] + suffixes[2];
+suffix2 = getCreatedDirectory(dirParent, suffix2);
+dirOuts = newArray(suffix0, suffix1, suffix2);
+
+/*
 print("dirParent: " + dirParent);  // testing
+print("printing dirOuts iteratively, below:");  // testing
 for (i = 0; i < dirOuts.length; i++) {print(dirOuts[i]);}  // testing
 for (i = 0; i < dirOuts.length; i++) {File.makeDirectory(dirOuts[i]);}  // creates the directories, if it does not exist. otherwise it does nothing.
 exit();  // testing
+*/
 
 // create output file list (which is to be progressively extended when iterating over input files)
 outputs = Array.copy(inputs);  // to be progressively updated during iterations. enables on-the-go (while only iterating over inputs) and progressively saving of intermediate output images.
