@@ -127,6 +127,18 @@ def get_file_path_list():
     return [path + "/" + file for file in files]
 
 
+def iterate_over_file_paths(file_path, function):
+
+    function(file_path)
+
+    pass
+
+
+def get_unopened_tif_info(file):
+    
+    pass
+
+
 if __name__ == "__main__":
 
     # tkinter notes
