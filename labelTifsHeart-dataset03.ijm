@@ -6,6 +6,35 @@ print("start of program `" +macro_filename+ "`"); print("");  // start of progra
 /* FUNCTIONS */
 
 
+function truncateString(s, n)
+{
+	/* truncates a given string s by n characters (if n is 1, the last character is removed). assumes input arguments are valid & does no checking. */
+	s = substring(s, 0, lengthOf(s) - n);
+	return s;
+}
+
+
+function getCreatedDirectory(dirIn, suffix)
+{
+	/* Creates a directory with the same name as the given directory but with a suffix appended to it, and returns the path of it.
+	 * dirIn (string) : The input directory containing input files to be processed. has a trailing slash (or backslash).
+	 * suffix (string) : The suffix to be appended to the given folder name
+	 * return dirOut (string) : The output (or just the created) directory as a string.
+	 */
+
+	// create string of the directory to be created
+	dirOut = replace(dirIn, "\\", "/");
+	dirOut = truncateString(dirOut, 1);  // truncate the folder path by the trailing slash
+	dirOut = dirOut + suffix + "/";  // extend the input folder by the suffix
+
+	// create the directory
+	File.makeDirectory(dirOut);
+	
+	// return the string of the created directory
+	return dirOut;
+}
+
+
 function getFilesStripped (dir, delimiter)
 {
 	/* Gets the names of the files contained in dir, excluding file extensions. Returns an array of strings.
@@ -51,14 +80,8 @@ function appendSuffix(files, suffix)
 /* PROCEDURES FOR HEART LABEL CREATION */
 
 
-// get input directory
+// get input file list
 dirIn = getDir("Choose input directory (contains all images, i.e., all channels)");
-
-// output directory (saving the output files here), has the same folder name as the input directory but with an added suffix
-// define prefix to other suffixes for marking outputs (folders and files) stemming from this file (labelling)
-preSuffix = "-label";
-dirOut = getCreatedDirectory(dirIn, preSuffix);
-
 delim = ".";
 inputs = getFilesStripped(dirIn, delim);
 extension = ".tif";
@@ -70,26 +93,30 @@ sigmaString = "x="+sigma+" y="+sigma+" z="+sigma;
 // define the lower threshold value
 thresholdMin = 570;
 
-
-
 // define suffixes for saving of intermediate output images
-// the 'largest' suffix means only the heart label (= the largest label) is kept
+preSuffix = "-label";
 suffixes = newArray(
 	"-blur3D" + sigma,
 	"-Otsu" + thresholdMin,
 	"-largest");
 
 // create output directories (multiple ones for saving intermediate output images of multiple intermediate steps)
-dirParent = File.getParent(dirIn) + "/";  // works on files or directories
-dirParent = dirParent + preSuffix;  // marking all subsequent output folders with the preSuffix '-label', for easier readability of resulting input & output data folder structure.
-dirOuts = newArray(
-	dirParent + suffixes[0] + "/",
-	dirParent + suffixes[0] + suffixes[1] + "/",
-	dirParent + suffixes[0] + suffixes[1] + suffixes[2] + "/");
+dirParent = truncateString(dirIn, 1);
+dirParent = dirParent + preSuffix + "/";
+suffix0 = suffixes[0];
+suffix0 = getCreatedDirectory(dirParent, suffix0);
+suffix1 = suffixes[0] + suffixes[1];
+suffix1 = getCreatedDirectory(dirParent, suffix1);
+suffix2 = suffixes[0] + suffixes[1] + suffixes[2];
+suffix2 = getCreatedDirectory(dirParent, suffix2);
+dirOuts = newArray(suffix0, suffix1, suffix2);
+
+/*
 print("dirParent: " + dirParent);  // testing
+print("printing dirOuts iteratively, below:");  // testing
 for (i = 0; i < dirOuts.length; i++) {print(dirOuts[i]);}  // testing
-for (i = 0; i < dirOuts.length; i++) {File.makeDirectory(dirOuts[i]);}  // creates the directories, if it does not exist. otherwise it does nothing.
 exit();  // testing
+*/
 
 // create output file list (which is to be progressively extended when iterating over input files)
 outputs = Array.copy(inputs);  // to be progressively updated during iterations. enables on-the-go (while only iterating over inputs) and progressively saving of intermediate output images.
@@ -114,6 +141,7 @@ for (i = 0; i < inputs.length; i++)
 		continue;
 	}
 	else {print("i:"+i+", "+inputs[i]+", fluo channel, proceeding with image processing.");}
+	//continue;  // testing
 
 	// open the fluo channel image
 	open(dirIn + inputs[i] + extension);
