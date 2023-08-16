@@ -47,7 +47,6 @@ def create_dir(path, suffix=""):
     return path
 
 
-
 def rename_file(filename, suffix, extension=""):
 
     """
@@ -121,23 +120,23 @@ def export_file(image, filename):
     return 0
 
 
-def get_file_path_list():
-    path = get_directory_dialog()
+def get_file_path_list(path=""):
+    """
+    returns list of file paths in a given, or chosen if none provided, directory, including extensions.
+    """
+
+    path = get_directory_dialog() if path=="" else path
     files = get_file_list(path)
+    
     return [path + "/" + file for file in files]
 
 
-def do_x_iterating_over_file_paths(function, file_paths):
+def iterate_function_over_file_paths(function, file_paths):
 
     for i, file_path in enumerate(file_paths):
         print(f"i={i}, ")
         function(file_path)
 
-    pass
-
-
-def get_unopened_tif_info(file):
-    
     pass
 
 
