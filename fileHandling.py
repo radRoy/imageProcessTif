@@ -127,9 +127,11 @@ def get_file_path_list():
     return [path + "/" + file for file in files]
 
 
-def iterate_over_file_paths(file_path, function):
+def do_x_iterating_over_file_paths(function, file_paths):
 
-    function(file_path)
+    for i, file_path in enumerate(file_paths):
+        print(f"i={i}, ")
+        function(file_path)
 
     pass
 
