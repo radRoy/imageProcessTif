@@ -53,7 +53,7 @@ if __name__ == "__main__":
     n_channel_duplicates = 3
 
     # input file paths
-    path = fH.get_directory_dialog()  # str: path with slashes and trailing slash
+    path = fH.get_folder_path_dialog()  # str: path with slashes and trailing slash
     files = fH.get_file_list(path)  # list: of the filenames (with extension) contained in the given path
 
     # tif file paths - assume these are formatted correctly (czyx)

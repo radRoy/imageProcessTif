@@ -35,7 +35,7 @@ def get_resolution_tif(file_path_tif):
 if __name__ == "__main__":
 
     # 1st folder with h5 images
-    path = fH.get_directory_dialog()
+    path = fH.get_folder_path_dialog()
     files = fH.get_file_list(path)
     file_paths = [path + "/" + file for file in files]
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         # print(get_resolution_h5(file_path))
         # print("")
 
-    file_path = fH.get_filepath_dialog()
+    file_path = fH.get_file_path_dialog()
     #print(file_path, type(file_path))
     with open_h5(file_path) as f:
         print(list(f.keys()))

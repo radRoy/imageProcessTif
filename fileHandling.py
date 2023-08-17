@@ -1,35 +1,57 @@
-#import tkinter as tk
+"""
+daniel walther
+creation: 23.07.2023 (dd.mm.yyyy)
+"""
+
+
 from tkinter import filedialog
 import skimage
 import os
 import pathlib
 
 
-def get_filepath_dialog(window_title="Choose file path"):
+def get_file_path_dialog(window_title="Choose file path"):
     """
-    opens a dialog window for choosing a file, with optionally customisable window title
+    Opens a dialog window for choosing a file, with optionally customisable window title, returns file path string.
 
     Args:
         window_title: title the dialog window displays, instructing the user on what to do
 
-    Returns: str, absolute file path with "/" (slashes) and file extension
+    Returns: str, absolute file path with "/" (slashes) and file extension. For example: C:/Users/Name/file.txt
 
     """
-    file_path = filedialog.askopenfilename(title=window_title)
-    return file_path
 
-
-def get_directory_dialog(window_title="Choose folder path"):
     """
-    opens a dialog window for choosing a folder, with optionally customisable window title
+    # testing
+    file_path = get_file_path_dialog()
+    print(file_path)
+    """
+
+    return filedialog.askopenfilename(title=window_title)
+
+
+def get_folder_path_dialog(window_title="Choose folder path"):
+    """
+    Opens a dialog window for choosing a folder, with optionally customisable window title, returns path string.
 
     Args:
         window_title: title the dialog window displays, instructing the user on what to do
 
-    Returns: str, absolute folder path with "/" (slashes) and trailing "/"
+    Returns: str, absolute folder path with "/" (slashes) and trailing "/". For example:  C:/Users/Name/folder/
 
     """
+
+    """
+    # testing
+    directory = get_folder_path_dialog()  # str, path with slashes, no trailing "/"
+    print("directory with path from dialog:", directory)
+    print(type(directory))
+    """
+
     return filedialog.askdirectory(title=window_title) + "/"
+
+
+# mark
 
 
 def extract_parent_path(file_path: str):
@@ -58,7 +80,7 @@ def get_file_list(parent_path=""):
 
     """
     if parent_path == "":
-        parent_path = get_directory_dialog()  # should be str with trailing slash
+        parent_path = get_folder_path_dialog()  # should be str with trailing slash
     file_list = os.listdir(parent_path)
     return file_list
 
@@ -157,7 +179,7 @@ def get_file_path_list(path=""):
     returns list of file paths in a given, or chosen if none provided, directory, including extensions.
     """
 
-    path = get_directory_dialog() if path=="" else path
+    path = get_folder_path_dialog() if path == "" else path
     files = get_file_list(path)
     
     return [path + "/" + file for file in files]
@@ -169,7 +191,7 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
     *args every iteration.
 
     Args:
-        iterable: An iterable, e.g., a list of strings, whose elements are passed as the first arguments to sub_function.
+        iterable: An iterable, e.g., list of strings, whose elements are passed as the first arguments to sub_function.
         sub_function: A function, must have the first argument be compatible with the elements in the given iterable.
         *args: The list (or whatever object) of input arguments passed to sub_function every iteration.
 
@@ -186,12 +208,16 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
 
 if __name__ == "__main__":
 
-    # file reading dialog notes
+    # hier stehengeblieben
     """
-    file_path = filedialog.askopenfilename()
-    parent_dir = filedialog.askdirectory()
-    print(file_path)
+    testing and beautifying (proper documentation etc.) of functions done until: "# mark" above.
+    completed functions:
+        get_file_path_dialog()
+        get_folder_path_dialog()
+    """
+    # bis hier
 
+    """
     parent_dir = pathlib.Path(file_path)
     parent_dir = parent_dir.parent.absolute()
     print(parent_dir)
@@ -206,12 +232,10 @@ if __name__ == "__main__":
     print("file path from dialog:", file_path)
     print(type(file_path))
 
-    directory = get_directory_dialog()  # str, path with slashes, no trailing "/"
-    print("directory with path from dialog:", directory)
-    print(type(directory))
     """
 
-    """parent_dir = extract_parent_dir(get_filepath_dialog())  # pathlib.WindowsPath, path with backslashes, no trailing "\"
+    """parent_dir = extract_parent_dir(get_filepath_dialog())
+        # pathlib.WindowsPath, path with backslashes, no trailing "\"
     print("extracted parent directory from file path:", parent_dir)
     print(type(parent_dir))
 
@@ -219,9 +243,11 @@ if __name__ == "__main__":
     print(parent_dir_str)
     print(type(parent_dir_str))"""
 
+    """
     parent_dir = get_directory_dialog()
     file_list = get_file_list(parent_dir)
     print("file list in the given directory (regardless of filetype) " + parent_dir + ":")
     for file in file_list:
         print("  " + file)
         print(type(file))
+    """

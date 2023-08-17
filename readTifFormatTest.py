@@ -32,13 +32,13 @@ if __name__ == "__main__":
     else:
         
         # folder 1
-        path = fH.get_directory_dialog()
+        path = fH.get_folder_path_dialog()
         files = fH.get_file_list(path)
         file_paths = [path + file for file in files]
         main(file_paths)
 
         # folder 2
-        path = fH.get_directory_dialog()
+        path = fH.get_folder_path_dialog()
         files = fH.get_file_list(path)
         file_paths = [path + file for file in files]
         main(file_paths)

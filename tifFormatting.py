@@ -58,7 +58,7 @@ if __name__ == "__main__":
                     "id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB.tif"
     """
 
-    path = fH.get_directory_dialog()  # str: path with slashes and trailing slash
+    path = fH.get_folder_path_dialog()  # str: path with slashes and trailing slash
     files = fH.get_file_list(path)  # list: of the filenames (with extension) contained in the given path
 
     # tif file paths - assume these are formatted correctly (czyx)

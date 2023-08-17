@@ -51,14 +51,14 @@ if __name__ == "__main__":
     h5_file_paths = []  # the h5 files to be created or appended to.
 
     # INPUT FILE PATHS
-    path = fH.get_directory_dialog()  # str: path with slashes and trailing slash
+    path = fH.get_folder_path_dialog()  # str: path with slashes and trailing slash
     files = fH.get_file_list(path)  # list: of the filenames (with extension) contained in the given path
     # tif file paths - assume these are formatted correctly (czyx)
     file_paths = [path + file for file in files]
 
     if mode_append:
         # OUTPUT FILE PATHS, directories, etc.
-        path_out = fH.get_directory_dialog()  # str with trailing slash (path contains h5 files)
+        path_out = fH.get_folder_path_dialog()  # str with trailing slash (path contains h5 files)
         h5_files = fH.get_file_list(path_out)
         h5_file_paths = [path_out + file for file in h5_files]
 
