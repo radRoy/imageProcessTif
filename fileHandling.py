@@ -32,7 +32,7 @@ def get_directory_dialog(window_title="Choose folder path"):
     return filedialog.askdirectory(title=window_title) + "/"
 
 
-def extract_parent_path(file_path):
+def extract_parent_path(file_path: str):
     """
     extracts the parent directory's absolute path of an absolute file path
 
@@ -47,14 +47,23 @@ def extract_parent_path(file_path):
     return parent_path
 
 
-def get_file_list(parent_dir=""):
-    if parent_dir == "":
-        parent_dir = get_directory_dialog()  # should be str with trailing slash
-    file_list = os.listdir(parent_dir)
+def get_file_list(parent_path=""):
+    """
+    TBD
+
+    Args:
+        parent_path: should be str with trailing slash (TBD: revise description)
+
+    Returns: TBD: list of only filenames? (i.e., with path? with extension?)
+
+    """
+    if parent_path == "":
+        parent_path = get_directory_dialog()  # should be str with trailing slash
+    file_list = os.listdir(parent_path)
     return file_list
 
 
-def create_dir(path, suffix=""):
+def create_dir(path: str, suffix=""):
     """
     creates a given directory specified by path (absolute path) and the suffix to be appended to it.
 
@@ -70,7 +79,7 @@ def create_dir(path, suffix=""):
     return path
 
 
-def rename_file(filename, suffix, extension=""):
+def rename_file(filename: str, suffix: str, extension=""):
 
     """
     Appends a suffix to a given filename with extension, returning `filename-suffix.extension`
@@ -113,7 +122,7 @@ def rename_file(filename, suffix, extension=""):
     return file_out
 
 
-def read_tif_stack(tif_stack_filepath):
+def read_tif_stack(tif_stack_filepath: str):
     """
     reads in and returns a tif stack.
 
@@ -126,7 +135,7 @@ def read_tif_stack(tif_stack_filepath):
     return skimage.io.imread(tif_stack_filepath)
 
 
-def export_file(image, filename):
+def export_file(image, filename: str):
     """
     Exports a numpy.ndarray (e.g., a tif z stack) to .tif format.
     Args:
@@ -154,22 +163,28 @@ def get_file_path_list(path=""):
     return [path + "/" + file for file in files]
 
 
-def iterate_function_over_file_paths(function, file_paths):
+def iterate_function_args_over_iterable(iterable, sub_function, *args):
+    """
+    iterates over a given iterable (e.g., list of strings), calls a given function with given set of input arguments
+    *args every iteration.
 
-    for i, file_path in enumerate(file_paths):
+    Args:
+        iterable: An iterable, e.g., a list of strings, whose elements are passed as the first arguments to sub_function.
+        sub_function: A function, must have the first argument be compatible with the elements in the given iterable.
+        *args: The list (or whatever object) of input arguments passed to sub_function every iteration.
+
+    Returns: Nothing, currently.
+
+    """
+
+    for i, element in enumerate(iterable):
         print(f"i={i}, ")
-        function(file_path)
+        sub_function(element, *args)
 
     pass
 
 
 if __name__ == "__main__":
-
-    # tkinter notes
-    """
-    # tell python / tkinter explicitly to initialise the window creation process (and hide the init window)
-    root = tk.Tk()
-    root.withdraw()"""
 
     # file reading dialog notes
     """
