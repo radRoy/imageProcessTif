@@ -6,23 +6,45 @@ import pathlib
 
 
 def get_filepath_dialog(window_title="Choose file path"):
+    """
+    opens a dialog window for choosing a file, with optionally customisable window title
+
+    Args:
+        window_title: title the dialog window displays, instructing the user on what to do
+
+    Returns: str, absolute file path with "/" (slashes) and file extension
+
+    """
     file_path = filedialog.askopenfilename(title=window_title)
     return file_path
 
 
 def get_directory_dialog(window_title="Choose folder path"):
     """
+    opens a dialog window for choosing a folder, with optionally customisable window title
 
-    Returns: str, absolute path with "/" (slashes) and trailing "/"
+    Args:
+        window_title: title the dialog window displays, instructing the user on what to do
+
+    Returns: str, absolute folder path with "/" (slashes) and trailing "/"
 
     """
     return filedialog.askdirectory(title=window_title) + "/"
 
 
-def extract_parent_dir(file_path):
-    parent_dir = pathlib.Path(file_path)
-    parent_dir = parent_dir.parent.absolute()
-    return parent_dir
+def extract_parent_path(file_path):
+    """
+    extracts the parent directory's absolute path of an absolute file path
+
+    Args:
+        file_path: absolute path of a file, with the filename and extension
+
+    Returns: absolute path of the file's parent directory with trailing slash
+
+    """
+    parent_path = pathlib.Path(file_path)  # probably replacing backslashes with slashes (not commented when coded)
+    parent_path = parent_path.parent.absolute()  # extract a file's parent path
+    return parent_path
 
 
 def get_file_list(parent_dir=""):
@@ -35,6 +57,7 @@ def get_file_list(parent_dir=""):
 def create_dir(path, suffix=""):
     """
     creates a given directory specified by path (absolute path) and the suffix to be appended to it.
+
     Args:
         path: str, absolute path with trailing "/"
         suffix: str, suffix to be appended to given path. can be nothing.
@@ -149,7 +172,8 @@ if __name__ == "__main__":
     root.withdraw()"""
 
     # file reading dialog notes
-    """file_path = filedialog.askopenfilename()
+    """
+    file_path = filedialog.askopenfilename()
     parent_dir = filedialog.askdirectory()
     print(file_path)
 
@@ -159,7 +183,8 @@ if __name__ == "__main__":
 
     file_list = os.listdir(parent_dir)
     for file in file_list:
-        print("," + file + ".")"""
+        print("," + file + ".")
+    """
 
     """
     file_path = get_filepath_dialog()  # str, path with slashes
