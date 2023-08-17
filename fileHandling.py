@@ -51,21 +51,21 @@ def get_folder_path_dialog(window_title="Choose folder path"):
     return filedialog.askdirectory(title=window_title) + "/"
 
 
-# mark
-
-
 def extract_parent_path(file_path: str):
     """
-    extracts the parent directory's absolute path of an absolute file path
+    Extracts the parent directory of an absolute file path, returns path string.
 
     Args:
-        file_path: absolute path of a file, with the filename and extension
+        file_path: Absolute path of a file, with the filename and extension.
 
-    Returns: absolute path of the file's parent directory with trailing slash
+    Returns: Absolute path of the file's parent directory WITHOUT TRAILING (BACK)SLASH - TBD.
 
     """
+    print(f"file path input = {file_path}, type {type(file_path)}")
     parent_path = pathlib.Path(file_path)  # probably replacing backslashes with slashes (not commented when coded)
+    print(f"pathlib.Path(file_path) = {parent_path}, type {type(parent_path)}")
     parent_path = parent_path.parent.absolute()  # extract a file's parent path
+    print(f"pathlib.Path(file_path).parent.absolute() = {parent_path}, type {type(parent_path)}")
     return parent_path
 
 
@@ -176,7 +176,8 @@ def export_file(image, filename: str):
 
 def get_file_path_list(path=""):
     """
-    returns list of file paths in a given, or chosen if none provided, directory, including extensions.
+    Returns list of file paths in a given, or chosen if none provided, directory, including extensions.
+    TBD: Works with slashes and backslashes
     """
 
     path = get_folder_path_dialog() if path == "" else path
@@ -208,24 +209,17 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
 
 if __name__ == "__main__":
 
-    # hier stehengeblieben
+    # INFO BLOCK
     """
     testing and beautifying (proper documentation etc.) of functions done until: "# mark" above.
     completed functions:
         get_file_path_dialog()
         get_folder_path_dialog()
     """
-    # bis hier
 
-    """
-    parent_dir = pathlib.Path(file_path)
-    parent_dir = parent_dir.parent.absolute()
-    print(parent_dir)
-
-    file_list = os.listdir(parent_dir)
-    for file in file_list:
-        print("," + file + ".")
-    """
+    # TEST BLOCK
+    parent = extract_parent_path(get_file_path_dialog())
+    print(parent)
 
     """
     file_path = get_filepath_dialog()  # str, path with slashes
@@ -251,3 +245,5 @@ if __name__ == "__main__":
         print("  " + file)
         print(type(file))
     """
+
+    exit(0)
