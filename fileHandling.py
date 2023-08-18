@@ -5,6 +5,8 @@ creation: 23.07.2023 (dd.mm.yyyy)
 
 
 from tkinter import filedialog
+
+import numpy
 import skimage
 import os
 import pathlib
@@ -161,7 +163,6 @@ def create_sibling_dir(path: str, suffix: str):
 
 
 def rename_file(filename: str, suffix: str, extension=""):
-
     """
     Appends a suffix to a given filename with extension, returning `filename-suffix.extension`
 
@@ -216,9 +217,10 @@ def read_tif_stack(tif_stack_filepath: str):
     return skimage.io.imread(tif_stack_filepath)
 
 
-def export_file(image, filename: str):
+def export_file(image: numpy.ndarray, filename: str):
     """
     Exports a numpy.ndarray (e.g., a tif z stack) to .tif format.
+
     Args:
         image: numpy.ndarray (e.g., a formatted RGB24 TIFF z stack)
         filename: filename preceded by the absolute path where it is to be saved
@@ -230,7 +232,8 @@ def export_file(image, filename: str):
 
     print("saved shape :", image.shape)
     print("export_file(): File created: {}".format(filename))
-    return 0
+
+    pass
 
 
 def get_file_path_list(path=""):
