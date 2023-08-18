@@ -9,21 +9,14 @@ creation date: 2023.08.18
 
 
 import fileHandling as fH
-import numpy as np
-
-
-def sort_tifs_by_specimen(*args):
-    # TBD: same as below TBD
-
-    pass  # some list of specimen specific file path lists, probably
-
-
-def concatenate_tifs(*args):
-    # TBD: determine the best way of giving the input images to this function
-
-    pass
 
 
 if __name__ == '__main__':
+
+    #file_paths = fH.get_file_path_list( path=fH.get_folder_path_dialog( window_title="Choose folder with single channel images to concatenate"))
+    input_file_paths = fH.get_file_path_list()
+
+    output = fH.iterate_function_args_over_iterable(input_file_paths, fH.append_suffix, *['suffix'])
+    print(f'\noutputs:\n{output}')
 
     exit(0)

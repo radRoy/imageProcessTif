@@ -50,7 +50,11 @@ def get_folder_path_dialog(window_title="Choose folder path"):
     print(type(directory))
     """
 
-    return filedialog.askdirectory(title=window_title) + "/"
+    path = filedialog.askdirectory(title=window_title) + "/"
+    print(f"get folder path returns: {path}")
+    #return filedialog.askdirectory(title=window_title) + "/"
+
+    return path
 
 
 def extract_parent_path(file_path: str):
@@ -240,13 +244,17 @@ def get_file_path_list(path=""):
     """
     Returns list of file paths in a given, or interactively chosen if none provided, directory, including extensions.
 
-    TBD verify: Works with slashes and backslashes
+    Args:
+        path: `str`, absolute folder paths with trailing slash.
+
+    Returns: `list`, file paths of the files contained in the given directory, with absolute path (slashes) and extension.
     """
 
-    path = get_folder_path_dialog() if path == "" else path
+    path = get_folder_path_dialog(window_title="Choose the folder you want the file path list from") if path == "" else path
     files = get_file_list(path)
     
-    return [path + "/" + file for file in files]
+    #return [path + "/" + file for file in files]  # old, TBD: adapt usages such that they give the right input regarding trailing slash.
+    return [path + file for file in files]
 
 
 def iterate_function_args_over_iterable(iterable, sub_function, *args):
@@ -263,11 +271,12 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
 
     """
 
+    output_list = []
     for i, element in enumerate(iterable):
         print(f"i={i}, ")
-        sub_function(element, *args)
+        output_list.append(sub_function(element, *args))
 
-    pass
+    return output_list
 
 
 if __name__ == "__main__":
