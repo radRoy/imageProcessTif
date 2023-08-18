@@ -7,6 +7,9 @@ My repository containing ImageJ Macros and python scripts for processing TIFF (t
 
 The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-format) for multi-channel image data required by [3D U-Net](https://github.com/wolny/pytorch-3dunet) is (C, Z, Y, X) with proper handling of internal paths in the h5 datasets given to 3D U-Net. The HDF5 or TIFF outputs from the [mesoSPIM](https://mesospim.org/) are in a different format. This requires some image processing beyond creation of training labels. An overview over all image processing steps involved in relation to this repository is given in order here (things are generally done iteratively for all files in a specified input folder):
 
+**Some detailed information on the *input data formatting* steps that work was previously documented in the [cloud](https://github.com/radRoy/cloud/tree/master)'s README.md repo under [Wrangling with the Input Data Format...](https://github.com/radRoy/cloud/blob/master/README.md#wrangling-with-the-input-data-format-formatting-hdf5-data-sets-for-data-with-multiple-channels-3-autofluorescence-laser-lines-and-the-input-parameters).**  
+- Somewhere there, on the date 230710, I found a well-named yaml file `train_config-RGB24raw,uint16label-230710-1-3in1out-shapeChange.yml` followed by the comment `# successfully trains on the multichannel input data`. Therefore, the required input data format is 
+
 - convert the h5 microscopy output image data to **tif** format (no script for this yet)
   - Note: The microscope recordings can be very large (> 1 TB). You may require a more powerful computer than your local workstation.
 - **scale** the tif images down to the desired size
