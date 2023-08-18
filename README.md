@@ -7,8 +7,7 @@ My repository containing ImageJ Macros and python scripts for processing TIFF (t
 
 The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-format) for multi-channel image data required by [3D U-Net](https://github.com/wolny/pytorch-3dunet) is (C, Z, Y, X) with proper handling of internal paths in the h5 datasets given to 3D U-Net. The HDF5 or TIFF outputs from the [mesoSPIM](https://mesospim.org/) are in a different format. This requires some image processing beyond creation of training labels. An overview over all image processing steps involved in relation to this repository is given in order here (things are generally done iteratively for all files in a specified input folder):
 
-**Some detailed information on the *input data formatting* steps that work was previously documented in the [cloud](https://github.com/radRoy/cloud/tree/master)'s README.md repo under [Wrangling with the Input Data Format...](https://github.com/radRoy/cloud/blob/master/README.md#wrangling-with-the-input-data-format-formatting-hdf5-data-sets-for-data-with-multiple-channels-3-autofluorescence-laser-lines-and-the-input-parameters).**  
-- Somewhere there, on the date 230710, I found a well-named yaml file `train_config-RGB24raw,uint16label-230710-1-3in1out-shapeChange.yml` followed by the comment `# successfully trains on the multichannel input data`. Therefore, the required input data format is 
+**Refer to the section below this list for the process on finding (/reconstructing from my READMEs etc.) input data formatting steps.**
 
 - convert the h5 microscopy output image data to **tif** format (no script for this yet)
   - Note: The microscope recordings can be very large (> 1 TB). You may require a more powerful computer than your local workstation.
@@ -25,6 +24,17 @@ The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-forma
   - 2. append the remaining images to the h5 files (again, be mindful of setting the parameters correctly of the corresponding python script)
 - (**verify**) the format of the newly created hdf5 files which should be ready for training a U-Net model (uncertain whether a script (redH5.py) contains code for this, already)
 - (**transfer**) the files to the Science Cluster drives (no script for this yet)
+
+**Refer to this repo's `formatTifsHyperstackH5-Recording.ijm` in `FijiRecordings` for a recording on how to format the tifs correctly (TBD: verify).**
+
+**Some detailed information on the *input data formatting* steps that work was previously documented in the [cloud](https://github.com/radRoy/cloud/tree/master)'s README.md repo under [Wrangling with the Input Data Format...](https://github.com/radRoy/cloud/blob/master/README.md#wrangling-with-the-input-data-format-formatting-hdf5-data-sets-for-data-with-multiple-channels-3-autofluorescence-laser-lines-and-the-input-parameters).**  
+- Somewhere there, on the date 230710, I found a well-named yaml file **`train_config-RGB24raw,uint16label-230710-1-3in1out-shapeChange.yml` followed by the comment `# successfully trains on the multichannel input data`**. Therefore, 3dunet requires the label input in 16bit per pixel grey format, and the multichannel raw input
+
+When investigating the format of tif images from dataset02 (where the valid multi-channel input format was determined), I ran my file `imageProcessTif/readTifFormatTest.py` on some images:
+- processed (with my **Fiji macros**), non-formatted tif image: `shape: (109, 1102, 371) , image filepath M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo/id01-Ch405nm-crop-scaled0.25.tif`
+- after 1st formatting step (concatenating raw input channels with **Fiji built-ins** (reduces 16bit to 8bit per pixel! no fiji work-around found in web)): `shape: (327, 1102, 371) , image filepath M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackSequence/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackSequence.tif`
+- after 2nd formatting step (converting the sequence to RGB with **Fiji built-ins**): `shape: (109, 1102, 371, 3) , image filepath M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB.tif`
+- after 3rd & final formatting step (changing the image data format to CZYX with **python scripts**): `shape: (3, 109, 1102, 371) , image filepath M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24-czyx/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB-czyx.tif`
 
 ## important remarks:
 
