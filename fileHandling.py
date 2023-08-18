@@ -160,9 +160,6 @@ def create_sibling_dir(path: str, suffix: str):
     return path
 
 
-"""
-hier stehengeblieben
-"""
 def rename_file(filename: str, suffix: str, extension=""):
 
     """
@@ -238,8 +235,9 @@ def export_file(image, filename: str):
 
 def get_file_path_list(path=""):
     """
-    Returns list of file paths in a given, or chosen if none provided, directory, including extensions.
-    TBD: Works with slashes and backslashes
+    Returns list of file paths in a given, or interactively chosen if none provided, directory, including extensions.
+
+    TBD verify: Works with slashes and backslashes
     """
 
     path = get_folder_path_dialog() if path == "" else path
@@ -271,47 +269,6 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
 
 if __name__ == "__main__":
 
-    # INFO BLOCK
-
-    """
-    testing and beautifying (proper documentation etc.) of functions done until: "# mark" above.
-    completed functions:
-        get_file_path_dialog(window_title="Choose file path")
-        get_folder_path_dialog(window_title="Choose folder path")
-        extract_parent_path(file_path: str)
-        get_file_list(parent_path="")
-        append_suffix(string: str, suffix: str)
-        create_dir(path), tested by testing below function
-        create_sibling_dir(path=get_folder_path_dialog(), suffix="test folder")
-    """
-
-    # TEST BLOCK
-
-    # PREVIOUS TEST BLOCKS
-
-    """
-    file_path = get_filepath_dialog()  # str, path with slashes
-    print("file path from dialog:", file_path)
-    print(type(file_path))
-
-    """
-
-    """parent_dir = extract_parent_dir(get_filepath_dialog())
-        # pathlib.WindowsPath, path with backslashes, no trailing "\"
-    print("extracted parent directory from file path:", parent_dir)
-    print(type(parent_dir))
-
-    parent_dir_str = str(parent_dir)
-    print(parent_dir_str)
-    print(type(parent_dir_str))"""
-
-    """
-    parent_dir = get_directory_dialog()
-    file_list = get_file_list(parent_dir)
-    print("file list in the given directory (regardless of filetype) " + parent_dir + ":")
-    for file in file_list:
-        print("  " + file)
-        print(type(file))
-    """
+    # insert test blocks archived in the functions above for testing
 
     exit(0)
