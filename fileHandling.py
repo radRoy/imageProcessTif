@@ -58,49 +58,111 @@ def extract_parent_path(file_path: str):
     Args:
         file_path: Absolute path of a file, with the filename and extension.
 
-    Returns: Absolute path of the file's parent directory WITHOUT TRAILING (BACK)SLASH - TBD.
+    Returns: Absolute path of the file's parent directory as a string, with backslashes and a trailing slash. For
+    example: C:\\\cdef\\\parent/ (triple backslashes in raw docu. text, to get one backslash in pycharm documentation
+    popup helper thingy)
 
     """
-    print(f"file path input = {file_path}, type {type(file_path)}")
-    parent_path = pathlib.Path(file_path)  # probably replacing backslashes with slashes (not commented when coded)
-    print(f"pathlib.Path(file_path) = {parent_path}, type {type(parent_path)}")
-    parent_path = parent_path.parent.absolute()  # extract a file's parent path
-    print(f"pathlib.Path(file_path).parent.absolute() = {parent_path}, type {type(parent_path)}")
-    return parent_path
+
+    """
+    # testing parent path getter function
+    parent = extract_parent_path(get_file_path_dialog())
+    print(parent)  # e.g., C:\cdef\parent/
+    # testing usability of the output path (mixed back- & slashes)
+    print(get_file_list(parent))  # e.g., ['.idea', 'main.py', '__pycache__']
+    
+    # testing outputs
+    file_path, type <class 'str'>
+        # with path and extension (slashes)
+    pathlib.Path(file_path), type <class 'pathlib.WindowsPath'>
+        # (backslashes, same file path in another class type)
+    pathlib.Path(file_path).parent.absolute(), type <class 'pathlib.WindowsPath'>
+        # (backslashes, no trailing backslash)
+    str(pathlib.Path(file_path).parent.absolute()), type <class 'str'>
+        # (absolute parent path, no trailing backslash)
+    str(pathlib.Path(file_path).parent.absolute()) + '/', type <class 'str'>
+        # (absolute parent path, trailing slash, otherwise backslashes)
+    """
+
+    return str(pathlib.Path(file_path).parent.absolute()) + '/'
 
 
 def get_file_list(parent_path=""):
     """
-    TBD
+    Reads all file names contained in the given folder path, returns them in a list as strings, with extensions.
 
     Args:
-        parent_path: should be str with trailing slash (TBD: revise description)
+        parent_path: String absolute folder path (TBD: verify that it's necessary or not: with trailing slash).
 
-    Returns: TBD: list of only filenames? (i.e., with path? with extension?)
+    Returns: List of file names with extensions. For example: ['.idea', 'main.py', '__pycache__']
 
     """
     if parent_path == "":
         parent_path = get_folder_path_dialog()  # should be str with trailing slash
-    file_list = os.listdir(parent_path)
-    return file_list
+
+    return os.listdir(parent_path)
 
 
-def create_dir(path: str, suffix=""):
+def append_suffix(string: str, suffix: str):
     """
-    creates a given directory specified by path (absolute path) and the suffix to be appended to it.
+    Appends a suffix to a string and returns it.
+
+    Args:
+        string: String that needs appending.
+        suffix: String that is to be appended.
+
+    Returns: One concatenated string.
+
+    """
+    return string + suffix
+
+
+def create_dir(path: str):
+    """
+    Creates a given directory.
+
+    Args:
+        path: Absolute path string.
+
+    Returns: Created (if new) directory string.
+
+    """
+
+    """
+    # testing done by testing create_sibling_dir()
+    """
+
+    None if os.path.exists(path) else os.mkdir(path)
+
+    return path
+
+
+def create_sibling_dir(path: str, suffix: str):
+    """
+    Creates a sibling directory to the given absolute path by inserting the suffix between it and the trailing slash.
 
     Args:
         path: str, absolute path with trailing "/"
-        suffix: str, suffix to be appended to given path. can be nothing.
+        suffix: str, suffix to be appended to given path.
 
     Returns: str, the created (if new) path including trailing "/"
 
     """
+
+    """
+    # testing
+    print(create_sibling_dir(path=get_folder_path_dialog(), suffix="test folder"))
+    """
+
     path = path.strip("/") + suffix + "/"
-    os.mkdir(path) if not os.path.exists(path) else None
+    create_dir(path)
+
     return path
 
 
+"""
+hier stehengeblieben
+"""
 def rename_file(filename: str, suffix: str, extension=""):
 
     """
@@ -210,16 +272,22 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
 if __name__ == "__main__":
 
     # INFO BLOCK
+
     """
     testing and beautifying (proper documentation etc.) of functions done until: "# mark" above.
     completed functions:
-        get_file_path_dialog()
-        get_folder_path_dialog()
+        get_file_path_dialog(window_title="Choose file path")
+        get_folder_path_dialog(window_title="Choose folder path")
+        extract_parent_path(file_path: str)
+        get_file_list(parent_path="")
+        append_suffix(string: str, suffix: str)
+        create_dir(path), tested by testing below function
+        create_sibling_dir(path=get_folder_path_dialog(), suffix="test folder")
     """
 
     # TEST BLOCK
-    parent = extract_parent_path(get_file_path_dialog())
-    print(parent)
+
+    # PREVIOUS TEST BLOCKS
 
     """
     file_path = get_filepath_dialog()  # str, path with slashes

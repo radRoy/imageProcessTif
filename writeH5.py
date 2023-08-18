@@ -65,7 +65,7 @@ if __name__ == "__main__":
     if not mode_append:
         # OUTPUT FILE PATHS, directories, etc.
         path_out = path.strip("/") + "-h5/"  # str: path with appended -h5
-        created_path = fH.create_dir(path_out)  # (str output, not required) create output path if it doesn't exist yet
+        created_path = fH.create_sibling_dir(path_out)  # (str output, not required) create output path if it doesn't exist yet
         # print(path_out == created_path)  # testing (prints True)
 
         # file paths of the h5 files to be created / appended to

@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     # output file paths, directories, etc.
     path_out = path.strip("/") + suffix + "/"  # str: path with appended suffix
-    created_path = fH.create_dir(path_out)  # (str output, not required) create output path if it doesn't exist yet
+    created_path = fH.create_sibling_dir(path_out)  # (str output, not required) create output path if it doesn't exist yet
     # print(path_out == created_path)  # testing (prints True)
     output_file_paths = []
     for i, file in enumerate(files):
