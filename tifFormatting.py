@@ -14,10 +14,10 @@ import fileHandling as fH
 
 def reformat_tif_stack(tif_stack):
     """
-    reformats a given tif stack: moves the 4th dimension to the first index, e.g., zyxC to Czyx.
+    Reformats a given tif stack: moves the 4th dimension to the first index, e.g., zyxC to Czyx. (TBD: QU: Why "e.g." and not "i.e."? Which data format is assumed of the input tif_stack files?)
 
     Args:
-        tif_stack: absolute file path, with extension
+        tif_stack: absolute file path, with extension. TBD: what data format of the file is assumed? zyxc, zyx, ...?
 
     Returns: numpy.ndarray, formatted as described above
 
@@ -35,6 +35,16 @@ def reformat_tif_stack(tif_stack):
 
 
 def main(file_path, output_file_path):
+    """
+    TBD: Write description
+
+    Args:
+        file_path: TBD, most importantly: Is some manual reformatting, e.g., RBG stuff in fiji, assumed?
+        output_file_path: TBD
+
+    Returns: TBD
+
+    """
 
     # if <'file' exists>
     if os.path.isfile(file_path):
@@ -51,8 +61,8 @@ def main(file_path, output_file_path):
 
 if __name__ == "__main__":
 
-    # tif file with its data dimensions / order as such: [z, y, x, c], where zyx are image dimensions (pixel locations),
-    # and c is channel (laser lines saved as RGB)
+    # Example tif file with its data dimensions / order as such: [z, y, x, c], where zyx are image dimensions (pixel
+    # locations), and c is channel (laser lines saved as RGB)
     """
     tif_from_fiji = "M:/data/d.walther/Microscopy/babb03/tiff-ct3/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24/" \
                     "id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB.tif"
@@ -62,6 +72,7 @@ if __name__ == "__main__":
     files = fH.get_file_list(path)  # list: of the filenames (with extension) contained in the given path
 
     # tif file paths - assume these are formatted correctly (czyx)
+        # QU: The assumption that the file paths (?) are formatted correctly seems out of place. What did I mean, earlier?
     file_paths = [path + file for file in files]
 
     # output file paths, directories, etc.
