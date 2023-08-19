@@ -1,11 +1,14 @@
 """
 daniel walther
 creation: 23.07.2023 (dd.mm.yyyy)
+
+links:
+    https://docs.python.org/3/library/dialog.html#module-tkinter.filedialog
 """
 
 
-from tkinter import filedialog
-
+import tkinter as tk
+from tkinter import filedialog  # can not be called as tk.filedialog
 import numpy
 import skimage
 import os
@@ -280,6 +283,10 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
 
 
 if __name__ == "__main__":
+
+    window = tk.Tk()
+    window.wm_attributes('-topmost', 1)
+    window.withdraw()  # this suppresses the tk window
 
     # insert test blocks archived in the functions above for testing
 
