@@ -54,7 +54,7 @@ def get_folder_path_dialog(window_title="Choose folder path"):
     """
 
     path = filedialog.askdirectory(title=window_title) + "/"
-    print(f"get folder path returns: {path}")
+    #print(f"get folder path returns: {path}")
     #return filedialog.askdirectory(title=window_title) + "/"
 
     return path
@@ -171,14 +171,14 @@ def create_sibling_dir(path: str, suffix: str):
 
 def rename_file(filename: str, suffix: str, extension=""):
     """
-    Appends a suffix to a given filename with extension, returning `filename-suffix.extension`
+    Appends a suffix to a given filename with extension, returning `filename-suffix.extension`, where `-suffix` is the string given as argument.
 
     Args:
-        filename: str, filename with extension, no path
-        suffix: str, filename with added suffix and extension, no path
-        extension: str, desired file extension. if not specified, the extension appended to 'file' will be reattached.
+        filename: str, filename with extension, no path.
+        suffix: str, the suffix to be inserted between the given filename and its extension.
+        extension: str, desired file extension. if not specified, the extension that came with 'filename' will be reattached.
 
-    Returns: str, filename with the desired suffix appended to it, preceding file extension.
+    Returns: str, filename with the desired suffix inserted between it and the file extension.
 
     """
 
@@ -218,7 +218,7 @@ def read_tif_stack(tif_stack_filepath: str):
     Args:
         tif_stack_filepath: str, absolute tif stack file path
 
-    Returns: numpy.ndarray containing that tif image
+    Returns: `numpy.ndarray` containing that tif image
 
     """
     return skimage.io.imread(tif_stack_filepath)
@@ -229,10 +229,10 @@ def export_file(image: numpy.ndarray, filename: str):
     Exports a numpy.ndarray (e.g., a tif z stack) to .tif format.
 
     Args:
-        image: numpy.ndarray (e.g., a formatted RGB24 TIFF z stack)
-        filename: filename preceded by the absolute path where it is to be saved
+        image: `numpy.ndarray` (e.g., a formatted RGB24 TIFF z stack, or something else entirely)
+        filename: `str` - Aboslute path and filename with extension.
 
-    Returns: nothing (0)
+    Returns: nothing (pass).
     """
 
     skimage.io.imsave(filename, image)  # , photometric='minisblack'
@@ -276,17 +276,13 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
 
     output_list = []
     for i, element in enumerate(iterable):
-        print(f"i={i}, ")
+        #print(f"i={i}, ")
         output_list.append(sub_function(element, *args))
 
     return output_list
 
 
 if __name__ == "__main__":
-
-    window = tk.Tk()
-    window.wm_attributes('-topmost', 1)
-    window.withdraw()  # this suppresses the tk window
 
     # insert test blocks archived in the functions above for testing
 
