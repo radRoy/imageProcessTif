@@ -49,7 +49,7 @@ if __name__ == '__main__':
     # INFO: when commenting: files, file paths, etc. are always with extension except when stated otherwise
     # TBD: Add new code the code below in such a way, that the processed auto- & fluorescence tifs need to be opened just once for them to be formatted, concatenated, and converted to the 3dunet ready hdf5 files. This will probably involve calling writeH5.py, etc.
 
-    # This is supposed to put the tkinter dialog window (for choosing inputs etc.) on top of other windows (I think it works but is buggy).
+    # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows.
     window = tk.Tk()
     window.wm_attributes('-topmost', 1)
     window.withdraw()  # this suppresses the tk window
