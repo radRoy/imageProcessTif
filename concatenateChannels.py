@@ -122,7 +122,7 @@ if __name__ == '__main__':
         for j, channel_path in enumerate(specimen_paths):
             # open single channel image
             single_channel = fH.read_tif_stack(channel_path)
-            print(f'{a_ids_unique[i]}, i{i}j{j}; single channel shape: f{single_channel.shape}, channel path: f{channel_path}')  # check format (should be (Z,Y,X), i.e., (smallest, largest, middle) shape output)
+            print(f'{a_ids_unique[i]}, i{i}j{j}; single channel shape: {single_channel.shape}, channel path: {channel_path}')  # check format (should be (Z,Y,X), i.e., (smallest, largest, middle) shape output)
                 # single channel shape: (125, 1169, 414)
                 # <same shape for all images (tested between dataset03 specimens)>
                 # (check format: The Fiji-processed tif is already in the correct format (Z,Y,X))
