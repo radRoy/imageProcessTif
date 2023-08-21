@@ -89,15 +89,24 @@ In all my scripts, in-line documentation is available.
     - scaling;
     - raw: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
     - label: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
-- dataset03 (babb03-ct3-405,488,561-body_crop)
+- dataset03 (babb03-ct3-405,488,561-normCrop)
   - (temp: the **current** dataset)
-  - the dataset in creation starting 2023.08.07 (Monday just after holidays) until ...TBDetermined.
+  - the dataset in creation starting 2023.08.07 (Monday just after holidays) until 2023.08.21.
   - the dataset used from ...TBDetermined until ...TBDetermined.
   - the next to-be dataset, where the cropping region only includes the tadpoles' bodies and not the tail - for getting more cube-like images for easier patch shape handling
   - normalised cropping, such that all specimens have the same 3D cropping region.
   - refer to the file [babb03-dataset03-cropping-table.xlsx](https://github.com/radRoy/imageProcessTif/blob/master/babb03-dataset03-cropping-table.xlsx) for the cropping coordinates
   - kinds of image processing performed to get the dataset (& scripts used & relevant folder names in the microscopy image directories)
-    - cropping; `cropTifs-Static-dataset03.ijm`; 
+    - cropping; `cropTifs-Static-dataset03.ijm`;
+    - scaling; `scaleTifs.ijm`;
+    - labelling; `labelTifsHeart-dataset03.ijm`;
+    - concatenating autofluorescence channels by specimen (from single to multi channel); `concatenateChannels.py`; no reformatting was necessary, just read in tifs in python, concatenate the arrays of one specimen, save (with python, the bit depth stays 16 bit per pixel, per channel, not like with Fiji where a forced conversion to 8 bit takes place).
+      - np.array shape: (C, Z, Y, X), 16 bit per channel & pixel - np.array dtype `uint16`
+    - (nothing done to label images);
+      - np.array shape: (Z, Y, X), 8 bit - np.array dtype `uint8`
+    - writing the images to H5 format; `writeH5.py`; write autofluo concatenats first, then append labels;
+- dataset x (does not exist)
+  - a hypothetical dataset, where the cropping region only includes the tadpoles' bodies and not the tail - for getting more cube-like images for easier patch shape handling (hypothetically)
 
 - 
   - dataset01

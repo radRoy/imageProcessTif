@@ -9,10 +9,10 @@ def main(file_paths=["M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-cr
 
         if os.path.isfile(file):
             image = skimage.io.imread(file)
-            print("shape:", image.shape, ", image filepath", file)
+            print(f'\ndimension type (~bit depth per pixel): {image.dtype}\npython type: {type(image)}\npython shape (format): {image.shape}\nfile path: {file}')  # testing
 
         else:
-            print("File", file, "does not exist.")
+            print("\nFile", file, "does not exist.")
 
     return 0
 
@@ -25,14 +25,47 @@ if __name__ == "__main__":
         "M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24-czyx/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB-czyx.tif"]  # this line: my reformatted one, should be Czyx (3, z, y, x), where y > x > z
         # see output comment section at the end for output of these file_paths
 
-
     file_paths = [
         'M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo/id01-Ch405nm-crop-scaled0.25.tif'
     ]
         # see output comment section at the end for output of these file_paths
 
-    static = False
+    file_paths_dataset03_autofluo = [
+        'M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-autofluo/id01-img_Ch405 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif',
+        'M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm.tif'
+    ]
+    '''
+    dimension type (~bit depth per pixel): uint16
+    python type: <class 'numpy.ndarray'>
+    python shape (format): (125, 1169, 414)
+    file path: M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-autofluo/id01-img_Ch405 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif
+    
+    dimension type (~bit depth per pixel): uint16
+    python type: <class 'numpy.ndarray'>
+    python shape (format): (3, 125, 1169, 414)
+    file path: M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm.tif
+    '''
 
+    file_paths_dataset03_fluo = [
+        'M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-fluo/id01-img_Ch638 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif',
+        'M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id01-img_Ch638 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif'
+    ]
+    '''
+    dimension type (~bit depth per pixel): uint16
+    python type: <class 'numpy.ndarray'>
+    python shape (format): (125, 1169, 414)
+    file path: M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-fluo/id01-img_Ch638 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif
+    
+    dimension type (~bit depth per pixel): uint8
+    python type: <class 'numpy.ndarray'>
+    python shape (format): (125, 1169, 414)
+    file path: M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset03/raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id01-img_Ch638 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+    '''
+
+    static = True
+
+    #file_paths = file_paths_dataset03_autofluo
+    file_paths = file_paths_dataset03_fluo
     if static:
 
         main(file_paths)

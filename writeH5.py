@@ -140,7 +140,7 @@ if __name__ == "__main__":
 
         a_tif = fH.read_tif_stack(file_path)
         print(f'\nA tif file has been opened and will be written to an H5 file. Properties of this tif file:')
-        print(f' python type: {type(a_tif)}\n python shape (format): {a_tif.shape}\n file path: {file_path}')  # testing
+        print(f' python type: {type(a_tif)}\n python shape (format): {a_tif.shape}\n file path: {file_path}\n dimension type (~bit depth per pixel): {a_tif.dtype}')  # testing
         created_file_path_out = tif_append_h5(data_array=a_tif, h5_path=h5_file_paths[i], internal_path=internal_path)
         # break  # testing
 
