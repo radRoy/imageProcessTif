@@ -22,7 +22,7 @@ if __name__ == "__main__":
     file_paths = [
         "M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackSequence/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackSequence.tif",
         "M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB.tif",
-        "M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24-czyx/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB-czyx.tif"]  # this line: my reformatted one, should be Czyx (3, z, y, x)
+        "M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24-czyx/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB-czyx.tif"]  # this line: my reformatted one, should be Czyx (3, z, y, x), where y > x > z
         # see output comment section at the end for output of these file_paths
 
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     ]
         # see output comment section at the end for output of these file_paths
 
-    static = True
+    static = False
 
     if static:
 
@@ -46,10 +46,10 @@ if __name__ == "__main__":
         main(file_paths)
 
         # folder 2
-        path = fH.get_folder_path_dialog()
+        '''path = fH.get_folder_path_dialog()
         files = fH.get_file_list(path)
         file_paths = [path + file for file in files]
-        main(file_paths)
+        main(file_paths)'''
     
     exit(0)
 
