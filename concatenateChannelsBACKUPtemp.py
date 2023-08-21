@@ -107,12 +107,6 @@ if __name__ == '__main__':
     print('\nOutput file names:')
     fH.iterate_function_args_over_iterable(output_multi_channel_filenames, print)  # testing
 
-    # fuse output path and output file names together to form the (absolute) output file paths
-    output_concatenated_file_paths = [output_path + filename for filename in output_multi_channel_filenames]
-    #print(f'\nOutput file paths:')
-    #fH.iterate_function_args_over_iterable(output_concatenated_file_paths, print)  # testing
-    #exit(0)
-
     ''' CONCATENATION (SINGLE TO MULTI CHANNEL IMAGES) TAKES PLACE BELOW '''
 
     # concatenate each specimen's single channel tifs
