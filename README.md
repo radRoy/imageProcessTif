@@ -89,7 +89,7 @@ In all my scripts, in-line documentation is available.
     - scaling;
     - raw: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
     - label: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
-- dataset03 (babb03-ct3-405,488,561-normCrop)
+- dataset03 (babb03-ct3-405,488,561-normCrop) **THIS DATASET WORKS WITH `train3dunet` (although running on cpu, cuda was not available - QA in progress)**
   - (temp: the **current** dataset)
   - the dataset in creation starting 2023.08.07 (Monday just after holidays) until 2023.08.21.
   - the dataset used from ...TBDetermined until ...TBDetermined.
