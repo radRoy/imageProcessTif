@@ -89,11 +89,10 @@ In all my scripts, in-line documentation is available.
     - scaling;
     - raw: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
     - label: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
-- dataset03 (babb03-ct3-405,488,561-normCrop) **THIS DATASET WORKS WITH `train3dunet` (although running on cpu, cuda was not available - QA in progress)**
-  - (temp: the **current** dataset)
+- dataset03 (babb03-ct3-405,488,561-normCrop) **THIS DATASET WORKS WITH `train3dunet`**
+  - channels 405,488,561 nm were autofluorescence, channel 638 nm was fluorescence, in all stainings (babb03 microscope session).
   - the dataset in creation starting 2023.08.07 (Monday just after holidays) until 2023.08.21.
-  - the dataset used from ...TBDetermined until ...TBDetermined.
-  - the next to-be dataset, where the cropping region only includes the tadpoles' bodies and not the tail - for getting more cube-like images for easier patch shape handling
+  - the dataset used from 2023.08.21 until 2023.09.07.
   - normalised cropping, such that all specimens have the same 3D cropping region.
   - refer to the file [babb03-dataset03-cropping-table.xlsx](https://github.com/radRoy/imageProcessTif/blob/master/babb03-dataset03-cropping-table.xlsx) for the cropping coordinates
   - kinds of image processing performed to get the dataset (& scripts used & relevant folder names in the microscopy image directories)
@@ -105,8 +104,19 @@ In all my scripts, in-line documentation is available.
     - (nothing done to label images);
       - np.array shape: (Z, Y, X), 8 bit - np.array dtype `uint8`
     - writing the images to H5 format; `writeH5.py`; write autofluo concatenats first, then append labels;
-- dataset x (does not exist)
-  - a hypothetical dataset, where the cropping region only includes the tadpoles' bodies and not the tail - for getting more cube-like images for easier patch shape handling (hypothetically)
+  - train, val, test division: 3-2-2: specimen...
+    - id 01,02,03 in the train,
+    - id 04,05 in the val,
+    - id 06,07 in the test set (although the test set was not used in the end).
+- dataset04
+  - identical to dataset03, except for the train,val,test division: 5-1-1: specimen...
+    - id 01,02,03,04,05 in the train,
+    - id 06 in the val,
+    - id 07 in the test set.
+  - The purpose of dataset04 is to try to achieve bett validation evaluation scores (therefore, I think, better validation prediction images (which is the ultimate goal)) with 3dunet.
+- dataset05 **TEMP**
+  - **TEMP** does not exist yet, not yet started to make this one.
+  - The purpose of this dataset is to get better validation performance metrics by increasing train sample size by pooling together ct3 images from babb02.1 and babb03 microscope sessions.
 
 - 
   - dataset01
