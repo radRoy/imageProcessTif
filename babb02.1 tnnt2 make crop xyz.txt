@@ -1,0 +1,20 @@
+babb02.1tnnt2
+
+max dx: 1500
+max dy: 3906
+
+01: makeRectangle(990, 870, 972, 3528);
+	z: 1-91
+02: makeRectangle(1710, 690, 858, 3618);
+	z: 2-92
+03: makeRectangle(960, 612, 984, 3780);
+04: makeRectangle(966, 990, 1488, 3228);
+05: makeRectangle(642, 936, 1500, 3036);
+06: makeRectangle(756, 480, 1428, 3906);
+
+non-cropped:
+max dz (n_slices): 105
+min dz (n_slices): 91
+
+//makeRectangle(x,y, 2556,3906);
+//run("Duplicate...", "duplicate range=1-50");
