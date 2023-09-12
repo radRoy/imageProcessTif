@@ -1,7 +1,7 @@
 Daniel Walther
 repo creation date: 19.06.2023 (dd.mm.yyyy)
 
-# imageProcessTiff
+# <u>imageProcessTiff</u>
 
 My repository containing ImageJ Macros and python scripts for processing TIFF (tif) and HDF5 (h5, hdf5) files for use with 3D U-Net (3dunet). The files available from start stem from around 09.05.2023, upon which later IJMacros (ijm) were built. In general, the ijm files are for the image processing regardless of 3dunet input data format (referred below) and the python scripts are for the input data formatting steps after the binary label images have been created. Most parts of the whole image processing workflow have been automated by script files (that includes macros).
 
@@ -14,7 +14,7 @@ The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-forma
 - **scale** the tif images down to the desired size
   - Note: Ideally, the scaling factor is determined by an informed choice based on computing resource constraints and U-Net model results.
   - If data from multiple imaging sessions are to be combined into one dataset for unet training, the spatial resolution (voxel size - correspondance between volume of sample and recorded pixel size in 3D, i.e., in respective dimensions) from the two image recordings have to be considered. Most likely, training data with a single spatial resolution is desired. The spatial resolution of tif images (or probably h5 images just as well) can be determined with Fiji, by opening an image and looking at its info (File > Show Info, or something like), i.e., the `Voxel size: x * y * z pixels per micron^3`. I recommend using the `Bio-Formats Importer` to open a tif image of interest as a virtual stack and then `Show Info (Ctrl + I)`, as this will always show the voxel size in xyz-pixels-per-micron^3, no matter how many consecutive scaling steps between the opened and the original unscaled tif iamge. (In contrast - this is not recommended to prevent confusion and save reduce image loading time - tif is scaled with Fiji and this tif file is just dragged into Fiji, then `Show Info` will show the voxel size in xyz-pixels-per-pixel^3, referring to the pixel size of the original unscaled image.)
-- **crop** the tif images so that all cropped images have the same size (U-Net can handle different sizes, at least during training, but there will be some complications if different specimens' images are cropped individually). This step could be exchanged in order with scaling, but this would be more space and time intensive.
+- **crop** the tif images so that all cropped images have the same size (U-Net can handle different sizes, at least during training, but there will be some complications if different specimens' images are cropped individually). This step could be exchanged in order with scaling, but this would be more space and time intensive. If data from multiple different imaging sessions are to be combined into one dataset, then the images must have the same spatial resolution (voxel size) before cropping (or the scaling must be completed before cropping, in any case, e.g., when a model able to handle different voxel sizes equivalently on a semantic levels is to be trained).
 - **label** (create binary annotations of) the fluorescently labelled organs / tissues using the appropriate laser channels (channel handling included in labelling ijm script).
 - **format** the autofluorescence channels to the above mentioned input data format (this may involve multiple steps / scripts).
   - 1. order of x, y, z information in tif files (array handling) (TBD verify list order)
@@ -37,18 +37,18 @@ When investigating the format of tif images from dataset02 (where the valid mult
 - after 2nd formatting step (converting the sequence to RGB with **Fiji built-ins**): `shape: (109, 1102, 371, 3) , image filepath M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB.tif`
 - after 3rd & final formatting step (changing the image data format to CZYX with **python scripts**): `shape: (3, 109, 1102, 371) , image filepath M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo-hyperstackRGB24-czyx/id01-Ch405,488,561nm-crop-scaled0.25-hyperstackRGB-czyx.tif`
 
-## important remarks:
+## <u>important remarks:</u>
 
 __CAUTION:__ Do ***NOT*** work on one .ijm script in two editors simultaneously (e.g., VS Code and Fiji's built-in editor)! If you do, at some point, Fiji will be 'confused', freeze, and when you force close it with the task manager (or so), Fiji will delete all file contents of the file being changed in the two editors (alternatingly, in my case. I did this, because the VS Code, or most other editors, are way more user-friendly than the Fiji built-in editor, in my opinion (imo)).
 
-## useful Fiji / ImageJ (Macro) links in general:
+## <u>useful Fiji / ImageJ (Macro) links in general:</u>
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
 - [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/)
 
 "Fiji" and "Imagej" are used interchangeably as the difference between them would not matter to me, if there was one.
 
-### copied from the BIO321 course - Joana Delgado Martin's fiji hands-on hand-out:
+### <u>copied from the BIO321 course - Joana Delgado Martin's fiji hands-on hand-out:</u>
 
 21. Literature and further information:  
 - The ImageJ online documentation
@@ -67,7 +67,7 @@ Any publication that uses Fiji should cite the original Fiji paper:
 
 Schindelin J, Arganda-Carreras I, Frise E, Kaynig V, Longair M, Pietzsch T, Preibisch S, Rueden C, Saalfeld S, Schmid B, Tinevez JY, White DJ, Hartenstein V, Eliceiri K, Tomancak P and Cardona A (2012). Fiji: an open-source platform for biological-image analysis. Nat Methods Jun 28;9()7);676-82
 
-## my .ijm scripts (= macros)
+## <u>my .ijm scripts (= macros)</u>
 
 In all my scripts, in-line documentation is available.
 
@@ -75,11 +75,15 @@ In all my scripts, in-line documentation is available.
 - `scaleTifs.ijm` is a dynamic script for scaling any set of TIF stacks images in a given folder in x-, y- and z-dimensions. Only the scaling factor is static - specify it in the script somewhere.
 - `labelTifsHeart.ijm` is a dynamic script for segmenting the biggest fluorescence signal of a group of TIF stack images. The selection of fluorescence vs. non-fluorescence images is still static, as my string comparison / comprehension skills in .ijm (IJM) are still rudimentary. The value for the threshold segmentation needs to be manually determined in a given image group and statically changed in the script.
 
-### overview over the datasets created
+### <u>overview over the datasets created</u>
 
-- dataset01 (babb03-ct3-488) babb03? rather babb02, no? and a5, no? QU:
-  - babb02 data: 638 nm (fluo), 488 nm QU: TBD verify
+- dataset01 (babb03-ct3-488)
+  - babb02.1 data: 638 nm (fluo), 488 nm
 - dataset02 (babb03-ct3-405,488,561)
+  - voxel size x, y, z [micron^3 / voxel] = 10, 10, 10
+    - babb02.1 voxel size: 0.85, 0.85, 10
+    - scaling factor used: .085, .085, 1 (applied to resolution [pixel / micron])
+  - babb03 data: 638 nm (fluo), 405 nm, 488 nm, 561 nm
   - the dataset used from <= 2023.07.06 until >= 2023.07.18 (just before my holidays (21.07.2023 - 06.08.2023))
   - cropped individually, such that every specimen has its own 3D cropping region.
     - cropped files were created on the 19.06.2023 (dd.mm.yyyy)
@@ -90,7 +94,10 @@ In all my scripts, in-line documentation is available.
     - scaling;
     - raw: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
     - label: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
-- dataset03 (babb03-ct3-405,488,561-normCrop) **THIS DATASET WORKS WITH `train3dunet`**
+- dataset03 (babb03-ct3-405,488,561-normCrop)
+  - voxel size x, y, z [micron^3 / voxel] = 4, 4, 4
+    - babb03 voxel size: 1, 1, 1
+    - scaling factor used: 0.25 (applied to resolution [pixel / micron])
   - channels 405,488,561 nm were autofluorescence, channel 638 nm was fluorescence, in all stainings (babb03 microscope session).
   - the dataset in creation starting 2023.08.07 (Monday just after holidays) until 2023.08.21.
   - the dataset used from 2023.08.21 until 2023.09.07.
@@ -115,17 +122,16 @@ In all my scripts, in-line documentation is available.
     - id 06 in the val,
     - id 07 in the test set.
   - The purpose of dataset04 is to try to achieve bett validation evaluation scores (therefore, I think, better validation prediction images (which is the ultimate goal)) with 3dunet.
-- dataset05 **TEMP**
-  - **TEMP** does not exist yet, not yet started to make this one.
-  - The purpose of this dataset is to get better validation performance metrics by increasing train sample size by pooling together ct3 images from babb02.1 and babb03 microscope sessions.
+- dataset05
+  - The purpose of this dataset is to get better validation performance metrics by increasing train sample size by pooling together ct3 (aka tnnt2) images from babb02.1 and babb03 microscope sessions.
+  - voxel size x, y, z [micron^3 / pixel] = 2.53, 2.53, 10
+    - resolution [pixel / micron] = 1 / (10 * 2.53 * 2.53) = 0.015622803
+    - resolution of dataset03: 1 / (64 = 4 * 4 * 4) = 0.015625
+    - minimal dataset05 resolution is, xyz: 1, 1, 10, but the resolution would then be 0.1 px/micron, which is much more data than datset03. Dataset03 was just right in fitting the whole images into one A100 with one big patch (with a small buffer zone in each image, unfortunatley).
+      - voxel size of babb03, xyz: 1, 1, 1
+      - voxel size of babb02.1, xyz: .85, .85, 10
 
-- 
-  - dataset01
-- babb03 data: 638 nm (fluo), 405 nm, 488 nm, 561 nm
-  - dataset02
-  - dataset03
-
-## outline of the envisioned automated cropping process
+## <u>outline of the envisioned automated cropping process</u>
 
 __useful links:__  
 - high-level Segmentation tutorial (imagej.net): <https://imagej.net/imaging/segmentation#flexible-workflow>
@@ -139,7 +145,7 @@ __envisioned process:__
 - extrapolate back up to original image size, include a boundary, e.g., by extrapolating to the outer pixel locations instead of the middle ones ~
 - perform cropping on original images
 
-## comparison of Fiji's built-in thresholding algorithms
+## <u>comparison of Fiji's built-in thresholding algorithms</u>
 
 Fiji thresholding algorithms ranking by segmentation(label) quality (i.e., whole signal included, noise excluded) (view in Source, not Preview, mode):
 
@@ -162,7 +168,7 @@ default
 = Triangle  
 = Yen  
 
-## 3D U-Net training data set formatting / creation (HDF5 files)
+## <u>3D U-Net training data set formatting / creation (HDF5 files)</u>
 
 Refer to (above listed) link about [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/). Following this procedure specimen-wise:
 
