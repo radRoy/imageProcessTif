@@ -1,0 +1,9 @@
+run("Bio-Formats Importer", "open=[M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw usable/babb2.1-tnnt2-01-488nm-Int50.tiff] color_mode=Default open_files rois_import=[ROI manager] view=[Data Browser] stack_order=XYCZT use_virtual_stack");
+run("Bio-Formats Importer", "open=[M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw usable/babb2.1-tnnt2-02-488nm-Int50.tiff] color_mode=Default open_files rois_import=[ROI manager] view=[Data Browser] stack_order=XYCZT use_virtual_stack");
+run("Bio-Formats Importer", "open=[M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw usable/babb2.1-tnnt2-03-488nm-Int50.tiff] color_mode=Default open_files rois_import=[ROI manager] view=[Data Browser] stack_order=XYCZT use_virtual_stack");
+run("Bio-Formats Importer", "open=[M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw usable/babb2.1-tnnt2-04-488nm-Int50.tiff] color_mode=Default open_files rois_import=[ROI manager] view=[Data Browser] stack_order=XYCZT use_virtual_stack");
+run("Bio-Formats Importer", "open=[M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw usable/babb2.1-tnnt2-05-488nm-Int50.tiff] color_mode=Default open_files rois_import=[ROI manager] view=[Data Browser] stack_order=XYCZT use_virtual_stack");
+run("Bio-Formats Importer", "open=[M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw usable/babb2.1-tnnt2-06-488nm-Int50.tiff] color_mode=Default open_files rois_import=[ROI manager] view=[Data Browser] stack_order=XYCZT use_virtual_stack");
+//getVoxelSize(width, height, depth, unit)
+getVoxelSize(width, height, depth, unit);
+print(i+1, width, height, depth, unit);
