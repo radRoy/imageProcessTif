@@ -1,0 +1,182 @@
+2023.09.12
+Daniel Walther
+
+-----------------------------------------------------------
+start of program `scaleTifs-dataset05-babb02.1.ijm`
+
+appendSuffix(): Output filenames created by suffixing the input filenames.
+directory of input files: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\
+directory of output files: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/
+opening image 0: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-01-488nm-Int50.tiff
+Image dimensions:
+2960 5056 1 100 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-01-488nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 1: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-01-638nm-Int50.tiff
+Image dimensions:
+2960 5056 1 100 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-01-638nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 2: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-02-488nm-Int50.tiff
+Image dimensions:
+2960 5056 1 100 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-02-488nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 3: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-02-638nm-Int50.tiff
+Image dimensions:
+2960 5056 1 100 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-02-638nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 4: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-03-488nm-Int50.tiff
+Image dimensions:
+2960 5056 1 105 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-03-488nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 5: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-03-638nm-Int50.tiff
+Image dimensions:
+2960 5056 1 105 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-03-638nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 6: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-04-488nm-Int50.tiff
+Image dimensions:
+2960 5056 1 100 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-04-488nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 7: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-04-638nm-Int50.tiff
+Image dimensions:
+2960 5056 1 100 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-04-638nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 8: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-05-488nm-Int50.tiff
+Image dimensions:
+2960 5056 1 97 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-05-488nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 9: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-05-638nm-Int50.tiff
+Image dimensions:
+2960 5056 1 97 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-05-638nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 10: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-06-488nm-Int50.tiff
+Image dimensions:
+2960 5056 1 91 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-06-488nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+opening image 11: M:\data\d.walther\Microscopy\babb02\babb02.1-tnnt2\raw\babb2.1-tnnt2-06-638nm-Int50.tiff
+Image dimensions:
+2960 5056 1 91 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb02/babb02.1-tnnt2/raw-bicubic-scaled0.336x-0.336y-1z/babb2.1-tnnt2-06-638nm-Int50-bicubic-scaled0.336x-0.336y-1z.tif
+
+end of program `scaleTifs-dataset05-babb02.1.ijm`, exit reached
+-----------------------------------------------------------
+start of program `scaleTifs-dataset05-babb03.ijm`
+
+-----------------------------------------------------------
+start of program `scaleTifs-dataset05-babb03.ijm`
+
+appendSuffix(): Output filenames created by suffixing the input filenames.
+directory of input files: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\
+directory of output files: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/
+opening image 0: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id01-img_Ch405 nm_Angle180.0_Tile1.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id01-img_Ch405 nm_Angle180.0_Tile1-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 1: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id01-img_Ch488 nm_Angle180.0_Tile1.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id01-img_Ch488 nm_Angle180.0_Tile1-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 2: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id01-img_Ch561 nm_Angle180.0_Tile1.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id01-img_Ch561 nm_Angle180.0_Tile1-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 3: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id01-img_Ch638 nm_Angle180.0_Tile1.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id01-img_Ch638 nm_Angle180.0_Tile1-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 4: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id02-img_Ch405 nm_Angle225.0_Tile2.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id02-img_Ch405 nm_Angle225.0_Tile2-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 5: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id02-img_Ch488 nm_Angle225.0_Tile2.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id02-img_Ch488 nm_Angle225.0_Tile2-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 6: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id02-img_Ch561 nm_Angle225.0_Tile2.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id02-img_Ch561 nm_Angle225.0_Tile2-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 7: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id02-img_Ch638 nm_Angle225.0_Tile2.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id02-img_Ch638 nm_Angle225.0_Tile2-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 8: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id03-img_Ch405 nm_Angle135.0_Tile3.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id03-img_Ch405 nm_Angle135.0_Tile3-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 9: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id03-img_Ch488 nm_Angle135.0_Tile3.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id03-img_Ch488 nm_Angle135.0_Tile3-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 10: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id03-img_Ch561 nm_Angle135.0_Tile3.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id03-img_Ch561 nm_Angle135.0_Tile3-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 11: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id03-img_Ch638 nm_Angle135.0_Tile3.tif
+Image dimensions:
+2960 5056 1 550 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id03-img_Ch638 nm_Angle135.0_Tile3-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 12: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id04-img_Ch405 nm_Angle45.0_Tile4.tif
+Image dimensions:
+2960 5056 1 600 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id04-img_Ch405 nm_Angle45.0_Tile4-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 13: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id04-img_Ch488 nm_Angle45.0_Tile4.tif
+Image dimensions:
+2960 5056 1 600 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id04-img_Ch488 nm_Angle45.0_Tile4-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 14: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id04-img_Ch561 nm_Angle45.0_Tile4.tif
+Image dimensions:
+2960 5056 1 600 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id04-img_Ch561 nm_Angle45.0_Tile4-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 15: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id04-img_Ch638 nm_Angle45.0_Tile4.tif
+Image dimensions:
+2960 5056 1 600 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id04-img_Ch638 nm_Angle45.0_Tile4-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 16: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id05-img_Ch405 nm_Angle270.0_Tile5.tif
+Image dimensions:
+2960 5056 1 499 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id05-img_Ch405 nm_Angle270.0_Tile5-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 17: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id05-img_Ch488 nm_Angle270.0_Tile5.tif
+Image dimensions:
+2960 5056 1 499 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id05-img_Ch488 nm_Angle270.0_Tile5-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 18: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id05-img_Ch561 nm_Angle270.0_Tile5.tif
+Image dimensions:
+2960 5056 1 499 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id05-img_Ch561 nm_Angle270.0_Tile5-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 19: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id05-img_Ch638 nm_Angle270.0_Tile5.tif
+Image dimensions:
+2960 5056 1 499 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id05-img_Ch638 nm_Angle270.0_Tile5-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 20: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id06-img_Ch405 nm_Angle225.0_Tile6.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id06-img_Ch405 nm_Angle225.0_Tile6-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 21: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id06-img_Ch488 nm_Angle225.0_Tile6.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id06-img_Ch488 nm_Angle225.0_Tile6-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 22: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id06-img_Ch561 nm_Angle225.0_Tile6.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id06-img_Ch561 nm_Angle225.0_Tile6-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 23: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id06-img_Ch638 nm_Angle225.0_Tile6.tif
+Image dimensions:
+2960 5056 1 500 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id06-img_Ch638 nm_Angle225.0_Tile6-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 24: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id07-img_Ch405 nm_Angle45.0_Tile7.tif
+Image dimensions:
+2960 5056 1 650 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id07-img_Ch405 nm_Angle45.0_Tile7-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 25: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id07-img_Ch488 nm_Angle45.0_Tile7.tif
+Image dimensions:
+2960 5056 1 650 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id07-img_Ch488 nm_Angle45.0_Tile7-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 26: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id07-img_Ch561 nm_Angle45.0_Tile7.tif
+Image dimensions:
+2960 5056 1 650 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id07-img_Ch561 nm_Angle45.0_Tile7-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+opening image 27: M:\data\d.walther\Microscopy\babb03\tiff-ct3\raw\id07-img_Ch638 nm_Angle45.0_Tile7.tif
+Image dimensions:
+2960 5056 1 650 1
+A file has been saved. filename: M:/data/d.walther/Microscopy/babb03/tiff-ct3/raw-bicubic-scaled0.3953x-0.3953y-0.1z/id07-img_Ch638 nm_Angle45.0_Tile7-bicubic-scaled0.3953x-0.3953y-0.1z.tif
+
+end of program `scaleTifs-dataset05-babb03.ijm`, exit reached
