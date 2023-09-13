@@ -148,7 +148,7 @@ dirIn = getDir("Choose input directory");
 
 // output directory (saving the output files here), has the same folder name as the input directory but with an added suffix
 suffix = "-scaled";
-scaledByString = toString(xScaling) + "x-" + toString(yScaling) + "y-" + toString(zScaling) + "z";
+scaledByString = "-" + toString(xScaling) + "x-" + toString(yScaling) + "y-" + toString(zScaling) + "z";
 suffix = "-" + interpolation + suffix + scaledByString;
 dirOut = getCreatedDirectory(dirIn, suffix);
 
