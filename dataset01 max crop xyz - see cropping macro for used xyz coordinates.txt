@@ -1,0 +1,14 @@
+babb02.1a5
+
+max dx: 2556
+max dy: 2906
+
+cropped:
+	max dz (n_slices): 100
+	min dz (n_slices): 85
+non-cropped:
+	max dz (n_slices): 108
+	min dz (n_slices): 90
+
+//makeRectangle(x,y, 2556,3906);
+//run("Duplicate...", "duplicate range=1-50");
