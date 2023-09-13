@@ -98,7 +98,7 @@ function appendSuffix(files, suffix)
 
 function createOutputFilePaths(dir, filenames, extension)
 {
-	/* Create array of file paths, with extension. Based on a given filename list, a given path, a suffix, and a file extension.
+	/* Create array of file paths, with extension. Based on a given path (with trailing slash), a given filename list (without extension or trailing dot), and a file extension (with dot).
 	Returns a string Array of new file paths. */
 
 	// create output file paths
@@ -118,9 +118,23 @@ function createOutputFilePaths(dir, filenames, extension)
 // get input directory
 dirIn = getDir("Choose input directory");
 
-// output directory (saving the output files here), has the same folder name as the input directory but with an added suffix
+// suffix to append to input file and folder names
 suffix = "-suffix";
-dirOut = getCreatedDirectory(dirIn, suffix);
+
+// optional user choice of output directory
+chooseDirOut = getBoolean("Do you want to choose the output directory?\n'Yes': Choose folder,\n'No': Create folder next to input folder,\n'Cancel': Stop this program.");
+if (chooseDirOut)
+{
+	print("Letting the user choose the output directory.");
+	dirOut = getDir("Choose output directory (please add the suffix manually, if desired):");
+	dirOut = getCreatedDirectory(dirOut, "");
+}
+else
+{
+	print("Determining output directory automatically.");
+	// output directory (saving the output files here), has the same folder name as the input directory but with an added suffix
+	dirOut = getCreatedDirectory(dirIn, suffix);
+}
 
 // get input file list (only file names)
 delim = ".";
