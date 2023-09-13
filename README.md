@@ -77,9 +77,10 @@ In all my scripts, in-line documentation is available.
 
 ### <u>overview over the datasets created</u>
 
-- dataset01 (babb03-ct3-488)
+- **dataset01** (babb03-ct3-488)
   - babb02.1 data: 638 nm (fluo), 488 nm
-- dataset02 (babb03-ct3-405,488,561)
+
+- **dataset02** (babb03-ct3-405,488,561)
   - voxel size x, y, z [micron^3 / voxel] = 10, 10, 10
     - babb02.1 voxel size: 0.85, 0.85, 10
     - scaling factor used: .085, .085, 1 (applied to resolution [pixel / micron])
@@ -94,7 +95,8 @@ In all my scripts, in-line documentation is available.
     - scaling;
     - raw: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
     - label: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
-- dataset03 (babb03-ct3-405,488,561-normCrop)
+
+- **dataset03** (babb03-ct3-405,488,561-normCrop)
   - voxel size x, y, z [micron^3 / voxel] = 4, 4, 4
     - babb03 voxel size: 1, 1, 1
     - scaling factor used: 0.25 (applied to resolution [pixel / micron])
@@ -116,20 +118,31 @@ In all my scripts, in-line documentation is available.
     - id 01,02,03 in the train,
     - id 04,05 in the val,
     - id 06,07 in the test set (although the test set was not used in the end).
-- dataset04
+- **dataset04**
   - identical to dataset03, except for the train,val,test division: 5-1-1: specimen...
     - id 01,02,03,04,05 in the train,
     - id 06 in the val,
     - id 07 in the test set.
   - The purpose of dataset04 is to try to achieve bett validation evaluation scores (therefore, I think, better validation prediction images (which is the ultimate goal)) with 3dunet.
-- dataset05
+
+- **dataset05.0**
   - The purpose of this dataset is to get better validation performance metrics by increasing train sample size by pooling together ct3 (aka tnnt2) images from babb02.1 and babb03 microscope sessions.
+  - babb02.1 and babb03 have the heart stain in the 638 and autofluorescence in the 488 nm laser channel (babb03 also has two other autofluo. channels, but these are not used for training in this dataset).
   - voxel size x, y, z [micron^3 / pixel] = 2.53, 2.53, 10
     - resolution [pixel / micron] = 1 / (10 * 2.53 * 2.53) = 0.015622803
     - resolution of dataset03: 1 / (64 = 4 * 4 * 4) = 0.015625
-    - minimal dataset05 resolution is, xyz: 1, 1, 10, but the resolution would then be 0.1 px/micron, which is much more data than datset03. Dataset03 was just right in fitting the whole images into one A100 with one big patch (with a small buffer zone in each image, unfortunatley).
+    - minimal dataset05.0 resolution is, xyz: 1, 1, 10, but the resolution would then be 0.1 px/micron, which is much more data than datset03. Dataset03 was just right in fitting the whole images into one A100 with one big patch (with a small buffer zone in each image, unfortunatley).
       - voxel size of babb03, xyz: 1, 1, 1
       - voxel size of babb02.1, xyz: .85, .85, 10
+  - in creation since 12.09.2023
+  - scaling done with: `scaleTifs-dataset05-babb02.1.ijm` for the babb02.1 `scaleTifs-dataset05-babb03.ijm` for the babb03 ct3 (aka tnnt2, heart stain) images.
+  - label threshold value: TBD
+- **dataset05.1**
+  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of dataset06 is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
+  - label threshold value: TBD
+- **dataset05.2**
+  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of dataset06 is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
+  - label threshold value: TBD
 
 ## <u>outline of the envisioned automated cropping process</u>
 
