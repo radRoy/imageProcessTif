@@ -1,4 +1,6 @@
-macro_filename = "TEMPLATE_my_functions.ijm"
+// script for cropping: open all images in a folder with bio-formats importer
+
+macro_filename = "bio-formatsImportFolder.ijm"
 print("-----------------------------------------------------------");
 print("start of program `" +macro_filename+ "`"); print("");  // start of program, for easy output reading
 
@@ -98,7 +100,7 @@ function appendSuffix(files, suffix)
 
 function createOutputFilePaths(dir, filenames, extension)
 {
-	/* Create array of file paths, with extension. Based on a given filename list, a given path, a suffix, and a file extension.
+	/* Create array of file paths, with extension. Based on a given path (with trailing slash), a given filename list (without extension or trailing dot), and a file extension (with dot).
 	Returns a string Array of new file paths. */
 
 	// create output file paths
@@ -112,26 +114,40 @@ function createOutputFilePaths(dir, filenames, extension)
 }
 
 
-function ArrayUnique(array) {
-	// source: https://imagej.nih.gov/ij/macros/Array_Functions.txt
-	array 	= Array.sort(array);
-	array 	= Array.concat(array, 999999);
-	uniqueA = newArray();
-	i = 0;	
-   	while (i<(array.length)-1) {
-		if (array[i] == array[(i)+1]) {
-			//print("found: "+array[i]);			
-		} else {
-			uniqueA = Array.concat(uniqueA, array[i]);
-		}
-   		i++;
-   	}
-	return uniqueA;
+/* FILE HANDLING */
+
+
+// get input directory
+dirIn = getDir("Choose input directory");
+
+// get input file list (only file names)
+delim = ".";
+inputs = getFilesStripped(dirIn, delim);  // array of only the file names in the given directory, no path, no extension
+
+// file paths of the input files
+filePaths = getFilePaths(dirIn);  // array of the file paths in the given directory, i.e., absolute path, file name, and extension
+
+
+/* USING BIO-FORMATS IMPORTER ON ALL FILES IN A FOLDER (FOR GETTING THE CROPPING ROIS) */
+
+
+inputs_unique = Array.copy(inputs);
+n_channels = 4;
+
+for (i = 0; i < filePaths.length; i++)
+{
+	// opening only one channel of each specimen (I only need 1 image per specimen for making the cropping ROIs) - opening only the lowest wavelength channel (so not fluo), here.
+		// in python, if statement would look like this: `if "638" in filename: ...` - no such thing in .ijm language, TTBOMK
+	if (! (((i + 1) + 3) % n_channels == 0))
+	{
+		print("i:"+i+", "+inputs[i]+", skipping channel.");
+		continue;
+	}
+	else {print("i:"+i+", "+inputs[i]+", correct channel, proceeding with image processing.");}
+	
+	// open image with bio-formats importer
+	run("Bio-Formats Importer", "open=[" + filePaths[i] + "] color_mode=Default open_files rois_import=[ROI manager] view=[Data Browser] stack_order=XYCZT use_virtual_stack");
 }
 
 
 print(""); print("end of program `" +macro_filename+ "` reached."); exit("exit reached.");  // end of program, for easy output reading
-
-// ------------------------------------------------------------------
-// ------------------------------------------------------------------
-// ------------------------------------------------------------------
