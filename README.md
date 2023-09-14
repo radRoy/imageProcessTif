@@ -123,10 +123,11 @@ In all my scripts, in-line documentation is available.
     - id 01,02,03,04,05 in the train,
     - id 06 in the val,
     - id 07 in the test set.
-  - The purpose of dataset04 is to try to achieve bett validation evaluation scores (therefore, I think, better validation prediction images (which is the ultimate goal)) with 3dunet.
+  - The purpose of dataset04 is to try to achieve better validation evaluation scores (therefore, I think, better validation prediction images (which is the ultimate goal)) with 3dunet by increasing the number of train images.
 
-- **dataset05.0**
+- **dataset05**
   - The purpose of this dataset is to get better validation performance metrics by increasing train sample size by pooling together ct3 (aka tnnt2) images from babb02.1 and babb03 microscope sessions.
+  - Goal: Heart segmentations (CT3 stainings (Troponin))
   - babb02.1 and babb03 have the heart stain in the 638 and autofluorescence in the 488 nm laser channel (babb03 also has two other autofluo. channels, but these are not used for training in this dataset).
   - voxel size x, y, z [micron^3 / pixel] = 2.53, 2.53, 10
     - resolution [pixel / micron] = 1 / (10 * 2.53 * 2.53) = 0.015622803
@@ -134,8 +135,13 @@ In all my scripts, in-line documentation is available.
     - minimal dataset05.0 resolution is, xyz: 1, 1, 10, but the resolution would then be 0.1 px/micron, which is much more data than datset03. Dataset03 was just right in fitting the whole images into one A100 with one big patch (with a small buffer zone in each image, unfortunatley).
       - voxel size of babb03, xyz: 1, 1, 1
       - voxel size of babb02.1, xyz: .85, .85, 10
+  - voxel size (xyz, micron) of scaled babb02.1 images: 2.5298, 2.5298, 10
+  - voxel size (xyz, micron) of scaled babb03 images: 2.5297, 2.5297, 10
+    - difference in voxel size is 0.0001 micron = 0.1 nm, which is orders of magnitude smaller than the simple body size difference between specimens and therefore negligible.
   - in creation since 12.09.2023
   - scaling done with: `scaleTifs-dataset05-babb02.1.ijm` for the babb02.1 `scaleTifs-dataset05-babb03.ijm` for the babb03 ct3 (aka tnnt2, heart stain) images.
+- **dataset05.0**
+  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of dataset06 is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
   - label threshold value: TBD
 - **dataset05.1**
   - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of dataset06 is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
