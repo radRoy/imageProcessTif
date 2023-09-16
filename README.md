@@ -141,13 +141,13 @@ In all my scripts, in-line documentation is available.
   - in creation since 12.09.2023
   - scaling done with: `scaleTifs-dataset05-babb02.1.ijm` for the babb02.1 `scaleTifs-dataset05-babb03.ijm` for the babb03 ct3 (aka tnnt2, heart stain) images.
 - **dataset05.0**
-  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of dataset06 is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
+  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of this dataset is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
   - label threshold value: TBD
 - **dataset05.1**
-  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of dataset06 is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
+  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of this dataset is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
   - label threshold value: TBD
 - **dataset05.2**
-  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of dataset06 is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
+  - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of this dataset is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
   - label threshold value: TBD
 
 ## <u>outline of the envisioned automated cropping process</u>
