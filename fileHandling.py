@@ -282,6 +282,28 @@ def iterate_function_args_over_iterable(iterable, sub_function, *args):
     return output_list
 
 
+def exclude_extension_from_filename(filename_with_extension: str, delim="."):
+    """
+    Strips the extension from a filename string and returns the filename and its extension as a tuple.
+
+    Args:
+        filename_with_extension: str = The filename string with extension, delimited by 'delim'.
+        delim: str = The delimiter used between the filename and its extension (default is '.').
+
+    Returns: (filename, extension) - a tuple containing the extracted 'filename' and 'extension' string variables.
+
+    """
+
+    filename = ""
+    parts = filename_with_extension.split(delim)
+    for part in parts[:-1]:
+        filename += part + delim
+    filename = filename[:-1]
+    extension = parts[-1]
+
+    return filename, extension
+
+
 if __name__ == "__main__":
 
     # insert test blocks archived in the functions above for testing
