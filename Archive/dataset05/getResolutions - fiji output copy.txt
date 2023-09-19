@@ -1,0 +1,30 @@
+start of program `getResolutionsBioFormatsImporter.ijm`
+
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+xyz size: 467x 902y 50z
+
+end of program `getResolutionsBioFormatsImporter.ijm` reached.
