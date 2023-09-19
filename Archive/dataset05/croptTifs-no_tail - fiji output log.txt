@@ -1,0 +1,57 @@
+start of program `cropTifs-Static-dataset05-no_tail.ijm`
+
+appendSuffix(): Output filenames created by suffixing the input filenames.
+Opening file, i=0. filename = babb02.1-ct3-id01-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id01-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=1. filename = babb02.1-ct3-id01-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id01-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=2. filename = babb02.1-ct3-id02-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id02-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=3. filename = babb02.1-ct3-id02-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id02-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=4. filename = babb02.1-ct3-id03-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id03-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=5. filename = babb02.1-ct3-id03-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id03-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=6. filename = babb02.1-ct3-id04-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id04-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=7. filename = babb02.1-ct3-id04-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id04-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=8. filename = babb02.1-ct3-id05-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id05-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=9. filename = babb02.1-ct3-id05-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id05-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=10. filename = babb02.1-ct3-id06-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id06-488nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=11. filename = babb02.1-ct3-id06-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb02.1-ct3-id06-638nm-Int50-bicubic-scaled-0.336x-0.336y-1z-cropNorm-no_tail.tif
+Opening file, i=12. filename = babb03-ct3-id01-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id01-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=13. filename = babb03-ct3-id01-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id01-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=14. filename = babb03-ct3-id02-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id02-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=15. filename = babb03-ct3-id02-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id02-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=16. filename = babb03-ct3-id03-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id03-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=17. filename = babb03-ct3-id03-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id03-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=18. filename = babb03-ct3-id04-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id04-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=19. filename = babb03-ct3-id04-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id04-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=20. filename = babb03-ct3-id05-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id05-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=21. filename = babb03-ct3-id05-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id05-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=22. filename = babb03-ct3-id06-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id06-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=23. filename = babb03-ct3-id06-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id06-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=24. filename = babb03-ct3-id07-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id07-488nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+Opening file, i=25. filename = babb03-ct3-id07-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z
+File saved as: M:\data\d.walther\Microscopy\dataset05/raw-bicubic-scaled-to_voxel_size-2.53x-2.53y-10z-cropNorm-no_tail/babb03-ct3-id07-638nm-bicubic-scaled-0.3953x-0.3953y-0.1z-cropNorm-no_tail.tif
+
+end of program `cropTifs-Static-dataset05-no_tail.ijm` reached.
