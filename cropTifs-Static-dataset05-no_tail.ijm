@@ -65,7 +65,7 @@ function duplicateArrayElements(array, n_duplicates)
 		{
 			k = i*n_duplicates + j;
 			duplicateArray[k] = array[i];
-			print(array[i], "=", duplicateArray[k]);
+			// print(array[i], "=", duplicateArray[k]);
 		}
 	}
 	return duplicateArray;
