@@ -55,24 +55,46 @@ function appendSuffix(files, suffix)
 }
 
 
+function duplicateArrayElements(array, n_duplicates)
+{
+	duplicateArray = newArray(n_duplicates * array.length);
+	for (i = 0; i < array.length; i++)
+	{
+		// zranges = newArray(zranges_unique[0], zranges_unique[0], zranges_unique[0], zranges_unique[0], zranges_unique[1], zranges_unique[1], zranges_unique[1], zranges_unique[1], zranges_unique[2], zranges_unique[2], zranges_unique[2], zranges_unique[2], zranges_unique[3], zranges_unique[3], zranges_unique[3], zranges_unique[3], zranges_unique[4], zranges_unique[4], zranges_unique[4], zranges_unique[4], zranges_unique[5], zranges_unique[5], zranges_unique[5], zranges_unique[5], zranges_unique[6], zranges_unique[6], zranges_unique[6], zranges_unique[6]);
+		for (j = 0; j < n_duplicates; j++)
+		{
+			k = i*n_duplicates + j;
+			duplicateArray[k] = array[i];
+			print(array[i], "=", duplicateArray[k]);
+		}
+	}
+	return duplicateArray;
+}
+
+
 /* MANUAL (=STATIC) INPUT VALUES (E.G., CROPPING COORDINATES, ETC.) */
+// data (coordinates and stack no.s) are taken from .py-filled excel tables named 'dataset05-...xlsx'
 
 
-// dataset02 (babb03.something) has 7 specimens, with 4 channels each
+/* // dataset05 (babb02.1 and babb03, both ct3) has 13 specimens, with 2 channels each (488) nm autofluo., 638 nm fluo.);*/
+n_channels = 2;
+
 // z-crop by duplication
-zranges_unique = newArray("2-500", "44-542", "35-533", "54-552", "1-499", "2-500", "96-594");
-zranges = newArray(zranges_unique[0], zranges_unique[0], zranges_unique[0], zranges_unique[0], zranges_unique[1], zranges_unique[1], zranges_unique[1], zranges_unique[1], zranges_unique[2], zranges_unique[2], zranges_unique[2], zranges_unique[2], zranges_unique[3], zranges_unique[3], zranges_unique[3], zranges_unique[3], zranges_unique[4], zranges_unique[4], zranges_unique[4], zranges_unique[4], zranges_unique[5], zranges_unique[5], zranges_unique[5], zranges_unique[5], zranges_unique[6], zranges_unique[6], zranges_unique[6], zranges_unique[6]);
+	// order: babb02.1 id01-06, babb03 id01-07
+zranges_unique = newArray("30-79", "31-80", "19-68", "37-86", "20-69", "19-68", "1-50", "6-55", "6-55", "8-57", "1-50", "1-50", "11-60");
+	// these ranges are the table ranges (z0_check-z1_check), but added 1 to those coordinates. Fiji takes stack no. here (starting at 1), whereas I calculated the z-coordinates (starting at 0).
+zranges = duplicateArrayElements(zranges_unique, n_channels);
 
 // x- and y-crop by making rectangle (just the rectangle tool macro)
 // x coordinates
-xspan = 1657;  // maximal dx of this dataset (TBD)
-xoffsets_unique = newArray(659, 1036, 591, 630, 760, 713, 612);
-xoffsets = newArray(xoffsets_unique[0], xoffsets_unique[0], xoffsets_unique[0], xoffsets_unique[0], xoffsets_unique[1], xoffsets_unique[1], xoffsets_unique[1], xoffsets_unique[1], xoffsets_unique[2], xoffsets_unique[2], xoffsets_unique[2], xoffsets_unique[2], xoffsets_unique[3], xoffsets_unique[3], xoffsets_unique[3], xoffsets_unique[3], xoffsets_unique[4], xoffsets_unique[4], xoffsets_unique[4], xoffsets_unique[4], xoffsets_unique[5], xoffsets_unique[5], xoffsets_unique[5], xoffsets_unique[5], xoffsets_unique[6], xoffsets_unique[6], xoffsets_unique[6], xoffsets_unique[6]);
+xspan = 467;  // dx_norm of this dataset
+xoffsets_unique = newArray(260, 487, 256, 265, 313, 213, 426, 503, 378, 423, 384, 495, 339);
+xoffsets = duplicateArrayElements(xoffsets_unique, n_channels);
 
 // y coordinates
-yspan = 4677;  // maximal dx of this dataset (TBD)
-yoffsets_unique = newArray(303, 379, 233, 283, 379, 70, 217);
-yoffsets = newArray(yoffsets_unique[0], yoffsets_unique[0], yoffsets_unique[0], yoffsets_unique[0], yoffsets_unique[1], yoffsets_unique[1], yoffsets_unique[1], yoffsets_unique[1], yoffsets_unique[2], yoffsets_unique[2], yoffsets_unique[2], yoffsets_unique[2], yoffsets_unique[3], yoffsets_unique[3], yoffsets_unique[3], yoffsets_unique[3], yoffsets_unique[4], yoffsets_unique[4], yoffsets_unique[4], yoffsets_unique[4], yoffsets_unique[5], yoffsets_unique[5], yoffsets_unique[5], yoffsets_unique[5], yoffsets_unique[6], yoffsets_unique[6], yoffsets_unique[6], yoffsets_unique[6]);
+yspan = 902;  // dy_norm of this dataset
+yoffsets_unique = newArray(167, 116, 106, 217, 204, 45, 1051, 1093, 1055, 1056, 1084, 976, 1071);
+yoffsets = duplicateArrayElements(yoffsets_unique, n_channels);
 
 
 /* FILE HANDLING */
@@ -92,7 +114,7 @@ for (i = 0; i < filePaths.length; i++)
 }
 
 // create output filenames
-suffix = "-cropNorm";
+suffix = "-cropNorm-no_tail";
 outputs = Array.copy(inputs);
 outputs = appendSuffix(outputs, suffix);
 
