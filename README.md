@@ -39,7 +39,7 @@ When investigating the format of tif images from dataset02 (where the valid mult
 
 ## <u>important remarks:</u>
 
-__CAUTION:__ Do ***NOT*** work on one .ijm script in two editors simultaneously (e.g., VS Code and Fiji's built-in editor)! If you do, at some point, Fiji will be 'confused', freeze, and when you force close it with the task manager (or so), Fiji will delete all file contents of the file being changed in the two editors (alternatingly, in my case. I did this, because the VS Code, or most other editors, are way more user-friendly than the Fiji built-in editor, in my opinion (imo)).
+__CAUTION:__ Do ***NOT*** work on one .ijm script in two editors simultaneously (e.g., VS Code and Fiji's built-in editor)! If you do, at some point, Fiji will be 'confused', freeze, and when you force close it with the task manager (or so), Fiji will delete all file contents of the file being changed in the two editors (alternatingly, in my case. I did this, because the VS Code, or most other editors, are more user-friendly than the Fiji built-in editor, in my opinion (imo)).
 
 ## <u>useful Fiji / ImageJ (Macro) links in general:</u>
 
