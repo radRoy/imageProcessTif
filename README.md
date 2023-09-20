@@ -181,12 +181,14 @@ default
 = IsoData                   2D < 3D regarding noise exclusion, 2D > 3D regarding signal inclusion  
 = IJ_IsoData  
   
-< Otsu                      slightly but noticeably better inclusion & exclusion of signal & noise  
+< **Otsu**                      slightly but noticeably better inclusion & exclusion of signal & noise  
 (<) Percentile  
 = RenyiEntropy  
 = Shanbhag  
 = Triangle  
 = Yen  
+
+Conclusion: Since 'Otsu' thresholding was used before and Thomas Naert reported it to work the best, I will use the Fiji built-in Otsu thresholding algorithm.
 
 ## <u>(TEMP: outdated. python scripts done in the meantime. TBD: keep still relevant information, add it to above input data formatting section.) 3D U-Net training data set formatting / creation (HDF5 files)</u>
 
