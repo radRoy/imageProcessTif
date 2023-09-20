@@ -169,8 +169,8 @@ __envisioned process:__
 
 Fiji thresholding algorithms ranking by segmentation(label) quality (i.e., whole signal included, noise excluded) (view in Source, not Preview, mode):
 
-thresholding algorithm		transformations, quality
-----------------------------------------------------
+### <u>thresholding algorithm; transformations, quality</u>
+
 default  
 = Huang  
   
