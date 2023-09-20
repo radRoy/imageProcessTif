@@ -9,7 +9,7 @@ The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-forma
 
 **Refer to the section below this list for the process on finding (/reconstructing from my READMEs etc.) input data formatting steps.**
 
-- convert the h5 microscopy output image data to **tif** format (no script for this yet)
+- **convert** the h5 microscopy output image data to **tif** format (no script for this yet)
   - Note: The microscope recordings can be very large (> 1 TB). You may require a more powerful computer than your local workstation.
 - **scale** the tif images down to the desired size
   - Note: Ideally, the scaling factor is determined by an informed choice based on computing resource constraints and U-Net model results.
@@ -23,7 +23,7 @@ The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-forma
 - **convert** the tif images to hdf5
   - 1. create h5 files with either the auto- or the fluorescence images (separate folders, does not matter which is chosen) (be mindful of setting the parameters correctly of the corresponding python script)
   - 2. append the remaining images to the h5 files (again, be mindful of setting the parameters correctly of the corresponding python script)
-- (**verify**) the format of the newly created hdf5 files which should be ready for training a U-Net model (uncertain whether a script (redH5.py) contains code for this, already)
+- (**verify**) the format of the newly created hdf5 files which should be ready for training a U-Net model (uncertain whether a script (readH5.py) contains code for this, already)
 - (**transfer**) the files to the Science Cluster drives (no script for this yet)
 
 **Refer to this repo's `formatTifsHyperstackH5-Recording.ijm` in `FijiRecordings` for a recording on how to format the tifs correctly (TBD: verify).**
@@ -160,7 +160,8 @@ __envisioned process:__
 - downscale images to pre-determined maximal image size (low-quality interpolation should suffice)
 - distinguish background from signal (thresholding, pixel brightness distribution cluster analysis, etc.)
 - determine 6 coordinates: min & max locations of signal in each x, y, and z dimensions
-- export image-wise coordinates into a csv table or similar
+- determine 3 more coordinates: centre coordinate of the brightest region in the fluorescence image of each specimen (representing the centre coordinates of interests, i.e., where the labelled organ of interest is located in an image) in x, y, and z dimensions. Gaussian Blurring will be helpful in achieving this.
+- export image-wise coordinates into a csv table or similar (e.g., to .xlsx with pythons pandas package - refer to `croppingCoordinateCalculation.py` for some implemented code for table handling in python).
 - extrapolate back up to original image size, include a boundary, e.g., by extrapolating to the outer pixel locations instead of the middle ones ~
 - perform cropping on original images
 
@@ -187,7 +188,7 @@ default
 = Triangle  
 = Yen  
 
-## <u>3D U-Net training data set formatting / creation (HDF5 files)</u>
+## <u>(TEMP: outdated. python scripts done in the meantime. TBD: keep still relevant information, add it to above input data formatting section.) 3D U-Net training data set formatting / creation (HDF5 files)</u>
 
 Refer to (above listed) link about [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/). Following this procedure specimen-wise:
 
