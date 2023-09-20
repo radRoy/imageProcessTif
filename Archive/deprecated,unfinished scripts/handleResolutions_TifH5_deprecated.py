@@ -1,6 +1,6 @@
 import numpy as np
 import fileHandling as fH
-import list_resolutions as lR
+import listResolutions_deprecated as lR
 
 
 # unfinished function that was never used

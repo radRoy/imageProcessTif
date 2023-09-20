@@ -16,7 +16,7 @@ def list_resolutions_h5(file_paths):
             print(f[key])
         """
 
-        res = rH.get_resolution_h5(file_path)
+        res = rH.get_resolution_h5(file_path)  # loads the whole file
         resolutions.append(res) if res not in resolutions else None
         print(f"i={i}: last element of resolutions: {resolutions[-1]}")
 
@@ -28,7 +28,7 @@ def list_resolutions_tif(file_paths):
     resolutions = []
 
     for i, file_path in enumerate(file_paths):
-        im = Image.open(file_path)
+        im = Image.open(file_path)  # probably loads the whole file
         width, height = im.size
 
 
