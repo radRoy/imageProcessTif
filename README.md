@@ -1,38 +1,44 @@
 Daniel Walther
 repo creation date: 19.06.2023 (dd.mm.yyyy)
 
-# <u>imageProcessTiff</u>
+# <u>imageProcessTif</u>
 
 My repository containing ImageJ Macros and python scripts for processing TIFF (tif) and HDF5 (h5, hdf5) files for use with 3D U-Net (3dunet). The files available from start stem from around 09.05.2023, upon which later IJMacros (ijm) were built. In general, the ijm files are for the image processing regardless of 3dunet input data format (referred below) and the python scripts are for the input data formatting steps after the binary label images have been created. Most parts of the whole image processing workflow have been automated by script files (that includes macros).
 
-The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-format) for multi-channel image data required by [3D U-Net](https://github.com/wolny/pytorch-3dunet) is (C, Z, Y, X) with proper handling of internal paths in the h5 datasets given to 3D U-Net. The HDF5 or TIFF outputs from the [mesoSPIM](https://mesospim.org/) are in a different format. This requires some image processing beyond creation of training labels. **An overview over all image processing steps involved in relation to this repository is given in order here** (things are generally done iteratively for all files in a specified input folder) (refer to the section below this list for the process on finding (/reconstructing from my READMEs etc.) input data formatting steps):
+The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-format) for multi-channel image data required by [3D U-Net](https://github.com/wolny/pytorch-3dunet) is (C, Z, Y, X) with proper handling of internal paths in the h5 datasets given to 3D U-Net. The HDF5 or TIFF outputs from the [mesoSPIM](https://mesospim.org/) are in a different format. This requires some image processing beyond creation of training labels.
 
-- **convert** the h5 microscopy output image data to **tif** format (no script for this yet).
+## <u>conceptual and practical workflow overview</u>
+
+Things are generally done iteratively for all files in a specified input folder. For information on the correct 3dunet input data format, refer to section [Information regarding the input data format required by 3dunet](#Information-regarding-the-input-data-format-required-by-3dunet) below. This list is **concept-focussed**. For a shorter application-focussed list of available scripts, refer to section [my scripts and macros](#my-scripts-and-macros) below.
+
+- **convert** (`TBD: auto conversion`) the h5 microscopy output image data to **tif** format (no script for this yet).
   - Note: The microscope recordings can be very large (> 1 TB). You may require a more powerful computer than your local workstation.
-- **scale** the tif images down to the desired size (use `scaleTifs-dataset-babb03.ijm` or similar).
+- **scale** (`scaleTifs-dataset(...).ijm`) the tif images down to the desired size
   - Note: Ideally, the scaling factor is determined by an informed choice based on computing resource constraints and U-Net model results.
   - If data from multiple imaging sessions are to be combined into one dataset for unet training, the spatial resolution (voxel size - correspondance between volume of sample and recorded pixel size in 3D, i.e., in respective dimensions) from the two image recordings have to be considered. Most likely, training data with a single spatial resolution is desired. The spatial resolution of tif images (or probably h5 images just as well) can be determined with Fiji, by opening an image and looking at its info (File > Show Info, or something like), i.e., the `Voxel size: x * y * z pixels per micron^3`. I recommend using the `Bio-Formats Importer` to open a tif image of interest as a virtual stack and then `Show Info (Ctrl + I)`, as this will always show the voxel size in xyz-pixels-per-micron^3, no matter how many consecutive scaling steps between the opened and the original unscaled tif iamge. (In contrast - this is not recommended to prevent confusion and save reduce image loading time - tif is scaled with Fiji and this tif file is just dragged into Fiji, then `Show Info` will show the voxel size in xyz-pixels-per-pixel^3, referring to the pixel size of the original unscaled image.)
-- **crop** the tif images so that all cropped images have the same size (U-Net can handle different sizes, at least during training, but there will be some complications if different specimens' images are cropped individually). This step could be exchanged in order with scaling, but this would be more space and time intensive. If data from multiple different imaging sessions are to be combined into one dataset, then the images must have the same spatial resolution (voxel size) before cropping (or the scaling must be completed before cropping, in any case, e.g., when a model able to handle different voxel sizes equivalently on a semantic levels is to be trained).
+- **crop** (`TBD: auto edge detection`, `croppingCoordinateCalculation.py`, `cropTifs-Static-dataset(...).ijm`) the tif images so that all cropped images have the same size (U-Net can handle different sizes, at least during training, but there will be some complications if different specimens' images are cropped individually). This step could be exchanged in order with scaling, but this would be more space and time intensive. If data from multiple different imaging sessions are to be combined into one dataset, then the images must have the same spatial resolution (voxel size) before cropping (or the scaling must be completed before cropping, in any case, e.g., when a model able to handle different voxel sizes equivalently on a semantic levels is to be trained).
   - Currently, no script for determining the specimen cropping regions/coordinates and coordinates of interest (where its labelled organ is) exists. This has to be done manually for now. I suggest using a computer that has short image loading times for opening the whole .tif images in Fiji (e.g., a device connected to the research group's fast network infrastructure).
     - For now, copy a non-filled `.xlsx` file from previous datasets and fill those cells again. You can re-format the file, just do not change the column headers (relevant for later scripting).
   - a script for calculating cropping coordinates `croppingCoordinateCalculation.py` exists and is robust against all edge cases/ boundary conditions including rounding issues. Currently, this script reads data from an `.xlsx` file and fills that file with additional information (coordinates).
   - a script for checking the cropped images' sizes `getResolutionsBioFormatsImporter` exists and is efficient in working with large image data (i.e., does not need to load the whole image stack to get the info. it wants).
   - For the actual cropping process, a script `cropTifs-Static-dataset05-no_tail.ijm` or similar exists. For now, adapt the newest version of this script to the calculated, normalised cropping coordinates (i.e., change the static array definitions by manually copying cells' values from the `.xlsx` file filled by an earlier script).
-- **label** (create binary annotations of) the fluorescently labelled organs / tissues using the appropriate laser channels (channel handling included in labelling ijm script) (use `labelTifsHeart-dataset(...).ijm`).
-- **format** the autofluorescence channels to the above mentioned input data format (this may involve multiple steps / scripts) (use `concatenateChannels.py`).
+- **label** (`labelTifsHeart-dataset(...).ijm`) (create binary annotations of) the fluorescently labelled organs / tissues using the appropriate laser channels (channel handling included in labelling ijm script).
+- **format** (`concatenateChannels.py`) the autofluorescence channels to the above mentioned input data format (this may involve multiple steps / scripts).
   - 1. order of x, y, z information in the single channel tif files (array handling, `np.roll` or a similar function)
   - 2. single to multi channel
-- (**verify**) the format of the newly created, re-formatted tif images (dedicated script for this is available)
-- **convert** the tif images to hdf5 (use `writeH5.py`)
+- (**verify**) the format of the newly created, re-formatted tif images. You can do this by reading the output of the formatting python script.
+- **convert** (`writeH5.py`) the tif images to hdf5
   - 1. create h5 files with either the auto- or the fluorescence images (separate folders, does not matter which is chosen, although I recommend to first choose the autofluorescence images because the autofluorescence folder names are more informative, at least at the time of writing) (be mindful of setting the parameters correctly of the corresponding python script)
   - 2. append the remaining images to the h5 files (again, be mindful of setting the parameters correctly of the corresponding python script)
-- (**verify**) the format of the newly created hdf5 files which should be ready for training a U-Net model (uncertain whether a script (most likely `readH5.py`) contains code for this, already)
-- (**transfer**) the files to the Science Cluster drives (no script for this yet)
+- (**verify**) (`readH5.py`, maybe) the format of the newly created hdf5 files which should be ready for training a U-Net model (uncertain whether a script contains code for this, already)
+- (**transfer**) (`TBD: auto transfer`) the files to the Science Cluster drives. Currently, this is done manually with the [globus](https://www.globus.org/) file transfer service.
+
+### <u>Information regarding the input data format required by 3dunet</u>
 
 **Refer to this repo's `formatTifsHyperstackH5-Recording.ijm` in `FijiRecordings` for a recording on how to format the tifs correctly (TBD: verify).**
 
 **Some detailed information on the *input data formatting* steps that work was previously documented in the [cloud](https://github.com/radRoy/cloud/tree/master)'s README.md repo under [Wrangling with the Input Data Format...](https://github.com/radRoy/cloud/blob/master/README.md#wrangling-with-the-input-data-format-formatting-hdf5-data-sets-for-data-with-multiple-channels-3-autofluorescence-laser-lines-and-the-input-parameters).**  
-- Somewhere there, on the date 230710, I found a well-named yaml file **`train_config-RGB24raw,uint16label-230710-1-3in1out-shapeChange.yml` followed by the comment `# successfully trains on the multichannel input data`**. Therefore, 3dunet requires the label input in 16bit per pixel grey format, and the multichannel raw input
+- Somewhere there, on the date 230710, I found a well-named yaml file **`train_config-RGB24raw,uint16label-230710-1-3in1out-shapeChange.yml` followed by the comment `# successfully trains on the multichannel input data`**. Therefore, 3dunet requires the label input in 16bit per pixel grey format, and the multichannel raw input ... TBD: finish this part, revise it, or remove it.
 
 When investigating the format of tif images from dataset02 (where the valid multi-channel input format was determined), I ran my file `imageProcessTif/readTifFormatTest.py` on some images:
 - processed (with my **Fiji macros**), non-formatted tif image: `shape: (109, 1102, 371) , image filepath M:/data/d.walther/Microscopy/babb03/tiff-ct3/dataset02/-crop-bicubic-scaled0.25-autofluo/id01-Ch405nm-crop-scaled0.25.tif`
@@ -70,15 +76,7 @@ Any publication that uses Fiji should cite the original Fiji paper:
 
 Schindelin J, Arganda-Carreras I, Frise E, Kaynig V, Longair M, Pietzsch T, Preibisch S, Rueden C, Saalfeld S, Schmid B, Tinevez JY, White DJ, Hartenstein V, Eliceiri K, Tomancak P and Cardona A (2012). Fiji: an open-source platform for biological-image analysis. Nat Methods Jun 28;9()7);676-82
 
-## <u>my .ijm scripts (= macros)</u>
-
-In all my scripts, in-line documentation is available.
-
-- `cropTifs-Static.ijm` is a static cropping script. no automatic edge or signal detection is done. x-, y- and z-coordinates for cropping have to be given (i.e., changed) manually in the script.
-- `scaleTifs.ijm` is a dynamic script for scaling any set of TIF stacks images in a given folder in x-, y- and z-dimensions. Only the scaling factor is static - specify it in the script somewhere.
-- `labelTifsHeart.ijm` is a dynamic script for segmenting the biggest fluorescence signal of a group of TIF stack images. The selection of fluorescence vs. non-fluorescence images is still static, as my string comparison / comprehension skills in .ijm (IJM) are still rudimentary. The value for the threshold segmentation needs to be manually determined in a given image group and statically changed in the script.
-
-### <u>overview over the datasets created</u>
+## <u>datasets overview</u>
 
 - **dataset01** (babb03-ct3-488)
   - babb02.1 data: 638 nm (fluo), 488 nm
@@ -193,7 +191,11 @@ default
 
 Conclusion: Since 'Otsu' thresholding was used before and Thomas Naert reported it to work the best, I will use the Fiji built-in Otsu thresholding algorithm.
 
-## <u>(TEMP: outdated. python scripts done in the meantime. TBD: keep still relevant information, add it to above input data formatting section.) 3D U-Net training data set formatting / creation (HDF5 files)</u>
+## <u>3D U-Net training data set formatting / creation (HDF5 files)</u>
+
+TBD: Archive this information for documenting how the relevant dataset was created.
+
+TBD: Then, reference this archived text file under the relevant dataset in the **datasets overview** section.
 
 Refer to (above listed) link about [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/). Following this procedure specimen-wise:
 
