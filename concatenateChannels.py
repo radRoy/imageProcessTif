@@ -92,7 +92,7 @@ if __name__ == '__main__':
     print(f'\nOutput path:\n{output_path}')
 
     # create output file names
-    # (replace the 'id' and 'ch405 nm_angle...' parts by the unique id and append the multichannel part)
+    # (replace the 'id' and 'ch405 nm_angle...' parts by the unique id and append the multichannel part (the substrings to be replaced where removed from the file names when the filenames were stored in 'filename_parts'))
     output_multi_channel_filenames = []
     for i, id in enumerate(a_ids_unique):
         preceding_part = id
@@ -128,8 +128,14 @@ if __name__ == '__main__':
                 # (check format: The Fiji-processed tif is already in the correct format (Z,Y,X))
             # (above print line:) also check: ch405 before ch488 before ch561 & id01 before id02 etc. (check whether sorted works (sanity double-check, don't know how it shouldn't work, used sorted() above).
 
+            ''' THE LINE ROTATING DIMENSIONS WITHIN A SINGLE CHANNEL IMAGE '''
+            # The dimension rotation (e.g., XYZ to ZYX) would have to be done here.
+            # But, with the preceding processing steps done as they were during this script writing (as in dataset03),
+            # the dimensions already are in 3dunet's desired order/format (zyx).
+            # So, no np.roll(single_channel)~ is necessary.
+
             # append single channel to a list for later concatenation into one multichannel array
-            #concatenated.append([single_channel])
+            #concatenated.append([single_channel])  # wrong (leaving it in just in case it's useful in the future)
                 # single channel shape: (125, 1169, 414)
                 # single channel shape: (125, 1169, 414)
                 # concatenated shape: (3, 1, 125, 1169, 414)
@@ -139,9 +145,10 @@ if __name__ == '__main__':
                 # single channel shape: (125, 1169, 414)
                 # concatenated shape: (3, 125, 1169, 414)
 
+        ''' THE LINE DOING THE CONCATENATING FROM SINGLE TO MULTI CHANNEL '''
         # do the np.array conversion thing
         concatenated = np.array(concatenated)
-        print(f'concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400): {concatenated.shape}')
+        print(f'concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400)): {concatenated.shape}')
 
         # export the concatenated ndarray to an actual tif file
         fH.export_file(concatenated, output_concatenated_file_paths[i])
