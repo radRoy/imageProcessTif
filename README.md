@@ -79,6 +79,7 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - babb02.1 data: 638 nm (fluo), 488 nm
 
 - **dataset02** (babb03-ct3-405,488,561)
+  - Recommendation: I would refrain from using this dataset in the future. Rather, remake this dataset with the kept individually cropped single channel images by using newer (python) scripts that work reliably and not as confusing as the same workflow done with Fiji.
   - voxel size x, y, z [micron^3 / voxel] = 10, 10, 10
     - babb02.1 voxel size: 0.85, 0.85, 10
     - scaling factor used: .085, .085, 1 (applied to resolution [pixel / micron])
@@ -90,9 +91,14 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - refer to the folder [ROIs crop xy (dataset02)](https://github.com/radRoy/imageProcessTif/tree/master/ROIs%20crop%20xy%20(dataset02))
   - kinds of image processing performed to get the dataset (& scripts used & relevant folder names in the microscopy image directories)
     - cropping regions determined manually & individually Fiji (see some `ROI` folder); `cropTifs-Static-dataset02.ijm` used for doing the actual cropping; folder: `M:\data\d.walther\Microscopy\babb03\tiff-ct3\dataset02\raw-cropInd`
-    - scaling;
-    - raw: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
-    - label: **QU:no notes found - TBD: reconstruct based on what works with dataset03 (same original recordings)**
+    - scaling: `scaleTifs.ijm`, if I recall correctly. This script might have been changed for creation of dataset03 since then, but the things done are essentially the same.
+    - raw:
+      - concatenated to RGB24 with Fiji, thereby automatically converting the uInt16 pixel (per channel) values to uInt8 values.
+      - formatted with python to CZYX (from something like YXZC from Fiji RGB24-concatenating beforehand).
+    - label:
+      - converted from uInt8 to uInt16 with Fiji
+    - both raw & label images were written to h5 format with the python script `writeH5.py`.
+  - Refer to `README-archive.md`, section 'dataset02 creation (outdated) ...' for additional details about the input formatting problem during the creation of dataset02.
 
 - **dataset03** (babb03-ct3-405,488,561-normCrop)
   - voxel size x, y, z [micron^3 / voxel] = 4, 4, 4
@@ -193,33 +199,3 @@ default
 = Yen  
 
 Conclusion: Since 'Otsu' thresholding was used before and Thomas Naert reported it to work the best, I will use the Fiji built-in Otsu thresholding algorithm.
-
-
-
-
-
-
-
-
-
--------------------------------------- above is ordered and clean ----------------------------
-
-## <u>3D U-Net training data set formatting / creation (HDF5 files)</u>
-
-TBD: Archive this information for documenting how the relevant dataset was created.
-
-TBD: Then, reference this archived text file under the relevant dataset in the **datasets overview** section.
-
-Refer to (above listed) link about [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/). Following this procedure specimen-wise:
-
-Creating the label input data set:  
-- copy the label image as many times as there are autofluorescence channels in that imaging batch (e.g., 3 channels - 405, 488, 561). This mimicks 3 channels to the 3D U-Net, because (when using binary loss functions) per raw input channel, U-Net requires 1 corresponding label data set. Since there is only 1, the same, intended correct (organ) segmentation for all 3 (autofluorescence) channels, the label has to be copied for creating the HDF5 data set used for training U-Net.
-- start with the procedure written on above linked website - choose the n (e.g., 3) label copies, mimicking n channgels, as images to import.
-- follow the link above for further steps (creating a tif hyperstack).
-- when saving the tif (hyper)stack~ to HDF5, call the "label_internal_path" `/label`. Consider the formatting  specified in pytorch-3dunet's README (C, Z, Y, X).
-
-Creating the raw input data set:  
-- No step required, here. (No copying or similar required. There are already n (e.g., 3) (autofluorescence) channels available for the raw input data.)
-- start with the procedure written on above linked website - choose the n (e.g., 3) raw (autofluorescence) input channels as images to import.
-- follow the link above for further steps (creating a tif hyperstack).
-- when saving the tif (hyper)stack~ to HDF5, call the "raw_internal_path" `/raw`. Consider the formatting  specified in pytorch-3dunet's README (C, Z, Y, X).

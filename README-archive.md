@@ -58,26 +58,17 @@ When investigating the format of tif images from dataset02 (where the valid mult
 
 ...
 
-
-
-
-
-
-
-
-
--------------------------------------- above is ordered and clean ----------------------------
-
-## <u>3D U-Net training data set formatting / creation (HDF5 files)</u>
-
-TBD: Archive this information for documenting how the relevant dataset was created.
+## <u>dataset02 creation (outdated) - input data formatting with Fiji, from single channel tif to multi channel hdf5 files</u>
 
 TBD: Then, reference this archived text file under the relevant dataset in the **datasets overview** section.
+
+This section is incomplete and outdated. It is kept for archiving purposes, for example, for keeping the links used to arrive at the image processing methodologies I used in the ccreation of **dataset02**.
 
 Refer to (above listed) link about [Combining multiple channels/timepoints into a hyperstack in Fiji](https://cbmf.hms.harvard.edu/avada_faq/fiji-hyperstacks/). Following this procedure specimen-wise:
 
 Creating the label input data set:  
-- copy the label image as many times as there are autofluorescence channels in that imaging batch (e.g., 3 channels - 405, 488, 561). This mimicks 3 channels to the 3D U-Net, because (when using binary loss functions) per raw input channel, U-Net requires 1 corresponding label data set. Since there is only 1, the same, intended correct (organ) segmentation for all 3 (autofluorescence) channels, the label has to be copied for creating the HDF5 data set used for training U-Net.
+- (!outdated) copy the label image as many times as there are autofluorescence channels in that imaging batch (e.g., 3 channels - 405, 488, 561). This mimicks 3 channels to the 3D U-Net, because (when using binary loss functions) per raw input channel, U-Net requires 1 corresponding label data set. Since there is only 1, the same, intended correct (organ) segmentation for all 3 (autofluorescence) channels, the label has to be copied for creating the HDF5 data set used for training U-Net.
+  - This has turned out to be **false**! There is an option in 3dunet's `train_config.yml` files for the number of input and output channels. There, for 3 raw (autofluorescence) channels, set input channel no. to 3, for 1 label channel, set output channel no. to 1.
 - start with the procedure written on above linked website - choose the n (e.g., 3) label copies, mimicking n channgels, as images to import.
 - follow the link above for further steps (creating a tif hyperstack).
 - when saving the tif (hyper)stack~ to HDF5, call the "label_internal_path" `/label`. Consider the formatting  specified in pytorch-3dunet's README (C, Z, Y, X).
