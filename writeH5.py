@@ -71,10 +71,6 @@ if __name__ == "__main__":
         h5_files = fH.get_file_list(path_out_append)
         h5_file_paths = [path_out_append + file for file in h5_files]
 
-        #print(f'\nh5 append mode: h5 file paths:')
-        #fH.iterate_function_args_over_iterable(h5_file_paths, print)
-        #exit(0)
-
     ''' INPUT FILE PATHS - H5 NEW CASE '''
 
     if not mode_append:
@@ -116,9 +112,20 @@ if __name__ == "__main__":
     #fileHandling.iterate_function_args_over_iterable(h5_file_paths, print)
     #exit(0)
 
-    #h5_file_paths = h5_file_paths[1:]  # testing assert statement below
-    assert len(file_paths) == len(h5_file_paths), 'writeH5.py: Input and output file path lists should contain the same number of file paths (but they do not).'
-    #exit(0)
+    if mode_append:
+        print(f'\n h5 append mode: tif (input) file paths:')
+        fH.iterate_function_args_over_iterable(file_paths, print)
+        print(f'\n h5 append mode: h5 (output) file paths:')
+        fH.iterate_function_args_over_iterable(h5_file_paths, print)
+    else:
+        print(f'\n h5 create mode: tif (input) file paths:')
+        fH.iterate_function_args_over_iterable(file_paths, print)
+        print(f'\n h5 create mode: h5 (output) file paths:')
+        fH.iterate_function_args_over_iterable(h5_file_paths, print)
+
+    # h5_file_paths = h5_file_paths.append(h5_file_paths[0])  # testing assert statement below
+    assert len(file_paths) == len(h5_file_paths), "writeH5.py: Input and output file path lists should contain the same number of file paths (but they do not)."
+
 
     ''' H5 CREATION / APPENDING, ITERATIVELY '''
 

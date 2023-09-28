@@ -243,21 +243,21 @@ def export_file(image: numpy.ndarray, filename: str):
     pass
 
 
-def get_file_path_list(path=""):
+def get_file_path_list(parent_path=""):
     """
     Returns list of file paths in a given, or interactively chosen if none provided, directory, including extensions.
 
     Args:
-        path: `str`, absolute folder paths with trailing slash.
+        parent_path: `str`, absolute folder paths with trailing slash.
 
     Returns: `list`, file paths of the files contained in the given directory, with absolute path (slashes) and extension.
     """
 
-    path = get_folder_path_dialog(window_title="Choose the folder you want the file path list from") if path == "" else path
-    files = get_file_list(path)
+    parent_path = get_folder_path_dialog(window_title="Choose the folder you want the file path list from") if parent_path == "" else parent_path
+    files = get_file_list(parent_path)
     
     #return [path + "/" + file for file in files]  # old, TBD: adapt usages such that they give the right input regarding trailing slash.
-    return [path + file for file in files]
+    return [parent_path + file for file in files]
 
 
 def iterate_function_args_over_iterable(iterable, sub_function, *args):

@@ -149,6 +149,10 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of this dataset is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
   - label threshold value: TBD
 
+- **dataset06**: VRAM study about channels, bitdepth, and patch shape
+  - The purpose of this dataset is to refine the VRAM usage prediction formula by also considering number of channels and each channels bit depth. I also vary patch shape to experimentally confirm that there is no interaction between these VRAM usage predictors (TBD: note outcome regarding interaction)
+  - 
+
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)

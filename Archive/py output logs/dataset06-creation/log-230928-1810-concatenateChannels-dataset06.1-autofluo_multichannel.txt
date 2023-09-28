@@ -1,0 +1,86 @@
+script started at 2023.09.28, 1803
+script finished at 2023.09.28, 1810
+for dataset06.1 creation, concatenate autofluorescence channels (2), uint16
+
+C:\Users\Dancer\Documents\imageProcessTif\venv\Scripts\python.exe C:\Users\Dancer\Documents\imageProcessTif\concatenateChannels.py
+
+Sorted raw input file paths:
+['M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id01-img_Ch405 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif'
+ 'M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id01-img_Ch488 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif']
+['M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id02-img_Ch405 nm_Angle225.0_Tile2-cropNorm-bicubic-scaled0.25.tif'
+ 'M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id02-img_Ch488 nm_Angle225.0_Tile2-cropNorm-bicubic-scaled0.25.tif']
+['M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id03-img_Ch405 nm_Angle135.0_Tile3-cropNorm-bicubic-scaled0.25.tif'
+ 'M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id03-img_Ch488 nm_Angle135.0_Tile3-cropNorm-bicubic-scaled0.25.tif']
+['M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id04-img_Ch405 nm_Angle45.0_Tile4-cropNorm-bicubic-scaled0.25.tif'
+ 'M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id04-img_Ch488 nm_Angle45.0_Tile4-cropNorm-bicubic-scaled0.25.tif']
+['M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id05-img_Ch405 nm_Angle270.0_Tile5-cropNorm-bicubic-scaled0.25.tif'
+ 'M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id05-img_Ch488 nm_Angle270.0_Tile5-cropNorm-bicubic-scaled0.25.tif']
+['M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id06-img_Ch405 nm_Angle225.0_Tile6-cropNorm-bicubic-scaled0.25.tif'
+ 'M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id06-img_Ch488 nm_Angle225.0_Tile6-cropNorm-bicubic-scaled0.25.tif']
+['M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id07-img_Ch405 nm_Angle45.0_Tile7-cropNorm-bicubic-scaled0.25.tif'
+ 'M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id07-img_Ch488 nm_Angle45.0_Tile7-cropNorm-bicubic-scaled0.25.tif']
+
+Output path:
+M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/
+
+Output file names:
+id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+
+Starting the processing steps
+id01, i0j0; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id01-img_Ch405 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif
+id01, i0j1; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id01-img_Ch488 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (2, 125, 1169, 414)
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+saved shape : (2, 125, 1169, 414)
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id02, i1j0; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id02-img_Ch405 nm_Angle225.0_Tile2-cropNorm-bicubic-scaled0.25.tif
+id02, i1j1; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id02-img_Ch488 nm_Angle225.0_Tile2-cropNorm-bicubic-scaled0.25.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (2, 125, 1169, 414)
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+saved shape : (2, 125, 1169, 414)
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id03, i2j0; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id03-img_Ch405 nm_Angle135.0_Tile3-cropNorm-bicubic-scaled0.25.tif
+id03, i2j1; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id03-img_Ch488 nm_Angle135.0_Tile3-cropNorm-bicubic-scaled0.25.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (2, 125, 1169, 414)
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+saved shape : (2, 125, 1169, 414)
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id04, i3j0; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id04-img_Ch405 nm_Angle45.0_Tile4-cropNorm-bicubic-scaled0.25.tif
+id04, i3j1; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id04-img_Ch488 nm_Angle45.0_Tile4-cropNorm-bicubic-scaled0.25.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (2, 125, 1169, 414)
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+saved shape : (2, 125, 1169, 414)
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id05, i4j0; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id05-img_Ch405 nm_Angle270.0_Tile5-cropNorm-bicubic-scaled0.25.tif
+id05, i4j1; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id05-img_Ch488 nm_Angle270.0_Tile5-cropNorm-bicubic-scaled0.25.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (2, 125, 1169, 414)
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+saved shape : (2, 125, 1169, 414)
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id06, i5j0; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id06-img_Ch405 nm_Angle225.0_Tile6-cropNorm-bicubic-scaled0.25.tif
+id06, i5j1; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id06-img_Ch488 nm_Angle225.0_Tile6-cropNorm-bicubic-scaled0.25.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (2, 125, 1169, 414)
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+saved shape : (2, 125, 1169, 414)
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+id07, i6j0; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id07-img_Ch405 nm_Angle45.0_Tile7-cropNorm-bicubic-scaled0.25.tif
+id07, i6j1; single channel shape: (125, 1169, 414), channel path: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id07-img_Ch488 nm_Angle45.0_Tile7-cropNorm-bicubic-scaled0.25.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (2, 125, 1169, 414)
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+saved shape : (2, 125, 1169, 414)
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-multiChannel(CZYX)-Ch405,488nm/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm.tif
+
+Process finished with exit code 0

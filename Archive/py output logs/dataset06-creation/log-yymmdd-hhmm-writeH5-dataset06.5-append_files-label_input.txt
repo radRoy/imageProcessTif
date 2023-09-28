@@ -1,0 +1,2 @@
+script finished at 2023.09.28, hhmm
+for dataset06.5 creation, label path, writeH5 append

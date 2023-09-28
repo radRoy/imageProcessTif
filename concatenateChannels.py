@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     ''' STATIC VARIABLE DEFINITION '''
     suffix_multi_channel = '-multiChannel(CZYX)'
-    channel_string = 'Ch405,488,561nm'
+    channel_string = 'Ch405,488nm'
     suffix_multi_channel += '-' + channel_string
     ''' STATIC VARIABLE DEFINITION END '''
 
@@ -148,9 +148,7 @@ if __name__ == '__main__':
         ''' THE LINE DOING THE CONCATENATING FROM SINGLE TO MULTI CHANNEL '''
         # do the np.array conversion thing
         concatenated = np.array(concatenated)
-        print(f'concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400)): {concatenated.shape}')
+        print(f'concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): {concatenated.shape}')
 
         # export the concatenated ndarray to an actual tif file
         fH.export_file(concatenated, output_concatenated_file_paths[i])
-
-    exit(0)
