@@ -216,9 +216,9 @@ def read_tif_stack(tif_stack_filepath: str):
     reads in and returns a tif stack.
 
     Args:
-        tif_stack_filepath: str, absolute tif stack file path
+        tif_stack_filepath: str, absolute tif stack file path.
 
-    Returns: `numpy.ndarray` containing that tif image
+    Returns: `numpy.ndarray` containing that tif image.
 
     """
     return skimage.io.imread(tif_stack_filepath)
@@ -237,7 +237,8 @@ def export_file(image: numpy.ndarray, filename: str):
 
     skimage.io.imsave(filename, image)  # , photometric='minisblack'
 
-    print("saved shape :", image.shape)
+    print("export_file(): saved shape :", image.shape)
+    print(f"export_file(): saved bitdepth (numpy type): {image.dtype}")
     print("export_file(): File created: {}".format(filename))
 
     pass
@@ -302,6 +303,13 @@ def exclude_extension_from_filename(filename_with_extension: str, delim="."):
     extension = parts[-1]
 
     return filename, extension
+
+
+def get_string_list_filtered_by_ending(l: list, s: str):
+    for x in l:
+        if not x.endswith(s):
+            l.remove(x)
+    return l
 
 
 if __name__ == "__main__":

@@ -1,2 +1,0 @@
-script finished at 2023.09.28, hhmm
-for dataset06.4 creation, raw path, writeH5 new

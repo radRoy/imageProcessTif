@@ -1,0 +1,101 @@
+script finished at 2023.09.28, hhmm
+for dataset06.4 creation, label path, writeH5 append
+
+C:\Users\Dancer\Documents\imageProcessTif\venv\Scripts\python.exe C:\Users\Dancer\Documents\imageProcessTif\writeH5.py
+
+Program start: 2023-09-29 18:57:55.890514
+
+ h5 append mode: tif (input) file paths:
+M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id01-img_Ch638 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id02-img_Ch638 nm_Angle225.0_Tile2-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id03-img_Ch638 nm_Angle135.0_Tile3-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id04-img_Ch638 nm_Angle45.0_Tile4-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id05-img_Ch638 nm_Angle270.0_Tile5-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id06-img_Ch638 nm_Angle225.0_Tile6-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id07-img_Ch638 nm_Angle45.0_Tile7-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+
+ h5 append mode: h5 (output) file paths:
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+
+H5 files are going to be appended to.
+
+i: 0, Opening a tif file: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id01-img_Ch638 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id01-img_Ch638 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (125, 1169, 414)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (2, 125, 1169, 414)
+
+i: 1, Opening a tif file: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id02-img_Ch638 nm_Angle225.0_Tile2-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id02-img_Ch638 nm_Angle225.0_Tile2-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (125, 1169, 414)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (2, 125, 1169, 414)
+
+i: 2, Opening a tif file: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id03-img_Ch638 nm_Angle135.0_Tile3-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id03-img_Ch638 nm_Angle135.0_Tile3-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (125, 1169, 414)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (2, 125, 1169, 414)
+
+i: 3, Opening a tif file: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id04-img_Ch638 nm_Angle45.0_Tile4-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id04-img_Ch638 nm_Angle45.0_Tile4-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (125, 1169, 414)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (2, 125, 1169, 414)
+
+i: 4, Opening a tif file: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id05-img_Ch638 nm_Angle270.0_Tile5-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id05-img_Ch638 nm_Angle270.0_Tile5-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (125, 1169, 414)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (2, 125, 1169, 414)
+
+i: 5, Opening a tif file: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id06-img_Ch638 nm_Angle225.0_Tile6-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id06-img_Ch638 nm_Angle225.0_Tile6-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (125, 1169, 414)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (2, 125, 1169, 414)
+
+i: 6, Opening a tif file: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id07-img_Ch638 nm_Angle45.0_Tile7-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-label-processed/babb03-raw-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest/id07-img_Ch638 nm_Angle45.0_Tile7-cropNorm-bicubic-scaled0.25-label-blur3D1-Otsu570-largest.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint8-h5/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (125, 1169, 414)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (2, 125, 1169, 414)
+
+Program finish: 2023-09-29 19:00:08.321563
+----	----	----	----
+
+Process finished with exit code 0

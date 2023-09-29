@@ -1,0 +1,111 @@
+for dataset06.4 creation, convert 16 to 8 bit.
+
+C:\Users\Dancer\Documents\imageProcessTif\venv\Scripts\python.exe C:\Users\Dancer\Documents\imageProcessTif\convertTifList16bitTo8bit.py
+
+Program start: 2023-09-29 18:35:35.377167
+
+Input directory:
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/
+Input file paths:
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+
+Output directory:
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/
+Output file paths:
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+Starting the processing steps
+
+i: 0, Opening image: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+Opened image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint16): uint16
+Converting image to uint8 (8bit)
+Converted image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint8): uint8
+Saving the converted 8bit tif image
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (2, 125, 1169, 414)
+export_file(): saved bitdepth (numpy type): uint8
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+i: 1, Opening image: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+Opened image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint16): uint16
+Converting image to uint8 (8bit)
+Converted image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint8): uint8
+Saving the converted 8bit tif image
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (2, 125, 1169, 414)
+export_file(): saved bitdepth (numpy type): uint8
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+i: 2, Opening image: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+Opened image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint16): uint16
+Converting image to uint8 (8bit)
+Converted image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint8): uint8
+Saving the converted 8bit tif image
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (2, 125, 1169, 414)
+export_file(): saved bitdepth (numpy type): uint8
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+i: 3, Opening image: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+Opened image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint16): uint16
+Converting image to uint8 (8bit)
+Converted image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint8): uint8
+Saving the converted 8bit tif image
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (2, 125, 1169, 414)
+export_file(): saved bitdepth (numpy type): uint8
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+i: 4, Opening image: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+Opened image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint16): uint16
+Converting image to uint8 (8bit)
+Converted image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint8): uint8
+Saving the converted 8bit tif image
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (2, 125, 1169, 414)
+export_file(): saved bitdepth (numpy type): uint8
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+i: 5, Opening image: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+Opened image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint16): uint16
+Converting image to uint8 (8bit)
+Converted image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint8): uint8
+Saving the converted 8bit tif image
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (2, 125, 1169, 414)
+export_file(): saved bitdepth (numpy type): uint8
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+i: 6, Opening image: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16.tif
+Opened image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint16): uint16
+Converting image to uint8 (8bit)
+Converted image's shape: (2, 125, 1169, 414), bitdepth (np.ndarray.dtype, expect np.uint8): uint8
+Saving the converted 8bit tif image
+C:\Users\Dancer\Documents\imageProcessTif\fileHandling.py:238: UserWarning: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (2, 125, 1169, 414)
+export_file(): saved bitdepth (numpy type): uint8
+export_file(): File created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488nm-uint16-uint8/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488nm-uint16-uint8.tif
+
+Program finish: 2023-09-29 18:41:05.139918
+----	----	----	----
+
+Process finished with exit code 0

@@ -1,7 +1,10 @@
 import os.path
 import tkinter as tk
-import fileHandling as fH
+import datetime
+
 import h5py
+
+import fileHandling as fH
 import readH5
 
 
@@ -29,6 +32,8 @@ def tif_append_h5(data_array, h5_path, internal_path):
 
 
 if __name__ == "__main__":
+
+    print(f"\nProgram start: {datetime.datetime.now()}")
 
     # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows.
     window = tk.Tk()
@@ -145,8 +150,10 @@ if __name__ == "__main__":
         print(f'\nNew H5 files are going to be created.')
     for i, file_path in enumerate(file_paths):
 
+        # open the tif file
+        print(f"\ni: {i}, Opening a tif file: {file_path}")
         a_tif = fH.read_tif_stack(file_path)
-        print(f'\nA tif file has been opened and will be written to an H5 file. Properties of this tif file:')
+        print(f'A tif file has been opened and will be written to an H5 file. Properties of this tif file:')
         print(f' python type: {type(a_tif)}\n python shape (format): {a_tif.shape}\n file path: {file_path}\n dimension type (~bit depth per pixel): {a_tif.dtype}')  # testing
         created_file_path_out = tif_append_h5(data_array=a_tif, h5_path=h5_file_paths[i], internal_path=internal_path)
         # break  # testing
@@ -156,4 +163,4 @@ if __name__ == "__main__":
         for key in list(h5file.keys()):
             print(f"Shape of python-saved H5 file / internal H5 path: 'key' {key}: {h5file[key].shape}")
 
-    exit(0)
+    print(f"\nProgram finish: {datetime.datetime.now()}\n----\t----\t----\t----")

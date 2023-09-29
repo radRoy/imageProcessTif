@@ -1,0 +1,86 @@
+for dataset06.3 creation, raw path, writeH5 new
+
+C:\Users\Dancer\Documents\imageProcessTif\venv\Scripts\python.exe C:\Users\Dancer\Documents\imageProcessTif\writeH5.py
+
+Program start: 2023-09-29 18:06:30.574831
+
+ h5 create mode: tif (input) file paths:
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+
+ h5 create mode: h5 (output) file paths:
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+
+New H5 files are going to be created.
+
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id01-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 125, 1169, 414)
+
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id02-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 125, 1169, 414)
+
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id03-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 125, 1169, 414)
+
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id04-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 125, 1169, 414)
+
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id05-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 125, 1169, 414)
+
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id06-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 125, 1169, 414)
+
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 125, 1169, 414)
+ file path: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: M:/data/d.walther/Microscopy/dataset06/tif-raw-processed/babb03-raw-cropNorm-bicubic-scaled0.25-autofluo-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5/id07-cropNorm-bicubic-scaled0.25-multiChannel(CZYX)-Ch405,488,561nm-uint8-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 125, 1169, 414)
+
+Program finish: 2023-09-29 18:13:31.646491
+----	----	----	----
+
+Process finished with exit code 0
