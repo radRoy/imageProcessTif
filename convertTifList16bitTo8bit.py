@@ -7,6 +7,8 @@ purpose: convert a list of tif images (file paths) from type uint16 to uint8 and
 
 
 import numpy as np
+
+import files
 import fileHandling as fH
 
 
@@ -16,6 +18,7 @@ def convertTifList16bitTo8bit(file_paths: list):
 
 if __name__ == "__main__":
 
-    inputs = fH.get_file_list(folder)
+    fs = files.Filestream(input_extension=".tif")
+    print(fs.__str__())
 
     exit()
