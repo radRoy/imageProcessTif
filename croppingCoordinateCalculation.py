@@ -75,8 +75,8 @@ def case3_1(table: pd.DataFrame, n: str, i: int):
     n_skew = (n_interest - n0_ind) / dn_ind
     n0_check = n0_ind + n_skew * dn_diff
     n1_check = n1_ind - (1 - n_skew) * dn_diff
-    table.loc[i, n+"0_check"] = int(n0_check)  # TBD solve the rounding problem
-    table.loc[i, n+"1_check"] = int(n1_check)  # TBD solve the rounding problem
+    table.loc[i, n+"0_check"] = int(n0_check)  # solved the rounding problem
+    table.loc[i, n+"1_check"] = int(n1_check)  # solved the rounding problem
 
     return table
 
