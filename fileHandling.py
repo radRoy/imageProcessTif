@@ -306,10 +306,23 @@ def exclude_extension_from_filename(filename_with_extension: str, delim="."):
 
 
 def get_string_list_filtered_by_ending(l: list, s: str):
-    for x in l:
-        if not x.endswith(s):
-            l.remove(x)
-    return l
+    """
+    Filters out all list elements that do not end with the specified file ending. Returns the filtered list, i.e., with the unwanted list elements excluded.
+
+    Args:
+        l: list - The string list intended to contain file paths
+        s: string - The desired ending string of the strings in list 'l', e.g., '.tif'
+
+    Returns: list 'l_out' - A copy of the input list but filtered to contain only strings that end with 's'.
+
+    """
+    l_out = []
+    for i, x in enumerate(l):
+        # Debugging
+        # print(f" i {i}, {x}")
+        if x.endswith(s):
+            l_out.append(x)
+    return l_out
 
 
 if __name__ == "__main__":
