@@ -148,10 +148,33 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - TEMP: This dataset was not created. I am keeping the note here because I am still planning to do something like this, but with a little more sophisticated labelling techniques.
   - Identical to the other dataset05s, except for the **label** creation threshold value - the purpose of this dataset is to set a different value for the intensity threshold labelling to investigate the effect of different labels on the model training performance metrics.
   - label threshold value: TBD
+  - normCrop: no_tail crop (refer to .roi files stored somewhere sensible (this repo, probably))
 
 - **dataset06**: VRAM study about channels, bitdepth, and patch shape
   - The purpose of this dataset is to refine the VRAM usage prediction formula by also considering number of channels and each channels bit depth. I also vary patch shape to experimentally confirm that there is no interaction between these VRAM usage predictors (TBD: note outcome regarding interaction)
-  - 
+  - babb03 data set
+  - ct3 (heart stain, aka tnnt2)
+  - crop: normCrop (all images cropped to the same size), whole body crop fr crop (TBD verify?)
+  - train/val/test: 5(id01-05) / 1(id06) / 1(id07)
+  - data taken from dataset03 (bicubic scaled by 0.25 in xyz)
+    - () raw input: autofluorescence, ranging from triple to single channel (405, 488, 561 nm).
+    - () label input: manual otsu threshold based on 638 nm channel
+- **dataset06.x** (.0 - .5):
+  - multi channel to single channel autofluorescence raw inputs: 405,488,651; 405,488; 405;
+  - once in 16 bit (numpy uint16) and once in 8 bit (numpy uint8)
+
+  - **dataset07**: Fluo single channel raw input test based on dataset03 processed images.
+  - The purpose of this dataset is to verify that to verify that I understand 3dunet and use it properly (control study for carrying on with autofluorescence segmentation goal). I hope to achieve this by using fluorescence images as the raw input to be trained to segment. This should work as it is the conventional approach in image segmentation 
+  - created on 231007
+  - in use since 231007
+  - babb03 data set
+  - ct3 (heart stain, aka tnnt2)
+  - crop: normCrop (all images cropped to the same size), whole body crop
+  - train/val/test: 5(id01-05) / 1(id06) / 1(id07)
+  - data taken from dataset03 (labels and fluo bicubic scaled by 0.25 in xyz)
+    - () raw input: fluo channel 638 nm
+    - () label input: manual otsu threshold based on 638 nm channel
+  - no processing steps performed, just used `writeH5.py` to convert the `.tif` images to `.h5` files.
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
