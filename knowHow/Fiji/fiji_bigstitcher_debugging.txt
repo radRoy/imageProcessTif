@@ -1,0 +1,4 @@
+Debugging TEMP notes: imagej bigstitcher opening h5 xml
+
+try 1: from Dancer PC, opening core drive file:
+Caused by: ch.systemsx.cisd.hdf5.exceptions.HDF5FileNotFoundException: Path is not a valid HDF5 file. (M:\data\d.walther\Microscopy\babb03\ct3\.\babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5)
