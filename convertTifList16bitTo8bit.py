@@ -79,6 +79,6 @@ if __name__ == "__main__":
 
         # export the concatenated ndarray to an actual tif file
         print(f"Saving the converted 8bit tif image")
-        fH.export_file(tif_8, output_paths[i])
+        fH.export_ndarray_to_file_path(tif_8, output_paths[i])
 
     print(f"\nProgram finish: {datetime.datetime.now()}\n----\t----\t----\t----")

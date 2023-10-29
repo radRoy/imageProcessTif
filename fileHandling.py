@@ -93,7 +93,15 @@ def extract_parent_path(file_path: str):
         # (absolute parent path, trailing slash, otherwise backslashes)
     """
 
-    return str(pathlib.Path(file_path).parent.absolute()) + '/'
+    # return str(pathlib.Path(file_path).parent.absolute()) + '/'  # (absolute parent path, trailing slash, otherwise backslashes)
+    return str(pathlib.Path(file_path).parent.absolute().as_posix()) + '/'  # path with only slashes and trailing slash.
+
+
+def extract_filename_from_file_path(file_path: str):
+    """
+    Returns the filename with extension from a given file path.
+    """
+    return pathlib.Path(file_path).name
 
 
 def get_file_list(parent_path=""):
@@ -224,7 +232,7 @@ def read_tif_stack(tif_stack_filepath: str):
     return skimage.io.imread(tif_stack_filepath)
 
 
-def export_file(image: numpy.ndarray, filename: str):
+def export_ndarray_to_file_path(image: numpy.ndarray, filename: str):
     """
     Exports a numpy.ndarray (e.g., a tif z stack) to .tif format.
 
@@ -259,6 +267,25 @@ def get_file_path_list(parent_path=""):
 
     #return [path + "/" + file for file in files]  # old, TBD: adapt usages such that they give the right input regarding trailing slash.
     return [parent_path + file for file in files]
+
+
+def extract_path_and_filename_from_file_path(file_path):
+    """
+    Returns tuple of the absolute path with trailing slash in file path and the filename with extension (path, filename.extension).
+    """
+    return extract_parent_path(file_path), extract_filename_from_file_path(file_path)  # path = absolute path with trailing slash. filename = filename with extension.
+
+
+def get_output_from_input_file_path_list_and_suffix(input_paths: list, suffix: str):
+    """
+    Takes list of absolute file paths and returns a list of the suffixed file paths, e.g., ['path/filename-suffix.extension', ...].
+    """
+    output_paths = []
+    for file_path in input_paths:
+        path, filename = extract_path_and_filename_from_file_path(file_path)
+        print(f"  fH.output_from_input()~: {path} - {filename}")
+        output_paths.append(path + rename_file(filename, suffix))
+    return output_paths
 
 
 def iterate_function_args_over_iterable(iterable, sub_function, *args):

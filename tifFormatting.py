@@ -51,7 +51,7 @@ def main(file_path, output_file_path):
         print("\nFile", file_path, "exists and is a file.")
 
         image_formatted = reformat_tif_stack(file_path)
-        fH.export_file(image_formatted, output_file_path)
+        fH.export_ndarray_to_file_path(image_formatted, output_file_path)
         return 0
 
     # else

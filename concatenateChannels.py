@@ -151,4 +151,4 @@ if __name__ == '__main__':
         print(f'concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): {concatenated.shape}')
 
         # export the concatenated ndarray to an actual tif file
-        fH.export_file(concatenated, output_concatenated_file_paths[i])
+        fH.export_ndarray_to_file_path(concatenated, output_concatenated_file_paths[i])

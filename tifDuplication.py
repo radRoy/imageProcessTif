@@ -37,7 +37,7 @@ def main(file_path, output_file_path, n_channels):
         print("\nFile", file_path, "exists and is a file.")
 
         image_formatted = duplicate_tif_stack(file_path, n_channels)
-        fH.export_file(image_formatted, output_file_path)
+        fH.export_ndarray_to_file_path(image_formatted, output_file_path)
         return 0
 
     # else
