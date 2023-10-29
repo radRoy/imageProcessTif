@@ -110,8 +110,8 @@ def main(str_internal_path: str, bool_mode_append: bool):
         fH.iterate_function_args_over_iterable(h5_file_paths, print)
 
     # ensure only the right file type is in the file path lists
-    file_paths = fH.get_string_list_filtered_by_ending(l=file_paths, s=".tif")
-    h5_file_paths = fH.get_string_list_filtered_by_ending(l=h5_file_paths, s=".h5")
+    file_paths = fH.get_string_list_filtered_by_wanted_ending(l=file_paths, s=".tif")
+    h5_file_paths = fH.get_string_list_filtered_by_wanted_ending(l=h5_file_paths, s=".h5")
 
     # The two file path (input and output) lists must contain the same number of elements.
     # h5_file_paths = h5_file_paths.append(h5_file_paths[0])  # testing assert statement below

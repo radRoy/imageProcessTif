@@ -256,7 +256,7 @@ def get_file_path_list(parent_path=""):
 
     parent_path = get_folder_path_dialog(window_title="Choose the folder you want the file path list from") if parent_path == "" else parent_path
     files = get_file_list(parent_path)
-    
+
     #return [path + "/" + file for file in files]  # old, TBD: adapt usages such that they give the right input regarding trailing slash.
     return [parent_path + file for file in files]
 
@@ -305,13 +305,13 @@ def exclude_extension_from_filename(filename_with_extension: str, delim="."):
     return filename, extension
 
 
-def get_string_list_filtered_by_ending(l: list, s: str):
+def get_string_list_filtered_by_wanted_ending(l: list, s: str):
     """
     Filters out all list elements that do not end with the specified file ending. Returns the filtered list, i.e., with the unwanted list elements excluded.
 
     Args:
-        l: list - The string list intended to contain file paths
-        s: string - The desired ending string of the strings in list 'l', e.g., '.tif'
+        l: list - The string list intended to contain file paths.
+        s: string - The desired ending string of the strings in list 'l', e.g., '.tif'.
 
     Returns: list 'l_out' - A copy of the input list but filtered to contain only strings that end with 's'.
 
@@ -321,6 +321,42 @@ def get_string_list_filtered_by_ending(l: list, s: str):
         # Debugging
         # print(f" i {i}, {x}")
         if x.endswith(s):
+            l_out.append(x)
+    return l_out
+
+
+def get_string_list_filtered_by_wanted_substring(l: list, s: str):
+    """
+    Filters out all list elements that do not contain the specified string. Returns the filtered list, i.e., with the unwanted list elements excluded.
+
+    Args:
+        l: list - The string list intended to contain file paths.
+        s: string - The desired sub string of the strings in list 'l', e.g., 'file_tree'.
+
+    Returns: list 'l_out' - A copy of the input list but filtered to contain only strings that contain 's'.
+
+    """
+    l_out = []
+    for x in l:
+        if s in x:
+            l_out.append(x)
+    return l_out
+
+
+def get_string_list_filtered_by_unwanted_substring(l: list, s: str):
+    """
+    Filters out all list elements that do not contain the specified string. Returns the filtered list, i.e., with the unwanted list elements excluded.
+
+    Args:
+        l: list - The string list intended to contain file paths.
+        s: string - The unwanted sub string of the strings in list 'l', e.g., ','.
+
+    Returns: list 'l_out' - A copy of the input list but filtered to contain only strings that do not contain 's'.
+
+    """
+    l_out = []
+    for x in l:
+        if s not in x:
             l_out.append(x)
     return l_out
 

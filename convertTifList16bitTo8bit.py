@@ -31,7 +31,7 @@ if __name__ == "__main__":
     input_paths = fH.get_file_path_list(input_directory)
     # filter input paths by file type
     input_extension = ".tif"
-    input_paths = fH.get_string_list_filtered_by_ending(input_paths, input_extension)
+    input_paths = fH.get_string_list_filtered_by_wanted_ending(input_paths, input_extension)
     # print the input directory and file paths
     print(f"\nInput directory:\n{input_directory}")
     print("Input file paths:")
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     # get input filenames to be renamed for output file export
     input_filenames = fH.get_file_list(input_directory)
-    input_filenames = fH.get_string_list_filtered_by_ending(input_filenames, input_extension)
+    input_filenames = fH.get_string_list_filtered_by_wanted_ending(input_filenames, input_extension)
 
     """ STATIC VARIABLE DEFINITION """
     suffix = "-uint8"
