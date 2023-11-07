@@ -176,6 +176,18 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - () label input: manual otsu threshold based on 638 nm channel
   - no processing steps performed, just used `writeH5.py` to convert the `.tif` images to `.h5` files.
 
+- **dataset08**: (babb03) Tif images for training with the Fiji 2D-UNet Plugin.
+  - babb03
+  - heart stain, CT3
+  - This unet plugin requires the tif images to be opened in Fiji.
+  - Tif images are required.
+  - Each training and validation image must have an Overlay of the segmentation label saved into it. Refer to this [video tutorial on generating training data by Thomas Naert](https://lienkamplab.org/wp-content/uploads/2021/10/2_Annotation.mp4) from the [lienkamplab.org page for deep learning resources](https://lienkamplab.org/deep-learning-models/).
+    - Therefore, I need to take my 3D binary masks (tif stacks) from a previous dataset (TBD: which one? note here.) and make Image > Overlay from them for each training and validation image (& per channel if multichannel training data).
+  
+  - **dataset08.1**: positive fluorescence control heart segmentation dataset
+
+  - **dataset08.2**: autofluorescence single channel heart segmentation dataset
+
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
