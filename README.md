@@ -163,7 +163,7 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - multi channel to single channel autofluorescence raw inputs: 405,488,651; 405,488; 405;
   - once in 16 bit (numpy uint16) and once in 8 bit (numpy uint8)
 
-  - **dataset07**: Fluo single channel raw input test based on dataset03 processed images.
+- **dataset07**: Fluo single channel raw input test based on dataset03 processed images.
   - The purpose of this dataset is to verify that to verify that I understand 3dunet and use it properly (control study for carrying on with autofluorescence segmentation goal). I hope to achieve this by using fluorescence images as the raw input to be trained to segment. This should work as it is the conventional approach in image segmentation 
   - created on 231007
   - in use since 231007
@@ -177,16 +177,17 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - no processing steps performed, just used `writeH5.py` to convert the `.tif` images to `.h5` files.
 
 - **dataset08**: (babb03) Tif images for training with the Fiji 2D-UNet Plugin.
+  - preprocessed images were taken from **dataset03**.
+    - scaling: bicubic scaling by 0.25 in all dimensions z, y and x.
+    - cropping: normalised cropping including the whole body.
   - babb03
   - heart stain, CT3
   - This unet plugin requires the tif images to be opened in Fiji.
   - Tif images are required.
   - Each training and validation image must have an Overlay of the segmentation label saved into it. Refer to this [video tutorial on generating training data by Thomas Naert](https://lienkamplab.org/wp-content/uploads/2021/10/2_Annotation.mp4) from the [lienkamplab.org page for deep learning resources](https://lienkamplab.org/deep-learning-models/).
     - Therefore, I need to take my 3D binary masks (tif stacks) from a previous dataset (TBD: which one? note here.) and make Image > Overlay from them for each training and validation image (& per channel if multichannel training data).
-  
-  - **dataset08.1**: positive fluorescence control heart segmentation dataset
-
-  - **dataset08.2**: autofluorescence single channel heart segmentation dataset
+  - **dataset08.0**: positive fluorescence control heart segmentation dataset
+  - **dataset08.1**: autofluorescence single channel heart segmentation dataset
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
