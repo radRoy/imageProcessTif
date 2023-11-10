@@ -1,44 +1,46 @@
 /*
  * Daniel Walther
  * Creation Date: 08.11.2023 (dd.mm.yyyy)
- * purpose: create label overlays on input images, based on binary masks from intensity thresholding. Change the labelling to sparsely annotated (sparse binary mask label overlay, all other slices should contain a ROI with label "ignore" according to Falk et al paper on unet).
+ * purpose: Create label overlays on input images, based on binary masks from intensity thresholding.
+ *   addition: Creation of 3D segmentation model by training 2Dunet with 2D images: split up z-stacks into 2D .tif images with one slice per image with slices without organ of interest being annotated with an "ignore" ROI overlay.
+ * 
+ * links:
+ *   https://static-content.springer.com/esm/art%3A10.1038%2Fs41592-018-0261-2/MediaObjects/41592_2018_261_MOESM1_ESM.pdf section SN 2.2.1 - 3D paragraph.
  */
 
 
-exit("Hang on! Verify that the macro actually does what you want. Then delete this print statement.");
-
-
-// All slices that should be taken as basis for sparse annotations.
+// first and last slices that contain label pixels
 
 // Below values are for cropped and scaled images from the 'raw-cropNorm-bicubic-scaled0.25-fluo' folder from dataset03, with images from tiff-ct3, babb03.
 // The corresponding labels (also relevant for the slice numbers below) are in the 'Y:\Users\DWalther\Microscopy\ dataset08\ raw-cropNorm-bicubic-scaled0.25-fluo-labelBinary-Otsu630-largest' folder.
 
 // specimen id01
-slices = newArray(38, 66);  // TBD TBContinued
+startSlice = 30;
+endSlice = 67;
 
 // specimen id02
-//startSlice = 51;
-//endSlice = 86;
+startSlice = 51;
+endSlice = 86;
 
 // specimen id03
-//startSlice = 50;
-//endSlice = 84;
+startSlice = 50;
+endSlice = 84;
 
 // specimen id04
-//startSlice = 39;
-//endSlice = 76;
+startSlice = 39;
+endSlice = 76;
 
 // specimen id05
-//startSlice = 44;
-//endSlice = 74;
+startSlice = 44;
+endSlice = 74;
 
 // specimen id06
-//startSlice = 55;
-//endSlice = 93;
+startSlice = 55;
+endSlice = 93;
 
 // specimen id07
-//startSlice = 46;
-//endSlice = 74;
+startSlice = 46;
+endSlice = 74;
 
 // 1. comment out all except the wanted specimen id above.
 // 2. open and bring to foreground that specimen's binary label .tif image.
@@ -47,16 +49,23 @@ slices = newArray(38, 66);  // TBD TBContinued
 run("ROI Manager...");
 organLabel = "heart";  // dataset08, babb03-ct3
 
-// z-size in this batch is 125, normalised cropping (same size for all specimens)
-for (i = 0; i < 125; i++) {
-	
+for (i = 1; i <= nSlices; i++) {
 	Stack.setSlice(i);
-	print("slice: " + getSliceNumber());
-	run("Create Selection");  // automatically selects all pixels with value 255, just what I need for creating selections of binary organ masks.
+		//print("slice: " + getSliceNumber());
+	
+	// if(...){ <annotate slice> } else{ <ignore slice> }
+	if (i >= startSlice && i <= endSlice) {run("Create Selection");}  // automatically selects all pixels with value 255, just what I need for creating selections of binary organ masks.
+	else {run("Select All");}
+
 	roiManager("Add");  // adds the selection to the ROI manager
 	roiManager("Select", i - startSlice);  // selecting the just created ROI by index in the ROI manager.
-	roiManager("Rename", organLabel);  // renaming that ROI
-	RoiManager.setPosition(i);  // "Sets the position of the selected selections."
+	
+	// if(...){ <annotate slice> } else{ <ignore slice> }
+	if (i >= startSlice && i <= endSlice) {roiManager("Rename", organLabel + "#1");}  // renaming that ROI
+			// Why the #1? Refer to above linked unet paper by Falk et al section SN 2.2.1
+	else {roiManager("rename", "ignore");}
+
+	RoiManager.setPosition(i);  // "Sets the position of the selected selections." Necessary because renaming a ROI somehow removes its slice information.
 }
 
 
@@ -79,10 +88,6 @@ suffix = "-labelBinaryOverlay-Otsu630-largest-" + organLabel;  // 'organLabel' f
 suffix = "-labelBinaryOverlay-Otsu" + thresholdMin + "-largest-" + organLabel;  // 'thresholdMin' from another macro, the other labelTifsHeart-dataset08 one.
 	// 'largest' stems from the processing step extracting the largest blob from multiple threshold segmentation masks in one fluorescence image.
 
-// 7. close all image windows
-close("*");
-
-// 8. reset Roi Manager (ctrl+a => 'Delete') (delete all rois in the list)
-roiManager("reset");
-
+close("*");  // 7. close all image windows
+roiManager("reset");  // 8. reset Roi Manager (ctrl+a => 'Delete') (delete all rois in the list)
 // 9. go to step 1 for next image &/ specimen
