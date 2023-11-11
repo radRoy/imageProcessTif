@@ -3,6 +3,8 @@ repo creation date: 19.06.2023 (dd.mm.yyyy)
 
 # <u>imageProcessTif</u>
 
+Some `.ijm` files have been moved to the new repo [`radRoy/WaltherFiji`][radRoy/WaltherFiji] (as of 11.11.2023) which is locally embedded into Fiji's scripting directory making my macros in that repo appear in the `Plugins` tab of Fiji.
+
 My repository containing ImageJ Macros and python scripts for processing TIFF (tif) and HDF5 (h5, hdf5) files for use with 3D U-Net (3dunet). The files available from start stem from around 09.05.2023, upon which later IJMacros (ijm) were built. In general, the ijm files are for the image processing regardless of 3dunet input data format (referred below) and the python scripts are for the input data formatting steps after the binary label images have been created. Most parts of the whole image processing workflow have been automated by script files (that includes macros).
 
 The [input data format](https://github.com/wolny/pytorch-3dunet#input-data-format) for multi-channel image data required by [3D U-Net](https://github.com/wolny/pytorch-3dunet) is (C, Z, Y, X) with proper handling of internal paths in the h5 datasets given to 3D U-Net. The HDF5 or TIFF outputs from the [mesoSPIM](https://mesospim.org/) are in a different format. This requires some image processing beyond creation of training labels.
@@ -239,3 +241,5 @@ default
 = Yen  
 
 Conclusion: Since 'Otsu' thresholding was used before and Thomas Naert reported it to work the best, I will use the Fiji built-in Otsu thresholding algorithm.
+
+[radrRoy/WaltherFiji]: https://github.com/radRoy/WaltherFiji
