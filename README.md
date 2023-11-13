@@ -189,6 +189,10 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - Each training and validation image must have an Overlay of the segmentation label saved into it. Refer to this [video tutorial on generating training data by Thomas Naert](https://lienkamplab.org/wp-content/uploads/2021/10/2_Annotation.mp4) from the [lienkamplab.org page for deep learning resources](https://lienkamplab.org/deep-learning-models/).
     - Therefore, I need to take my 3D binary masks (tif stacks) from a previous dataset (TBD: which one? note here.) and make Image > Overlay from them for each training and validation image (& per channel if multichannel training data).
   - **dataset08.0**: positive fluorescence control heart segmentation dataset
+    - I separated the single slices of every specime's z-stack into separate tif images (one slice per tif image), on the group drive. I wrote an `.ijm` script for that.
+    - I did not use all the slices for training a unet model. Refer to my [`README-protocol.md`][README protocol] entry for the  [day 231113][231113 monday] for potentially more information.
+    - train / val: specimen id01-id05 train, id06-id07 val.
+    - slices 3, 13, 23, ..., 123 were used for each specimen.
   - **dataset08.1**: autofluorescence single channel heart segmentation dataset
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
@@ -243,3 +247,6 @@ default
 Conclusion: Since 'Otsu' thresholding was used before and Thomas Naert reported it to work the best, I will use the Fiji built-in Otsu thresholding algorithm.
 
 [radrRoy/WaltherFiji]: https://github.com/radRoy/WaltherFiji
+
+[README protocol]: https://github.com/radRoy/msc/blob/master/README-protocol.md
+[231113 monday]: https://github.com/radRoy/msc/blob/master/README-protocol.md#231113-monday
