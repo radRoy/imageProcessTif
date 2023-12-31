@@ -14,14 +14,14 @@ import h5py
 import fileHandling as fH
 
 
-def open_h5(file_path_h5):
+def open_h5(file_path_h5, mode="r"):
     # file_h5: str to an .h5 file including absolute path
-    h5 = h5py.File(file_path_h5, "r")
+    h5 = h5py.File(file_path_h5, mode)
     return h5
 
 
 def get_resolution_h5(file_path_h5):
-    file = open_h5(file_path_h5)
+    file = h5py.File(name=file_path_h5, mode="r")
     key = list(file.keys())[-1]
     # print(f"this file's shape: {file[key].shape}")  # testing (shape)
     # print(f"this file's shape's type: {type(file[key].shape)}")  # testing (tuple)
