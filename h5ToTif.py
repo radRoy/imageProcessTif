@@ -5,8 +5,15 @@ purpose: read .h5 file and export to .tif format. Intended use case: Take predic
 """
 
 
-import skimage
+import tkinter as tk
+import numpy as np
+
+
+# import skimage
+import cv2  # aka opencv-python for installation
 import h5py
+
+
 from imageProcessTif import fileHandling as fH
 
 
@@ -22,18 +29,33 @@ def main():
             continue
 
         print(f"Opening file {file_path_h5}")
-        image = h5py.File(name=file_path_h5, mode="r")  # read .h5 image to np.ndarray
+        hdf = h5py.File(name=file_path_h5, mode="r")  # read .h5 image to np.ndarray
+        keys = list(hdf.keys())
+        print(f"list hdf5 items: {keys}")
+        for j in range(len(keys)):
+            img_ds = hdf[keys[j]][()]
+            print(f'Image Dataset info: Shape={img_ds.shape},Dtype={img_ds.dtype}')  # shape and dtype of hdf5 dataset
+            img_ds: np.ndarray  # add python type hint for np. ... auto-completion
+            img_ds = img_ds.astype(dtype=np.uint32)  # https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html
+                # https://numpy.org/doc/stable/reference/arrays.scalars.html#unsigned-integer-types
 
-        file_path_tif = file_path_h5.replace(".h5", ".tif")  # define output file path
-        print(f"Saving file {file_path_tif}")
-        print(image)
-        skimage.io.imsave(fname=file_path_tif, arr=image)  # save (.tif) file
-        print(f"File saved.")
+            file_path_tif = file_path_h5.replace(".h5", f"-key_{keys[j]}.tif")  # define output file path
+            print(f"Saving file {file_path_tif}")
+            # print(hdf)
+            # skimage.io.imsave(fname=file_path_tif, arr=image)  # save (.tif) file
+            cv2.imwrite(file_path_tif, img_ds)
+            print(f"File saved.")
 
     return 0
 
 
 if __name__ == "__main__":
+
+    # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows.
+    window = tk.Tk()
+    window.wm_attributes('-topmost', 1)
+    window.withdraw()  # this suppresses the tk window
+
     print("\n- - - - - - - - - -\nstart program.\n")
     main()
     print("\nend program.")
