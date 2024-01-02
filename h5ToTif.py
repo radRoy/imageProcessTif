@@ -12,6 +12,7 @@ import numpy as np
 # import skimage
 import cv2  # aka opencv-python for installation
 import h5py
+import npy2bdv  # Nikita's h5 handling package
 
 
 from imageProcessTif import fileHandling as fH
