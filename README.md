@@ -195,6 +195,20 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - slices 3, 13, 23, ..., 123 were used for each specimen.
   - **dataset08.1**: autofluorescence single channel heart segmentation dataset
 
+- **dataset09**: (babb03-ct3) Eye labels, tif images for training with the fixed 3D U-Net using pytorch-3dunet.
+  - in creation since: 240105 or so, earliest fiji macro created on 240107.
+  - purpose/goal of this dataset: Proof of concept - prove the 3d autofluorescence segmentation is possible with the eyes of Xenopus tropicalis embryos at NF stage 42-44. Sample size n = 7 (train + val + test).
+  - kind of data: multichannel autofluorescence data (405, 488, 561 nm), labels from autofluorescence, 1 output channel.
+  - dense annotations of the eyes used for training.
+  - software used for label creation:
+    - Fiji, ImageJ Macro
+    - Fiji: creating binary masks manually with Otsu Auto Threshold in the slice with the cross section of the eye and no heart (because the heart is brighter than the eye, heart stain).
+    - ImageJ Macro: `[WaltherFiji]/Labelling/label_tifs_eyes-dataset09-binary_to_overlay.ijm` used for converting the binary masks to ROI overlays, with labels "nothing" and "eye".
+    - Fiji: Manually alter overlays/ROIs such that only the eyes are included in the ROIs. Use drawing tools like polygon or similar.
+    - (Fiji Macro: Add inverted label "background" in all the slices where there is an "eye" label. based on [Cicek et al 2016 3D U-Net](https://doi.org/10.48550/arXiv.1606.06650) paper)
+    - TBD Decide approach: Multi-class labelling for pytorch-3dunet: Base decisions on the Cicek et al 2016 paper and the [Wolny et al 2020 PlantSeg](https://doi.org/10.7554/eLife.57613) paper.
+    - TBD Decide approach: python HDF5 creation: custom scripts in [imageProcessTif] or Nikita's scripts in [npy2bdv].
+
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
@@ -216,6 +230,8 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
 	- https://imagej.net/Presentations
 - Github
 	- https://github.com/fiji
+
+  [imageProcessTif]
 
 Any publication that uses Fiji should cite the original Fiji paper:  
 
@@ -246,7 +262,11 @@ default
 
 Conclusion: Since 'Otsu' thresholding was used before and Thomas Naert reported it to work the best, I will use the Fiji built-in Otsu thresholding algorithm.
 
-[radrRoy/WaltherFiji]: https://github.com/radRoy/WaltherFiji
+[radRoy/WaltherFiji]: https://github.com/radRoy/WaltherFiji
+[WaltherFiji]: https://github.com/radRoy/WaltherFiji
+[radRoy/imageProcessTif]: https://github.com/radRoy/imageProcessTif
+[imageProcessTif]: https://github.com/radRoy/imageProcessTif
+[npy2bdv]: https://github.com/nvladimus/npy2bdv
 
 [README protocol]: https://github.com/radRoy/msc/blob/master/README-protocol.md
 [231113 monday]: https://github.com/radRoy/msc/blob/master/README-protocol.md#231113-monday
