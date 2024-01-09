@@ -216,6 +216,16 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - Fiji: Multi-class labelling for pytorch-3dunet: Choose a unique intensity value for each object (eye) to be segmented, based on combination of [Wolny et al 2020 PlantSeg](https://doi.org/10.7554/eLife.57613) and pytorch-3dunet sample data.
     - TBD Decide approach: python HDF5 creation: custom scripts in [imageProcessTif] or Nikita's scripts in [npy2bdv]. Can I keep the metadata with npy2bdv?
 
+- **dataset10**: babb03-ct3-scaled-uncropped-isometric ~(5.784 um)^3 voxel size, eye labels
+  - This dataset is isometric
+  - This dataset is **not cropped**, only scaled (downscaled). *Since pytorch-3dunet only uses patches containing a desired (default 60 %) minimal amount of the label ~volume, cropping is not important as long as I take the smallest of the input images for patch & stride shape calculations since the patch shape and number of images are the only significant predictors of VRAM usage during training.*  
+  => original voxel sizes (pixel lengths) of babb03 (z,y,x) in um: 2, 0.85, 0.85  
+  => scaled voxel sizes (pixel lengths) of dataset09 (z,y,x) in um: 5.784, 5.784, 5.784
+  - label creation: same process & approach as for dataset09 (Fiji manual + macro)
+  - software used for label creation (should not contradict process from dataset09):
+    - Fiji: threshold of fluo images, Otsu auto threshold at a cross section of an eye without heart on that slice, so that whole eye outline (where connected) is segmented. This resulted in intensity thresholds ranging from 343 to 378 (16 bit images).
+    - Fiji macro: [WaltherFiji]`/Labelling/label_tifs_eyes-dataset10-binary_to_overlay.ijm`
+
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
