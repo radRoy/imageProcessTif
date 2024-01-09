@@ -194,6 +194,7 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - train / val: specimen id01-id05 train, id06-id07 val.
     - slices 3, 13, 23, ..., 123 were used for each specimen.
   - **dataset08.1**: autofluorescence single channel heart segmentation dataset
+  - TBD: add description all further dataset08 sub-datasets (up to 08.07 or so were made).
 
 - **dataset09**: (babb03-ct3) Eye labels, tif images for training with the fixed 3D U-Net using pytorch-3dunet.
   - in creation since: 240105 or so, earliest fiji macro created on 240107.
@@ -201,13 +202,19 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - kind of data: multichannel autofluorescence data (405, 488, 561 nm), labels from autofluorescence, 1 output channel.
   - dense annotations of the eyes used for training.
   - software used for label creation:
-    - Fiji, ImageJ Macro
+    - Fiji, ImageJ Macro (= Fiji Macro = macro)
     - Fiji: creating binary masks manually with Otsu Auto Threshold in the slice with the cross section of the eye and no heart (because the heart is brighter than the eye, heart stain).
     - ImageJ Macro: `[WaltherFiji]/Labelling/label_tifs_eyes-dataset09-binary_to_overlay.ijm` used for converting the binary masks to ROI overlays, with labels "nothing" and "eye".
     - Fiji: Manually alter overlays/ROIs such that only the eyes are included in the ROIs. Use drawing tools like polygon or similar.
-    - (Fiji Macro: Add inverted label "background" in all the slices where there is an "eye" label. based on [Cicek et al 2016 3D U-Net](https://doi.org/10.48550/arXiv.1606.06650) paper)
-    - TBD Decide approach: Multi-class labelling for pytorch-3dunet: Base decisions on the Cicek et al 2016 paper and the [Wolny et al 2020 PlantSeg](https://doi.org/10.7554/eLife.57613) paper.
-    - TBD Decide approach: python HDF5 creation: custom scripts in [imageProcessTif] or Nikita's scripts in [npy2bdv].
+    - (TBD Wait for Wolny's response email: Is multi-class semantic segmenation possible in this way with pytorch-3dunet? - Probably skip this step and convert ROIs back to binary masks:)
+      - (TBD Fiji Macro: Add inverted label "background" in all the slices where there is an "eye" label. based on [Cicek et al 2016 3D U-Net](https://doi.org/10.48550/arXiv.1606.06650) paper)
+    - Fiji Macro: Convert ROI overlays back to binary masks, all with 255 intensity value (uint8), the default in Fiji. This can be used later on for multi-class semantic segmentation with appropriate changes (label processing, e.g.). Depends on how to do this, not clear in pytorch-3dunet documentation & accompanying paper ([Wolny et al 2020 PlantSeg](https://doi.org/10.7554/eLife.57613)).
+    - Fiji: correct the voxel size information of the .tif images.
+  - **dataset09.0**: binary semantic segmentation of eyes
+    - TBD Decide approach: python HDF5 creation: custom scripts in [imageProcessTif] or Nikita's scripts in [npy2bdv]. Can I keep the metadata with npy2bdv?
+  - **dataset09.1**: multi-class semantic segmentation of eyes
+    - Fiji: Multi-class labelling for pytorch-3dunet: Choose a unique intensity value for each object (eye) to be segmented, based on combination of [Wolny et al 2020 PlantSeg](https://doi.org/10.7554/eLife.57613) and pytorch-3dunet sample data.
+    - TBD Decide approach: python HDF5 creation: custom scripts in [imageProcessTif] or Nikita's scripts in [npy2bdv]. Can I keep the metadata with npy2bdv?
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
