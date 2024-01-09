@@ -225,6 +225,9 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - software used for label creation (should not contradict process from dataset09):
     - Fiji: threshold of fluo images, Otsu auto threshold at a cross section of an eye without heart on that slice, so that whole eye outline (where connected) is segmented. This resulted in intensity thresholds ranging from 343 to 378 (16 bit images).
     - Fiji macro: [WaltherFiji]`/Labelling/label_tifs_eyes-dataset10-binary_to_overlay.ijm`
+    - Fiji: brush tool allows editing ROIs from Overlays. [ImageJ Doc: Tools](https://imagej.net/ij/docs/tools.html), see "Selection Brush" for usage details.
+    - Fiji: brush tool fine adjustments: brightness & contrast settings:
+      - id01: min, max = 291, 556
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
