@@ -19,7 +19,7 @@ import npy2bdv  # Nikita's h5 handling package
 from imageProcessTif import fileHandling as fH
 
 
-def main():
+def main(suffix):
 
     path = fH.get_folder_path_dialog(window_title="Choose folder with .h5 file(s)")
     file_path_list = fH.get_file_path_list(parent_path=path)
@@ -30,6 +30,10 @@ def main():
         file_path_h5 = file_path_list[i]  # define input file path
         if not file_path_h5.endswith(".h5"):
             print(f"File {file_path_h5} does not end with '.h5'. Skipping file.")
+            continue
+        if suffix in file_path_h5:
+            print(f"File {file_path_h5} contains the suffix '{suffix}' and is therefore an output of this script."
+                  f"Skipping file.")
             continue
 
         print(f"Opening file {file_path_h5}")
@@ -47,7 +51,7 @@ def main():
                 # nc = 1, nz = 125, ny = 1169, nx = 414
 
             ## BDV version using Nikita's npy2bdv package:
-            fname = file_path_h5.replace(".h5", f"-npy2bdv_test.h5")
+            fname = file_path_h5.replace(".h5", f"-{suffix}.h5")
             bdv_writer = npy2bdv.BdvWriter(filename=fname, nchannels=nc)
 
             # filling the new h5 file with the np.ndarray channel by channel
@@ -80,5 +84,6 @@ if __name__ == "__main__":
     window.withdraw()  # this suppresses the tk window
 
     print("\n- - - - - - - - - -\nstart program.\n")
-    main()
+    suffix = "npy2bdv"
+    main(suffix)
     print("\nend program.")
