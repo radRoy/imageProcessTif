@@ -124,12 +124,17 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - id 01,02,03 in the train,
     - id 04,05 in the val,
     - id 06,07 in the test set (although the test set was not used in the end).
+
 - **dataset04**
-  - identical to dataset03, except for the train,val,test division: 5-1-1: specimen...
-    - id 01,02,03,04,05 in the train,
-    - id 06 in the val,
-    - id 07 in the test set.
+  - identical to dataset03, except for the train,val,test division: 5-1-1 (true for all datasets / models part of dataset04): Which specimen is in train/val/test set differs between dataset04 sub-versions.
   - The purpose of dataset04 is to try to achieve better validation evaluation scores (therefore, I think, better validation prediction images (which is the ultimate goal)) with 3dunet by increasing the number of train images.
+  - **dataset04.a**
+    - = 3D model 10.a; val=id06, test=id07, train=id01,02,03,04,05
+    - (rem.: input images, etc. taken from dataset03, read above point...)
+  - **dataset04.b**
+    - = 3D model 10.b; val=id05, test=id01, train=id02,03,04,06,07
+  - **dataset04.c**
+    - = 3D model 10.c; val=id04, test=id02, train=id01,03,05,06,07
 
 - **dataset05**
   - The purpose of this dataset is to get better validation performance metrics by increasing train sample size by pooling together ct3 (aka tnnt2) images from babb02.1 and babb03 microscope sessions.
