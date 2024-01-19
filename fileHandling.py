@@ -288,7 +288,7 @@ def get_output_from_input_file_path_list_and_suffix(input_paths: list, suffix: s
     return output_paths
 
 
-def iterate_function_args_over_iterable(iterable, sub_function, *args):
+def iterate_function_args_over_iterable(sub_function, iterable, *args):
     """
     iterates over a given iterable (e.g., list of strings), calls a given function with given set of input arguments
     *args every iteration.

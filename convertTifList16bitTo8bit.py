@@ -35,7 +35,7 @@ if __name__ == "__main__":
     # print the input directory and file paths
     print(f"\nInput directory:\n{input_directory}")
     print("Input file paths:")
-    fH.iterate_function_args_over_iterable(np.array(input_paths), print)
+    fH.iterate_function_args_over_iterable(print, np.array(input_paths))
 
     """ OUTPUT STUFF """
 
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     # print the output directory and file paths
     print(f"\nOutput directory:\n{output_directory}")
     print("Output file paths:")
-    fH.iterate_function_args_over_iterable(np.array(output_paths), print)
+    fH.iterate_function_args_over_iterable(print, np.array(output_paths))
 
     """ MAIN FILE OPERATIONS """
 

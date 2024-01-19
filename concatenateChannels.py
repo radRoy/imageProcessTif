@@ -69,10 +69,11 @@ if __name__ == '__main__':
     file_paths_grouped_by_specimen = get_file_paths_grouped_by_specimen_id(single_channel_paths, a_ids_unique)
     #print(np.array(grouped_specimen_file_paths).shape)  # 7 (n_specimens), 3 (n_single_channels_per_specimen)
     #fH.iterate_function_args_over_iterable(np.array(grouped_specimen_file_paths), print)
-    file_paths_grouped_by_specimen = fH.iterate_function_args_over_iterable(file_paths_grouped_by_specimen, sorted)  # sorts in ascending order, within specimens
+    file_paths_grouped_by_specimen = fH.iterate_function_args_over_iterable(sorted,
+                                                                            file_paths_grouped_by_specimen)  # sorts in ascending order, within specimens
     file_paths_grouped_by_specimen = sorted(file_paths_grouped_by_specimen)  # sorts in ascending order (by specimen id)
     print("\nSorted raw input file paths:")
-    fH.iterate_function_args_over_iterable(np.array(file_paths_grouped_by_specimen), print)
+    fH.iterate_function_args_over_iterable(print, np.array(file_paths_grouped_by_specimen))
 
     ''' OUTPUT STUFF '''
 
@@ -103,9 +104,11 @@ if __name__ == '__main__':
         #print(output_multi_channel_filenames[i])  # testing, e.g., 'id01-Ch405,488,561nm-cropNorm-bicubic-scaled0.25.tif'
 
     # append filename suffix to the filenames
-    output_multi_channel_filenames = fH.iterate_function_args_over_iterable(output_multi_channel_filenames, fH.rename_file, *[suffix_multi_channel])  # inserts a suffix between filenames and their extensions
+    output_multi_channel_filenames = fH.iterate_function_args_over_iterable(fH.rename_file,
+                                                                            output_multi_channel_filenames,
+                                                                            suffix_multi_channel)  # inserts a suffix between filenames and their extensions
     print('\nOutput file names:')
-    fH.iterate_function_args_over_iterable(output_multi_channel_filenames, print)  # testing
+    fH.iterate_function_args_over_iterable(print, output_multi_channel_filenames)  # testing
 
     # fuse output path and output file names together to form the (absolute) output file paths
     output_concatenated_file_paths = [output_path + filename for filename in output_multi_channel_filenames]

@@ -100,14 +100,14 @@ def main(str_internal_path: str, bool_mode_append: bool):
 
     if bool_mode_append:
         print(f'\n h5 append mode: tif (input) file paths:')
-        fH.iterate_function_args_over_iterable(file_paths, print)
+        fH.iterate_function_args_over_iterable(print, file_paths)
         print(f'\n h5 append mode: h5 (output) file paths:')
-        fH.iterate_function_args_over_iterable(h5_file_paths, print)
+        fH.iterate_function_args_over_iterable(print, h5_file_paths)
     else:
         print(f'\n h5 create mode: tif (input) file paths:')
-        fH.iterate_function_args_over_iterable(file_paths, print)
+        fH.iterate_function_args_over_iterable(print, file_paths)
         print(f'\n h5 create mode: h5 (output) file paths:')
-        fH.iterate_function_args_over_iterable(h5_file_paths, print)
+        fH.iterate_function_args_over_iterable(print, h5_file_paths)
 
     # ensure only the right file type is in the file path lists
     file_paths = fH.get_string_list_filtered_by_wanted_ending(l=file_paths, s=".tif")
