@@ -249,6 +249,10 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
         - 2  3  4  5  7 11
       - id07: 23: 20 unlabeled, 3 eye (damaged sample, only 1 eye, rest is fine): selected "unlabeled" slices (ignoring index of "eye" slices):
         - 5 18 20
+    - train-val division of embryo IDs:
+      - R output: 3 4 2 7 6 1 5
+      - id02,03,04,06,07 in the train set
+      - id01,05 in the val set
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 

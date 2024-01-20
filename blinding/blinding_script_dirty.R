@@ -64,3 +64,7 @@ print(sort(id07))
 #
 #> print(sort(id07))
 #[1]  5 18 20
+
+## dataset10.a train val division
+n_files <- 7
+print(numbers_blind <- sample.int(n_files, replace = FALSE))
