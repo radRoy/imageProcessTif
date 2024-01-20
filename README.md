@@ -236,19 +236,19 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - **dataset10.a** sparse eye fluo 2dunet
     - class balance (see [imageProcessTif]/blinding/... for the R scripts) (see `Group/.../dataset10.a/...-sliced/` for images, and `...-slice-balanced/` for the balanced selection thereof):
       - id01: 18: 10 unlabeled, 8 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 2 10  4  9  3  7  1  6
+        - 1  2  3  4  6  7  9 10
       - id02: 19: 13 unlabeled, 9 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 6  4  3 13 12  1  7 11  5
+        - 1  3  4  5  6  7 11 12 13
       - id03: 19: 11 unlabeled, 8 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 9  8  3 11  7  4  6  2
+        - 2  3  4  6  7  8  9 11
       - id04: 21: 15 unlabeled, 6 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 11  7 14 12  8  6
+        - 6  7  8 11 12 14
       - id05: 18: 11 unlabeled, 7 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 2  4  8  5  9 10 11
+        - 2  4  5  8  9 10 11
       - id06: 18: 12 unlabeled, 6 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 5  2  3  7 11 12
+        - 2  3  5  7 11 12
       - id07: 23: 20 unlabeled, 3 eye (damaged sample, only 1 eye, rest is fine): selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 18  8 15
+        - 8 15 18
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 

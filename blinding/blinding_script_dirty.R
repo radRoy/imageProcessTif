@@ -37,30 +37,30 @@ n_majority <- 20
 n_minority <- 3
 id07 <- sample(n_majority, n_minority, replace = FALSE)
 
-print(id01)
-print(id02)
-print(id03)
-print(id04)
-print(id05)
-print(id06)
-print(id07)
-#> print(id01)
-#[1]  2 10  4  9  3  7  1  6
+print(sort(id01))
+print(sort(id02))
+print(sort(id03))
+print(sort(id04))
+print(sort(id05))
+print(sort(id06))
+print(sort(id07))
+#> print(sort(id01))
+#[1]  1  2  3  4  6  7  9 10
 #
-#> print(id02)
-#[1]  6  4  3 13 12  1  7 11  5
+#> print(sort(id02))
+#[1]  1  3  4  5  6  7 11 12 13
 #
-#> print(id03)
-#[1]  9  8  3 11  7  4  6  2
+#> print(sort(id03))
+#[1]  2  3  4  6  7  8  9 11
 #
-#> print(id04)
-#[1] 11  7 14 12  8  6
+#> print(sort(id04))
+#[1]  6  7  8 11 12 14
 #
-#> print(id05)
-#[1]  2  4  8  5  9 10 11
+#> print(sort(id05))
+#[1]  2  4  5  8  9 10 11
 #
-#> print(id06)
-#[1]  5  2  3  7 11 12
+#> print(sort(id06))
+#[1]  2  3  5  7 11 12
 #
-#> print(id07)
-#[1] 18  8 15
+#> print(sort(id07))
+#[1]  8 15 18
