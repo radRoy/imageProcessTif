@@ -237,18 +237,18 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - class balance (see [imageProcessTif]/blinding/... for the R scripts) (see `Group/.../dataset10.a/...-sliced/` for images, and `...-slice-balanced/` for the balanced selection thereof):
       - id01: 18: 10 unlabeled, 8 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
         - 1  2  3  4  6  7  9 10
-      - id02: 19: 13 unlabeled, 9 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 1  3  4  5  6  7 11 12 13
+      - id02: 19: 13 unlabeled, 6 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
+        - 1  3  4  6 12 13
       - id03: 19: 11 unlabeled, 8 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 2  3  4  6  7  8  9 11
+        - 3  5  6  7  8  9 10 11
       - id04: 21: 15 unlabeled, 6 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 6  7  8 11 12 14
+        - 7 10 11 12 14 15
       - id05: 18: 11 unlabeled, 7 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 2  4  5  8  9 10 11
+        - 2 4 5 6 7 8 9
       - id06: 18: 12 unlabeled, 6 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 2  3  5  7 11 12
+        - 2  3  4  5  7 11
       - id07: 23: 20 unlabeled, 3 eye (damaged sample, only 1 eye, rest is fine): selected "unlabeled" slices (ignoring index of "eye" slices):
-        - 8 15 18
+        - 5 18 20
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
