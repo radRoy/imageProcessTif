@@ -234,6 +234,7 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - Fiji: brush tool fine adjustments: brightness & contrast settings:
       - id01-07: min, max = 291, 556
   - **dataset10.a** sparse eye fluo 2dunet
+    - Caution! This dataset is useless for 2dunet training because its slices labeled with "unlabeled" should be called "ignore" for 2dunet to know such a slice contains no class at all.
     - class balance (see [imageProcessTif]/blinding/... for the R scripts) (see `Group/.../dataset10.a/...-sliced/` for images, and `...-slice-balanced/` for the balanced selection thereof):
       - id01: 18: 10 unlabeled, 8 eye: selected "unlabeled" slices (ignoring index of "eye" slices):
         - 1  2  3  4  6  7  9 10
