@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
     ''' STATIC VARIABLE DEFINITION '''
     suffix_multi_channel = '-multiChannel(CZYX)'
-    channel_string = 'Ch405,488nm'
+    channel_string = 'Ch405,488,561nm'
     suffix_multi_channel += '-' + channel_string
     ''' STATIC VARIABLE DEFINITION END '''
 
