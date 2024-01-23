@@ -1,0 +1,6 @@
+## dataset10.b train val test division
+n_files <- 7
+print(numbers_blind <- sample.int(n_files, replace = FALSE))  # [1] 2 3 5 7 6 4 1
+# => id 2,3,5,6,7 train
+# => id 4 val
+# => id 1 test
