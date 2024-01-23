@@ -1,0 +1,27 @@
+id: (C, Z, Y, X)
+01: (3, 173, 743, 435),
+	z-roi: 61-151 = 90
+02: (3, 190, 743, 435),
+	z-roi: 64-185 = 121
+03: (3, 190, 743, 435),
+	z-roi: 57-185 = 128
+04: (3, 207, 743, 435),
+	z-roi: 72-204 = 132
+05: (3, 173, 743, 435),
+	z-roi: 30-163 = 133
+06: (3, 173, 743, 435),
+	z-roi: 19-155 = 136
+07: (3, 225, 743, 435),
+	z-roi: 110-214 = 114 (where two eyes would be~),
+	z-roi: 173-214 = 41 (one eye)
+
+redo labels (minor corrections)
+02:
+	- z185 full white => remove roi
+	- z174 eye missing => add roi
+	- z159 speck of mask outside the eye => correct roi
+	- z89 speck of mask outside the eye => correct roi
+03:
+	- z166 speck of mask outside the eye
+04:
+	- z85 speck outside eye
