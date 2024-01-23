@@ -1,0 +1,98 @@
+C:\Users\Dancer\Documents\venv\Scripts\python.exe C:\Users\Dancer\Documents\imageProcessTif\writeH5.py 
+
+Program start: 2024-01-22 21:40:56.802542
+
+ h5 append mode: tif (input) file paths:
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id01-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id02-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id03-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id04-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id05-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id06-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id07-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+
+ h5 append mode: h5 (output) file paths:
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id01-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id02-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id03-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id04-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id05-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id06-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id07-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+
+H5 files are going to be appended to.
+
+i: 0, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id01-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id01-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id01-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (173, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 173, 743, 435)
+
+i: 1, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id02-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (190, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id02-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id02-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (190, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 190, 743, 435)
+
+i: 2, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id03-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (190, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id03-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id03-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (190, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 190, 743, 435)
+
+i: 3, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id04-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (207, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id04-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id04-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (207, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 207, 743, 435)
+
+i: 4, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id05-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id05-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id05-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (173, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 173, 743, 435)
+
+i: 5, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id06-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id06-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id06-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (173, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 173, 743, 435)
+
+i: 6, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id07-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (225, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input label/id07-Ch638nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-fluo-eye-Otsu_auto-overlay-labels_preprocessed-refined-mask.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset10/dataset10.b/input raw-h5/id07-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (225, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 225, 743, 435)
+
+Program finish: 2024-01-22 21:46:03.301309
+----	----	----	----
+
+Process finished with exit code 0
