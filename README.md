@@ -258,6 +258,16 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
       - id02,03,04,06,07 in the train set
       - id01,05 in the val set
       - id01-07: min, max = 291, 556, with context dependent adaptation to see a large fraction of the 16bit range in brightness.
+  - **dataset10.b** dense eye 3 channel autofluo 3dunet
+    - train-val-test division:
+      - id 2,3,5,6,7 train
+      - id 4 val
+      - id 1 test
+  - **dataset10.c** dense eye fluo 3dunet
+    - train-val-test division: same as dataset10.b for comparability:
+      - id 2,3,5,6,7 train
+      - id 4 val
+      - id 1 test
 
 - **dataset11**: babb03 a5 scaled uncropped isometric ~(.... um)^3
   - This dataset is isometric
