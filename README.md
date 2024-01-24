@@ -227,7 +227,7 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
 - **dataset10**: babb03-ct3-scaled-uncropped-isometric ~(5.784 um)^3 voxel size, **eye labels**
   - This dataset is isometric
   - This dataset is **not cropped**, only scaled (downscaled). *Since pytorch-3dunet only uses patches containing a desired (default 60 %) minimal amount of the label ~volume, cropping is not important as long as I take the smallest of the input images for patch & stride shape calculations since the patch shape and number of images are the only significant predictors of VRAM usage during training.*  
-  => original voxel sizes (pixel lengths) of babb03 (z,y,x) in um: 2, 0.85, 0.85  
+  => original voxel sizes (pixel lengths) of babb03, ct3 (probably the same in all babb03 stains) (z,y,x) in um: 2, 0.85, 0.85  
   => scaled voxel sizes (pixel lengths) of dataset09 (z,y,x) in um: 5.784, 5.784, 5.784
   - label creation: same process & approach as for dataset09 (Fiji manual + macro)
   - software used for label creation (should not contradict process from dataset09):
@@ -258,6 +258,18 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
       - id02,03,04,06,07 in the train set
       - id01,05 in the val set
       - id01-07: min, max = 291, 556, with context dependent adaptation to see a large fraction of the 16bit range in brightness.
+
+- **dataset11**: babb03 a5 scaled uncropped isometric ~(.... um)^3
+  - This dataset is isometric
+  - This dataset is **not cropped**, only scaled (downscaled).  
+  => original voxel sizes (pixel lengths) of babb03, a5 (probably the same in all babb03 stains) (z,y,x) in um: 2.0, 0.85, 0.85  
+  => all the scalings made for these a5 recordings:  
+    - scaled by (z,y,x): ~(0.345760547, 0.146948232, 0.146948232); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
+    - scaled by (z,y,x): ~(0.363636363, 0.154545454, 0.154545454); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
+    - scaled by (z,y,x): ~(0.4, 0.17, 0.17); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
+    - scaled by (z,y,x): ~(0.444444444, 0.188888889, 0.188888889); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
+    - scaled by (z,y,x): ~(0.5, 0.2125, 0.2125); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)  
+  - This dataset was scaled to voxel size (zyx): ~ 5.784, 5.784, 5.784
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
