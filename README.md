@@ -235,7 +235,6 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - Fiji macro: [WaltherFiji]`/Labelling/label_tifs_eyes-dataset10-binary_to_overlay.ijm`
     - Fiji: brush tool allows editing ROIs from Overlays. [ImageJ Doc: Tools](https://imagej.net/ij/docs/tools.html), see "Selection Brush" for usage details.
     - Fiji: brush tool fine adjustments: brightness & contrast settings:
-<<<<<<< Updated upstream
       - id01-07: min, max = 291, 556
   - **dataset10.a** sparse eye fluo 2dunet
     - Caution! This dataset is useless for 2dunet training because its slices labeled with "unlabeled" should be called "ignore" for 2dunet to know such a slice contains no class at all.
@@ -258,9 +257,7 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
       - R output: 3 4 2 7 6 1 5
       - id02,03,04,06,07 in the train set
       - id01,05 in the val set
-=======
       - id01-07: min, max = 291, 556, with context dependent adaptation to see a large fraction of the 16bit range in brightness.
->>>>>>> Stashed changes
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
