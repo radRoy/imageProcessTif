@@ -268,6 +268,14 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
       - id 2,3,5,6,7 train
       - id 4 val
       - id 1 test
+  - **dataset10.c.1** dense eye fluo 3dunet
+    - only difference to dataset10.c: train-val-test assignment
+    - train-val-test division & val loss experiment: Same blinding assignment as in dataset10.b and 10.c. But train-val-test is 3-2-2 in this dataset, instead of 5-1-1 as in the other two, to see whether val loss avg curves are different when there are more than 1 images in val set
+      - id 2,3,5 train
+      - id 6,7 val
+      - id 4,1 test
+    - Question to answer with this dataset: Does the validation loss avg curve in the tensorboard training statistics vary more than the usual range ~ 0.01 with n_val_images > 1, or is it something else causing the curve to stay practically constant? Usually when using deep learning, the validation loss decreases similarly in shape and magnitude as the training loss does.  
+    => Refert to the [MSc]/README-protocol.md of 240125 for more information (answer) about this question.
 
 - **dataset11**: babb03 a5 scaled uncropped isometric ~(.... um)^3
   - This dataset is isometric
