@@ -54,6 +54,6 @@ set.seed(240123)  # dataset10.b train/val/test division
 ## dataset10.b train val division
 n_files <- 7
 print(numbers_blind <- sample.int(n_files, replace = FALSE))  # [1] 2 3 5 7 6 4 1
-# => id 2,3,5,6,7 train
-# => id 4 val
-# => id 1 test
+# => train=id02,03,05,07,06, val=id04, test=id01 in dataset10.b.0 (aka dataset10.b)
+# => train=id02,03,05,04,01, val=id07, test=id06 in dataset10.b.1
+# => train=id02,07,06,04,01, val=id03, test=id05 in dataset10.b.2

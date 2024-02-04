@@ -259,10 +259,16 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
       - id01,05 in the val set
       - id01-07: min, max = 291, 556, with context dependent adaptation to see a large fraction of the 16bit range in brightness.
   - **dataset10.b** dense eye 3 channel autofluo 3dunet
-    - train-val-test division:
-      - id 2,3,5,6,7 train
-      - id 4 val
-      - id 1 test
+    - r blinding ([imageProcessTif]...): sample output: 2 3 5 7 6 4 1
+    - **dataset10.b.0**, previously known as just `dataset10.b`
+      - val=id04, test=id01, train=id02,03,05,06,07
+    - **dataset10.b.1**
+      - val=id07, test=id06, train=id02,03,05,01,04
+    - **dataset10.b.2**
+      - val=id03, test=id05, train=id01,02,04,06,07
+    - **dataset10.b.3** - bonus: id07 only has 1 eye (organ of interest). This model's segmentation serves as a preliminary test for how 3dunet handles different, ~pseudo-mutant~ (damaged sample), samples without being trained for them (again, just an eye missing, everything else intact and not morphed significantly).
+      - val=id02, test=id07, train=id01,03,04,05,06,
+      
   - **dataset10.c** dense eye fluo 3dunet
     - train-val-test division: same as dataset10.b for comparability:
       - id 2,3,5,6,7 train
