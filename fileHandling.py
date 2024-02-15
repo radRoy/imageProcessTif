@@ -388,7 +388,23 @@ def get_string_list_filtered_by_unwanted_substring(l: list, s: str):
     return l_out
 
 
+def print_file_properties(ndarray):
+
+    if os.path.isfile(ndarray):
+        image = skimage.io.imread(ndarray)
+        print(
+            f'\nfile path: {ndarray=}\n dimension type (~bit depth per pixel): {image.dtype=}\n python type: {type(image)=}\n python shape (format): {image.shape=}')  # testing
+
+    else:
+        print("\nFile", ndarray, "does not exist or is not a file.")
+
+
 if __name__ == "__main__":
+
+    # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows.
+    window = tk.Tk()
+    window.wm_attributes('-topmost', 1)
+    window.withdraw()  # this suppresses the tk window
 
     # insert test blocks archived in the functions above for testing
 
