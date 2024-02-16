@@ -46,6 +46,12 @@ def intersection_over_union(label, segmentation):
     return iou
 
 
+def get_iou_filename(path_segmentation):
+    parent = fH.extract_parent_path(path_segmentation)  # absolute path with slashes, trailing slash
+    threshold_string = path_segmentation.split("-")[-1].strip(".tif").lstrip(" ")  # 'Otsu manual 0.25'
+    return f"{parent}iou - {threshold_string}.txt"
+
+
 def main(path_label="", path_segmentation="", custom_input=False):
 
     # label & segmentation image file handling in case where no file paths were given
@@ -95,8 +101,7 @@ def main(path_label="", path_segmentation="", custom_input=False):
 
     # saving the result to a file next to the segmentation input file
 
-    parent = fH.extract_parent_path(path_segmentation)  # absolute path with slashes, trailing slash
-    output_iou = f"{parent}iou.txt"
+    output_iou = get_iou_filename(path_segmentation)
     print(f"Writing to a .txt file next to the segmentation file: {output_iou=}")
     with open(output_iou, "a", encoding="utf-8") as f:
         f.writelines(f"{datetime.datetime.now()}\n")  # enter date
@@ -110,4 +115,5 @@ def main(path_label="", path_segmentation="", custom_input=False):
 
 if __name__ == "__main__":
 
-    main(custom_input=True)
+    main()
+    #main(custom_input=True)
