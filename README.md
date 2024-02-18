@@ -1,5 +1,4 @@
 Daniel Walther
-Daniel Walther
 repo creation date: 19.06.2023 (dd.mm.yyyy)
 
 # <u>imageProcessTif</u>
@@ -283,27 +282,27 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - Question to answer with this dataset: Does the validation loss avg curve in the tensorboard training statistics vary more than the usual range ~ 0.01 with n_val_images > 1, or is it something else causing the curve to stay practically constant? Usually when using deep learning, the validation loss decreases similarly in shape and magnitude as the training loss does.  
     => Refert to the [MSc]/README-protocol.md of 240125 for more information (answer) about this question.
 
-- **dataset11**: babb03 a5 scaled uncropped isometric ~(.... um)^3
+- **dataset11**: babb03 a5 scaled uncropped isometric ~(5.784(? - TBDecided) um)^3
   - This dataset is isometric
   - This dataset is **not cropped**, only scaled (downscaled).  
   => original voxel sizes (pixel lengths) of babb03, a5 (probably the same in all babb03 stains) (z,y,x) in um: 2.0, 0.85, 0.85  
   => all the scalings made for these a5 recordings:  
     - *scaled by (z,y,x): ~(0.345760547, 0.146948232, 0.146948232); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)*
-    - scaled by (z,y,x): ~(0.4, 0.17, 0.17); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
-    - scaled by (z,y,x): ~(0.444444444, 0.188888889, 0.188888889); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
-    - scaled by (z,y,x): ~(0.5, 0.2125, 0.2125); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)  
+    - scaled by (z,y,x): ~(0.4, 0.17, 0.17); resulting voxel size in um (z,y,x): (5, 5, 5)
+    - scaled by (z,y,x): ~(0.444444444, 0.188888889, 0.188888889); resulting voxel size in um (z,y,x): ~(4.500, 4.500, 4.500)
+    - scaled by (z,y,x): ~(0.5, 0.2125, 0.2125); resulting voxel size in um (z,y,x): (4, 4, 4)  
   - This dataset was scaled to voxel size (zyx): ~ 5.784, 5.784, 5.784 - scaled by ~(0.345760547, 0.146948232, 0.146948232) in (z,y,x)
 
-- **dataset12**: babb03 col2a1 scaled uncropped isometric ~(... um)^3
+- **dataset12**: babb03 col2a1 scaled uncropped isometric ~(5.784(? - TBDecided) um)^3
   - This dataset is isometric
   - This dataset is **not cropped**, only scaled (downscaled).  
   => original voxel sizes (pixel lengths) of babb03, col2a1 (z,y,x) in um: 2.0, 0.85, 0.85 (?)  
   => TBD: all the scalings To Be made for these a5 recordings (?):  
     - *scaled by (z,y,x): ~(0.345760547, 0.146948232, 0.146948232); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)*
-    - scaled by (z,y,x): ~(0.4, 0.17, 0.17); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
-    - scaled by (z,y,x): ~(0.444444444, 0.188888889, 0.188888889); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)
-    - scaled by (z,y,x): ~(0.5, 0.2125, 0.2125); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)  
-  - TBD: This dataset was scaled to voxel size (zyx): ~ 5.784, 5.784, 5.784
+    - scaled by (z,y,x): ~(0.4, 0.17, 0.17); resulting voxel size in um (z,y,x): (5, 5, 5)
+    - scaled by (z,y,x): ~(0.444444444, 0.188888889, 0.188888889); resulting voxel size in um (z,y,x): ~(4.500, 4.500, 4.500)
+    - scaled by (z,y,x): ~(0.5, 0.2125, 0.2125); resulting voxel size in um (z,y,x): (4, 4, 4)  
+  - TBD: This dataset was scaled to voxel size (zyx): ~ 5.784, 5.784, 5.784 - scaled by ~(0.345760547, 0.146948232, 0.146948232) in (z,y,x)
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
