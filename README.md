@@ -292,6 +292,21 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - scaled by (z,y,x): ~(0.444444444, 0.188888889, 0.188888889); resulting voxel size in um (z,y,x): ~(4.500, 4.500, 4.500)
     - scaled by (z,y,x): ~(0.5, 0.2125, 0.2125); resulting voxel size in um (z,y,x): (4, 4, 4)  
   - This dataset was scaled to voxel size (zyx): ~ 5.784, 5.784, 5.784 - scaled by ~(0.345760547, 0.146948232, 0.146948232) in (z,y,x)
+  - Blinding (train/val/test) for this dataset done in python because RStudio deletes my blinding script on different devices for some reason.
+    - Script used: [imageProcessTif]`\blinding\blinding.py`
+    - random sequence with seed `random.seed(240220)`: 7, 5, 2, 1, 4, 6, 3
+  - **dataset11.a** is for boundary type model
+    - **dataset11.a.0**
+      - test 7; val 5; train 2,1,4,6,3
+    - **dataset11.a.1**
+      - test 2; val 1; train 4,6,3,7,5
+    - **dataset11.a.2**
+      - test 4; val 6; train 3,7,5,2,1
+  - **dataset11.b** is for nuclei type model
+    - The 11.b.x datasets have the same train/val/test assignment like the 11.a.x datasets
+    - **dataset11.b.0** see 11.a.x for info
+    - **dataset11.b.1** see 11.a.x for info
+    - **dataset11.b.2** see 11.a.x for info
 
 - **dataset12**: babb03 col2a1 scaled uncropped isometric ~(5.784(? - TBDecided) um)^3
   - This dataset is isometric
