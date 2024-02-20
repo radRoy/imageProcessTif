@@ -1,0 +1,103 @@
+C:\Users\dwalther\AppData\Local\anaconda3\python.exe H:\imageProcessTif\concatenateChannels.py
+
+Sorted raw input file paths:
+['Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id01-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id01-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id01-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif']
+['Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id02-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id02-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id02-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif']
+['Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id03-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id03-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id03-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif']
+['Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id04-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id04-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id04-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif']
+['Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id05-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id05-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id05-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif']
+['Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id06-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id06-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id06-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif']
+['Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id07-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id07-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif'
+ 'Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id07-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif']
+
+Output path:
+Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/
+
+Output file names:
+id01-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id02-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id03-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id04-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id05-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id06-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id07-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+
+Starting the processing steps
+id01, i0j0; single channel shape: (164, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id01-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id01, i0j1; single channel shape: (164, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id01-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id01, i0j2; single channel shape: (164, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id01-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (3, 164, 743, 435)
+H:\imageProcessTif\fileHandling.py:246: UserWarning: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id01-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (3, 164, 743, 435)
+export_file(): saved bitdepth (numpy type): uint16
+export_file(): File created: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id01-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id02, i1j0; single channel shape: (164, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id02-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id02, i1j1; single channel shape: (164, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id02-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id02, i1j2; single channel shape: (164, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id02-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (3, 164, 743, 435)
+H:\imageProcessTif\fileHandling.py:246: UserWarning: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id02-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (3, 164, 743, 435)
+export_file(): saved bitdepth (numpy type): uint16
+export_file(): File created: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id02-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id03, i2j0; single channel shape: (149, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id03-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id03, i2j1; single channel shape: (149, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id03-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id03, i2j2; single channel shape: (149, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id03-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (3, 149, 743, 435)
+H:\imageProcessTif\fileHandling.py:246: UserWarning: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id03-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (3, 149, 743, 435)
+export_file(): saved bitdepth (numpy type): uint16
+export_file(): File created: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id03-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id04, i3j0; single channel shape: (175, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id04-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id04, i3j1; single channel shape: (175, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id04-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id04, i3j2; single channel shape: (175, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id04-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (3, 175, 743, 435)
+H:\imageProcessTif\fileHandling.py:246: UserWarning: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id04-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (3, 175, 743, 435)
+export_file(): saved bitdepth (numpy type): uint16
+export_file(): File created: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id04-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id05, i4j0; single channel shape: (173, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id05-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id05, i4j1; single channel shape: (173, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id05-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id05, i4j2; single channel shape: (173, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id05-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (3, 173, 743, 435)
+H:\imageProcessTif\fileHandling.py:246: UserWarning: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id05-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (3, 173, 743, 435)
+export_file(): saved bitdepth (numpy type): uint16
+export_file(): File created: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id05-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id06, i5j0; single channel shape: (225, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id06-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id06, i5j1; single channel shape: (225, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id06-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id06, i5j2; single channel shape: (225, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id06-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (3, 225, 743, 435)
+H:\imageProcessTif\fileHandling.py:246: UserWarning: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id06-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (3, 225, 743, 435)
+export_file(): saved bitdepth (numpy type): uint16
+export_file(): File created: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id06-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+id07, i6j0; single channel shape: (156, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id07-Ch405nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id07, i6j1; single channel shape: (156, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id07-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+id07, i6j2; single channel shape: (156, 743, 435), channel path: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel/id07-Ch561nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+concatenated (multichannel) shape (should be sth. like (3, 100, 1000, 400) in the case of 3 channels & dataset03): (3, 156, 743, 435)
+H:\imageProcessTif\fileHandling.py:246: UserWarning: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id07-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif is a low contrast image
+  skimage.io.imsave(filename, image)  # , photometric='minisblack'
+export_file(): saved shape : (3, 156, 743, 435)
+export_file(): saved bitdepth (numpy type): uint16
+export_file(): File created: Y:/Users/DWalther/Microscopy/dataset11/input raw single channel-multiChannel(CZYX)-Ch405,488,561nm/id07-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+
+Process finished with exit code 0

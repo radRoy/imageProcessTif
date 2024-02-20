@@ -1,4 +1,10 @@
 """
+TBD: Take pytorch-3dunet prediction tif or better yet h5,
+calculate series of Otsu threshold images (use Fiji wrapper for python 'pyimagej', translate working .ijm to .py here)
+to calculate and converge on the highest IoU score (root finder (Nullstellensucher)),
+save results in a txt file.
+- - -
+
 Read in two binary mask .tif stacks of same size (with file path dialogs or testing without),
 calculate the Intersection over Union (IoU) between them,
 write IoU to a text file next to the segmentation file, alongside some additional info (date, time, input file paths).
@@ -19,6 +25,9 @@ from tkinter import filedialog
 
 import cv2
 import numpy as np
+import imagej
+
+ij = imagej.init()
 
 import fileHandling as fH
 
