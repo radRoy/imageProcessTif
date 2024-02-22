@@ -25,9 +25,6 @@ from tkinter import filedialog
 
 import cv2
 import numpy as np
-import imagej
-
-ij = imagej.init()
 
 import fileHandling as fH
 
@@ -77,7 +74,7 @@ def main(path_label="", path_segmentation="", custom_input=False):
     # label image file handling in case where no file path was given
 
     if not path_label:
-        path_label = 'sample images/id01 input label.tif'
+        path_label = '../../sample images/id01 input label.tif'
         print(f"Using sample images since no path provided: {path_label=}")
     if os.path.isfile(path_label):
         label = fH.read_tif_stack(path_label)
@@ -89,7 +86,7 @@ def main(path_label="", path_segmentation="", custom_input=False):
     # segmentation image file handling in case where no file path was given
 
     if not path_segmentation:
-        path_segmentation = 'sample images/chpt-240204-0 dataset10.b.0 - 3D_nuclei eye autofluo - best - id01 - Otsu 0.25.tif'
+        path_segmentation = '../../sample images/chpt-240204-0 dataset10.b.0 - 3D_nuclei eye autofluo - best - id01 - Otsu 0.25.tif'
         print(f"Using sample images since no path provided: {path_segmentation=}")
     if os.path.isfile(path_segmentation):
         segmentation = fH.read_tif_stack(path_segmentation)
@@ -208,7 +205,7 @@ if __name__ == "__main__":
     main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.75.tif")
     main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.875.tif")"""
 
-    parent_label_1 = "Y:/Users/DWalther/unet DW/chpt-240204-1 -O- dataset10.b.1 - 3D_nuclei eye autofluo - very good/240209-1 best/"
+    """parent_label_1 = "Y:/Users/DWalther/unet DW/chpt-240204-1 -O- dataset10.b.1 - 3D_nuclei eye autofluo - very good/240209-1 best/"
     parent_segmentation_1 = parent_label_1
     label_1 = "id06 input label.tif"
     parent_label_3 = "Y:/Users/DWalther/unet DW/chpt-240204-2 -O- dataset10.b.2 - 3D_nuclei eye autofluo - very good/240209-2 best/"
@@ -237,7 +234,7 @@ if __name__ == "__main__":
     main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.0625.tif")
     main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.07813.tif")
     main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.09375.tif")
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.1094.tif")
+    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.1094.tif")"""
 
     # small study (only path_segmentation differs - slightly different thresholds were chosen, Nullstellensuche in Bezug auf den besten IoU Wert)
     # => if a model is underpredicting - e.g., in this case, a boundary instead of a filled volume model was trained - the lowest possible prediction segmentation threshold is the highest scoring in IoU.
