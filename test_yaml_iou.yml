@@ -1,0 +1,19 @@
+date: 2024-02-23 21:21:52.696375
+label_path: H:/imageProcessTif/sample images/batch_processing/id05 input label.tif
+threshold_segmentation_by_IoU:
+  0.6596773066983307:
+  - threshold: 0.75
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing/chpt-240204-2
+      dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.75.tif
+  0.7564332236248247:
+  - threshold: 0.5
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing/chpt-240204-2
+      dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.5.tif
+  0.8190385271053529:
+  - threshold: 0.25
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing/chpt-240204-2
+      dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.25.tif
+  0.8417041313080259:
+  - threshold: 0.125
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing/chpt-240204-2
+      dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.125.tif

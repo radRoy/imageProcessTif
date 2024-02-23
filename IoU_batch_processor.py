@@ -28,15 +28,17 @@ Daniel Walther
 
 import os
 import datetime
-import tkinter as tk
 import tkinter.messagebox
 from tkinter import filedialog
 
 import cv2
 import numpy
 import numpy as np
+import yaml  # https://pyyaml.org/wiki/PyYAMLDocumentation , using yaml.safe_dump()
 
 import fileHandling as fH
+
+
 
 
 def get_label_image(home_dir: str):
@@ -177,29 +179,9 @@ def extract_threshold_from_filename(segmentation_path):
     return threshold
 
 
-def get_single_iou_string(iou: float, label_path: str, segmentation_path: str, threshold: float or int):
-
-    single_iou_string = ""
-    single_iou_string += f"{iou=}\n"  # enter iou
-    single_iou_string += f"{threshold=}\n"  # enter iou
-    single_iou_string += f" {segmentation_path=}\n"  # enter segmentation file path
-    single_iou_string += "\n"  # end with a newline (adds an empty line as separator between entries, should the same iou.txt file be written into multiple times)
-
-    return single_iou_string
-
-
-def get_iou_batch_string(label_path: str, single_iou_strings: list):
-
-    iou_batch_string = ""
-    iou_batch_string += f" {label_path=}\n"  # enter label file path
-    iou_batch_string += f" {datetime.datetime.now()}\n"  # enter date
-
-    return iou_batch_string
-
-
 def process_segmentation_batch(label_path, segmentation_paths):
 
-    iou_tuples_batch = []  # List should suffice for starters. Later, a dictionary would fit better, here.
+    iou_groups = []  # List should suffice for starters. Later, a dictionary would fit better, here.
     for i, segmentation_path in enumerate(segmentation_paths):
         print(f"\nsegmentation {i=}: {segmentation_path}")
 
@@ -223,13 +205,14 @@ def process_segmentation_batch(label_path, segmentation_paths):
         threshold = extract_threshold_from_filename(segmentation_path)
         print(f"{iou=}")
         print(f"{threshold=}")
-        iou_tuple = [iou, threshold, segmentation_path]
-        iou_tuples_batch.append(iou_tuple)
+        iou_groups.append([iou, threshold, segmentation_path])
 
-    return iou_tuples_batch
+    return iou_groups
 
 
-def main(default_dialog_home="Y:/Users/DWalther/unet DW"):
+def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
+
+    iou_dict_list = []  # Can ignore this for now.
 
     # Starting the main IoU batch processing loop
 
@@ -263,101 +246,57 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW"):
 
         # Starting the batch processor for one ground truth image and its selected threshold segmentation batch
 
-        iou_tuples_batch = process_segmentation_batch(label_path=label_path, segmentation_paths=segmentation_batch)
-        iou_tuples_batch = sorted(iou_tuples_batch, reverse=True)
-        print()
-        fH.iterate_function_args_over_iterable(print, iou_tuples_batch)
+        iou_groups = process_segmentation_batch(label_path=label_path, segmentation_paths=segmentation_batch)
+        print("\niou_groups unsorted:")
+        fH.iterate_function_args_over_iterable(print, iou_groups)
+
+        iou_groups_dict = {group[0]: group for group in iou_groups}
+        #print("\nunsorted dict:")
+        #print(iou_groups_dict)
+
+        iou_groups_dict_keys_sorted = sorted(iou_groups_dict)  # sorting by descending IoU
+        #print("\nsorted dict keys:")
+        #print(iou_groups_dict_keys_sorted)
+
+        iou_groups_sorted = [iou_groups_dict[key] for key in iou_groups_dict_keys_sorted]
+        print("\nsorted list:")
+        print(iou_groups_sorted)
+
+        thresholds = np.array(iou_groups)[:, 1]
+        threshold_min, threshold_max = min(thresholds), max(thresholds)  # print(f"test:\n {threshold_min}\n {threshold_max}")
+        label_extension = "." + label_path.split(".")[-1]
+        output_yaml_file_path = f"{label_path.strip(label_extension)} - iou_batch - lower threshold value range [{threshold_min}, {threshold_max}].yml"
+
+        # write the data to a yaml file. see cloud/yamlHandling.py for my first encounters with yaml coding/comprehension in python.
+
+        test_output_file_path = "H:/imageProcessTif/test_yaml_iou.yml"
+        output_file_path = test_output_file_path if testing else output_yaml_file_path
+        while os.isfile(output_file_path):
+            output_file_path += ".yml"
+        with open(output_file_path, 'w') as yaml_out:
+            # data sorted by IoU (because that's the key value, here)
+            iou_dict = {group[0]: [{"threshold": group[1]}, {"segmentation_path": f'{group[2]}'}] for group in iou_groups_sorted}
+            data = {"date": datetime.datetime.now(),
+                    "label_path": label_path,
+                    "threshold_segmentation_by_IoU": iou_dict}
+
+            # converting the dictionary into a string and writing it to the output file
+            output = yaml.safe_dump(data=data, width=293)  # line length of >256 should suffice (Win. path length limit)
+            yaml_out.write(output)
+
+        iou_dict_list.append(data)
 
     # main loop cancel message
     print("\n-----------------------------------------------------------"
           "\nIoU batch processor main loop was cancelled / has finished."
           "\n-----------------------------------------------------------")
 
-    pass
+    return iou_dict_list
 
 
 if __name__ == "__main__":
 
     user_home_dir = "Y:/Users/DWalther/unet DW"
     batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing"
-    main(default_dialog_home=batch_testing_home_dir)
-
-    # How I manually processed segmentation batches before:
-    """
-    parent_label_0 = "Y:/Users/DWalther/unet DW/chpt-240124-0 -O- dataset10.b - 3D eye autofluo - LR factor 0.4 (6 steps), patience 20 - good/chpt-240131-1 - last - good/"
-    parent_segmentation_0 = parent_label_0
-    label_0 = "id01 input label.tif"
-    main(path_label=parent_label_0 + label_0, path_segmentation=parent_segmentation_0 + "chpt-240124-0 last - dataset10.b - 3D eye autofluo - id01 unseen - Otsu manual 0.125.tif")
-    main(path_label=parent_label_0 + label_0, path_segmentation=parent_segmentation_0 + "chpt-240124-0 last - dataset10.b - 3D eye autofluo - id01 unseen - Otsu manual 0.25.tif")
-    main(path_label=parent_label_0 + label_0, path_segmentation=parent_segmentation_0 + "chpt-240124-0 last - dataset10.b - 3D eye autofluo - id01 unseen - Otsu manual 0.375.tif")
-    main(path_label=parent_label_0 + label_0, path_segmentation=parent_segmentation_0 + "chpt-240124-0 last - dataset10.b - 3D eye autofluo - id01 unseen - Otsu manual 0.5.tif")
-    main(path_label=parent_label_0 + label_0, path_segmentation=parent_segmentation_0 + "chpt-240124-0 last - dataset10.b - 3D eye autofluo - id01 unseen - Otsu manual 0.625.tif")
-    main(path_label=parent_label_0 + label_0, path_segmentation=parent_segmentation_0 + "chpt-240124-0 last - dataset10.b - 3D eye autofluo - id01 unseen - Otsu manual 0.75.tif")
-    main(path_label=parent_label_0 + label_0, path_segmentation=parent_segmentation_0 + "chpt-240124-0 last - dataset10.b - 3D eye autofluo - id01 unseen - Otsu manual 0.875.tif")
-    
-    parent_label_1 = "Y:/Users/DWalther/unet DW/chpt-240204-1 -O- dataset10.b.1 - 3D_nuclei eye autofluo - very good/240209-1 best/"
-    parent_segmentation_1 = parent_label_1
-    label_1 = "id06 input label.tif"
-    main(path_label=parent_label_1 + label_1, path_segmentation=parent_segmentation_1 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - best - id06 - Otsu manual 0.125.tif")
-    main(path_label=parent_label_1 + label_1, path_segmentation=parent_segmentation_1 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - best - id06 - Otsu manual 0.25.tif")
-    main(path_label=parent_label_1 + label_1, path_segmentation=parent_segmentation_1 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - best - id06 - Otsu manual 0.375.tif")
-    main(path_label=parent_label_1 + label_1, path_segmentation=parent_segmentation_1 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - best - id06 - Otsu manual 0.5.tif")
-    main(path_label=parent_label_1 + label_1, path_segmentation=parent_segmentation_1 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - best - id06 - Otsu manual 0.625.tif")
-    main(path_label=parent_label_1 + label_1, path_segmentation=parent_segmentation_1 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - best - id06 - Otsu manual 0.75.tif")
-    main(path_label=parent_label_1 + label_1, path_segmentation=parent_segmentation_1 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - best - id06 - Otsu manual 0.875.tif")
-    
-    parent_label_2 = "Y:/Users/DWalther/unet DW/chpt-240204-1 -O- dataset10.b.1 - 3D_nuclei eye autofluo - very good/240209-5 last/"
-    parent_segmentation_2 = parent_label_2
-    label_2 = "id06 input label.tif"
-    main(path_label=parent_label_2 + label_2, path_segmentation=parent_segmentation_2 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - last - id06 - Otsu manual 0.125.tif")
-    main(path_label=parent_label_2 + label_2, path_segmentation=parent_segmentation_2 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - last - id06 - Otsu manual 0.25.tif")
-    main(path_label=parent_label_2 + label_2, path_segmentation=parent_segmentation_2 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - last - id06 - Otsu manual 0.375.tif")
-    main(path_label=parent_label_2 + label_2, path_segmentation=parent_segmentation_2 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - last - id06 - Otsu manual 0.5.tif")
-    main(path_label=parent_label_2 + label_2, path_segmentation=parent_segmentation_2 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - last - id06 - Otsu manual 0.625.tif")
-    main(path_label=parent_label_2 + label_2, path_segmentation=parent_segmentation_2 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - last - id06 - Otsu manual 0.75.tif")
-    main(path_label=parent_label_2 + label_2, path_segmentation=parent_segmentation_2 + "chpt-240204-1 dataset10.b.1 - 3D_nuclei eye autofluo - last - id06 - Otsu manual 0.875.tif")
-    
-    parent_label_3 = "Y:/Users/DWalther/unet DW/chpt-240204-2 -O- dataset10.b.2 - 3D_nuclei eye autofluo - very good/240209-2 best/"
-    parent_segmentation_3 = parent_label_3
-    label_3 = "id05 input label.tif"
-    main(path_label=parent_label_3 + label_3, path_segmentation=parent_segmentation_3 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.125.tif")
-    main(path_label=parent_label_3 + label_3, path_segmentation=parent_segmentation_3 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.25.tif")
-    main(path_label=parent_label_3 + label_3, path_segmentation=parent_segmentation_3 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.375.tif")
-    main(path_label=parent_label_3 + label_3, path_segmentation=parent_segmentation_3 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.5.tif")
-    main(path_label=parent_label_3 + label_3, path_segmentation=parent_segmentation_3 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.625.tif")
-    main(path_label=parent_label_3 + label_3, path_segmentation=parent_segmentation_3 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.75.tif")
-    main(path_label=parent_label_3 + label_3, path_segmentation=parent_segmentation_3 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - best - id05 - Otsu manual 0.875.tif")
-    
-    parent_label_4 = "Y:/Users/DWalther/unet DW/chpt-240204-2 -O- dataset10.b.2 - 3D_nuclei eye autofluo - very good/240209-6 last/"
-    parent_segmentation_4 = parent_label_4
-    label_4 = "id05 input label.tif"
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.125.tif")
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.25.tif")
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.375.tif")
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.5.tif")
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.625.tif")
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.75.tif")
-    main(path_label=parent_label_4 + label_4, path_segmentation=parent_segmentation_4 + "chpt-240204-2 dataset10.b.2 - 3D_nuclei eye autofluo - last - id05 - Otsu manual 0.875.tif")
-    
-    parent_label_5 = "Y:/Users/DWalther/unet DW/chpt-240204-3 -O- dataset10.b.3 - 3D_nuclei eye autofluo - very good/240209-3 best/"
-    parent_segmentation_5 = parent_label_5
-    label_5 = "id07 input label.tif"
-    main(path_label=parent_label_5 + label_5, path_segmentation=parent_segmentation_5 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - best - id07 - Otsu manual 0.125.tif")
-    main(path_label=parent_label_5 + label_5, path_segmentation=parent_segmentation_5 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - best - id07 - Otsu manual 0.25.tif")
-    main(path_label=parent_label_5 + label_5, path_segmentation=parent_segmentation_5 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - best - id07 - Otsu manual 0.375.tif")
-    main(path_label=parent_label_5 + label_5, path_segmentation=parent_segmentation_5 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - best - id07 - Otsu manual 0.5.tif")
-    main(path_label=parent_label_5 + label_5, path_segmentation=parent_segmentation_5 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - best - id07 - Otsu manual 0.625.tif")
-    main(path_label=parent_label_5 + label_5, path_segmentation=parent_segmentation_5 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - best - id07 - Otsu manual 0.75.tif")
-    main(path_label=parent_label_5 + label_5, path_segmentation=parent_segmentation_5 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - best - id07 - Otsu manual 0.875.tif")
-    
-    parent_label_6 = "Y:/Users/DWalther/unet DW/chpt-240204-3 -O- dataset10.b.3 - 3D_nuclei eye autofluo - very good/240209-7 last/"
-    parent_segmentation_6 = parent_label_6
-    label_6 = "id07 input label.tif"
-    main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.125.tif")
-    main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.25.tif")
-    main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.375.tif")
-    main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.5.tif")
-    main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.625.tif")
-    main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.75.tif")
-    main(path_label=parent_label_6 + label_6, path_segmentation=parent_segmentation_6 + "chpt-240204-3 dataset10.b.3 - 3D_nuclei eye autofluo - last - id07 - Otsu manual 0.875.tif")
-    """
+    # main(default_dialog_home=batch_testing_home_dir, testing=True)
+    main()
