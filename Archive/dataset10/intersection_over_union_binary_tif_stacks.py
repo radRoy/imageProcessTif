@@ -78,7 +78,7 @@ def main(path_label="", path_segmentation="", custom_input=False):
         print(f"Using sample images since no path provided: {path_label=}")
     if os.path.isfile(path_label):
         label = fH.read_tif_stack(path_label)
-        fH.print_file_properties(path_label)  # zyx
+        fH.print_ndarray_properties(label)  # zyx
     else:
         print("\nFile", path_label, "does not exist.")
         exit(1)
@@ -90,7 +90,7 @@ def main(path_label="", path_segmentation="", custom_input=False):
         print(f"Using sample images since no path provided: {path_segmentation=}")
     if os.path.isfile(path_segmentation):
         segmentation = fH.read_tif_stack(path_segmentation)
-        fH.print_file_properties(path_segmentation)  # zyx
+        fH.print_ndarray_properties(segmentation)  # zyx
     else:
         print("\nFile", path_segmentation, "does not exist.")
         exit(1)

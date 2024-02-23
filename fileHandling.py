@@ -227,7 +227,6 @@ def read_tif_stack(tif_stack_filepath: str):
         tif_stack_filepath: str, absolute tif stack file path.
 
     Returns: `numpy.ndarray` containing that tif image.
-
     """
     return skimage.io.imread(tif_stack_filepath)
 
@@ -379,7 +378,6 @@ def get_string_list_filtered_by_unwanted_substring(l: list, s: str):
         s: string - The unwanted sub string of the strings in list 'l', e.g., ','.
 
     Returns: list 'l_out' - A copy of the input list but filtered to contain only strings that do not contain 's'.
-
     """
     l_out = []
     for x in l:
@@ -388,23 +386,32 @@ def get_string_list_filtered_by_unwanted_substring(l: list, s: str):
     return l_out
 
 
-def print_file_properties(ndarray):
+def print_ndarray_properties(ndarray: numpy.ndarray, file_path=""):
 
-    if os.path.isfile(ndarray):
-        image = skimage.io.imread(ndarray)
-        print(
-            f'\nfile path: {ndarray=}\n dimension type (~bit depth per pixel): {image.dtype=}\n python type: {type(image)=}\n python shape (format): {image.shape=}')  # testing
+    if file_path:  # False if file_path == "", among other cases
+        print(f'\nfile path: {ndarray=}')
+    print(f"Array properties:"
+          f"\n dimension type (~bit depth per pixel): {ndarray.dtype=}"
+          f"\n python type: {type(ndarray)=}"
+          f"\n python shape (format): {ndarray.shape=}")
 
-    else:
-        print("\nFile", ndarray, "does not exist or is not a file.")
+    pass
+
+
+def tkinter_window_init():
+
+    # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows when a pop-up is created.
+    window = tk.Tk()
+    window.wm_attributes('-topmost', 1)
+    window.withdraw()  # this suppresses the tk window
+
+    return 0
 
 
 if __name__ == "__main__":
 
-    # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows.
-    window = tk.Tk()
-    window.wm_attributes('-topmost', 1)
-    window.withdraw()  # this suppresses the tk window
+    # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows when a pop-up is created.
+    tkinter_window_init()
 
     # insert test blocks archived in the functions above for testing
 
