@@ -68,10 +68,20 @@ def get_iou_filename(iou, path_segmentation):
     return f"{parent}iou {iou} - {threshold_string}.txt"
 
 
-def main(path_label="", path_segmentation="", custom_input=False):
+def process_segmentation_batch(label, segmentation_batch):
+
+    iou_batch_data = []  # maybe a dictionary? list should suffice for starters.
+    for i, segmentation in enumerate(segmentation_batch):
+        segmentation_data = ["date, etc.", intersection_over_union(label, segmentation)]
+        iou_batch_data.append(segmentation_data)
+
+    return iou_batch_data
+
+
+def main(path_label="", path_segmentation="", custom_input=False, testing=False):
 
     # label & segmentation image file handling in case where no file paths were given
-
+        # => update this section to request a file batch
     if custom_input:
         # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows.
         window = tk.Tk()
@@ -80,8 +90,9 @@ def main(path_label="", path_segmentation="", custom_input=False):
         path_label = filedialog.askopenfilename(title="Choose the binary mask label .tif file")
         path_segmentation = filedialog.askopenfilename(title="Choose the binary mask segmentation .tif file")
 
+    """
     # label image file handling in case where no file path was given
-
+        # => update this focus on 'testing' function argument
     if not path_label:
         path_label = '../../sample images/id01 input label.tif'
         print(f"Using sample images since no path provided: {path_label=}")
@@ -93,7 +104,7 @@ def main(path_label="", path_segmentation="", custom_input=False):
         exit(1)
 
     # segmentation image file handling in case where no file path was given
-
+        # => update this focus on 'testing' function argument
     if not path_segmentation:
         path_segmentation = '../../sample images/chpt-240204-0 dataset10.b.0 - 3D_nuclei eye autofluo - best - id01 - Otsu 0.25.tif'
         print(f"Using sample images since no path provided: {path_segmentation=}")
@@ -103,20 +114,27 @@ def main(path_label="", path_segmentation="", custom_input=False):
     else:
         print("\nFile", path_segmentation, "does not exist.")
         exit(1)
+    """
+        # => emigrate the 'label' and 'segmentation' definition.
+        # => adapt to the new 'testing' case.
 
     # handling image shape exception
-
+        # => processing function
     if label.shape != segmentation.shape:
         print("\nError: Label and segmentation images must have the same shape (dimension shape & length) but they do not:")
         print(f" label.shape", label.shape)
         print(f" segmentation.shape", segmentation.shape)
 
     # IoU calculation
-
+        # => processing function
     iou = intersection_over_union(label=label, segmentation=segmentation)  # 'label' and 'segmentation' can be switched in order. Does not matter for this metric (commutative or so).
 
-    # saving the result to a file next to the segmentation input file
+    # --- --- --- # --- --- --- # --- --- --- # --- --- --- # --- --- --- TBD: adapt main() to this function call.
+    iou_batch = process_segmentation_batch(label, segmentation_batch)
+    # --- --- --- # --- --- --- # --- --- --- # --- --- --- # --- --- --- TBD: adapt main() to this function call.
 
+    # saving the result to a file next to the segmentation input file
+        # (=> processing function ?)
     output_iou = get_iou_filename(iou, path_segmentation)
     print(f"Writing to a .txt file next to the segmentation file: {output_iou=}")
     with open(output_iou, "a", encoding="utf-8") as f:
@@ -131,9 +149,9 @@ def main(path_label="", path_segmentation="", custom_input=False):
 
 if __name__ == "__main__":
 
-    # main()  # testing
-    while tkinter.messagebox.askokcancel("Calculate IoU with python", "Continue?"):
-        main(custom_input=True)  # application
+    main(testing=True)  # testing
+    # while tkinter.messagebox.askokcancel("Calculate IoU with python", "Continue?"):
+    #     main(custom_input=True)  # application
 
     """
     parent_label_0 = "Y:/Users/DWalther/unet DW/chpt-240124-0 -O- dataset10.b - 3D eye autofluo - LR factor 0.4 (6 steps), patience 20 - good/chpt-240131-1 - last - good/"
