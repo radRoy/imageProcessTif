@@ -25,7 +25,6 @@ extension date: 22.02.2024
 Daniel Walther
 """
 
-
 import os
 import datetime
 import tkinter.messagebox
@@ -39,6 +38,13 @@ import yaml  # https://pyyaml.org/wiki/PyYAMLDocumentation , using yaml.safe_dum
 import fileHandling as fH
 
 
+def is_numeric(s: str):
+    """Returns True if input is a number (integer or float) and returns False otherwise."""
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
 
 
 def get_label_image(home_dir: str):
@@ -77,7 +83,7 @@ def get_segmentation_batch(home_dir: str):
     # "...create an Open dialog and return the selected filename(s) that correspond to existing file(s)."
     segmentation_path_batch = filedialog.askopenfilenames(
         title="Choose at least one segmentation file belonging to the previously selected ground truth."
-              "The name should end with a threshold value.",
+              " The name should end with a threshold value range: `...[0.25,1].tif` with [lower,upper] threshold.",
         initialdir=home_dir
     )
 
@@ -87,7 +93,7 @@ def get_segmentation_batch(home_dir: str):
 def assert_iou_filenames_valid(label_path: str, segmentation_path: str):
     """
     Handles input file path exceptions to do with the file name of label and segmentation input files
-    (end with .tif, segmentation file should precede .tif with a number).
+    (end with .tif, segmentation file should precede .tif with a range [<lower_threshold>,<upper_threshold>]).
 
     Args:
         label_path: `str` - Absolute file path of the input label image.
@@ -97,14 +103,16 @@ def assert_iou_filenames_valid(label_path: str, segmentation_path: str):
     """
 
     # assert that .tif files were chosen.
-    assert label_path.endswith(".tif") or label_path.endswith(".tiff"),\
+    assert label_path.endswith(".tif") or label_path.endswith(".tiff"), \
         f"\nGround truth file should end with '.tif' or '.tiff'." \
         f"\n {label_path=}"
     assert segmentation_path.endswith(".tif") or segmentation_path.endswith(".tiff"), \
         f"\nSegmentation file should end with '.tif' or '.tiff'." \
         f"\n {segmentation_path=}"
-    assert segmentation_path.split(" ")[-1].split(".")[0].isnumeric(),\
-        f"\nThe segmentation file name should end with a number (its lower threshold value)," \
+    s_lower_threshold = segmentation_path.split(" ")[-1].split(".ti")[0].lstrip("[").rstrip("]").split(",")[0]
+    assert is_numeric(s_lower_threshold), \
+        f"\nThe segmentation file name should end with a range [<lower_threshold>,<upper_threshold>]" \
+        f"(thereof, the first (lower) threshold value is relevant for this python script)," \
         f"before the .tif(f) file extension." \
         f"\n {segmentation_path=}"
 
@@ -125,7 +133,7 @@ def assert_iou_input_images_shapes_equal(label, segmentation):
     Returns: `True` if assertions are True.
     """
 
-    assert label.shape == segmentation.shape,\
+    assert label.shape == segmentation.shape, \
         f"\nError: Label and segmentation images must have the same shape (dimension shape & length) but they do not:" \
         f"\n label shape:        {label.shape}" \
         f"\n segmentation shape: {segmentation.shape}"
@@ -147,10 +155,10 @@ def assert_iou_input_images_are_binary(label, segmentation):
 
     label_unique = np.unique(label)  # [0 255]
     segmentation_unique = np.unique(segmentation)  # [0 255]
-    assert len(label_unique) <= 2,\
+    assert len(label_unique) <= 2, \
         f"\nThe label image is not a binary mask (more than 2 unique values found), unique values:" \
         f"\n {label_unique}"
-    assert len(segmentation_unique) <= 2,\
+    assert len(segmentation_unique) <= 2, \
         f"\nThe segmentation image is not a binary mask (more than 2 unique values found), unique values:" \
         f"\n {segmentation_unique}"
 
@@ -158,7 +166,6 @@ def assert_iou_input_images_are_binary(label, segmentation):
 
 
 def intersection_over_union(label: numpy.ndarray, segmentation: numpy.ndarray):
-
     assert_iou_input_images_are_binary(label, segmentation)  # redundant in 'IoU_batch_processor.py' but leaving it in.
 
     intersection = cv2.bitwise_and(label, segmentation)
@@ -171,16 +178,15 @@ def intersection_over_union(label: numpy.ndarray, segmentation: numpy.ndarray):
     return iou
 
 
-def extract_threshold_from_filename(segmentation_path):
-
+def extract_thresholds_from_filename(segmentation_path):
     extension = "." + segmentation_path.split(" ")[-1].split(".")[-1]
-    threshold = float(segmentation_path.split(" ")[-1].split(extension)[0])
-
-    return threshold
+    thresholds = segmentation_path.split(" ")[-1].split(extension)[0].lstrip("[").rstrip("]").split(",")
+    lower = float(thresholds[0])
+    upper = float(thresholds[1])
+    return lower, upper
 
 
 def process_segmentation_batch(label_path, segmentation_paths):
-
     iou_groups = []  # List should suffice for starters. Later, a dictionary would fit better, here.
     for i, segmentation_path in enumerate(segmentation_paths):
         print(f"\nsegmentation {i=}: {segmentation_path}")
@@ -202,17 +208,16 @@ def process_segmentation_batch(label_path, segmentation_paths):
 
         # calculate iou, extract threshold, append current iou pair to iou batch list
         iou = intersection_over_union(label, segmentation)
-        threshold = extract_threshold_from_filename(segmentation_path)
+        thresholds = extract_thresholds_from_filename(segmentation_path)
         print(f"{iou=}")
-        print(f"{threshold=}")
-        iou_groups.append([iou, threshold, segmentation_path])
+        print(f"{thresholds=}")
+        iou_groups.append([segmentation_path, iou, thresholds[0], thresholds[1]])
 
     return iou_groups
 
 
 def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
-
-    iou_dict_list = []  # Can ignore this for now.
+    iou_dict_list_list = []  # Can ignore this for now.
 
     # Starting the main IoU batch processing loop
 
@@ -236,7 +241,8 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
               f"\n {label_path=}")
 
         # segmentation file batch
-        segmentation_batch = get_segmentation_batch(default_dialog_home)
+        label_parent_path = os.path.dirname(label_path)  # https://stackoverflow.com/questions/2860153/how-do-i-get-the-parent-directory-in-python
+        segmentation_batch = get_segmentation_batch(label_parent_path)
         if not segmentation_batch:
             print("\nNo segmentation file(s) selected. Restarting main loop.")
             continue  # repeats main loop
@@ -247,56 +253,60 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
         # Starting the batch processor for one ground truth image and its selected threshold segmentation batch
 
         iou_groups = process_segmentation_batch(label_path=label_path, segmentation_paths=segmentation_batch)
-        print("\niou_groups unsorted:")
-        fH.iterate_function_args_over_iterable(print, iou_groups)
+        # print(f"\ntest: iou_groups unsorted:\n {fH.iterate_function_args_over_iterable(print, iou_groups)}")
+        iou_groups = fH.sort_rows_by_column_k(iou_groups, 2)
 
-        iou_groups_dict = {group[0]: group for group in iou_groups}
-        #print("\nunsorted dict:")
-        #print(iou_groups_dict)
+        # print(f"\ntesting dictionary comprehension output:")
+        # fH.iterate_function_args_over_iterable(print, [group for group in iou_groups])
+        # iou_groups_dict = {group[0]: group for group in iou_groups}
+        # print(f"test: dict:\n {iou_groups_dict}")
 
-        iou_groups_dict_keys_sorted = sorted(iou_groups_dict)  # sorting by descending IoU
-        #print("\nsorted dict keys:")
-        #print(iou_groups_dict_keys_sorted)
+        # iou_groups_dict_keys_sorted = sorted(iou_groups_dict)  # sorting by descending IoU
+        # iou_groups_sorted = [iou_groups_dict[key] for key in iou_groups_dict_keys_sorted]
 
-        iou_groups_sorted = [iou_groups_dict[key] for key in iou_groups_dict_keys_sorted]
-        print("\nsorted list:")
-        print(iou_groups_sorted)
+        # thresholds = np.array(iou_groups)[:, 1]
+        lower_thresholds = []
+        for threshold_string in np.array(iou_groups)[:, 2]:
+            lower_thresholds.append(float(threshold_string))
+        threshold_min, threshold_max = min(lower_thresholds), max(lower_thresholds)
 
-        thresholds = np.array(iou_groups)[:, 1]
-        threshold_min, threshold_max = min(thresholds), max(thresholds)  # print(f"test:\n {threshold_min}\n {threshold_max}")
         label_extension = "." + label_path.split(".")[-1]
         output_yaml_file_path = f"{label_path.strip(label_extension)} - iou_batch - lower threshold value range [{threshold_min}, {threshold_max}].yml"
 
         # write the data to a yaml file. see cloud/yamlHandling.py for my first encounters with yaml coding/comprehension in python.
 
-        test_output_file_path = "H:/imageProcessTif/test_yaml_iou.yml"
-        output_file_path = test_output_file_path if testing else output_yaml_file_path
-        while os.isfile(output_file_path):
+        testing_output_file_path = "H:/imageProcessTif/test_yaml_iou.yml"
+        output_file_path = testing_output_file_path if testing else output_yaml_file_path
+        while os.path.isfile(output_file_path):  # quick n dirty solution for not overwriting existing files
             output_file_path += ".yml"
         with open(output_file_path, 'w') as yaml_out:
             # data sorted by IoU (because that's the key value, here)
-            iou_dict = {group[0]: [{"threshold": group[1]}, {"segmentation_path": f'{group[2]}'}] for group in iou_groups_sorted}
+            iou_dict_list = [
+                {group[2]: [
+                    {"segmentation_path": group[0]}, {"iou": group[1]}, {"lower_threshold": group[2]}, {"upper_threshold": group[3]}
+                ]} for group in iou_groups
+            ]
             data = {"date": datetime.datetime.now(),
                     "label_path": label_path,
-                    "threshold_segmentation_by_IoU": iou_dict}
+                    "segmentation_scores_by_threshold": iou_dict_list}
 
             # converting the dictionary into a string and writing it to the output file
             output = yaml.safe_dump(data=data, width=293)  # line length of >256 should suffice (Win. path length limit)
+            print(f"\ntest during file being opened (string being written to output file):\n {output}")
             yaml_out.write(output)
 
-        iou_dict_list.append(data)
+        iou_dict_list_list.append(data)
 
     # main loop cancel message
     print("\n-----------------------------------------------------------"
           "\nIoU batch processor main loop was cancelled / has finished."
           "\n-----------------------------------------------------------")
 
-    return iou_dict_list
+    return iou_dict_list_list
 
 
 if __name__ == "__main__":
-
     user_home_dir = "Y:/Users/DWalther/unet DW"
-    batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing"
+    batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing_1.1"
     # main(default_dialog_home=batch_testing_home_dir, testing=True)
     main()

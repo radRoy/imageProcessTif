@@ -303,7 +303,6 @@ def iterate_function_args_over_iterable(sub_function, iterable, *args):
 
     output_list = []
     for i, element in enumerate(iterable):
-        #print(f"i={i}, ")
         output_list.append(sub_function(element, *args))
 
     return output_list
@@ -406,6 +405,14 @@ def tkinter_window_init():
     window.withdraw()  # this suppresses the tk window
 
     return 0
+
+
+def sort_rows_by_column_k(rows: list, k: int):
+
+    column = [row[k] for row in rows]
+    sorted_rows = [rows[i] for i in [column.index(x) for x in sorted(column)]]
+
+    return sorted_rows
 
 
 if __name__ == "__main__":

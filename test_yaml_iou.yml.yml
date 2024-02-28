@@ -1,0 +1,28 @@
+date: 2024-02-28 14:59:15.480776
+label_path: H:/imageProcessTif/sample images/batch_processing_1.1/id07 input label.tif
+segmentation_scores_by_threshold:
+- 1.526e-05:
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing_1.1/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-refined-h5_predictions - Otsu [0.00001526,1].tif
+  - iou: 0.0006436448846994092
+  - lower_threshold: 1.526e-05
+  - upper_threshold: 1.0
+- 0.5:
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing_1.1/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-refined-h5_predictions - Otsu [0.5,1].tif
+  - iou: 0.0
+  - lower_threshold: 0.5
+  - upper_threshold: 1.0
+- 0.8:
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing_1.1/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-refined-h5_predictions - Otsu [0.8,1].tif
+  - iou: 0.0
+  - lower_threshold: 0.8
+  - upper_threshold: 1.0
+- 0.9:
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing_1.1/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-refined-h5_predictions - Otsu [0.9,1].tif
+  - iou: 0.0
+  - lower_threshold: 0.9
+  - upper_threshold: 1.0
+- 1.0:
+  - segmentation_path: H:/imageProcessTif/sample images/batch_processing_1.1/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-refined-h5_predictions - Otsu [1,1].tif
+  - iou: 0.0
+  - lower_threshold: 1.0
+  - upper_threshold: 1.0
