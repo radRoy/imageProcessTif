@@ -216,6 +216,19 @@ def process_segmentation_batch(label_path, segmentation_paths):
     return iou_groups
 
 
+def append_highscore_to_filename(output_file_path: str, iou_groups: list):
+
+    ious = [group[1] for group in iou_groups]
+    highscore = max(ious)  # max iou
+    k = ious.index(highscore)  # position index of the highest scoring segmentation in the iou_groups input list
+    extension = output_file_path.split(".")[-1]  # assume that output_file_path ends with .tif or so
+    output_file_path = output_file_path.rstrip("." + extension)
+    a_groups = np.array(iou_groups)
+    output_file_path += f"-iou_highscore_{highscore}-threshold_[{a_groups[k, 2]},{a_groups[k, 3]}].{extension}"
+
+    return output_file_path
+
+
 def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
     iou_dict_list_list = []  # Can ignore this for now.
 
@@ -277,6 +290,7 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
 
         testing_output_file_path = "H:/imageProcessTif/test_yaml_iou.yml"
         output_file_path = testing_output_file_path if testing else output_yaml_file_path
+        output_file_path = append_highscore_to_filename(output_file_path, iou_groups)
         while os.path.isfile(output_file_path):  # quick n dirty solution for not overwriting existing files
             output_file_path += ".yml"
         with open(output_file_path, 'w') as yaml_out:
@@ -308,5 +322,5 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
 if __name__ == "__main__":
     user_home_dir = "Y:/Users/DWalther/unet DW"
     batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing_1.1"
-    # main(default_dialog_home=batch_testing_home_dir, testing=True)
-    main()
+    main(default_dialog_home=batch_testing_home_dir, testing=True)
+    # main()
