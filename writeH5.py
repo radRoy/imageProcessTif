@@ -42,7 +42,7 @@ def main(str_internal_path: str, bool_mode_append: bool):
 
     # the tif input files. to be saved in hdf5 format
 
-    path = fH.get_folder_path_dialog()  # str: path with slashes and trailing slash
+    path = fH.get_folder_path_dialog(window_title="Choose input folder containing '.tif' files to be converted into '.h5' files")  # str: path with slashes and trailing slash
     files = fH.get_file_list(path)  # list: of the filenames (with extension) contained in the given path
     # tif file paths - assume these are formatted correctly (czyx)
     file_paths = [path + file for file in files]
@@ -53,7 +53,7 @@ def main(str_internal_path: str, bool_mode_append: bool):
 
     if bool_mode_append:
         # OUTPUT FILE PATHS, directories, etc.
-        path_out_append = fH.get_folder_path_dialog()  # str with trailing slash (path contains h5 files)
+        path_out_append = fH.get_folder_path_dialog("Choose the output folder containing already existing '.h5' files to write (append) into")  # str with trailing slash (path contains h5 files)
         h5_files = fH.get_file_list(path_out_append)
         h5_file_paths = [path_out_append + file for file in h5_files]
 

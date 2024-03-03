@@ -1,0 +1,98 @@
+C:\Users\dwalther\AppData\Local\anaconda3\python.exe H:\imageProcessTif\writeH5.py
+
+Program start: 2024-03-04 00:12:31.164661
+
+ h5 create mode: tif (input) file paths:
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id01-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id02-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id03-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id04-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id05-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id06-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+
+ h5 create mode: h5 (output) file paths:
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id01-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id02-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id03-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id04-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id05-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id06-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+
+New H5 files are going to be created.
+
+i: 0, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id01-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+TiffPage 0: TypeError: read_bytes() missing 3 required positional arguments: 'dtype', 'count', and 'offsetsize'
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (164, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id01-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id01-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (164, 743, 435)
+
+i: 1, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id02-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+TiffPage 0: TypeError: read_bytes() missing 3 required positional arguments: 'dtype', 'count', and 'offsetsize'
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (164, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id02-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id02-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (164, 743, 435)
+
+i: 2, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id03-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+TiffPage 0: TypeError: read_bytes() missing 3 required positional arguments: 'dtype', 'count', and 'offsetsize'
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (149, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id03-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id03-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (149, 743, 435)
+
+i: 3, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id04-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+TiffPage 0: TypeError: read_bytes() missing 3 required positional arguments: 'dtype', 'count', and 'offsetsize'
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (175, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id04-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id04-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (175, 743, 435)
+
+i: 4, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id05-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+TiffPage 0: TypeError: read_bytes() missing 3 required positional arguments: 'dtype', 'count', and 'offsetsize'
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id05-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id05-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (173, 743, 435)
+
+i: 5, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id06-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+TiffPage 0: TypeError: read_bytes() missing 3 required positional arguments: 'dtype', 'count', and 'offsetsize'
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (225, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id06-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id06-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (225, 743, 435)
+
+i: 6, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+TiffPage 0: TypeError: read_bytes() missing 3 required positional arguments: 'dtype', 'count', and 'offsetsize'
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (156, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.c-preprocessing/input label filled-h5/id07-Ch638nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x-mask-0.08_max-kidney-filled-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (156, 743, 435)
+
+Program finish: 2024-03-04 00:12:54.703878
+----	----	----	----
+
+Process finished with exit code 0
