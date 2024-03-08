@@ -284,7 +284,7 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
         threshold_min, threshold_max = min(lower_thresholds), max(lower_thresholds)
 
         label_extension = "." + label_path.split(".")[-1]
-        output_yaml_file_path = f"{label_path.strip(label_extension)} - iou_batch - lower threshold value range [{threshold_min}, {threshold_max}].yml"
+        output_yaml_file_path = f"{label_path.strip(label_extension)} - iou_batch - lower threshold value range [{round(threshold_min, 4)}, {threshold_max}].yml"
 
         # write the data to a yaml file. see cloud/yamlHandling.py for my first encounters with yaml coding/comprehension in python.
 
@@ -322,5 +322,5 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
 if __name__ == "__main__":
     user_home_dir = "Y:/Users/DWalther/unet DW"
     batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing_1.1"
-    main(default_dialog_home=batch_testing_home_dir, testing=True)
-    # main()
+    # main(default_dialog_home=batch_testing_home_dir, testing=True)
+    main()

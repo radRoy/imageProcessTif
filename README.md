@@ -307,17 +307,31 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - **dataset11.b.0** see 11.a.x for info
     - **dataset11.b.1** see 11.a.x for info
     - **dataset11.b.2** see 11.a.x for info
+  - **dataset11.c**
+    - kidney (pronephros) labels were filled with my 2d binary mask fill macro. Some holes still exist in some slices, but the big majority of 2D holes was filled.
+    - this model still produced bad results. last checkpoint is always better than the best checkpoint, measure in IoU (see the Group drive dataset folders for results (.yml files currently))
+  - **dataset11.d**: babb03 ct3 eye autofluo dataset isometric 5.784 um3, just for getting eye labels for the multi-organ eye,kidney dataset11.e
+    - This dataset is isometric
+    - This dataset is **not cropped**, only scaled (downscaled).  
+    => original voxel sizes (pixel lengths) of babb03, col2a1 (z,y,x) in um: 2.0, 0.85, 0.85
+    - These eye labels were made with previous nuclei type eye models using the 3 autofluo channels (same channels throughout babb03 imaging batch)
+    - TBD: This dataset can be used for model validation since this was not only a different stain but also a different imaging batch (although the same sample preparation batch).
+  - **dataset11.e**: babb03 ct3 eye and kidney multi-organ dataset isometric 5.784 um3
+    - wait for dataset11.d to finish predictions
 
 - **dataset12**: babb03 col2a1 scaled uncropped isometric ~(5.784(? - TBDecided) um)^3
   - This dataset is isometric
   - This dataset is **not cropped**, only scaled (downscaled).  
-  => original voxel sizes (pixel lengths) of babb03, col2a1 (z,y,x) in um: 2.0, 0.85, 0.85 (?)  
+  => original voxel sizes (pixel lengths) of babb03, col2a1 (z,y,x) in um: 2.0, 0.85, 0.85  
   => TBD: all the scalings To Be made for these a5 recordings (?):  
     - *scaled by (z,y,x): ~(0.345760547, 0.146948232, 0.146948232); resulting voxel size in um (z,y,x): ~(5.784, 5.784, 5.784)*
     - scaled by (z,y,x): ~(0.4, 0.17, 0.17); resulting voxel size in um (z,y,x): (5, 5, 5)
     - scaled by (z,y,x): ~(0.444444444, 0.188888889, 0.188888889); resulting voxel size in um (z,y,x): ~(4.500, 4.500, 4.500)
     - scaled by (z,y,x): ~(0.5, 0.2125, 0.2125); resulting voxel size in um (z,y,x): (4, 4, 4)  
-  - TBD: This dataset was scaled to voxel size (zyx): ~ 5.784, 5.784, 5.784 - scaled by ~(0.345760547, 0.146948232, 0.146948232) in (z,y,x)
+  - This dataset was scaled to voxel size (zyx): ~ 5.784, 5.784, 5.784 - scaled by ~(0.345760547, 0.146948232, 0.146948232) in (z,y,x)
+  - Labels were attempted in Imaris  
+  => Imaris was abandoned for making annotations
+  - Currently, no labels exist for this dataset
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
