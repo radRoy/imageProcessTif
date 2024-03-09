@@ -165,7 +165,7 @@ if __name__ == "__main__":
     label_path = "label"
     raw_path = "raw"
     internal_path = raw_path
-    mode_append = True
+    mode_append = False
     """
     if True: 2 dialogs will appear:
         1. input directory

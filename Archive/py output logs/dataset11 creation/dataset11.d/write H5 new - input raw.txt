@@ -1,0 +1,91 @@
+C:\Users\Dancer\Documents\imageProcessTif\venv\Scripts\python.exe C:\Users\Dancer\Documents\imageProcessTif\writeH5.py
+
+Program start: 2024-03-08 22:54:58.124564
+
+ h5 create mode: tif (input) file paths:
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id01-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id02-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id03-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id04-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id05-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id06-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id07-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+
+ h5 create mode: h5 (output) file paths:
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id01-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id02-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id03-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id04-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id05-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id06-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id07-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+
+New H5 files are going to be created.
+
+i: 0, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id01-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id01-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id01-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 173, 743, 435)
+
+i: 1, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id02-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 190, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id02-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id02-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 190, 743, 435)
+
+i: 2, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id03-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 190, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id03-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id03-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 190, 743, 435)
+
+i: 3, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id04-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 207, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id04-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id04-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 207, 743, 435)
+
+i: 4, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id05-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id05-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id05-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 173, 743, 435)
+
+i: 5, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id06-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id06-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id06-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 173, 743, 435)
+
+i: 6, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id07-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (3, 225, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw/id07-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.d/input raw-h5/id07-bicubic-scaled-0.3458z-0.1469y-0.1469x-multiChannel(CZYX)-Ch405,488,561nm-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (3, 225, 743, 435)
+
+Program finish: 2024-03-08 22:59:48.026137
+----	----	----	----
+
+Process finished with exit code 0
