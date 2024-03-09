@@ -21,3 +21,4 @@ id01-img_Ch405 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif
 .idea
 venv
 sample\ images
+.idea/imageProcessTif.iml
