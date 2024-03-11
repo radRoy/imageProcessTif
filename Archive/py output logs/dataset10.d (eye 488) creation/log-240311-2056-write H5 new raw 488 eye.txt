@@ -1,0 +1,91 @@
+H:\venv\Scripts\python.exe H:\imageProcessTif\writeH5.py
+
+Program start: 2024-03-11 20:54:40.196565
+
+ h5 create mode: tif (input) file paths:
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id01-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id02-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id03-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id04-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id05-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id06-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id07-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+
+ h5 create mode: h5 (output) file paths:
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id01-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id02-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id03-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id04-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id05-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id06-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id07-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+
+New H5 files are going to be created.
+
+i: 0, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id01-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id01-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id01-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (173, 743, 435)
+
+i: 1, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id02-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (190, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id02-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id02-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (190, 743, 435)
+
+i: 2, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id03-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (190, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id03-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id03-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (190, 743, 435)
+
+i: 3, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id04-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (207, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id04-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id04-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (207, 743, 435)
+
+i: 4, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id05-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id05-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id05-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (173, 743, 435)
+
+i: 5, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id06-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id06-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id06-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (173, 743, 435)
+
+i: 6, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id07-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (225, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye/id07-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset10/dataset10.d/raw-bicubic-scaled-isometric-5.784um-0.3458z-0.1469y-0.1469x-autofluo-488-eye-h5/id07-Ch488nm-bicubic-scaled-0.3458z-0.1469y-0.1469x-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (225, 743, 435)
+
+Program finish: 2024-03-11 20:55:06.965451
+----	----	----	----
+
+Process finished with exit code 0
