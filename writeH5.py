@@ -164,8 +164,8 @@ if __name__ == "__main__":
     #   set 'mode_append' either to 'True' (if h5 files exist already) or 'False' (if new h5 files should be created)
     label_path = "label"
     raw_path = "raw"
-    internal_path = label_path
-    mode_append = True
+    internal_path = raw_path
+    mode_append = False
     """
     if True: 2 dialogs will appear:
         1. input directory
