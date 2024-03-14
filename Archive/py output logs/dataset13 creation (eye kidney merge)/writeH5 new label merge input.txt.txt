@@ -1,0 +1,91 @@
+C:\Users\dwalther\AppData\Local\anaconda3\python.exe H:\imageProcessTif\writeH5.py
+
+Program start: 2024-03-14 19:22:50.444489
+
+ h5 create mode: tif (input) file paths:
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id01-label_merged-eye_488_0.25-kidney_638_0.08.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id02-label_merged-eye_488_0.25-kidney_638_0.08.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id03-label_merged-eye_488_0.25-kidney_638_0.08.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id04-label_merged-eye_488_0.25-kidney_638_0.08.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id05-label_merged-eye_488_0.25-kidney_638_0.08.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id06-label_merged-eye_488_0.25-kidney_638_0.08.tif
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id07-label_merged-eye_488_0.25-kidney_638_0.08.tif
+
+ h5 create mode: h5 (output) file paths:
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id01-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id02-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id03-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id04-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id05-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id06-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id07-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+
+New H5 files are going to be created.
+
+i: 0, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id01-label_merged-eye_488_0.25-kidney_638_0.08.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (164, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id01-label_merged-eye_488_0.25-kidney_638_0.08.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id01-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (164, 743, 435)
+
+i: 1, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id02-label_merged-eye_488_0.25-kidney_638_0.08.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (164, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id02-label_merged-eye_488_0.25-kidney_638_0.08.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id02-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (164, 743, 435)
+
+i: 2, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id03-label_merged-eye_488_0.25-kidney_638_0.08.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (149, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id03-label_merged-eye_488_0.25-kidney_638_0.08.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id03-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (149, 743, 435)
+
+i: 3, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id04-label_merged-eye_488_0.25-kidney_638_0.08.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (175, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id04-label_merged-eye_488_0.25-kidney_638_0.08.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id04-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (175, 743, 435)
+
+i: 4, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id05-label_merged-eye_488_0.25-kidney_638_0.08.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id05-label_merged-eye_488_0.25-kidney_638_0.08.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id05-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (173, 743, 435)
+
+i: 5, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id06-label_merged-eye_488_0.25-kidney_638_0.08.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (225, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id06-label_merged-eye_488_0.25-kidney_638_0.08.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id06-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (225, 743, 435)
+
+i: 6, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id07-label_merged-eye_488_0.25-kidney_638_0.08.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (156, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638/id07-label_merged-eye_488_0.25-kidney_638_0.08.tif
+ dimension type (~bit depth per pixel): uint8
+HDF5 file created: Y:/Users/DWalther/Microscopy/dataset11/dataset11.e eye kidney merge/label_merged - eye_488 kidney_638-h5/id07-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (156, 743, 435)
+
+Program finish: 2024-03-14 19:23:02.764545
+----	----	----	----
+
+Process finished with exit code 0

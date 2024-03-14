@@ -231,22 +231,22 @@ def read_tif_stack(tif_stack_filepath: str):
     return skimage.io.imread(tif_stack_filepath)
 
 
-def export_ndarray_to_file_path(image: numpy.ndarray, filename: str):
+def export_ndarray_to_file_path(image: numpy.ndarray, file_path: str):
     """
     Exports a numpy.ndarray (e.g., a tif z stack) to .tif format.
 
     Args:
         image: `numpy.ndarray` (e.g., a formatted RGB24 TIFF z stack, or something else entirely)
-        filename: `str` - Aboslute path and filename with extension.
+        file_path: `str` - Aboslute path and filename with extension.
 
     Returns: nothing (pass).
     """
 
-    skimage.io.imsave(filename, image)  # , photometric='minisblack'
+    skimage.io.imsave(file_path, image)  # , photometric='minisblack'
 
     print("export_file(): saved shape :", image.shape)
     print(f"export_file(): saved bitdepth (numpy type): {image.dtype}")
-    print("export_file(): File created: {}".format(filename))
+    print("export_file(): File created: {}".format(file_path))
 
     pass
 
@@ -388,11 +388,11 @@ def get_string_list_filtered_by_unwanted_substring(l: list, s: str):
 def print_ndarray_properties(ndarray: numpy.ndarray, file_path=""):
 
     if file_path:  # False if file_path == "", among other cases
-        print(f'\nfile path: {ndarray=}')
+        print(f'\nfile path: {file_path=}')
     print(f"Array properties:"
-          f"\n dimension type (~bit depth per pixel): {ndarray.dtype=}"
+          f"\n numpy dimension type (~bit depth per pixel): {ndarray.dtype=}"
           f"\n python type: {type(ndarray)=}"
-          f"\n python shape (format): {ndarray.shape=}")
+          f"\n numpy shape (format, dimensions): {ndarray.shape=}")
 
     pass
 

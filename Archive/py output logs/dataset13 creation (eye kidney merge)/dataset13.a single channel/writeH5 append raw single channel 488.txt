@@ -1,0 +1,98 @@
+C:\Users\dwalther\AppData\Local\anaconda3\python.exe H:\imageProcessTif\writeH5.py
+
+Program start: 2024-03-14 20:57:36.521030
+
+ h5 append mode: tif (input) file paths:
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id01-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id02-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id03-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id04-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id05-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id06-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id07-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+
+ h5 append mode: h5 (output) file paths:
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id01-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id02-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id03-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id04-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id05-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id06-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id07-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+
+H5 files are going to be appended to.
+
+i: 0, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id01-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (164, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id01-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id01-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (164, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (164, 743, 435)
+
+i: 1, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id02-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (164, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id02-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id02-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (164, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (164, 743, 435)
+
+i: 2, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id03-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (149, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id03-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id03-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (149, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (149, 743, 435)
+
+i: 3, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id04-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (175, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id04-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id04-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (175, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (175, 743, 435)
+
+i: 4, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id05-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (173, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id05-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id05-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (173, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (173, 743, 435)
+
+i: 5, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id06-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (225, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id06-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id06-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (225, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (225, 743, 435)
+
+i: 6, Opening a tif file: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id07-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+A tif file has been opened and will be written to an H5 file. Properties of this tif file:
+ python type: <class 'numpy.ndarray'>
+ python shape (format): (156, 743, 435)
+ file path: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/input raw single channel 488 (dataset11)/id07-Ch488nm-bicubic-scaled-isometric-0.3458z-0.1469y-0.1469x.tif
+ dimension type (~bit depth per pixel): uint16
+HDF5 file appended to: Y:/Users/DWalther/Microscopy/dataset13/dataset13.a single channel/label_merged - eye_488 kidney_638-h5/id07-label_merged-eye_488_0.25-kidney_638_0.08-h5.h5
+Shape of python-saved H5 file / internal H5 path: 'key' label: (156, 743, 435)
+Shape of python-saved H5 file / internal H5 path: 'key' raw: (156, 743, 435)
+
+Program finish: 2024-03-14 20:58:20.851048
+----	----	----	----
+
+Process finished with exit code 0

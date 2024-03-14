@@ -13,6 +13,7 @@ import os
 import datetime
 import tkinter.messagebox
 from tkinter import filedialog
+import tkinter as tk
 
 import cv2
 import numpy
@@ -215,6 +216,13 @@ def append_highscore_to_filename(output_file_path: str, iou_groups: list):
     return output_file_path
 
 
+def binary_mask_union(label_a_path, label_b_path):
+
+    union = cv2.bitwise_or()
+
+    return union
+
+
 def main(default_dialog_home="Y:/Users/DWalther/Microscopy", testing=False):
 
     # Starting the main loop
@@ -224,87 +232,81 @@ def main(default_dialog_home="Y:/Users/DWalther/Microscopy", testing=False):
             "Binary Mask Union",
             "This process will ask for two binary mask images to be merged into one image (all TIFF files)."
             "\n\nDo you want to continue?"):
-        print("\n---------------------------------------"
+        print("\n-------------------------------------"
               "\nStarting binary mask union main loop.")
 
-        # File selection
+        # File selection, input and output stuff
 
+        # input: 1st label image file
         label_a_path = get_label_image(default_dialog_home)
         if not label_a_path:
             print("\nNo image (.tif(f)) selected for 1st binary mask label image to be merged. Restarting main loop.")
             continue  # repeats main loop
-        print(f"\nGround truth image path:"
+        print(f"\n1st binary mask label image path:"
               f"\n {label_a_path=}")
-
-        # segmentation file batch
+        # input: 2nd label image file
         label_a_parent_path = os.path.dirname(label_a_path)  # https://stackoverflow.com/questions/2860153/how-do-i-get-the-parent-directory-in-python
         label_b_path = get_label_image(label_a_parent_path)
-        segmentation_batch = get_segmentation_batch(label_a_parent_path)
-        if not segmentation_batch:
-            print("\nNo segmentation file(s) selected. Restarting main loop.")
+        if not label_b_path:
+            print("\nNo image (.tif(f)) selected for 2nd binary mask label image to be merged. Restarting main loop.")
             continue  # repeats main loop
-        print(f"\nSegmentation image path(s):"
-              f"\n python's {type(segmentation_batch)=} (containing the chosen file path(s))")
-        fH.iterate_function_args_over_iterable(print, segmentation_batch)
+        print(f"\n2nd binary mask label image path:"
+              f"\n {label_b_path=}")
 
-        # Starting the batch processor for one ground truth image and its selected threshold segmentation batch
+        # output folder
+        output_folder = filedialog.askdirectory(initialdir=label_a_parent_path, title="Choose the output folder")  # absolute folder path with slashes, without trailing slash
+        # outpu file name
+        output_file_name = tkinter.simpledialog.askstring(title="Output file name",
+                                                         prompt=f"These are the two input file names:\n"
+                                                                f"- {os.path.basename(label_a_path)}\n"
+                                                                f"- {os.path.basename(label_b_path)}\n"
+                                                                f"\n"
+                                                                f"Enter the desired output filename\n"
+                                                                f"(extension '.tif' will be forced - if the name contains dots '.', end the name with a dot '.' or a file extension like '.tif'):")
+                                                                # f"- {os.path.splitext(os.path.basename(label_a_path))[0]}\n"
+                                                                # f"- {os.path.splitext(os.path.basename(label_b_path))[0]}\n"
+        print(f"\nGiven {output_file_name=}")
+        output_file_name = os.path.splitext(os.path.basename(output_file_name))[0]
+        print(f"Clean {output_file_name=}")
+        # output file path
+        output_file_path = output_folder + "/" + output_file_name + ".tif"
+        print(f"\nDesired {output_file_path=}")
+        while os.path.isfile(output_file_path):
+            output_file_path += ".tif"
+        print(f"\nAvailable {output_file_path=}")
 
-        iou_groups = process_segmentation_batch(label_path=label_a_path, segmentation_paths=segmentation_batch)
-        # print(f"\ntest: iou_groups unsorted:\n {fH.iterate_function_args_over_iterable(print, iou_groups)}")
-        iou_groups = fH.sort_rows_by_column_k(iou_groups, 2)
+        # Merge (union (Vereinigung)) the two binary mask label images;
 
-        # print(f"\ntesting dictionary comprehension output:")
-        # fH.iterate_function_args_over_iterable(print, [group for group in iou_groups])
-        # iou_groups_dict = {group[0]: group for group in iou_groups}
-        # print(f"test: dict:\n {iou_groups_dict}")
+        print(f"\nStarting binary mask union image processing.\n"
+              f"...")
+        label_a_image = fH.read_tif_stack(tif_stack_filepath=label_a_path)
+        fH.print_ndarray_properties(label_a_image, label_a_path)
+        label_b_image = fH.read_tif_stack(tif_stack_filepath=label_b_path)
+        fH.print_ndarray_properties(label_b_image, label_b_path)
+        union = cv2.bitwise_or(label_a_image, label_b_image)             # only returns the first image (src1)
+        # union = cv2.bitwise_or(label_a_image, label_b_image, dst=union)  # only returns the first image (src1)
+        # cv2.bitwise_or(label_a_image, label_b_image, dst=union)  # TBD: test it
+        fH.print_ndarray_properties(union, output_file_path)
 
-        # iou_groups_dict_keys_sorted = sorted(iou_groups_dict)  # sorting by descending IoU
-        # iou_groups_sorted = [iou_groups_dict[key] for key in iou_groups_dict_keys_sorted]
+        # Saving the merged binary mask label image file
 
-        # thresholds = np.array(iou_groups)[:, 1]
-        lower_thresholds = []
-        for threshold_string in np.array(iou_groups)[:, 2]:
-            lower_thresholds.append(float(threshold_string))
-        threshold_min, threshold_max = min(lower_thresholds), max(lower_thresholds)
-
-        label_extension = "." + label_a_path.split(".")[-1]
-        output_yaml_file_path = f"{label_a_path.strip(label_extension)} - iou_batch - lower threshold value range [{round(threshold_min, 4)}, {threshold_max}].yml"
-
-        # write the data to a yaml file. see cloud/yamlHandling.py for my first encounters with yaml coding/comprehension in python.
-
-        testing_output_file_path = "H:/imageProcessTif/test_yaml_iou.yml"
-        output_file_path = testing_output_file_path if testing else output_yaml_file_path
-        output_file_path = append_highscore_to_filename(output_file_path, iou_groups)
-        while os.path.isfile(output_file_path):  # quick n dirty solution for not overwriting existing files
-            output_file_path += ".yml"
-        with open(output_file_path, 'w') as yaml_out:
-            # data sorted by IoU (because that's the key value, here)
-            iou_dict_list = [
-                {group[2]: [
-                    {"segmentation_path": group[0]}, {"iou": group[1]}, {"lower_threshold": group[2]}, {"upper_threshold": group[3]}
-                ]} for group in iou_groups
-            ]
-            data = {"date": datetime.datetime.now(),
-                    "label_path": label_a_path,
-                    "segmentation_scores_by_threshold": iou_dict_list}
-
-            # converting the dictionary into a string and writing it to the output file
-            output = yaml.safe_dump(data=data, width=293)  # line length of >256 should suffice (Win. path length limit)
-            print(f"\ntest during file being opened (string being written to output file):\n {output}")
-            yaml_out.write(output)
-
-        iou_dict_list_list.append(data)
+        fH.export_ndarray_to_file_path(image=union, file_path=output_file_path)
 
     # main loop cancel message
-    print("\n-----------------------------------------------------------"
-          "\nIoU batch processor main loop was cancelled / has finished."
-          "\n-----------------------------------------------------------")
+    print("\n---------------------------------------------------------"
+          "\nBinary mask union main loop was cancelled / has finished."
+          "\n---------------------------------------------------------")
 
-    return iou_dict_list_list
+    pass
 
 
 if __name__ == "__main__":
+
     user_home_dir = "Y:/Users/DWalther/unet DW"
     batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing_1.1"
+
+    dataset11_eye_kidney_merge_dataset_home_dir = "Y:/Users/Dwalther/Microscopy/dataset11/"
+    dataset11 = dataset11_eye_kidney_merge_dataset_home_dir
+
     # main(default_dialog_home=batch_testing_home_dir, testing=True)
-    main()
+    main(dataset11)
