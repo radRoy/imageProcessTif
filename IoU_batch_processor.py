@@ -224,7 +224,7 @@ def append_highscore_to_filename(output_file_path: str, iou_groups: list):
     extension = output_file_path.split(".")[-1]  # assume that output_file_path ends with .tif or so
     output_file_path = output_file_path.rstrip("." + extension)
     a_groups = np.array(iou_groups)
-    output_file_path += f"-iou_highscore_{highscore}-threshold_[{a_groups[k, 2]},{a_groups[k, 3]}].{extension}"
+    output_file_path += f"-iou_batch_max_{round(highscore, 4)}-threshold_{round(float(a_groups[k, 2]), 4)}.{extension}"  # rounds iou highscore to 4 decimals (e.g., 0.0003 instead of 0.000272678)
 
     return output_file_path
 
@@ -261,6 +261,8 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
             continue  # repeats main loop
         print(f"\nSegmentation image path(s):"
               f"\n python's {type(segmentation_batch)=} (containing the chosen file path(s))")
+        segmentation_batch_folder = os.path.dirname(segmentation_batch[0])  # absolute folder path containing the segmentation file batch, with slashes, no trailing slash.
+        print(f"\n{segmentation_batch_folder=}")
         fH.iterate_function_args_over_iterable(print, segmentation_batch)
 
         # Starting the batch processor for one ground truth image and its selected threshold segmentation batch
@@ -284,7 +286,11 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
         threshold_min, threshold_max = min(lower_thresholds), max(lower_thresholds)
 
         label_extension = "." + label_path.split(".")[-1]
-        output_yaml_file_path = f"{label_path.strip(label_extension)} - iou_batch - lower threshold value range [{round(threshold_min, 4)}, {threshold_max}].yml"
+        label_filename = os.path.basename(label_path)  # label filename with extension
+        label_filename = os.path.splitext(label_filename)[0]  # label filename without extension - robust to multiple dots in filename
+        output_yaml_file_path = f"{segmentation_batch_folder}/{label_filename}.yml"  #  previously: output_yaml_file_path = f"{label_path.strip(label_extension)}.yml"
+
+        print(f"\ntest: {output_yaml_file_path=}")
 
         # write the data to a yaml file. see cloud/yamlHandling.py for my first encounters with yaml coding/comprehension in python.
 
@@ -293,6 +299,8 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
         output_file_path = append_highscore_to_filename(output_file_path, iou_groups)
         while os.path.isfile(output_file_path):  # quick n dirty solution for not overwriting existing files
             output_file_path += ".yml"
+        print(f"\noutput file path:"
+              f"\n {output_file_path=}")
         with open(output_file_path, 'w') as yaml_out:
             # data sorted by IoU (because that's the key value, here)
             iou_dict_list = [
@@ -306,7 +314,7 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
 
             # converting the dictionary into a string and writing it to the output file
             output = yaml.safe_dump(data=data, width=293)  # line length of >256 should suffice (Win. path length limit)
-            print(f"\ntest during file being opened (string being written to output file):\n {output}")
+            print(f"\ntest before writing to file. This text will be written:\n{output}")
             yaml_out.write(output)
 
         iou_dict_list_list.append(data)
