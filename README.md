@@ -333,6 +333,9 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   => Imaris was abandoned for making annotations
   - Currently, no labels exist for this dataset
 
+- **dataset13**: babb03 ct3 & a5 ... scaling info TBD: add it here. probably 5.784 um^3 as usual.
+  - eye labels from single channel 488 nm autofluo eye model chpt-240...-.
+
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
 - [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html)
