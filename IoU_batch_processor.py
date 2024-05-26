@@ -331,4 +331,8 @@ if __name__ == "__main__":
     user_home_dir = "Y:/Users/DWalther/unet DW"
     batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing_1.1"
     # main(default_dialog_home=batch_testing_home_dir, testing=True)
-    main()
+    # main()
+    label_dir_single_channel = "Y:/Users/DWalther/unet DW/3dunet/chpt-240314 ---/chpt-240314-0 to -3/common single channel input test set no eyes"
+    label_dir_triple_channel = "Y:/Users/DWalther/unet DW/3dunet/chpt-240314 ---/chpt-240314-4 to -7/common multi channel input test set no_eyes"
+    main(default_dialog_home=label_dir_single_channel)
+    main(default_dialog_home=label_dir_triple_channel)
