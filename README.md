@@ -335,6 +335,8 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
 
 - **dataset13**: babb03 ct3 & a5 ... scaling info TBD: add it here. probably 5.784 um^3 as usual.
   - eye labels from single channel 488 nm autofluo eye model chpt-240...-.
+  - kidney dataset11.d.2 used for multichannel eye model prediction
+  - kidney dataset11.d.3 used for single channel eye model prediction
 
 ## <u>links & information about Fiji / ImageJ (Macro)</u>
 
