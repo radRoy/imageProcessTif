@@ -334,5 +334,8 @@ if __name__ == "__main__":
     # main()
     label_dir_single_channel = "Y:/Users/DWalther/unet DW/3dunet/chpt-240314 ---/chpt-240314-0 to -3/common single channel input test set no eyes"
     label_dir_triple_channel = "Y:/Users/DWalther/unet DW/3dunet/chpt-240314 ---/chpt-240314-4 to -7/common multi channel input test set no_eyes"
-    main(default_dialog_home=label_dir_single_channel)
-    main(default_dialog_home=label_dir_triple_channel)
+
+    label_dir_11_autofluo_kidney_models = "Y:/Users/DWalther/unet DW/3dunet/chpt-240221 ---"
+    label_dir_11c_autofluo_kidney_models_filled = "Y:/Users/DWalther/unet DW/3dunet/chpt-240304 ---"
+
+    main()
