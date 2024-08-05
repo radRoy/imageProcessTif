@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Fiji.app/scripts/WaltherFiji" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../MSc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../cloud" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../myData" vcs="Git" />

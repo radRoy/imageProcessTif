@@ -29,6 +29,7 @@ import os
 import datetime
 import tkinter.messagebox
 from tkinter import filedialog
+from pathlib import PurePosixPath
 
 import cv2
 import numpy
@@ -218,13 +219,17 @@ def process_segmentation_batch(label_path, segmentation_paths):
 
 def append_highscore_to_filename(output_file_path: str, iou_groups: list):
 
+    print(f"\nappend_highscore_to_filename() test 1: {output_file_path=}")
+
     ious = [group[1] for group in iou_groups]
     highscore = max(ious)  # max iou
     k = ious.index(highscore)  # position index of the highest scoring segmentation in the iou_groups input list
-    extension = output_file_path.split(".")[-1]  # assume that output_file_path ends with .tif or so
-    output_file_path = output_file_path.rstrip("." + extension)
+
+    output_file_path = PurePosixPath(output_file_path)
     a_groups = np.array(iou_groups)
-    output_file_path += f"-iou_batch_max_{round(highscore, 4)}-threshold_{round(float(a_groups[k, 2]), 4)}.{extension}"  # rounds iou highscore to 4 decimals (e.g., 0.0003 instead of 0.000272678)
+    suffix = f"-iou_batch_max_{round(highscore, 4)}-threshold_{round(float(a_groups[k, 2]), 4)}"  # rounds iou highscore to 4 decimals (e.g., 0.0003 instead of 0.000272678)
+    output_file_path = output_file_path.with_stem(output_file_path.stem + suffix)
+    print(f"append_highscore_to_filename() test 4: {output_file_path=}")
 
     return output_file_path
 

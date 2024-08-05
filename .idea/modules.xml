@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../MSc/.idea/MSc.iml" filepath="$PROJECT_DIR$/../MSc/.idea/MSc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Fiji.app/scripts/WaltherFiji/.idea/WaltherFiji.iml" filepath="$PROJECT_DIR$/../Fiji.app/scripts/WaltherFiji/.idea/WaltherFiji.iml" />
       <module fileurl="file://$PROJECT_DIR$/../cloud/.idea/cloud.iml" filepath="$PROJECT_DIR$/../cloud/.idea/cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/imageProcessTif.iml" filepath="$PROJECT_DIR$/.idea/imageProcessTif.iml" />
       <module fileurl="file://$PROJECT_DIR$/../myData/.idea/myData.iml" filepath="$PROJECT_DIR$/../myData/.idea/myData.iml" />
