@@ -1,0 +1,52 @@
+[Metadata for file] D:/Daniel/BABB2-20230405_a5/Trops-06/babb2-a5-06_Mag5x_Tile0_Ch638_Sh0_Rot192.tiff
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 50
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -4870.6
+[y_pos] -8411.7
+[f_start] 23291.9
+[f_end] 23291.9
+[z_start] 1249.6
+[z_end] 2199.7
+[z_stepsize] 10.0
+[z_planes] 95
+[rot] 192.16
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.333
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.546
+[etl_r_amplitude] 0.16
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230405-152514
+[Started taking images] 20230405-152515
+[Stopped taking images] 20230405-152556
+[Stopped stack] 20230405-152556
+[Total time of taking images, s] 40.24
+[Total time of stack acquisition, s] 42.2
+[Frame rate during taking images, img/s:] 2.36
+[===================== END OF ACQUISITION ======================] 
+

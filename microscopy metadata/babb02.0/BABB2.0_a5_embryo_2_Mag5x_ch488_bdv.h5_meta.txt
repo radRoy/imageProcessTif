@@ -1,0 +1,52 @@
+[Metadata for file] D:/Daniel/BABB2_a5_embryo_2_Mag5x_ch488_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 70
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Left
+
+[POSITION] 
+[x_pos] -2189.6
+[y_pos] -7000.8
+[f_start] 23188.6
+[f_end] 23188.6
+[z_start] 4044.8
+[z_end] 5044.9
+[z_stepsize] 3.0
+[z_planes] 333
+[rot] 180.02
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.308
+[etl_l_amplitude] 0.155
+[etl_r_offset] 3.526
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230329-130132
+[Started taking images] 20230329-130135
+[Stopped taking images] 20230329-130350
+[Stopped stack] 20230329-130350
+[Total time of taking images, s] 134.9
+[Total time of stack acquisition, s] 138.27
+[Frame rate during taking images, img/s:] 2.47
+[===================== END OF ACQUISITION ======================] 
+

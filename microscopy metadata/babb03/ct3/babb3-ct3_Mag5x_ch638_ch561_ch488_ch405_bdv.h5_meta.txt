@@ -1,0 +1,1664 @@
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1509.1
+[y_pos] -330.0
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -300.0
+[z_end] 930.0
+[z_stepsize] 2.0
+[z_planes] 615
+[rot] 90.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-171036
+[Started taking images] 20230515-171113
+[Stopped taking images] 20230515-171629
+[Stopped stack] 20230515-171629
+[Total time of taking images, s] 315.61
+[Total time of stack acquisition, s] 352.83
+[Frame rate during taking images, img/s:] 1.95
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1509.1
+[y_pos] -330.0
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -300.0
+[z_end] 930.0
+[z_stepsize] 2.0
+[z_planes] 615
+[rot] 90.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-171629
+[Started taking images] 20230515-171634
+[Stopped taking images] 20230515-172153
+[Stopped stack] 20230515-172153
+[Total time of taking images, s] 319.32
+[Total time of stack acquisition, s] 324.08
+[Frame rate during taking images, img/s:] 1.93
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1509.1
+[y_pos] -330.0
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -300.0
+[z_end] 930.0
+[z_stepsize] 2.0
+[z_planes] 615
+[rot] 90.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-172153
+[Started taking images] 20230515-172159
+[Stopped taking images] 20230515-172722
+[Stopped stack] 20230515-172722
+[Total time of taking images, s] 322.37
+[Total time of stack acquisition, s] 328.52
+[Frame rate during taking images, img/s:] 1.91
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1509.1
+[y_pos] -330.0
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -300.0
+[z_end] 930.0
+[z_stepsize] 2.0
+[z_planes] 615
+[rot] 90.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-172722
+[Started taking images] 20230515-172728
+[Stopped taking images] 20230515-173251
+[Stopped stack] 20230515-173252
+[Total time of taking images, s] 323.7
+[Total time of stack acquisition, s] 329.86
+[Frame rate during taking images, img/s:] 1.9
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] -330.0
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -2160.0
+[z_end] -1160.0
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 180.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-173252
+[Started taking images] 20230515-173342
+[Stopped taking images] 20230515-173801
+[Stopped stack] 20230515-173801
+[Total time of taking images, s] 259.13
+[Total time of stack acquisition, s] 309.3
+[Frame rate during taking images, img/s:] 1.93
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] -330.0
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -2160.0
+[z_end] -1160.0
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 180.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-173801
+[Started taking images] 20230515-173805
+[Stopped taking images] 20230515-174227
+[Stopped stack] 20230515-174227
+[Total time of taking images, s] 262.13
+[Total time of stack acquisition, s] 266.42
+[Frame rate during taking images, img/s:] 1.91
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] -330.0
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -2160.0
+[z_end] -1160.0
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 180.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-174227
+[Started taking images] 20230515-174233
+[Stopped taking images] 20230515-174654
+[Stopped stack] 20230515-174654
+[Total time of taking images, s] 260.84
+[Total time of stack acquisition, s] 266.89
+[Frame rate during taking images, img/s:] 1.92
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] -330.0
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -2160.0
+[z_end] -1160.0
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 180.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-174654
+[Started taking images] 20230515-174700
+[Stopped taking images] 20230515-175121
+[Stopped stack] 20230515-175121
+[Total time of taking images, s] 260.54
+[Total time of stack acquisition, s] 266.59
+[Frame rate during taking images, img/s:] 1.92
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] 7209.9
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -1910.0
+[z_end] -810.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-175121
+[Started taking images] 20230515-175150
+[Stopped taking images] 20230515-175637
+[Stopped stack] 20230515-175637
+[Total time of taking images, s] 287.44
+[Total time of stack acquisition, s] 316.43
+[Frame rate during taking images, img/s:] 1.91
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] 7209.9
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -1910.0
+[z_end] -810.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-175637
+[Started taking images] 20230515-175642
+[Stopped taking images] 20230515-180135
+[Stopped stack] 20230515-180135
+[Total time of taking images, s] 293.45
+[Total time of stack acquisition, s] 297.75
+[Frame rate during taking images, img/s:] 1.87
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] 7209.9
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -1910.0
+[z_end] -810.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-180135
+[Started taking images] 20230515-180141
+[Stopped taking images] 20230515-180654
+[Stopped stack] 20230515-180654
+[Total time of taking images, s] 312.69
+[Total time of stack acquisition, s] 318.74
+[Frame rate during taking images, img/s:] 1.76
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 170.2
+[y_pos] 7209.9
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -1910.0
+[z_end] -810.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-180654
+[Started taking images] 20230515-180700
+[Stopped taking images] 20230515-181455
+[Stopped stack] 20230515-181455
+[Total time of taking images, s] 474.81
+[Total time of stack acquisition, s] 480.85
+[Frame rate during taking images, img/s:] 1.16
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1119.9
+[y_pos] 7609.9
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -2280.0
+[z_end] -1180.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 135.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-181455
+[Started taking images] 20230515-181545
+[Stopped taking images] 20230515-182313
+[Stopped stack] 20230515-182313
+[Total time of taking images, s] 448.12
+[Total time of stack acquisition, s] 498.51
+[Frame rate during taking images, img/s:] 1.23
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1119.9
+[y_pos] 7609.9
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -2280.0
+[z_end] -1180.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 135.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-182313
+[Started taking images] 20230515-182318
+[Stopped taking images] 20230515-183048
+[Stopped stack] 20230515-183048
+[Total time of taking images, s] 450.42
+[Total time of stack acquisition, s] 454.78
+[Frame rate during taking images, img/s:] 1.22
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1119.9
+[y_pos] 7609.9
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -2280.0
+[z_end] -1180.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 135.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-183048
+[Started taking images] 20230515-183054
+[Stopped taking images] 20230515-183819
+[Stopped stack] 20230515-183819
+[Total time of taking images, s] 444.8
+[Total time of stack acquisition, s] 450.84
+[Frame rate during taking images, img/s:] 1.24
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1119.9
+[y_pos] 7609.9
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -2280.0
+[z_end] -1180.0
+[z_stepsize] 2.0
+[z_planes] 550
+[rot] 135.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-183819
+[Started taking images] 20230515-183825
+[Stopped taking images] 20230515-184547
+[Stopped stack] 20230515-184547
+[Total time of taking images, s] 441.96
+[Total time of stack acquisition, s] 448.01
+[Frame rate during taking images, img/s:] 1.24
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1659.9
+[y_pos] 7289.9
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -560.0
+[z_end] 640.1
+[z_stepsize] 2.0
+[z_planes] 600
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-184547
+[Started taking images] 20230515-184637
+[Stopped taking images] 20230515-185443
+[Stopped stack] 20230515-185443
+[Total time of taking images, s] 485.96
+[Total time of stack acquisition, s] 535.83
+[Frame rate during taking images, img/s:] 1.23
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1659.9
+[y_pos] 7289.9
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -560.0
+[z_end] 640.1
+[z_stepsize] 2.0
+[z_planes] 600
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-185443
+[Started taking images] 20230515-185447
+[Stopped taking images] 20230515-190250
+[Stopped stack] 20230515-190250
+[Total time of taking images, s] 482.92
+[Total time of stack acquisition, s] 487.23
+[Frame rate during taking images, img/s:] 1.24
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1659.9
+[y_pos] 7289.9
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -560.0
+[z_end] 640.1
+[z_stepsize] 2.0
+[z_planes] 600
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-190250
+[Started taking images] 20230515-190256
+[Stopped taking images] 20230515-191059
+[Stopped stack] 20230515-191059
+[Total time of taking images, s] 483.04
+[Total time of stack acquisition, s] 489.1
+[Frame rate during taking images, img/s:] 1.24
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 1659.9
+[y_pos] 7289.9
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -560.0
+[z_end] 640.1
+[z_stepsize] 2.0
+[z_planes] 600
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-191059
+[Started taking images] 20230515-191106
+[Stopped taking images] 20230515-191911
+[Stopped stack] 20230515-191911
+[Total time of taking images, s] 485.48
+[Total time of stack acquisition, s] 491.9
+[Frame rate during taking images, img/s:] 1.24
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -909.9
+[y_pos] 14819.8
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -1040.1
+[z_end] -40.1
+[z_stepsize] 2.0
+[z_planes] 499
+[rot] 270.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-191911
+[Started taking images] 20230515-192113
+[Stopped taking images] 20230515-192800
+[Stopped stack] 20230515-192800
+[Total time of taking images, s] 406.14
+[Total time of stack acquisition, s] 528.5
+[Frame rate during taking images, img/s:] 1.23
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -909.9
+[y_pos] 14819.8
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -1040.1
+[z_end] -40.1
+[z_stepsize] 2.0
+[z_planes] 499
+[rot] 270.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-192800
+[Started taking images] 20230515-192804
+[Stopped taking images] 20230515-193453
+[Stopped stack] 20230515-193453
+[Total time of taking images, s] 408.96
+[Total time of stack acquisition, s] 413.26
+[Frame rate during taking images, img/s:] 1.22
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -909.9
+[y_pos] 14819.8
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -1040.1
+[z_end] -40.1
+[z_stepsize] 2.0
+[z_planes] 499
+[rot] 270.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-193453
+[Started taking images] 20230515-193459
+[Stopped taking images] 20230515-194148
+[Stopped stack] 20230515-194148
+[Total time of taking images, s] 408.91
+[Total time of stack acquisition, s] 414.97
+[Frame rate during taking images, img/s:] 1.22
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -909.9
+[y_pos] 14819.8
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -1040.1
+[z_end] -40.1
+[z_stepsize] 2.0
+[z_planes] 499
+[rot] 270.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-194148
+[Started taking images] 20230515-194154
+[Stopped taking images] 20230515-194844
+[Stopped stack] 20230515-194844
+[Total time of taking images, s] 409.77
+[Total time of stack acquisition, s] 415.83
+[Frame rate during taking images, img/s:] 1.22
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -910.1
+[y_pos] 22419.8
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -1010.1
+[z_end] -10.1
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-194844
+[Started taking images] 20230515-194914
+[Stopped taking images] 20230515-195610
+[Stopped stack] 20230515-195610
+[Total time of taking images, s] 416.15
+[Total time of stack acquisition, s] 446.17
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -910.1
+[y_pos] 22419.8
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -1010.1
+[z_end] -10.1
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-195610
+[Started taking images] 20230515-195614
+[Stopped taking images] 20230515-200310
+[Stopped stack] 20230515-200310
+[Total time of taking images, s] 415.86
+[Total time of stack acquisition, s] 420.17
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -910.1
+[y_pos] 22419.8
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -1010.1
+[z_end] -10.1
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-200310
+[Started taking images] 20230515-200316
+[Stopped taking images] 20230515-201013
+[Stopped stack] 20230515-201013
+[Total time of taking images, s] 417.02
+[Total time of stack acquisition, s] 423.08
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] -910.1
+[y_pos] 22419.8
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -1010.1
+[z_end] -10.1
+[z_stepsize] 2.0
+[z_planes] 500
+[rot] 225.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-201013
+[Started taking images] 20230515-201019
+[Stopped taking images] 20230515-201716
+[Stopped stack] 20230515-201716
+[Total time of taking images, s] 416.41
+[Total time of stack acquisition, s] 422.47
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 638 nm
+[Intensity (%)] 20
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 39.6
+[y_pos] 22419.8
+[f_start] -300.0
+[f_end] -300.0
+[z_start] -1270.1
+[z_end] 29.9
+[z_stepsize] 2.0
+[z_planes] 650
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.383
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.471
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-201716
+[Started taking images] 20230515-201853
+[Stopped taking images] 20230515-202756
+[Stopped stack] 20230515-202756
+[Total time of taking images, s] 542.93
+[Total time of stack acquisition, s] 639.93
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 561 nm
+[Intensity (%)] 74
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 595/31 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 39.6
+[y_pos] 22419.8
+[f_start] -322.9
+[f_end] -322.9
+[z_start] -1270.1
+[z_end] 29.9
+[z_stepsize] 2.0
+[z_planes] 650
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.3229999999999995
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.5260000000000002
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-202756
+[Started taking images] 20230515-202800
+[Stopped taking images] 20230515-203702
+[Stopped stack] 20230515-203702
+[Total time of taking images, s] 541.64
+[Total time of stack acquisition, s] 546.05
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 59
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 39.6
+[y_pos] 22419.8
+[f_start] -314.5
+[f_end] -314.5
+[z_start] -1270.1
+[z_end] 29.9
+[z_stepsize] 2.0
+[z_planes] 650
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.451
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-203702
+[Started taking images] 20230515-203708
+[Stopped taking images] 20230515-204611
+[Stopped stack] 20230515-204611
+[Total time of taking images, s] 543.32
+[Total time of stack acquisition, s] 549.49
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+
+[Metadata for file] Z:/transfer/HIFO_mesoSPIM_DATA_STREAM_discussedWithUrs/ct3/babb3-ct3_Mag5x_ch638_ch561_ch488_ch405_bdv.h5
+
+[CFG] 
+[Laser] 405 nm
+[Intensity (%)] 15
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 39.6
+[y_pos] 22419.8
+[f_start] -327.5
+[f_end] -327.5
+[z_start] -1270.1
+[z_end] 29.9
+[z_stepsize] 2.0
+[z_planes] 650
+[rot] 45.0
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.4229999999999996
+[etl_l_amplitude] 0.15
+[etl_r_offset] 3.581
+[etl_r_amplitude] 0.155
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230515-204611
+[Started taking images] 20230515-204617
+[Stopped taking images] 20230515-205517
+[Stopped stack] 20230515-205518
+[Total time of taking images, s] 540.16
+[Total time of stack acquisition, s] 546.58
+[Frame rate during taking images, img/s:] 1.2
+[===================== END OF ACQUISITION ======================] 
+

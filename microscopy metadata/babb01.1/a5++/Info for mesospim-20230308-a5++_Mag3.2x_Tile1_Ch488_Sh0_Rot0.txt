@@ -1,0 +1,57 @@
+ BitsPerPixel = 16
+ DimensionOrder = XYCZT
+ IsInterleaved = false
+ IsRGB = false
+ LittleEndian = true
+ PixelType = uint16
+ Series 0 Name = mesospim-20230308-a5++_Mag3.2x_Tile1_Ch488_Sh0_Rot0.tiff
+ SizeC = 1
+ SizeT = 1
+ SizeX = 2048
+ SizeY = 2048
+ SizeZ = 399
+BitsPerSample = 16
+Color mode = grayscale
+Compression = Uncompressed
+ImageJ = 1.11a
+ImageLength = 2048
+ImageWidth = 2048
+Location = Y:\Users\DWalther\Microscopy\babb01\babb01.1-mesospim-autofluo_control-638,488\a5++\mesospim-20230308-a5++_Mag3.2x_Tile1_Ch488_Sh0_Rot0.tiff
+MetaDataPhotometricInterpretation = Monochrome
+MetaMorph = no
+NumberOfChannels = 1
+PhotometricInterpretation = BlackIsZero
+ResolutionUnit = None
+SamplesPerPixel = 1
+Software = tifffile.py
+Spacing = 2.0
+Unit = um
+XResolution = 0.49261083743842365
+YResolution = 0.49261083743842365
+hyperstack = true
+--------------------------------------------
+(Fiji Is Just) ImageJ 2.14.0/1.54f; Java 1.8.0_322 [64-bit]; Windows 10 10.0; 92MB of 5969MB (1%)
+ 
+Title: mesospim-20230308-a5++_Mag3.2x_Tile1_Ch488_Sh0_Rot0.tiff
+Width:  4157.44 microns (2048)
+Height:  4157.44 microns (2048)
+Depth:  798 microns (399)
+Size:  3.1GB
+Resolution:  0.4926 pixels per micron
+Voxel size: 2.03x2.03x2 micron^3
+ID: -7
+Bits per pixel: 16 (unsigned, grayscale LUT)
+Display range: 22-2409
+Pixel value range: 22-2409
+Image: 1/399 (z:1/399 - mesospim-20230308-a5++_Mag3.2x_Tile1_Ch488_Sh0_Rot0.tiff)
+Stack type: virtual
+No threshold
+Magnification: 0.33
+ScaleToFit: false
+Uncalibrated
+Path: Y:\Users\DWalther\Microscopy\babb01\babb01.1-mesospim-autofluo_control-638,488\a5++\mesospim-20230308-a5++_Mag3.2x_Tile1_Ch488_Sh0_Rot0.tiff
+Screen location: 5,131 (1536x864)
+Coordinate origin:  0,0,0
+No properties
+No overlay
+No selection

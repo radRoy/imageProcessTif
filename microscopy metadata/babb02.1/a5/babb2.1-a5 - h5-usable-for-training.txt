@@ -1,0 +1,9 @@
+usable for training:
+1
+2
+3
+5
+6
+
+not usable for training (bad data):
+4 (XY-coordinates wrong, sample mainly off screen)

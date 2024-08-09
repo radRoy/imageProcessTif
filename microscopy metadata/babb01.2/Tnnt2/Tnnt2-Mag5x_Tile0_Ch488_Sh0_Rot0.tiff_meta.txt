@@ -1,0 +1,52 @@
+[Metadata for file] D:/ThomasPatricia/2023-13-3-AutoFluoDanielTestBechntop/heart_Mag5x_Tile0_Ch488_Sh0_Rot0.tiff
+
+[CFG] 
+[Laser] 488 nm
+[Intensity (%)] 50
+[Zoom] 5x
+[Pixelsize in um] 0.85
+[Filter] 535/22 Brightline
+[Shutter] Left
+
+[POSITION] 
+[x_pos] -3293.3
+[y_pos] -7350.2
+[f_start] 24290.5
+[f_end] 24290.5
+[z_start] 802.3
+[z_end] 1702.3
+[z_stepsize] 3.0
+[z_planes] 300
+[rot] 0.01
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/Users/Public/GitHub-public/mesoSPIM-control/mesoSPIM/config/etl_parameters/ETL-parameters-BT-DBE.csv
+[etl_l_offset] 3.298
+[etl_l_amplitude] 0.16
+[etl_r_offset] 3.526
+[etl_r_amplitude] 0.15
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.8
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.8
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] Photometrics
+[camera_exposure] 0.04
+[camera_line_interval] 7.5e-05
+[x_pixels] 5056
+[y_pixels] 2960
+
+[TIMING INFORMATION] 
+[Started stack] 20230313-150358
+[Started taking images] 20230313-150403
+[Stopped taking images] 20230313-150611
+[Stopped stack] 20230313-150612
+[Total time of taking images, s] 127.91
+[Total time of stack acquisition, s] 134.06
+[Frame rate during taking images, img/s:] 2.35
+[===================== END OF ACQUISITION ======================] 
+

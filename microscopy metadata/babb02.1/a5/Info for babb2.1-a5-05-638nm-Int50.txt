@@ -1,0 +1,57 @@
+ BitsPerPixel = 16
+ DimensionOrder = XYCZT
+ IsInterleaved = false
+ IsRGB = false
+ LittleEndian = true
+ PixelType = uint16
+ Series 0 Name = babb2.1-a5-05-638nm-Int50.tiff
+ SizeC = 1
+ SizeT = 1
+ SizeX = 2960
+ SizeY = 5056
+ SizeZ = 90
+BitsPerSample = 16
+Color mode = grayscale
+Compression = Uncompressed
+ImageJ = 1.11a
+ImageLength = 5056
+ImageWidth = 2960
+Location = Y:\Users\DWalther\Microscopy\babb02\babb02.1a5\raw usable\babb2.1-a5-05-638nm-Int50.tiff
+MetaDataPhotometricInterpretation = Monochrome
+MetaMorph = no
+NumberOfChannels = 1
+PhotometricInterpretation = BlackIsZero
+ResolutionUnit = None
+SamplesPerPixel = 1
+Software = tifffile.py
+Spacing = 10.0
+Unit = um
+XResolution = 1.1764705882352942
+YResolution = 1.1764705882352942
+hyperstack = true
+--------------------------------------------
+(Fiji Is Just) ImageJ 2.14.0/1.54f; Java 1.8.0_322 [64-bit]; Windows 10 10.0; 226MB of 5969MB (3%)
+ 
+Title: babb2.1-a5-05-638nm-Int50.tiff
+Width:  2516 microns (2960)
+Height:  4297.6000 microns (5056)
+Depth:  900 microns (90)
+Size:  2.5GB
+Resolution:  1.1765 pixels per micron
+Voxel size: 0.85x0.85x10 micron^3
+ID: -31
+Bits per pixel: 16 (unsigned, grayscale LUT)
+Display range: 227-439
+Pixel value range: 227-439
+Image: 1/90 (z:1/90 - babb2.1-a5-05-638nm-Int50.tiff)
+Stack type: virtual
+No threshold
+Magnification: 0.12
+ScaleToFit: false
+Uncalibrated
+Path: Y:\Users\DWalther\Microscopy\babb02\babb02.1a5\raw usable\babb2.1-a5-05-638nm-Int50.tiff
+Screen location: 5,131 (1536x864)
+Coordinate origin:  0,0,0
+No properties
+No overlay
+No selection

@@ -1,0 +1,41 @@
+[Metadata for file] D:/Data/Dwalther_lienkamp/mesospim-20230307/mesospim-20230308-a5+-_Mag3.2x_Tile0_Ch647_Sh0_Rot358.tiff
+
+[CFG] 
+[Laser] 647 nm
+[Intensity (%)] 35
+[Zoom] 3.2x
+[Pixelsize in um] 2.03
+[Filter] 405-488-561-640-Quadrupleblock
+[Shutter] Right
+
+[POSITION] 
+[x_pos] 21652.24
+[y_pos] 69149.9
+[f_start] 46595.5
+[f_end] 46595.5
+[z_start] 24547.02
+[z_end] 23497.1
+[z_stepsize] 2.0
+[z_planes] 524
+[rot] 358.6
+
+[ETL PARAMETERS] 
+[ETL CFG File] C:/soft/mesoSPIM-control-Feb2023/mesoSPIM/config/etl_parameters/ETL-parameters - Daniel - ZMB - BABB.csv
+[etl_l_offset] 2.5549999999999984
+[etl_l_amplitude] 0.0
+[etl_r_offset] 2.732
+[etl_r_amplitude] 0.223
+
+[GALVO PARAMETERS] 
+[galvo_l_frequency] 99.9
+[galvo_l_amplitude] 0.78125
+[galvo_l_offset] 0.0
+[galvo_r_amplitude] 0.78125
+[galvo_r_offset] 0.0
+
+[CAMERA PARAMETERS] 
+[camera_type] HamamatsuOrca
+[camera_exposure] 0.02
+[camera_line_interval] 7.5e-05
+[x_pixels] 2048
+[y_pixels] 2048
