@@ -79,6 +79,10 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
 
 ## <u>datasets overview</u>
 
+Note: some voxel sizes were false, previously (some might still be). Corrected voxel sizes are marked with **bold** typeface, e.g.:  
+- babb03 voxel size zyx in um: **2.0, 0.85, 0.85**  
+The wrong voxel sizes of most (or probably all) of the affected datasets are/were due to the confusion around babb03 voxel sizes. The babb03 voxel sizes did not get transferred correctly during the conversion from the microscope's hdf5 output to the more usable tiff format. This conversion was done with BigDataViewer. Whether just a setting was forgotten (user error) or the tool lacks some functionality is not clear at this point in time (MSc Defence presentation creation is currently in progress).
+
 - **dataset01** (babb03-ct3-488)
   - babb02.1 data: 638 nm (fluo), 488 nm
 
@@ -105,8 +109,8 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
   - Refer to `README-archive.md`, section 'dataset02 creation (outdated) ...' for additional details about the input formatting problem during the creation of dataset02.
 
 - **dataset03** (babb03-ct3-405,488,561-normCrop)
-  - voxel size x, y, z [micron^3 / voxel] = 4, 4, 4
-    - babb03 voxel size: 1, 1, 1
+  - voxel size x, y, z [micron^3 / voxel] = **3.4, 3.4, 8.0**
+    - babb03 voxel size x, y, z [micron^3 / voxel] = **0.85, 0.85, 2.0**
     - scaling factor used: 0.25 (applied to resolution [pixel / micron])
   - channels 405,488,561 nm were autofluorescence, channel 638 nm was fluorescence, in all stainings (babb03 microscope session).
   - the dataset in creation starting 2023.08.07 (Monday just after holidays) until 2023.08.21.
@@ -146,8 +150,8 @@ The above mentioned **dimension format** causes a lot of work if done with Fiji.
     - resolution [pixel / micron] = 1 / (10 * 2.53 * 2.53) = 0.015622803
     - resolution of dataset03: 1 / (64 = 4 * 4 * 4) = 0.015625
     - minimal dataset05.0 resolution is, xyz: 1, 1, 10, but the resolution would then be 0.1 px/micron, which is much more data than datset03. Dataset03 was just right in fitting the whole images into one A100 with one big patch (with a small buffer zone in each image, unfortunatley).
-      - voxel size of babb03, xyz: 1, 1, 1
-      - voxel size of babb02.1, xyz: .85, .85, 10
+      - voxel size of babb03, xyz, um: **.85, .85, 2.0**
+      - voxel size of babb02.1, xyz, um: .85, .85, 10
   - voxel size (xyz, micron) of scaled babb02.1 images: 2.5298, 2.5298, 10
   - voxel size (xyz, micron) of scaled babb03 images: 2.5297, 2.5297, 10
     - difference in voxel size is 0.0001 micron = 0.1 nm, which is orders of magnitude smaller than the simple body size difference between specimens and therefore negligible.
