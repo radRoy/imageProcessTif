@@ -30,6 +30,7 @@ import datetime
 import tkinter.messagebox
 from tkinter import filedialog
 from pathlib import PurePosixPath
+# from pathlib import PurePath
 
 import cv2
 import numpy
@@ -302,8 +303,16 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
         testing_output_file_path = "H:/imageProcessTif/test_yaml_iou.yml"
         output_file_path = testing_output_file_path if testing else output_yaml_file_path
         output_file_path = append_highscore_to_filename(output_file_path, iou_groups)
+        i = 1; stem = output_file_path.stem  # the 'stem' is the output filepath stem, which is the filepath's filename without extension.
         while os.path.isfile(output_file_path):  # quick n dirty solution for not overwriting existing files
-            output_file_path += ".yml"
+            # output_file_path += ".yml"
+            output_file_path = output_file_path.with_stem(stem + f"-cp{i}")
+            # output_file_path = output_file_path.with_suffix(f"-cp{i}")
+            # output_file_path = output_file_path.with_suffix(f"-{i}")
+            print(f"{type(output_file_path)=}")
+            print(f"\noutput file path:"
+                  f"\n {output_file_path=}")
+            i += 1
         print(f"\noutput file path:"
               f"\n {output_file_path=}")
         with open(output_file_path, 'w') as yaml_out:
@@ -344,3 +353,4 @@ if __name__ == "__main__":
     label_dir_11c_autofluo_kidney_models_filled = "Y:/Users/DWalther/unet DW/3dunet/chpt-240304 ---"
 
     main()
+PurePosixPath
