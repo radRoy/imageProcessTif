@@ -353,4 +353,3 @@ if __name__ == "__main__":
     label_dir_11c_autofluo_kidney_models_filled = "Y:/Users/DWalther/unet DW/3dunet/chpt-240304 ---"
 
     main()
-PurePosixPath
