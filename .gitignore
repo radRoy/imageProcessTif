@@ -23,3 +23,5 @@ venv
 sample\ images
 .idea/imageProcessTif.iml
 .idea/imageProcessTif.iml
+
+.idea/vcs.xml
