@@ -1,22 +1,12 @@
 """
-TBD: Take pytorch-3dunet prediction tif or better yet h5,
-calculate series of Otsu threshold images (use Fiji wrapper for python 'pyimagej', translate working .ijm to .py here)
-to calculate and converge on the highest IoU score (root finder (Nullstellensucher)),
-save results in a txt file.
-
-First TBD (22.02.2024):
 Calculate the IoU for a batch of prediction threshold & label image pairs, instead of pair by pair.
-- Prompt user for choosing a group (=batch) of thresholded .tif files to calculate the IoU for.
-    - Ask in batches of threshold images belonging to the same input label image.
-    - (Maybe also write the Intersection and Union images to an output file?
-      What would they be useful for besides calculating additional model performance metrics?)
-    - Write the IoU results to a separate output .txt file for each image pair (no chagnes required, there).
-- - -
-
-Read in two binary mask .tif stacks of same size (with file path dialogs or testing without),
-calculate the Intersection over Union (IoU) between them,
-write IoU to a text file next to the segmentation file, alongside some additional info (date, time, input file paths).
+    Read in two binary mask .tif stacks of same size (with file path dialogs or testing without),
+    calculate the Intersection over Union (IoU) between them,
+    determine best IoU score and corresponding files & probability thresholds
+    write IoU to a text file next to the segmentation file, alongside some additional info (date, time, input file paths).
 If the output file already exists, its existing contents are not overwritten but appended to with the new results.
+
+This file may exhibit some additional functions or deviate slightly from above written description. The main purpose and behaviour remains the same, though.
 
 This script works as intended.
 
