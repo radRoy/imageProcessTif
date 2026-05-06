@@ -1,6 +1,8 @@
 Daniel Walther
 repo creation date: 19.06.2023 (dd.mm.yyyy)
 
+**For a short code impression, I recommend looking at this file (image segmentation performance analysis using the Jaccard-Index): [IoU_batch_processor.py](https://github.com/radRoy/imageProcessTif/blob/740ba3c28adfffed5dd3f8070be496aeb14e9141/IoU_batch_processor.py#L4)**
+
 # <u>imageProcessTif</u>
 
 Some `.ijm` files have been moved to the new repo [`radRoy/WaltherFiji`][radRoy/WaltherFiji] (as of 11.11.2023) which is locally embedded into Fiji's scripting directory making my macros in that repo appear in the `Plugins` tab of Fiji.
