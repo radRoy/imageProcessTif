@@ -1,5 +1,22 @@
-Daniel Walther
-repo creation date: 19.06.2023 (dd.mm.yyyy)
+This project is a collection of `python` (and `ImageJMacro .ijm`?) files that process image files in `.tif` and `.h5` format. I provide you with no guide on how to use them, though I generally like to comment my code. Feel free to use the code yourself. Reference to me is nice but not required.
+
+***Currently being cleaned up***
+
+What does this project do?
+- work with image files
+  - `py`: convert `.tif` to `.h5`? and `.h5` to `.tif`, too?
+  - `py`: Also reformat file contents for `.h5` creation for [pytorch-3dunet][pytorch-3dunet] usage?
+  - `py`: calculate IoU ([Jaccard-Index](https://en.wikipedia.org/wiki/Jaccard_index)) of two segmentations
+  - `ijm`: intensity threshold segmentation (submodule [`Waltherfiji`][WaltherFiji])
+
+It does not have a `main` function of any kind. The workflow is split up into self-contained working parts that serve their purpose in a bigger project.
+
+What is missing from this project that would make it maintainable and extendable?
+1. order, clean-up and polish (rough, for comprehensive overview)
+2. readable overview of dependencies between files and to external packages
+3. list of files and their uses / purposes with guides
+4. test data sets
+5. clean, polished, well-commented code that is maintainable and extendable (SOLID principles are useful)
 
 **For a short code impression, I recommend looking at this file (image segmentation performance analysis using the Jaccard-Index): [IoU_batch_processor.py](https://github.com/radRoy/imageProcessTif/blob/740ba3c28adfffed5dd3f8070be496aeb14e9141/IoU_batch_processor.py#L4)**
 
@@ -402,6 +419,10 @@ Conclusion: Since 'Otsu' thresholding was used before and Thomas Naert reported 
 [radRoy/imageProcessTif]: https://github.com/radRoy/imageProcessTif
 [imageProcessTif]: https://github.com/radRoy/imageProcessTif
 [npy2bdv]: https://github.com/nvladimus/npy2bdv
+[pytorch-3dunet]: https://github.com/wolny/pytorch-3dunet
 
 [README protocol]: https://github.com/radRoy/msc/blob/master/README-protocol.md
 [231113 monday]: https://github.com/radRoy/msc/blob/master/README-protocol.md#231113-monday
+
+author: Daniel Walther
+repo creation date: 19.06.2023 (dd.mm.yyyy)
