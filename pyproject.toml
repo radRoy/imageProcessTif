@@ -1,0 +1,9 @@
+[project]
+name = "imageprocesstif"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.4.6",
+    "scikit-image>=0.26.0",
+]

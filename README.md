@@ -11,12 +11,12 @@ What does this project do?
 
 It does not have a `main` function of any kind. The workflow is split up into self-contained working parts that serve their purpose in a bigger project.
 
-What is missing from this project that would make it maintainable and extendable?
+What is missing from this project that would make it maintainable and extensible?
 1. order, clean-up and polish (rough, for comprehensive overview)
 2. readable overview of dependencies between files and to external packages
 3. list of files and their uses / purposes with guides
 4. test data sets
-5. clean, polished, well-commented code that is maintainable and extendable (SOLID principles are useful)
+5. clean, polished, well-commented code that is maintainable and extensible (SOLID principles are useful)
 
 **For a short code impression, I recommend looking at this file (image segmentation performance analysis using the Jaccard-Index): [IoU_batch_processor.py](https://github.com/radRoy/imageProcessTif/blob/740ba3c28adfffed5dd3f8070be496aeb14e9141/IoU_batch_processor.py#L4)**
 
