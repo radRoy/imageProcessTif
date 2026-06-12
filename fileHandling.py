@@ -68,15 +68,15 @@ def extract_parent_path(file_path: str):
         file_path: Absolute path of a file, with the filename and extension.
 
     Returns: Absolute path of the file's parent directory as a string, with backslashes and a trailing slash. For
-    example: C:\\\cdef\\\parent/ (triple backslashes in raw docu. text, to get one backslash in pycharm documentation
-    popup helper thingy)
+    example: C://cdef/parent/ (slashes instead of backslashes so 'SyntaxWarning: invalid escape sequence
+    `backslash`c' appearing)
 
     """
 
     """
     # testing parent path getter function
     parent = extract_parent_path(get_file_path_dialog())
-    print(parent)  # e.g., C:\cdef\parent/
+    print(parent)  # e.g., C:/cdef/parent/
     # testing usability of the output path (mixed back- & slashes)
     print(get_file_list(parent))  # e.g., ['.idea', 'main.py', '__pycache__']
     
