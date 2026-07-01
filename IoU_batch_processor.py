@@ -226,6 +226,9 @@ def append_highscore_to_filename(output_file_path: str, iou_groups: list):
 
 
 def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
+    """
+    default_dialog_home: str = user_home_dir in the __main__ section below, where
+    """
     iou_dict_list_list = []  # Can ignore this for now.
 
     # Starting the main IoU batch processing loop
@@ -233,7 +236,7 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
     fH.tkinter_window_init()  # This puts the tkinter dialog window (for choosing inputs etc.) on top of other windows when a pop-up is created.
     while tkinter.messagebox.askokcancel(
             "Intersection over Union batch processor",
-            "This process will ask for a batch of segmented model pytorch-3dunet model predictions files with the same ground truth and calculate the IoU between the respective pairs."
+            "This process will ask for a batch of segmented pytorch-3dunet model predictions files with the same ground truth and calculate the IoU between the respective pairs."
             "\n\nDo you want to continue?"
     ):
         print("\n---------------------------------------"
@@ -332,8 +335,16 @@ def main(default_dialog_home="Y:/Users/DWalther/unet DW", testing=False):
 
 
 if __name__ == "__main__":
-    user_home_dir = "Y:/Users/DWalther/unet DW"
-    batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing_1.1"
+
+    # Test the script
+
+    # home directories
+    # (previously user_home_dir = "Y:/Users/DWalther/unet DW")
+    user_home_dir = '/media/dancer/DATA1/Group-Lienkamp/Users/DWalther/unet DW'
+    # (previously batch_testing_home_dir = "H:/imageProcessTif/sample images/batch_processing_1.1")
+    batch_testing_home_dir = '/home/dancer/Documents/imageProcessTif/'  # '.../sample images/' does not exist
+        # TBD: reconstruct this path with this script, finding viable test images and add them to the repo
+
     # main(default_dialog_home=batch_testing_home_dir, testing=True)
     # main()
     label_dir_single_channel = "Y:/Users/DWalther/unet DW/3dunet/chpt-240314 ---/chpt-240314-0 to -3/common single channel input test set no eyes"
