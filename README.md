@@ -1,9 +1,9 @@
 # imageProcessTif
 
-[![Python Version](https://img.shields.io/badge/python-3.10+-blue.svg)](https://docs.python.org/3.10/index.html)
-[![Format](https://img.shields.io/badge/format-TIFF%20|%20HDF5-green.svg)](#input--output-specifications)
-[![Target](https://img.shields.io/badge/target-pytorch--3dunet-orange.svg)](https://github.com/wolny/pytorch-3dunet)
-[![ImageJ Macro](https://img.shields.io/badge/-Fiji-blue.svg)](https://imagej.net/scripting/macro)
+[![Python Version](https://img.shields.io/badge/python-3.10+-3a8dd7.svg)](https://docs.python.org/3.10/index.html)
+[![ImageJ Macro](https://img.shields.io/badge/Fiji-ImageJ%20Macro-dea01a.svg)](https://imagej.net/scripting/macro)
+[![Format](https://img.shields.io/badge/format-TIFF%20|%20HDF5-50a0ff.svg)](#input--output-specifications)
+[![Target](https://img.shields.io/badge/neural%20network-pytorch--3dunet-7976ff.svg)](https://github.com/wolny/pytorch-3dunet)
 
 
 A specialized data preparation and evaluation toolset for 3D light-sheet microscopy ([mesoSPIM](https://mesospim.org/)) image stacks. This repository bridges raw microscopy outputs (TIFF/HDF5) and [3D U-Net](https://github.com/wolny/pytorch-3dunet) deep learning segmentation pipelines for *Xenopus tropicalis* embryonic organs (heart, eye, kidney) using Python, ImageJ Macro (Fiji), Bash scripts and Git and SLURM.
