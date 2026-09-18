@@ -12,40 +12,45 @@ The overarching goal is to consolidate and refactor 4 related bioimage processin
 
 ## 2. Current State (This Repository: `imageProcessTif`)
 * **Role:** Preprocessing, format conversion, cropping, ROI handling, HDF5/TIF I/O, and IoU metric calculations.
-* **Status:** Contains standalone utility scripts, macros, and analysis tables that need cleanup, separation of reusable core modules from legacy/archive scripts, and packaging.
+* **Status:** Audit completed (`CODEBASE_AUDIT.md`). Moving to modular package structure under `src/mesospim/`.
 
 ---
 
 ## 3. Guiding Principles for Agents
 To preserve token context and maintain code quality, adhere strictly to the following rules:
-* **Minimal Context & Iterative Steps:** Tackle one module or one refactoring task per turn. Do not perform sweeping multi-repo changes in a single step.
-* **Modular Packaging:** Move reusable library logic into standard Python packages (e.g., `src/mesospim/...` or dedicated package folders) with `pyproject.toml` managed via `uv`.
-* **HPC & SLURM Ready:** Ensure scripts designed for cluster execution have clear CLI entry points (via `argparse` or `click`) and decoupled configuration (e.g., YAML/TOML).
+* **Minimal Context & Iterative Steps:** Tackle one task/module per prompt. Do not perform sweeping multi-repo changes in a single step.
+* **Modular Packaging:** Move reusable library logic into standard Python packages (e.g., `src/mesospim/...`) with `pyproject.toml` managed via `uv`.
+* **HPC & SLURM Ready:** Ensure scripts designed for cluster execution have clear CLI entry points (via `argparse` or `click`), headless capability, and decoupled configuration (YAML/TOML).
+* **Headless First:** Computational and I/O functions must never depend on GUI/Tkinter dialogs; GUI prompts are strictly optional wrappers.
 * **Source of Truth:** Rely on the actual code and file structure over conversational memory.
 * **Ignored Folders in Refactorings:** Ignore folders `Archive`, `.venv`, `.idea`, `.git`, `pycache` (and `__pycache__`) in refactorings.
 
 ---
 
-## 4. Phased Roadmap
+## 4. Phased Roadmap & Implementation Plan
 
-### Phase 1: Clean & Sanitize Current Repositories (Current Focus)
-- [ ] Audit and catalog core reusable logic vs. ad-hoc/legacy scripts in `imageProcessTif`.
-- [ ] Refactor loose functions into structured modules (I/O, metrics, transforms).
-- [ ] Establish basic unit tests and type annotations for core functions.
-- [ ] Repeat sanitization for the other 3 component repositories.
+### Phase 1: Clean & Modularize `imageProcessTif` (Current Focus)
+- [x] **Task 1.0:** Audit and catalog core reusable logic vs. ad-hoc/legacy scripts (see `CODEBASE_AUDIT.md`).
+- [ ] **Task 1.1:** Setup package layout (`src/mesospim/`) and implement headless path & filesystem utilities (`src/mesospim/io/paths.py`).
+- [ ] **Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`).
+- [ ] **Task 1.3:** Implement HDF5 I/O module with context managers for 3D U-Net dataset creation (`src/mesospim/io/hdf5.py`).
+- [ ] **Task 1.4:** Implement core spatial & channel transforms (`src/mesospim/transforms/formatting.py`, `src/mesospim/transforms/masks.py`).
+- [ ] **Task 1.5:** Implement specimen cropping coordinate normalization logic (`src/mesospim/transforms/cropping.py`).
+- [ ] **Task 1.6:** Implement IoU evaluation metrics and YAML reporting (`src/mesospim/metrics/iou.py`, `src/mesospim/metrics/reporting.py`).
+- [ ] **Task 1.7:** Build CLI entrypoints for headless / SLURM execution (`src/mesospim/cli/`).
+- [ ] **Task 1.8:** Establish unit test suite (`pytest`) and type annotations (`mypy`/`ruff`) across all modules.
 
 ### Phase 2: Monorepo Setup with `uv`
-- [ ] Initialize `mesospim_segmentation` workspace layout with `uv`.
-- [ ] Define workspace members / sub-packages with explicit dependencies.
-- [ ] Configure linting (`ruff`) and test runner (`pytest`).
+- [ ] **Task 2.1:** Initialize `mesospim_segmentation` workspace layout with `uv`.
+- [ ] **Task 2.2:** Define workspace members / sub-packages with explicit dependencies.
+- [ ] **Task 2.3:** Configure linting (`ruff`) and test runner (`pytest`).
+- [ ] **Task 2.4:** Migrate sanitization to the remaining 3 component repositories.
 
 ### Phase 3: Cluster (SLURM) & Evaluation Integration
-- [ ] Standardize SLURM job submission scripts and environment definitions.
-- [ ] Integrate end-to-end testing from preprocessing to training and model evaluation.
+- [ ] **Task 3.1:** Standardize SLURM job submission scripts and environment definitions.
+- [ ] **Task 3.2:** Integrate end-to-end testing from preprocessing to training and model evaluation.
 
 ---
 
 ## 5. Next Immediate Task for Agent
-When starting the next session, instruct the agent to:
-1. Inspect the core I/O and processing scripts in this repository (`fileHandling.py`, `IoU_batch_processor.py`, `tifFormatting.py`, etc.).
-2. Propose a clean module structure to separate reusable library code from one-off batch scripts.
+**Task 1.1:** Setup the `src/mesospim/` package layout and implement `src/mesospim/io/paths.py` (pure `pathlib`-based file listing, filtering, sibling directory creation, and naming utilities without Tkinter dependencies).
