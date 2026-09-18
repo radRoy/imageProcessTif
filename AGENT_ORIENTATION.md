@@ -22,6 +22,7 @@ To preserve token context and maintain code quality, adhere strictly to the foll
 * **Modular Packaging:** Move reusable library logic into standard Python packages (e.g., `src/mesospim/...` or dedicated package folders) with `pyproject.toml` managed via `uv`.
 * **HPC & SLURM Ready:** Ensure scripts designed for cluster execution have clear CLI entry points (via `argparse` or `click`) and decoupled configuration (e.g., YAML/TOML).
 * **Source of Truth:** Rely on the actual code and file structure over conversational memory.
+* **Ignored Folders in Refactorings:** Ignore folders `Archive`, `.venv`, `.idea`, `.git`, `pycache` (and `__pycache__`) in refactorings.
 
 ---
 
