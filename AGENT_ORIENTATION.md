@@ -31,7 +31,7 @@ To preserve token context and maintain code quality, adhere strictly to the foll
 
 ### Phase 1: Clean & Modularize `imageProcessTif` (Current Focus)
 - [x] **Task 1.0:** Audit and catalog core reusable logic vs. ad-hoc/legacy scripts (see `CODEBASE_AUDIT.md`).
-- [ ] **Task 1.1:** Setup package layout (`src/mesospim/`) and implement headless path & filesystem utilities (`src/mesospim/io/paths.py`). *(Context: Section 3 headless & pure `pathlib` rules)*
+- [x] **Task 1.1:** Setup package layout (`src/mesospim/`) and implement headless path & filesystem utilities (`src/mesospim/io/paths.py`). *(Context: Section 3 headless & pure `pathlib` rules)*
 - [ ] **Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`). *(Context: Section 3 headless rules, legacy TIF/conversion scripts)*
 - [ ] **Task 1.3:** Implement HDF5 I/O module with context managers for 3D U-Net dataset creation (`src/mesospim/io/hdf5.py`). *(Context: Section 3 headless rules, legacy HDF5 scripts)*
 - [ ] **Task 1.4:** Implement core spatial & channel transforms (`src/mesospim/transforms/formatting.py`, `src/mesospim/transforms/masks.py`). *(Context: Section 3 headless rules, legacy formatting/mask scripts)*
@@ -53,4 +53,4 @@ To preserve token context and maintain code quality, adhere strictly to the foll
 ---
 
 ## 5. Next Immediate Task for Agent
-**Task 1.1:** Setup the `src/mesospim/` package layout and implement `src/mesospim/io/paths.py` (pure `pathlib`-based file listing, filtering, sibling directory creation, and naming utilities without Tkinter dependencies).
+**Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`).
