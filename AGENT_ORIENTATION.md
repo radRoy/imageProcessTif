@@ -31,24 +31,24 @@ To preserve token context and maintain code quality, adhere strictly to the foll
 
 ### Phase 1: Clean & Modularize `imageProcessTif` (Current Focus)
 - [x] **Task 1.0:** Audit and catalog core reusable logic vs. ad-hoc/legacy scripts (see `CODEBASE_AUDIT.md`).
-- [ ] **Task 1.1:** Setup package layout (`src/mesospim/`) and implement headless path & filesystem utilities (`src/mesospim/io/paths.py`).
-- [ ] **Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`).
-- [ ] **Task 1.3:** Implement HDF5 I/O module with context managers for 3D U-Net dataset creation (`src/mesospim/io/hdf5.py`).
-- [ ] **Task 1.4:** Implement core spatial & channel transforms (`src/mesospim/transforms/formatting.py`, `src/mesospim/transforms/masks.py`).
-- [ ] **Task 1.5:** Implement specimen cropping coordinate normalization logic (`src/mesospim/transforms/cropping.py`).
-- [ ] **Task 1.6:** Implement IoU evaluation metrics and YAML reporting (`src/mesospim/metrics/iou.py`, `src/mesospim/metrics/reporting.py`).
-- [ ] **Task 1.7:** Build CLI entrypoints for headless / SLURM execution (`src/mesospim/cli/`).
-- [ ] **Task 1.8:** Establish unit test suite (`pytest`) and type annotations (`mypy`/`ruff`) across all modules.
+- [ ] **Task 1.1:** Setup package layout (`src/mesospim/`) and implement headless path & filesystem utilities (`src/mesospim/io/paths.py`). *(Context: Section 3 headless & pure `pathlib` rules)*
+- [ ] **Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`). *(Context: Section 3 headless rules, legacy TIF/conversion scripts)*
+- [ ] **Task 1.3:** Implement HDF5 I/O module with context managers for 3D U-Net dataset creation (`src/mesospim/io/hdf5.py`). *(Context: Section 3 headless rules, legacy HDF5 scripts)*
+- [ ] **Task 1.4:** Implement core spatial & channel transforms (`src/mesospim/transforms/formatting.py`, `src/mesospim/transforms/masks.py`). *(Context: Section 3 headless rules, legacy formatting/mask scripts)*
+- [ ] **Task 1.5:** Implement specimen cropping coordinate normalization logic (`src/mesospim/transforms/cropping.py`). *(Context: legacy cropping coordinates and scripts)*
+- [ ] **Task 1.6:** Implement IoU evaluation metrics and YAML reporting (`src/mesospim/metrics/iou.py`, `src/mesospim/metrics/reporting.py`). *(Context: Section 3 headless rules, IoU legacy scripts)*
+- [ ] **Task 1.7:** Build CLI entrypoints for headless / SLURM execution (`src/mesospim/cli/`). *(Context: Section 3 CLI/SLURM rules, Phase 1 modules)*
+- [ ] **Task 1.8:** Establish unit test suite (`pytest`) and type annotations (`mypy`/`ruff`) across all modules. *(Context: package layout & test conventions)*
 
 ### Phase 2: Monorepo Setup with `uv`
-- [ ] **Task 2.1:** Initialize `mesospim_segmentation` workspace layout with `uv`.
-- [ ] **Task 2.2:** Define workspace members / sub-packages with explicit dependencies.
-- [ ] **Task 2.3:** Configure linting (`ruff`) and test runner (`pytest`).
-- [ ] **Task 2.4:** Migrate sanitization to the remaining 3 component repositories.
+- [ ] **Task 2.1:** Initialize `mesospim_segmentation` workspace layout with `uv`. *(Context: Section 1 monorepo vision & `uv`)*
+- [ ] **Task 2.2:** Define workspace members / sub-packages with explicit dependencies. *(Context: Section 1 & component repository dependencies)*
+- [ ] **Task 2.3:** Configure linting (`ruff`) and test runner (`pytest`). *(Context: workspace root configuration)*
+- [ ] **Task 2.4:** Migrate sanitization to the remaining 3 component repositories. *(Context: Section 1 & remaining repository structures)*
 
 ### Phase 3: Cluster (SLURM) & Evaluation Integration
-- [ ] **Task 3.1:** Standardize SLURM job submission scripts and environment definitions.
-- [ ] **Task 3.2:** Integrate end-to-end testing from preprocessing to training and model evaluation.
+- [ ] **Task 3.1:** Standardize SLURM job submission scripts and environment definitions. *(Context: Section 1 & 3 SLURM/HPC cluster rules)*
+- [ ] **Task 3.2:** Integrate end-to-end testing from preprocessing to training and model evaluation. *(Context: Section 1 end-to-end pipeline scope)*
 
 ---
 
