@@ -18,12 +18,17 @@ The overarching goal is to consolidate and refactor 4 related bioimage processin
 
 ## 3. Guiding Principles for Agents
 To preserve token context and maintain code quality, adhere strictly to the following rules:
+* ***Do not do something that was not requested.*** Many points below fall under this principle. Adhere to it if you want to be helpful.
+* ***Be as concise as possible.*** This regards everything you do, whether it's code or answers or whatever else.
+* **Strict Refactoring Scope (No Unsolicited Features):** Do NOT add new unrequested features, parameters, alternative algorithms, or behavioral options (e.g. extra scaling modes, permissive flags, or speculative abstractions). Focus strictly on cleaning, modularizing, and decoupling the existing working code. Improving assertion/validation checks, type annotations, and modular structure is encouraged, but existing behavior, math, and logic must be faithfully preserved without feature creep.
 * **Minimal Context & Iterative Steps:** Tackle one task/module per prompt. Do not perform sweeping multi-repo changes in a single step.
 * **Modular Packaging:** Move reusable library logic into standard Python packages (e.g., `src/mesospim/...`) with `pyproject.toml` managed via `uv`.
 * **HPC & SLURM Ready:** Ensure scripts designed for cluster execution have clear CLI entry points (via `argparse` or `click`), headless capability, and decoupled configuration (YAML/TOML).
 * **Headless First:** Computational and I/O functions must never depend on GUI/Tkinter dialogs; GUI prompts are strictly optional wrappers.
 * **Source of Truth:** Rely on the actual code and file structure over conversational memory.
 * **Ignored Folders in Refactorings:** Ignore folders `Archive`, `.venv`, `.idea`, `.git`, `pycache` (and `__pycache__`) in refactorings.
+* **Strict Prompt Compliance & No Unsolicited Output:** When asked to print lines, files, or specific content, return strictly the requested content without extra commentary or clarification unless explicitly asked.
+* **Direct & Objective Question Answering:** For example, when asked "Why did you do X?", or factual questions in general, answer directly. That is, do not assume intent contradictory the literal meaning of the request. If unsuggested information is provided, nonetheless, never put it before the request response and never go into detail.
 
 ---
 
@@ -32,7 +37,7 @@ To preserve token context and maintain code quality, adhere strictly to the foll
 ### Phase 1: Clean & Modularize `imageProcessTif` (Current Focus)
 - [x] **Task 1.0:** Audit and catalog core reusable logic vs. ad-hoc/legacy scripts (see `CODEBASE_AUDIT.md`).
 - [x] **Task 1.1:** Setup package layout (`src/mesospim/`) and implement headless path & filesystem utilities (`src/mesospim/io/paths.py`). *(Context: Section 3 headless & pure `pathlib` rules)*
-- [ ] **Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`). *(Context: Section 3 headless rules, legacy TIF/conversion scripts)*
+- [x] **Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`). *(Context: Section 3 headless rules, legacy TIF/conversion scripts)*
 - [ ] **Task 1.3:** Implement HDF5 I/O module with context managers for 3D U-Net dataset creation (`src/mesospim/io/hdf5.py`). *(Context: Section 3 headless rules, legacy HDF5 scripts)*
 - [ ] **Task 1.4:** Implement core spatial & channel transforms (`src/mesospim/transforms/formatting.py`, `src/mesospim/transforms/masks.py`). *(Context: Section 3 headless rules, legacy formatting/mask scripts)*
 - [ ] **Task 1.5:** Implement specimen cropping coordinate normalization logic (`src/mesospim/transforms/cropping.py`). *(Context: legacy cropping coordinates and scripts)*
@@ -53,4 +58,4 @@ To preserve token context and maintain code quality, adhere strictly to the foll
 ---
 
 ## 5. Next Immediate Task for Agent
-**Task 1.2:** Implement standard TIF I/O and bit-depth conversion modules (`src/mesospim/io/tiff.py`, `src/mesospim/transforms/conversions.py`).
+**Task 1.3:** Implement HDF5 I/O module with context managers for 3D U-Net dataset creation (`src/mesospim/io/hdf5.py`).
