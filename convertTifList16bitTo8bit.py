@@ -6,12 +6,14 @@ purpose: convert a list of tif images (file paths) from type uint16 to uint8 and
 """
 
 
-import tkinter as tk
-import numpy as np
 import datetime
+from pathlib import Path
+import tkinter as tk
+from tkinter import filedialog
 
-# import files
-import fileHandling as fH
+import numpy as np
+import skimage.io
+
 from convertTif16bitTo8bit import convertTifUint16ToTifUint8
 
 
@@ -27,38 +29,33 @@ if __name__ == "__main__":
     """ INPUT STUFF """
 
     # get the file path list of the processed autofluorescence single channel tif images
-    input_directory = fH.get_folder_path_dialog(window_title='Choose input folder')
-    input_paths = fH.get_file_path_list(input_directory)
-    # filter input paths by file type
-    input_extension = ".tif"
-    input_paths = fH.get_string_list_filtered_by_wanted_ending(input_paths, input_extension)
+    input_directory = Path(filedialog.askdirectory(title='Choose input folder'))
+    input_paths = sorted(p for p in input_directory.iterdir() if p.is_file() and p.suffix.lower() == ".tif")
+
     # print the input directory and file paths
     print(f"\nInput directory:\n{input_directory}")
     print("Input file paths:")
-    fH.iterate_function_args_over_iterable(print, np.array(input_paths))
+    for p in np.array(input_paths):  # ndarray for nicer printing
+        print(p)
 
     """ OUTPUT STUFF """
-
-    # get input filenames to be renamed for output file export
-    input_filenames = fH.get_file_list(input_directory)
-    input_filenames = fH.get_string_list_filtered_by_wanted_ending(input_filenames, input_extension)
 
     """ STATIC VARIABLE DEFINITION """
     suffix = "-uint8"
     """ STATIC VARIABLE DEFINITION END """
 
     # create output directory
-    output_directory = fH.create_sibling_dir(path=input_directory, suffix=suffix)
-    # create output file names
-    output_filenames = []
-    for filename in input_filenames:
-        output_filenames.append(fH.rename_file(filename, suffix))
-    # create output file paths from output dir and output filenames
-    output_paths = [output_directory + filename for filename in output_filenames]
+    output_directory = input_directory.parent / f"{input_directory.name}{suffix}"
+    output_directory.mkdir(parents=False, exist_ok=True)
+
+    # create output file paths
+    output_paths = [output_directory / f"{p.stem}{suffix}{p.suffix}" for p in input_paths]
+
     # print the output directory and file paths
     print(f"\nOutput directory:\n{output_directory}")
     print("Output file paths:")
-    fH.iterate_function_args_over_iterable(print, np.array(output_paths))
+    for p in np.array(output_paths):  # ndarray for nicer printing
+        print(p)
 
     """ MAIN FILE OPERATIONS """
 
@@ -68,7 +65,7 @@ if __name__ == "__main__":
 
         # open image (uint16 tif)
         print(f"\ni: {i}, Opening image: {file_path}")
-        tif_16 = fH.read_tif_stack(tif_stack_filepath=file_path)  # assumed to be a uint16 tif image, dimensions (shape) do not matter
+        tif_16 = skimage.io.imread(file_path)  # assumed to be a uint16 tif image, dimensions (shape) do not matter
         print(f"Opened image's shape: {tif_16.shape}, bitdepth (np.ndarray.dtype, expect np.uint16): {tif_16.dtype}")
 
         # convert image to uint8
@@ -79,6 +76,6 @@ if __name__ == "__main__":
 
         # export the concatenated ndarray to an actual tif file
         print(f"Saving the converted 8bit tif image")
-        fH.export_ndarray_to_file_path(tif_8, output_paths[i])
+        skimage.io.imsave(output_paths[i], tif_8)
 
     print(f"\nProgram finish: {datetime.datetime.now()}\n----\t----\t----\t----")
