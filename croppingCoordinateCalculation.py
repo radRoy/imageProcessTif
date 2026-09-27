@@ -15,7 +15,7 @@ import pandas as pd
 import fileHandling as fH
 
 
-file = "dataset05-cropping-table-babb02.1,babb03-no_tail.xlsx"
+file = "data/dataset_metadata/dataset05-cropping-table-babb02.1,babb03-no_tail.xlsx"
 # file = "dataset05-cropping-table-babb02.1,babb03-whole_organism.xlsx"
 filename, extension = fH.exclude_extension_from_filename(filename_with_extension=file, delim=".")
 file_out = filename + "-filled" + "." + extension
