@@ -12,7 +12,7 @@ from tkinter import filedialog  # can not be called as tk.filedialog
 import numpy
 import skimage
 import os
-import pathlib
+from pathlib import Path
 
 
 def get_file_path_dialog(window_title="Choose file path"):
@@ -83,25 +83,25 @@ def extract_parent_path(file_path: str):
     # testing outputs
     file_path, type <class 'str'>
         # with path and extension (slashes)
-    pathlib.Path(file_path), type <class 'pathlib.WindowsPath'>
+    Path(file_path), type <class 'pathlib.WindowsPath'>
         # (backslashes, same file path in another class type)
-    pathlib.Path(file_path).parent.absolute(), type <class 'pathlib.WindowsPath'>
+    Path(file_path).parent.absolute(), type <class 'pathlib.WindowsPath'>
         # (backslashes, no trailing backslash)
-    str(pathlib.Path(file_path).parent.absolute()), type <class 'str'>
+    str(Path(file_path).parent.absolute()), type <class 'str'>
         # (absolute parent path, no trailing backslash)
-    str(pathlib.Path(file_path).parent.absolute()) + '/', type <class 'str'>
+    str(Path(file_path).parent.absolute()) + '/', type <class 'str'>
         # (absolute parent path, trailing slash, otherwise backslashes)
     """
 
-    # return str(pathlib.Path(file_path).parent.absolute()) + '/'  # (absolute parent path, trailing slash, otherwise backslashes)
-    return str(pathlib.Path(file_path).parent.absolute().as_posix()) + '/'  # path with only slashes and trailing slash.
+    # return str(Path(file_path).parent.absolute()) + '/'  # (absolute parent path, trailing slash, otherwise backslashes)
+    return str(Path(file_path).parent.absolute().as_posix()) + '/'  # path with only slashes and trailing slash.
 
 
 def extract_filename_from_file_path(file_path: str):
     """
     Returns the filename with extension from a given file path.
     """
-    return pathlib.Path(file_path).name
+    return Path(file_path).name
 
 
 def get_file_list(parent_path=""):
@@ -219,7 +219,7 @@ def rename_file(filename: str, suffix: str, extension=""):
     return file_out
 
 
-def read_tif_stack(tif_stack_filepath: str):
+def read_tif_stack(tif_stack_filepath: Path):
     """
     reads in and returns a tif stack.
 
