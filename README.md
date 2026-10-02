@@ -88,7 +88,6 @@ The repository is organized into focused, modular scripts:
 ### 2. Evaluation & Analysis
 - **`IoU_batch_processor.py`**: Evaluates model prediction outputs against ground truth masks across threshold sweeps (0.1–1.0) and outputs YAML summary reports.
 - **`yaml_tester.py`**: Inspects and validates evaluation configuration files.
-- **`class_label_balance_randomiser.py` / `blinding/blinding.py`**: Utilities for blinded train/val/test splitting and slice balancing.
 
 ### 3. Core Libraries & Support Modules
 - **`fileHandling.py` / `file_handling/`**: Shared file system utilities (finding files, extracting tokens, batch path management).

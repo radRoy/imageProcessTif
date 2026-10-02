@@ -77,9 +77,6 @@ Detailed Flow:
 ### `blinding/blinding.py`
 - *(no internal dependencies detected)*
 
-### `class_label_balance_randomiser.py`
-- *(no internal dependencies detected)*
-
 ### `concatenateChannels.py`
 - `fileHandling`
 

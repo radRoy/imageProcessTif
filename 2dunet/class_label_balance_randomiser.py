@@ -20,16 +20,11 @@ from pathlib import Path  # https://docs.python.org/3/library/pathlib.html
 import tkinter as tk
 import numpy as np
 # print(f"This script's path: {__file__}"); wd = Path(__file__).parent.absolute().parent.absolute(); os.chdir(wd); print(f"Setting working dir (parent dir of my git repos): {Path(__file__).parent.absolute().parent.absolute()}")
-from imageProcessTif import fileHandling as fH
-
-
-def class_balance_counter():
-    """another time another day. can do it faster the dirty easy way. way faster."""
-
-    pass
+import fileHandling as fH
 
 
 def class_label_balance_randomiser(files, file_paths, output_dir):
+
 
     # exploring The filenames for sections of easy processing
     l = [x.split("-") for x in [fH.exclude_extension_from_filename(file)[0] for file in files]]

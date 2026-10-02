@@ -18,7 +18,6 @@ This audit catalogs the Python scripts, utilities, and workflows in the `imagePr
 | `croppingCoordinateCalculation.py` | Calculates specimen-normalized ROI cropping bounds from Excel tables with edge-case handling (undershoot/overshoot). | **Reusable Transform / Domain Logic** | Directly reads/writes Excel files without separated pure mathematical functions. |
 | `readH5.py` / `writeH5.py` | HDF5 dataset creation and appending (`/raw`, `/label`) for 3D U-Net pipelines. | **Reusable I/O Module** | Logic mixed between Tkinter folder prompts and file operations; lacks context-manager abstraction. |
 | `h5_predict3dunet_to_Segmentation.py` | Converts `.h5` model predictions into BigDataViewer (BDV) format via `npy2bdv`. | **Reusable I/O / Export Module** | GUI coupling and ad-hoc script structure. |
-| `class_label_balance_randomiser.py` | Balances slice counts per class across specimens for 2D training. | **Ad-hoc / Unfinished Utility** | Incomplete experimental code. |
 | `yaml_tester.py` / `test_yaml_*.yml` | Serializes IoU results to YAML. | **Ad-hoc Validation** | Consolidate into evaluation metric reporting. |
 | `Archive/`, `knowHow/`, `FijiRecordings/` | Historical macros, Excel scaling tables, documentation notes. | **Legacy / Reference Data** | Retain as reference or move to `docs/` and `data/` reference folders. |
 
