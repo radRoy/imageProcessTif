@@ -1,27 +1,12 @@
 */temp bicubic scaled by 0.25/*
 
-# ignore all `*<.filetype>` files
 *.Rhistory
 *.iml
 *.pyc
 *.xml
-*.iml
-.idea/imageProcessTif.iml
-.idea/misc.xml
-.idea/imageProcessTif.iml
-.idea/misc.xml
 ~$dataset05-scaling_babb02,babb03.xlsx
 ~$dataset03-cropping-table-babb03.xlsx
 id01-img_Ch405 nm_Angle180.0_Tile1-cropNorm-bicubic-scaled0.25.tif
-.idea/imageProcessTif.iml
-.idea/misc.xml
-*.iml
-.idea/imageProcessTif.iml
-.idea/misc.xml
 .idea
 .venv
 sample\ images
-.idea/imageProcessTif.iml
-.idea/imageProcessTif.iml
-
-.idea/vcs.xml
